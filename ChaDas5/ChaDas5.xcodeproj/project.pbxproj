@@ -77,7 +77,6 @@
 		96451FD121AC79EF00C9C351 /* ChaDas5 */ = {
 			isa = PBXGroup;
 			children = (
-				96451FF221AC79F500C9C351 /* Entities */,
 				96451FF321AC79FC00C9C351 /* Controller */,
 				96451FF421AC7A0300C9C351 /* View */,
 				96451FD221AC79EF00C9C351 /* AppDelegate.swift */,
@@ -94,13 +93,6 @@
 				96451FE921AC79F000C9C351 /* Info.plist */,
 			);
 			path = ChaDas5UITests;
-			sourceTree = "<group>";
-		};
-		96451FF221AC79F500C9C351 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		96451FF321AC79FC00C9C351 /* Controller */ = {
@@ -385,7 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98PH68S7E9;
+				DEVELOPMENT_TEAM = B5JURCMZMH;
 				INFOPLIST_FILE = ChaDas5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -403,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98PH68S7E9;
+				DEVELOPMENT_TEAM = B5JURCMZMH;
 				INFOPLIST_FILE = ChaDas5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
