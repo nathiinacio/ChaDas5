@@ -13,6 +13,7 @@
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
 		96451FE821AC79F000C9C351 /* ChaDas5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96451FE721AC79F000C9C351 /* ChaDas5UITests.swift */; };
+		9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		96451FE321AC79F000C9C351 /* ChaDas5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChaDas5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96451FE721AC79F000C9C351 /* ChaDas5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaDas5UITests.swift; sourceTree = "<group>"; };
 		96451FE921AC79F000C9C351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				96451FD621AC79EF00C9C351 /* Main.storyboard */,
 				96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */,
+				9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
+				9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */,
 				96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */,
 				96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */,
 			);
