@@ -36,7 +36,7 @@ class Profile: UIViewController {
     override func viewDidLoad() {
         segmentedControl = CustomSegmentedContrl.init(frame: CGRect.init(x: 0, y: 300, width: self.view.frame.width, height: 45))
         segmentedControl.backgroundColor = .white
-        segmentedControl.commaSeperatedButtonTitles = "first, two"
+        segmentedControl.commaSeperatedButtonTitles = "Relatos passados, Relatos atuais"
         segmentedControl.addTarget(self, action: #selector(onChangeOfSegment(_:)), for: .valueChanged)
         
         self.view.addSubview(segmentedControl)

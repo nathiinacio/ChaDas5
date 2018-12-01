@@ -55,14 +55,14 @@ class CustomSegmentedContrl: UIControl {
     }
     
     
-    @IBInspectable var selectorColor: UIColor = .darkGray {
+    @IBInspectable var selectorColor: UIColor = .buttonPink {
         
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var selectorTextColor: UIColor = .green {
+    @IBInspectable var selectorTextColor: UIColor = .buttonPink {
         
         didSet {
             updateView()
@@ -77,7 +77,7 @@ class CustomSegmentedContrl: UIControl {
     
     convenience init(parent:UIView, verticalPosition:CGFloat = 25, segmentsCommaSeparated:String, action: Selector) {
         self.init(frame: CGRect.init(x: 0, y: verticalPosition, width: parent.frame.width, height: 45))
-        self.backgroundColor = .white
+        self.backgroundColor = .clear
         self.commaSeperatedButtonTitles = segmentsCommaSeparated
         self.addTarget(self, action: action, for: .valueChanged)
         
