@@ -17,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dah-py-wwN">
-                                <rect key="frame" x="50" y="50" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dah-py-wwN">
+                                <rect key="frame" x="50" y="50" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4B0-kj-L5o"/>
-                                    <constraint firstAttribute="width" constant="30" id="Lqw-Gl-CiM"/>
+                                    <constraint firstAttribute="width" constant="50" id="USt-Zg-jTl"/>
+                                    <constraint firstAttribute="height" constant="50" id="bFt-Kt-RCR"/>
                                 </constraints>
-                                <state key="normal" title="/">
+                                <state key="normal" title="/" image="editIcon">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
@@ -43,11 +43,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dah-py-wwN" firstAttribute="top" secondItem="3Xz-h8-fOq" secondAttribute="top" constant="30" id="Cav-Qb-GrC"/>
+                            <constraint firstItem="dah-py-wwN" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" constant="50" id="5xi-iR-l1y"/>
                             <constraint firstItem="QN9-CE-dox" firstAttribute="trailing" secondItem="3Xz-h8-fOq" secondAttribute="trailing" id="IZW-cc-9VP"/>
+                            <constraint firstItem="dah-py-wwN" firstAttribute="top" secondItem="3Xz-h8-fOq" secondAttribute="top" constant="30" id="Wsh-Zp-SnO"/>
                             <constraint firstItem="QN9-CE-dox" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" id="jhG-NE-yaM"/>
                             <constraint firstItem="QN9-CE-dox" firstAttribute="centerX" secondItem="kRd-i1-Ia0" secondAttribute="centerX" id="lNF-l4-vNk"/>
-                            <constraint firstItem="dah-py-wwN" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" constant="50" id="leq-0z-x5K"/>
                             <constraint firstAttribute="bottom" secondItem="QN9-CE-dox" secondAttribute="bottom" id="sgl-kc-QBw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Xz-h8-fOq"/>
@@ -60,4 +60,7 @@
             <point key="canvasLocation" x="85.599999999999994" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="editIcon" width="924" height="740"/>
+    </resources>
 </document>

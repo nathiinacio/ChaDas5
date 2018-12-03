@@ -17,29 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ges-bX-Snj">
-                                <rect key="frame" x="50" y="50" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ges-bX-Snj">
+                                <rect key="frame" x="50" y="50" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="/">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2uo-1H-T2H"/>
+                                    <constraint firstAttribute="width" constant="50" id="5yi-GQ-pOc"/>
+                                </constraints>
+                                <state key="normal" title="/" image="editIcon">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jP-yu-5l5">
-                                <rect key="frame" x="305" y="50" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
@@ -67,8 +57,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jP-yu-5l5">
+                                <rect key="frame" x="275" y="50" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ksn-4o-YPu"/>
+                                    <constraint firstAttribute="height" constant="50" id="rNB-5A-fbG"/>
+                                </constraints>
+                                <state key="normal" title="+" image="addIcon">
+                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xyl-jb-mIJ" firstAttribute="trailing" secondItem="7jP-yu-5l5" secondAttribute="trailing" constant="50" id="gR9-h5-Pk7"/>
+                            <constraint firstItem="7jP-yu-5l5" firstAttribute="top" secondItem="xyl-jb-mIJ" secondAttribute="top" constant="30" id="hvF-Do-FCF"/>
+                            <constraint firstItem="ges-bX-Snj" firstAttribute="top" secondItem="xyl-jb-mIJ" secondAttribute="top" constant="30" id="ok1-5h-63M"/>
+                            <constraint firstItem="ges-bX-Snj" firstAttribute="leading" secondItem="xyl-jb-mIJ" secondAttribute="leading" constant="50" id="xiX-sU-nEB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xyl-jb-mIJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" id="3oy-cj-eMt"/>
@@ -131,4 +143,8 @@
             <point key="canvasLocation" x="-1401" y="-43"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addIcon" width="924" height="740"/>
+        <image name="editIcon" width="924" height="740"/>
+    </resources>
 </document>

@@ -10,4 +10,8 @@ import UIKit
 
 class CreateNewAccount: UIViewController {
     
+    override func viewDidLoad() {
+        hideKeyboardWhenTappedAround()
+    }
+    
 }
