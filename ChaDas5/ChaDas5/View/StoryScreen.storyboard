@@ -70,6 +70,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hw4-sL-ogr"/>
                     </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="tde-1a-ZNZ" id="9oi-Ii-dyt"/>
+                        <outlet property="storyTextView" destination="FMQ-7Z-TuW" id="QgI-u8-BI2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcN-o6-nZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

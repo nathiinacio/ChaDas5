@@ -10,6 +10,11 @@ import UIKit
 
 class Login: UIViewController {
     
+    //outlets
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+            
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
     }

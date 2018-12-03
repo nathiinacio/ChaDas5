@@ -10,6 +10,11 @@ import UIKit
 
 class NewStoryScreen: UIViewController {
     
+    //outlets
+    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var newStoryTextView: UITextView!    
+    
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
     }

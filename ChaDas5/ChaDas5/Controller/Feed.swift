@@ -10,4 +10,8 @@ import UIKit
 
 class Feed: UIViewController {
     
+    //outlets
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var feedTableView: UITableView!    
+    
 }

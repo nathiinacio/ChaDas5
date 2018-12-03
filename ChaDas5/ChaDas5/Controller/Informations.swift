@@ -10,4 +10,9 @@ import UIKit
 
 class Informations: UIViewController {
     
+    //outlets
+    @IBOutlet weak var whatToDoButton: UIButton!
+    @IBOutlet weak var numbersButton: UIButton!
+    @IBOutlet weak var informationsButton: UIButton!    
+    
 }

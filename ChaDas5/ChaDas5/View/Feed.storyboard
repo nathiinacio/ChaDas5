@@ -54,6 +54,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="8af-cw-ccd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="gAk-hd-CQt" id="XcT-Ww-SvF"/>
+                        <outlet property="feedTableView" destination="rsd-4Z-ZH2" id="OZk-sm-Qrm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mai-gK-alR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -158,6 +158,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Se-Mf-buV"/>
                     </view>
+                    <connections>
+                        <outlet property="createNewAccountButton" destination="q5Q-eb-dRI" id="zwf-20-3m2"/>
+                        <outlet property="emailTextField" destination="TWp-O3-ywC" id="C0V-1g-apT"/>
+                        <outlet property="passwordConfirmationTextField" destination="PPe-7t-dED" id="6he-59-Q5m"/>
+                        <outlet property="passwordTextField" destination="EgS-Hm-QPG" id="mVs-BC-TVC"/>
+                        <outlet property="pickYourTeaCollectionView" destination="6Av-tV-KjB" id="qMH-zD-i9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWY-dX-pRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

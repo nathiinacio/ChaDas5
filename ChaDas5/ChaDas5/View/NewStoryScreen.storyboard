@@ -78,6 +78,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CQl-Yn-OcT"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="Oxe-hF-FXi" id="yCA-ca-KKu"/>
+                        <outlet property="dismissButton" destination="dfV-bd-YQZ" id="YGN-lk-I1u"/>
+                        <outlet property="newStoryTextView" destination="xvU-TD-to3" id="UDd-DT-5CC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxz-hK-j4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

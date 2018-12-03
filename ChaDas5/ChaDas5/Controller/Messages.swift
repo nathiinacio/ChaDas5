@@ -10,4 +10,8 @@ import UIKit
 
 class Messages: UIViewController {
     
+    //outlets
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var messagesTableView: UITableView!    
+    
 }

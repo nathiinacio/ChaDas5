@@ -87,12 +87,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="createNewAccountButton" destination="9LX-75-H2R" id="Ojq-98-rHX"/>
+                        <outlet property="loginButton" destination="saD-jf-j34" id="Cxv-uB-y2Y"/>
+                        <outlet property="mainLoginButton" destination="saD-jf-j34" id="aep-cc-peD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+            <point key="canvasLocation" x="-324" y="0.0"/>
         </scene>
     </scenes>
     <resources>

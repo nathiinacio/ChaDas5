@@ -54,6 +54,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mensagens" id="b51-d0-cxP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="dah-py-wwN" id="TKT-1R-vqs"/>
+                        <outlet property="messagesTableView" destination="QN9-CE-dox" id="5Qf-0j-QvB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viX-r6-w4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

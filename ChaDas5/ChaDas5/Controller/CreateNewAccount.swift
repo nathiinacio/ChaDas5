@@ -10,6 +10,13 @@ import UIKit
 
 class CreateNewAccount: UIViewController {
     
+    //outlets
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordConfirmationTextField: UITextField!
+    @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!
+    @IBOutlet weak var createNewAccountButton: UIButton!
+    
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
     }

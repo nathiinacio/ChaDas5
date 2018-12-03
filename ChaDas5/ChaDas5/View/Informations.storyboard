@@ -150,6 +150,11 @@
                     <tabBarItem key="tabBarItem" title="Informações" id="cpz-sc-Ig3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
+                    <connections>
+                        <outlet property="informationsButton" destination="AJd-8t-EQ6" id="gGu-oi-sXC"/>
+                        <outlet property="numbersButton" destination="q04-fT-Lpb" id="g4I-Kg-7rg"/>
+                        <outlet property="whatToDoButton" destination="a1I-g8-gz0" id="PtJ-Xh-qr8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azN-i6-rfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

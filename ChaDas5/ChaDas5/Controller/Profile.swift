@@ -29,11 +29,16 @@ class Profile: UIViewController {
     
     var segmentedControl: CustomSegmentedContrl!
 
+    //outlets
     @IBOutlet weak var profileLabel: UILabel!
-    
-    
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
+        
+        //segmented control customization
         segmentedControl = CustomSegmentedContrl.init(frame: CGRect.init(x: 0, y: 300, width: self.view.frame.width, height: 45))
         segmentedControl.backgroundColor = .white
         segmentedControl.commaSeperatedButtonTitles = "Relatos passados, Relatos atuais"
@@ -43,29 +48,11 @@ class Profile: UIViewController {
         
     }
     
-    
-    
-    
+    //segmented control adjustments
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
-        
-        
         profileLabel.text = "meu segmento é: \(sender.selectedSegmentIndex)"
     }
     
-//    @IBOutlet weak var profileSegmentedControl: UISegmentedControl!
-//
-//    @IBAction func segmentedTapped(_ sender: Any) {
-//
-//        let getIndex = profileSegmentedControl.selectedSegmentIndex
-//
-//        switch (getIndex) {
-//        case 0:
-//            self.profileLabel.backgroundColor = UIColor.red
-//        case 1:
-//            self.profileLabel.backgroundColor = UIColor.blue
-//        default:
-//            self.profileLabel.backgroundColor = UIColor.red
-//        }
     
 }
     

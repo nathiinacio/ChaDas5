@@ -10,4 +10,8 @@ import UIKit
 
 class StoryScreen: UIViewController {
     
+    //outlets
+    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var storyTextView: UITextView!    
+    
 }

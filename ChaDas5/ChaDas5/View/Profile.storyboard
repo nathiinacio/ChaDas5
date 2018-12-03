@@ -85,6 +85,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" id="3oy-cj-eMt"/>
                     <connections>
+                        <outlet property="addButton" destination="7jP-yu-5l5" id="GN0-iB-4N3"/>
+                        <outlet property="editButton" destination="ges-bX-Snj" id="sI5-JU-5iH"/>
+                        <outlet property="nameLabel" destination="q88-IL-ICW" id="4CM-6M-GJA"/>
+                        <outlet property="profileImage" destination="LOX-oQ-RBh" id="n1y-wT-qoc"/>
                         <outlet property="profileLabel" destination="EI8-ae-3Xg" id="AdK-WQ-i27"/>
                     </connections>
                 </viewController>
