@@ -29,6 +29,10 @@
 		9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E543C21B006CB0033FEBF /* Informations.swift */; };
 		9A4E543F21B006E60033FEBF /* NewStoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E543E21B006E60033FEBF /* NewStoryScreen.swift */; };
 		9A4E544121B0071F0033FEBF /* StoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E544021B0071F0033FEBF /* StoryScreen.swift */; };
+		9A89ED1D21BBFE93009FB3DF /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A89ED1C21BBFE93009FB3DF /* FeedTableViewCell.xib */; };
+		9A89ED1F21BC001F009FB3DF /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A89ED1E21BC001F009FB3DF /* FeedTableViewCell.swift */; };
+		9A89ED2121BC0178009FB3DF /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A89ED2021BC0178009FB3DF /* MessagesTableViewCell.xib */; };
+		9A89ED2321BC02D0009FB3DF /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A89ED2221BC02D0009FB3DF /* MessageTableViewCell.swift */; };
 		9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */; };
 		9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE5A121B305630050AE3E /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +74,10 @@
 		9A4E543C21B006CB0033FEBF /* Informations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Informations.swift; sourceTree = "<group>"; };
 		9A4E543E21B006E60033FEBF /* NewStoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryScreen.swift; sourceTree = "<group>"; };
 		9A4E544021B0071F0033FEBF /* StoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScreen.swift; sourceTree = "<group>"; };
+		9A89ED1C21BBFE93009FB3DF /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		9A89ED1E21BC001F009FB3DF /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		9A89ED2021BC0178009FB3DF /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
+		9A89ED2221BC02D0009FB3DF /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedContrl.swift; sourceTree = "<group>"; };
 		9AFBE5A121B305630050AE3E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +152,8 @@
 				9A4E543E21B006E60033FEBF /* NewStoryScreen.swift */,
 				9A4E544021B0071F0033FEBF /* StoryScreen.swift */,
 				9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */,
+				9A89ED1E21BC001F009FB3DF /* FeedTableViewCell.swift */,
+				9A89ED2221BC02D0009FB3DF /* MessageTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +172,8 @@
 				9A4E542E21AF4B160033FEBF /* NewStoryScreen.storyboard */,
 				9A4E543021AF4C490033FEBF /* StoryScreen.storyboard */,
 				9AFBE5A121B305630050AE3E /* ViewExtensions.swift */,
+				9A89ED1C21BBFE93009FB3DF /* FeedTableViewCell.xib */,
+				9A89ED2021BC0178009FB3DF /* MessagesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,10 +264,12 @@
 				9A4E542921AF44FF0033FEBF /* Feed.storyboard in Resources */,
 				9A4E542D21AF46000033FEBF /* Informations.storyboard in Resources */,
 				9A4E542B21AF458A0033FEBF /* Messages.storyboard in Resources */,
+				9A89ED2121BC0178009FB3DF /* MessagesTableViewCell.xib in Resources */,
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
 				9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */,
 				96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */,
 				9A4E542F21AF4B160033FEBF /* NewStoryScreen.storyboard in Resources */,
+				9A89ED1D21BBFE93009FB3DF /* FeedTableViewCell.xib in Resources */,
 				9A4E542521AF40790033FEBF /* Login.storyboard in Resources */,
 				96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */,
 			);
@@ -280,7 +294,9 @@
 				9A4E543921B0069B0033FEBF /* Feed.swift in Sources */,
 				9A4E544121B0071F0033FEBF /* StoryScreen.swift in Sources */,
 				9A4E543721B006870033FEBF /* Profile.swift in Sources */,
+				9A89ED1F21BC001F009FB3DF /* FeedTableViewCell.swift in Sources */,
 				9A4E543B21B006B30033FEBF /* Messages.swift in Sources */,
+				9A89ED2321BC02D0009FB3DF /* MessageTableViewCell.swift in Sources */,
 				9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */,
 				96451FD521AC79EF00C9C351 /* ViewController.swift in Sources */,
 				96451FD321AC79EF00C9C351 /* AppDelegate.swift in Sources */,

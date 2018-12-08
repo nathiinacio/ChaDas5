@@ -8,10 +8,20 @@
 
 import UIKit
 
-class Feed: UIViewController {
+class Feed: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
     
     //outlets
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var feedTableView: UITableView!    
+    @IBOutlet weak var feedTableView: UITableView!
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let feedCell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as! FeedTableViewCell
+    }
     
 }
