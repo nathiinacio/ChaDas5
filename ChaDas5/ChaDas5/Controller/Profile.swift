@@ -67,17 +67,18 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //table view setting
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return DAO.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
-        if segmentedControl.selectedSegmentIndex == 1 {
-            profileCell.profileCellTextField.text = "relatos atuais"
-        } else {
-            profileCell.profileCellTextField.text = "relatos passados"
-        }
+        profileCell.profileCellTextField.text = DAO.instance.todosOsDados[segmentedControl.selectedSegmentIndex][indexPath.row]
+
         return profileCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
     }
     
     
