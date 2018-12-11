@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ckq-ex-yFr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,32 +49,47 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sobre o que você quer conversar nesse chá?" translatesAutoresizingMaskIntoConstraints="NO" id="xvU-TD-to3">
-                                <rect key="frame" x="50" y="130" width="285" height="170"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvQ-fc-iJi">
+                                <rect key="frame" x="45" y="154" width="285" height="170"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sobre o que você quer conversar nesse chá?" translatesAutoresizingMaskIntoConstraints="NO" id="xvU-TD-to3">
+                                        <rect key="frame" x="25" y="18" width="235" height="135"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96973460912704468" green="0.92143064737319946" blue="0.92088466882705688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="MnK-e4-BUU"/>
-                                    <constraint firstAttribute="width" constant="285" id="bla-BC-7kt"/>
+                                    <constraint firstAttribute="bottom" secondItem="xvU-TD-to3" secondAttribute="bottom" constant="17" id="31T-3u-OrC"/>
+                                    <constraint firstAttribute="trailing" secondItem="xvU-TD-to3" secondAttribute="trailing" constant="25" id="CrN-ER-k12"/>
+                                    <constraint firstAttribute="width" constant="285" id="Qy1-7T-gRI"/>
+                                    <constraint firstItem="xvU-TD-to3" firstAttribute="top" secondItem="dvQ-fc-iJi" secondAttribute="top" constant="18" id="S5l-8a-dwF"/>
+                                    <constraint firstItem="xvU-TD-to3" firstAttribute="leading" secondItem="dvQ-fc-iJi" secondAttribute="leading" constant="25" id="jmF-xf-PSA"/>
+                                    <constraint firstAttribute="height" constant="170" id="rhf-DX-4kV"/>
                                 </constraints>
-                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </textView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dvQ-fc-iJi" firstAttribute="centerX" secondItem="btZ-HP-iCa" secondAttribute="centerX" id="1xz-pg-dye"/>
                             <constraint firstItem="dfV-bd-YQZ" firstAttribute="leading" secondItem="CQl-Yn-OcT" secondAttribute="leading" constant="50" id="5se-cl-r8y"/>
                             <constraint firstItem="dfV-bd-YQZ" firstAttribute="top" secondItem="CQl-Yn-OcT" secondAttribute="top" constant="30" id="DXe-xB-86k"/>
-                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="bottom" secondItem="xvU-TD-to3" secondAttribute="bottom" constant="367" id="EDi-lK-qdh"/>
-                            <constraint firstItem="xvU-TD-to3" firstAttribute="leading" secondItem="CQl-Yn-OcT" secondAttribute="leading" constant="50" id="FjG-LQ-p3V"/>
-                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="trailing" secondItem="xvU-TD-to3" secondAttribute="trailing" constant="40" id="NGs-Xp-pUv"/>
                             <constraint firstItem="Oxe-hF-FXi" firstAttribute="top" secondItem="CQl-Yn-OcT" secondAttribute="top" constant="30" id="lh6-aS-YO7"/>
                             <constraint firstItem="CQl-Yn-OcT" firstAttribute="trailing" secondItem="Oxe-hF-FXi" secondAttribute="trailing" constant="50" id="n5e-vU-zhN"/>
+                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="bottom" secondItem="dvQ-fc-iJi" secondAttribute="bottom" constant="343" id="qIu-ap-5YH"/>
+                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="trailing" secondItem="dvQ-fc-iJi" secondAttribute="trailing" constant="45" id="w08-Pc-RaZ"/>
+                            <constraint firstItem="dvQ-fc-iJi" firstAttribute="leading" secondItem="CQl-Yn-OcT" secondAttribute="leading" constant="45" id="zfZ-2T-3Of"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CQl-Yn-OcT"/>
                     </view>

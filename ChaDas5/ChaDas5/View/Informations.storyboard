@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjw-Iy-37R">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="hjw-Iy-37R" customClass="Informations" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x8T-Hy-M0R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqs-IF-1Jj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1131"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1031"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3u-E2-5D8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1016"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-g8-gz0">
                                                 <rect key="frame" x="87.5" y="96" width="200" height="200"/>
@@ -35,7 +35,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="70"/>
+                                                        <integer key="value" value="100"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
@@ -60,7 +60,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="70"/>
+                                                        <integer key="value" value="100"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
@@ -85,7 +85,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="70"/>
+                                                        <integer key="value" value="100"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
@@ -106,7 +106,6 @@
                                             <constraint firstItem="JyL-pN-Acz" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="3L6-Zu-Nes"/>
                                             <constraint firstItem="auk-Xp-CXR" firstAttribute="top" secondItem="a1I-g8-gz0" secondAttribute="bottom" constant="8" id="7Nl-7T-Fgk"/>
                                             <constraint firstItem="q04-fT-Lpb" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="7mD-1L-VZY"/>
-                                            <constraint firstAttribute="bottom" secondItem="UBE-2R-LdL" secondAttribute="bottom" constant="243" id="8Hq-IK-iUx"/>
                                             <constraint firstItem="UBE-2R-LdL" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="100" id="9GJ-M3-2NC"/>
                                             <constraint firstItem="AJd-8t-EQ6" firstAttribute="top" secondItem="JyL-pN-Acz" secondAttribute="bottom" constant="51" id="BIg-qp-TsI"/>
                                             <constraint firstItem="a1I-g8-gz0" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="CBt-dy-wK6"/>
@@ -124,6 +123,7 @@
                                             <constraint firstItem="UBE-2R-LdL" firstAttribute="top" secondItem="AJd-8t-EQ6" secondAttribute="bottom" constant="8" id="gtf-Dh-MM1"/>
                                             <constraint firstItem="q04-fT-Lpb" firstAttribute="top" secondItem="auk-Xp-CXR" secondAttribute="bottom" constant="51" id="m1E-91-2Mx"/>
                                             <constraint firstItem="a1I-g8-gz0" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="87.5" id="mrA-H3-2xg"/>
+                                            <constraint firstAttribute="bottom" secondItem="UBE-2R-LdL" secondAttribute="bottom" constant="59" id="rep-7p-QYH"/>
                                             <constraint firstItem="UBE-2R-LdL" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="txS-Cv-hgm"/>
                                             <constraint firstAttribute="trailing" secondItem="JyL-pN-Acz" secondAttribute="trailing" constant="96" id="vPv-Qx-iBI"/>
                                         </constraints>
@@ -131,7 +131,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="x3u-E2-5D8" firstAttribute="leading" secondItem="fqs-IF-1Jj" secondAttribute="leading" id="Ihq-Ur-fbb"/>
-                                    <constraint firstAttribute="bottom" secondItem="x3u-E2-5D8" secondAttribute="bottom" id="bUN-Py-Tz4"/>
+                                    <constraint firstAttribute="bottom" secondItem="x3u-E2-5D8" secondAttribute="bottom" constant="115" id="bUN-Py-Tz4"/>
                                     <constraint firstAttribute="trailing" secondItem="x3u-E2-5D8" secondAttribute="trailing" id="sgm-3o-K1Z"/>
                                     <constraint firstItem="x3u-E2-5D8" firstAttribute="top" secondItem="fqs-IF-1Jj" secondAttribute="top" id="tsP-Du-eNP"/>
                                 </constraints>
@@ -149,7 +149,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Informações" id="cpz-sc-Ig3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="informationsButton" destination="AJd-8t-EQ6" id="gGu-oi-sXC"/>
                         <outlet property="numbersButton" destination="q04-fT-Lpb" id="g4I-Kg-7rg"/>
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azN-i6-rfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="173"/>
+            <point key="canvasLocation" x="144.80000000000001" y="172.71364317841082"/>
         </scene>
     </scenes>
 </document>

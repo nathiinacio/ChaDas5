@@ -24,17 +24,16 @@ import UIKit
 
 
 
-class Profile: UIViewController {
-    
-    
+class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
     var segmentedControl: CustomSegmentedContrl!
 
     //outlets
-    @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileTableView: UITableView!
     
     override func viewDidLoad() {
         
@@ -43,19 +42,48 @@ class Profile: UIViewController {
         segmentedControl.backgroundColor = .white
         segmentedControl.commaSeperatedButtonTitles = "Relatos passados, Relatos atuais"
         segmentedControl.addTarget(self, action: #selector(onChangeOfSegment(_:)), for: .valueChanged)
-        
         self.view.addSubview(segmentedControl)
+        
+        //table view setting
+        self.profileTableView.separatorStyle = .none
+        profileTableView.dataSource = self
+        profileTableView.delegate = self
+        let nib = UINib.init(nibName: "ProfileTableViewCell", bundle: nil)
+        self.profileTableView.register(nib, forCellReuseIdentifier: "ProfileCell")
         
     }
     
+   
+    var dadosDaTableView = DAO.instance.todosOsDados[0]
+
     //segmented control adjustments
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
-        profileLabel.text = "meu segmento é: \(sender.selectedSegmentIndex)"
+        
+        dadosDaTableView = DAO.instance.todosOsDados[sender.selectedSegmentIndex]
+        profileTableView.reloadData()
+
+        
+    }
+    
+    //table view setting
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
+        if segmentedControl.selectedSegmentIndex == 1 {
+            profileCell.profileCellTextField.text = "relatos atuais"
+        } else {
+            profileCell.profileCellTextField.text = "relatos passados"
+        }
+        return profileCell
     }
     
     
 }
-    
+
+
 
     
 

@@ -14,13 +14,25 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var messagesTableView: UITableView!
     
+    override func viewDidLoad() {
+        
+        //table view setting
+        self.messagesTableView.separatorStyle = .none
+        messagesTableView.dataSource = self
+        messagesTableView.delegate = self
+        let nib = UINib.init(nibName: "MessagesTableViewCell", bundle: nil)
+        self.messagesTableView.register(nib, forCellReuseIdentifier: "MessagesCell")
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let feedCell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as! FeedTableViewCell
+        let messagesCell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesTableViewCell
+//        messagesCell.messageTableViewLabel.text = "ói eu aqui \(indexPath.row)"
+         return messagesCell
     }
     
 }
