@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+inhibit_all_warnings!
+
+target 'ChaDas5' do
+    use_frameworks!
+
+  # Pods for ChaDas5
+
+  pod 'MessageKit'
+  pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  post_install do |installer|
+      installer.pods_project.targets.each do |target|
+          if target.name == 'MessageKit'
+              target.build_configurations.each do |config|
+                  config.build_settings['SWIFT_VERSION'] = '4.0'
+              end
+          end
+      end
+  end
+
+  target 'ChaDas5UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
