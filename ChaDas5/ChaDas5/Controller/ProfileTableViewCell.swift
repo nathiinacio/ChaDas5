@@ -18,6 +18,7 @@ class ProfileTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profileCellTextField.isEditable = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

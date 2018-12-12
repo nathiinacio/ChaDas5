@@ -13,7 +13,7 @@ class DAO {
     private init(){}
     
     
-    let dadosSeg1 = ["relato 1", "relato 2", "relato 3"]
+    let dadosSeg1 = ["relato 1", "relato 2", "relato 3", "relato 8"]
     let dadosSeg2 = ["relato 4", "relato 5", "relato 6"]
     var todosOsDados:[[String]] {
         return [dadosSeg1, dadosSeg2]
