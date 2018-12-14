@@ -20,6 +20,11 @@ class Informations: UIViewController {
         self.dismiss()
     }
     
+    @IBAction func numbersDismissButton(_ sender: Any) {
+        self.dismiss()
+    }
+    
+    
     //dismiss func
     @objc private func dismiss() {
         self.dismiss(animated: true, completion: nil)
