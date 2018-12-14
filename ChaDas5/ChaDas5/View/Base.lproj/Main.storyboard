@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,91 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LX-75-H2R">
+                                <rect key="frame" x="80" y="414" width="215" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="H3y-MQ-i2y"/>
+                                    <constraint firstAttribute="height" constant="70" id="YKr-vE-FVZ"/>
+                                </constraints>
+                                <state key="normal" title="Criar Conta">
+                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saD-jf-j34">
+                                <rect key="frame" x="80" y="530" width="215" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="JWn-Sf-gOB"/>
+                                    <constraint firstAttribute="width" constant="215" id="nau-8F-cME"/>
+                                </constraints>
+                                <state key="normal" title="Fazer Login">
+                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-Kf-gA4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="qJ8-fi-mVf"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="76q-6w-RXR">
+                                <rect key="frame" x="67.5" y="81" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Svr-ww-HsZ"/>
+                                    <constraint firstAttribute="width" constant="240" id="n3r-YX-EBN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9LX-75-H2R" secondAttribute="trailing" constant="80" id="2nK-Yd-j8D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="saD-jf-j34" secondAttribute="bottom" constant="67" id="3PH-9c-iwQ"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="93H-3K-jvy"/>
+                            <constraint firstItem="saD-jf-j34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="H3r-nY-hWP"/>
+                            <constraint firstItem="9LX-75-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mby-U8-YFd"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N2d-Wg-ahW"/>
+                            <constraint firstItem="9LX-75-H2R" firstAttribute="top" secondItem="OpM-Kf-gA4" secondAttribute="bottom" constant="54" id="Npq-Qz-LYz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="76q-6w-RXR" secondAttribute="trailing" constant="67.5" id="TBi-PW-JHi"/>
+                            <constraint firstItem="76q-6w-RXR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="XR9-0Y-Dhs"/>
+                            <constraint firstItem="saD-jf-j34" firstAttribute="top" secondItem="9LX-75-H2R" secondAttribute="bottom" constant="46" id="Z4R-Ps-YTO"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZIc-S9-u7V"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am3-i5-x35"/>
+                            <constraint firstItem="76q-6w-RXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cMb-pK-3fX"/>
+                            <constraint firstItem="76q-6w-RXR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67.5" id="e3M-5Z-pRv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="saD-jf-j34" secondAttribute="trailing" constant="80" id="gwa-4Z-Mlf"/>
+                            <constraint firstItem="saD-jf-j34" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haD-GO-I2c"/>
+                            <constraint firstItem="9LX-75-H2R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="hgA-UR-vQ1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="createNewAccountButton" destination="9LX-75-H2R" id="jCG-ge-uXe"/>
+                        <outlet property="loginButton" destination="saD-jf-j34" id="Cxv-uB-y2Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-324" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mainIcon" width="924" height="740"/>
+    </resources>
 </document>
