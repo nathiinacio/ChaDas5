@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CreateNewAccount: UIViewController {
+class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
     
     //outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,6 +20,42 @@ class CreateNewAccount: UIViewController {
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
+        
+        //collection view settings
+        pickYourTeaCollectionView.allowsMultipleSelection = false
+        pickYourTeaCollectionView.dataSource = self
+        pickYourTeaCollectionView.delegate = self
+        pickYourTeaCollectionView.allowsSelection = true
+        pickYourTeaCollectionView.bounds.inset(by: pickYourTeaCollectionView.layoutMargins).width
+        let nib = UINib.init(nibName: "ChooseYourTeaCollectionViewCell", bundle: nil)
+        self.pickYourTeaCollectionView.register(nib, forCellWithReuseIdentifier: "PickYouTea")
     }
+    
+    //collection view settings
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return DAO.instance.teas.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let pickYouTeaCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickYouTea", for: indexPath) as! ChooseYourTeaCollectionViewCell
+        pickYouTeaCell.chooseYourTeaLabel.text = DAO.instance.teas[indexPath.item]
+        return pickYouTeaCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        pickYourTeaCollectionView.allowsSelection = true
+//        pickYourTeaCollectionView.allowsMultipleSelection = false
+//        pickYourTeaCollectionView.beginInteractiveMovementForItem(at: indexPath)
+//        pickYourTeaCollectionView.cellForItem(at: indexPath)?.isHighlighted = true
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! ChooseYourTeaCollectionViewCell
+        selectedCell.contentView.backgroundColor = UIColor.basePink
+        print("foi")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath) as? ChooseYourTeaCollectionViewCell
+        selectedCell?.contentView.backgroundColor = UIColor.white
+    }
+    
     
 }

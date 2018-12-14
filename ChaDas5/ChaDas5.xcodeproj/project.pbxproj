@@ -13,6 +13,8 @@
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
 		96451FE821AC79F000C9C351 /* ChaDas5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96451FE721AC79F000C9C351 /* ChaDas5UITests.swift */; };
+		9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */; };
+		9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */; };
 		9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */; };
 		9A4E542521AF40790033FEBF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542421AF40790033FEBF /* Login.storyboard */; };
 		9A4E542721AF43AF0033FEBF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542621AF43AF0033FEBF /* Profile.storyboard */; };
@@ -61,6 +63,8 @@
 		96451FE321AC79F000C9C351 /* ChaDas5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChaDas5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96451FE721AC79F000C9C351 /* ChaDas5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaDas5UITests.swift; sourceTree = "<group>"; };
 		96451FE921AC79F000C9C351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourTeaCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseYourTeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 		9A4E542421AF40790033FEBF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9A4E542621AF43AF0033FEBF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				9A76AF8121C02873003ED02C /* MessagesTableViewCell.swift */,
 				9A76AF8721C034F8003ED02C /* FeedTableViewCell.swift */,
 				9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */,
+				9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				9A76AF8221C02873003ED02C /* MessagesTableViewCell.xib */,
 				9A76AF8821C034F8003ED02C /* FeedTableViewCell.xib */,
 				9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */,
+				9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 			files = (
 				9A4E542721AF43AF0033FEBF /* Profile.storyboard in Resources */,
 				9A4E543121AF4C490033FEBF /* StoryScreen.storyboard in Resources */,
+				9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */,
 				9A4E542921AF44FF0033FEBF /* Feed.storyboard in Resources */,
 				9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */,
 				9A4E542D21AF46000033FEBF /* Informations.storyboard in Resources */,
@@ -316,6 +323,7 @@
 				9A4E543B21B006B30033FEBF /* Messages.swift in Sources */,
 				9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */,
 				96451FD521AC79EF00C9C351 /* ViewController.swift in Sources */,
+				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */,
 				9A76AF8921C034F8003ED02C /* FeedTableViewCell.swift in Sources */,

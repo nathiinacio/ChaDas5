@@ -10,9 +10,19 @@ import UIKit
 
 class Informations: UIViewController {
     
-    //outlets
+    //main pages outlets
     @IBOutlet weak var whatToDoButton: UIButton!
     @IBOutlet weak var numbersButton: UIButton!
-    @IBOutlet weak var informationsButton: UIButton!    
+    @IBOutlet weak var informationsButton: UIButton!
+    
+    //what to do
+    @IBAction func whatToDoDismissButton(_ sender: Any) {
+        self.dismiss()
+    }
+    
+    //dismiss func
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
