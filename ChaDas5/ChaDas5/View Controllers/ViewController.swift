@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         Auth.auth().signInAnonymously(completion: nil)
         print("*******************logado*******************")
       
+        Relato(conteudo: "teste time stamp", autor: "testador do time stamp")
     }
 
 }
