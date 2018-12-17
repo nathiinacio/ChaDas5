@@ -15,7 +15,6 @@
 		9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */; };
 		9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */; };
 		9A1B11D521C43B39006956B7 /* Conversa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D021C43B39006956B7 /* Conversa.swift */; };
-		9A1B11D621C43B39006956B7 /* DataAccess in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11D121C43B39006956B7 /* DataAccess */; };
 		9A1B11D721C43B39006956B7 /* Relato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D221C43B39006956B7 /* Relato.swift */; };
 		9A1B11D821C43B39006956B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D321C43B39006956B7 /* User.swift */; };
 		9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D421C43B39006956B7 /* Extentions.swift */; };
@@ -26,6 +25,7 @@
 		9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E821C43CC1006956B7 /* Assets.xcassets */; };
 		9A1B11EC21C43CC1006956B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */; };
 		9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */; };
+		9A1B11F121C44AE1006956B7 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11F021C44AE1006956B7 /* Firebase.swift */; };
 		9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */; };
 		9A4E542521AF40790033FEBF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542421AF40790033FEBF /* Login.storyboard */; };
 		9A4E542721AF43AF0033FEBF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542621AF43AF0033FEBF /* Profile.storyboard */; };
@@ -78,7 +78,6 @@
 		9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourTeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseYourTeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A1B11D021C43B39006956B7 /* Conversa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversa.swift; sourceTree = "<group>"; };
-		9A1B11D121C43B39006956B7 /* DataAccess */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataAccess; sourceTree = "<group>"; };
 		9A1B11D221C43B39006956B7 /* Relato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relato.swift; sourceTree = "<group>"; };
 		9A1B11D321C43B39006956B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A1B11D421C43B39006956B7 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A1B11EA21C43CC1006956B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		9A1B11F021C44AE1006956B7 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 		9A4E542421AF40790033FEBF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9A4E542621AF43AF0033FEBF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -243,11 +243,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9A1B11F221C44AEA006956B7 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				9A1B11F021C44AE1006956B7 /* Firebase.swift */,
+			);
+			name = DataAccess;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		9A76AF8B21C038CB003ED02C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9A1B11F221C44AEA006956B7 /* DataAccess */,
 				9A1B11D021C43B39006956B7 /* Conversa.swift */,
-				9A1B11D121C43B39006956B7 /* DataAccess */,
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
 				9A1B11D321C43B39006956B7 /* User.swift */,
@@ -264,7 +273,6 @@
 				4CCCE0BB8149E5127C5C35BC /* Pods-ChaDas5UITests.debug.xcconfig */,
 				E898BD9123731E547F0A4B46 /* Pods-ChaDas5UITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -368,7 +376,6 @@
 				9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */,
 				9A4E542D21AF46000033FEBF /* Informations.storyboard in Resources */,
 				9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */,
-				9A1B11D621C43B39006956B7 /* DataAccess in Resources */,
 				9A4E542B21AF458A0033FEBF /* Messages.storyboard in Resources */,
 				9A76AF8421C02873003ED02C /* MessagesTableViewCell.xib in Resources */,
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
@@ -505,6 +512,7 @@
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				9A1B11DF21C43BE5006956B7 /* MessageTableViewCell.swift in Sources */,
+				9A1B11F121C44AE1006956B7 /* Firebase.swift in Sources */,
 				9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,
 				9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */,
@@ -680,7 +688,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julia.ChaDas5;
+				PRODUCT_BUNDLE_IDENTIFIER = appledeveloperacademy.Chadas5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -700,7 +708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julia.ChaDas5;
+				PRODUCT_BUNDLE_IDENTIFIER = appledeveloperacademy.Chadas5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
