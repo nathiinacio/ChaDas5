@@ -20,10 +20,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        Auth.auth().signInAnonymously(completion: nil)
-        print("*******************logado*******************")
-      
-        Relato(conteudo: "teste time stamp", autor: "testador do time stamp")
+//        Auth.auth().signInAnonymously(completion: nil)
+//        print("*******************logado*******************")
+//      
+//        Relato(conteudo: "teste time stamp", autor: "testador do time stamp")
         createNewAccountButtonAnimation()
         loginButtonAnimation ()
     }

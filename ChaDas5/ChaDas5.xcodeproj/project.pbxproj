@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
 		9299D76C94354DB306315D2D /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D11E054B531DFB5B62B1E6 /* Pods_ChaDas5.framework */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
@@ -25,7 +26,6 @@
 		9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E821C43CC1006956B7 /* Assets.xcassets */; };
 		9A1B11EC21C43CC1006956B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */; };
 		9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */; };
-		9A1B11F121C44AE1006956B7 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11F021C44AE1006956B7 /* Firebase.swift */; };
 		9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */; };
 		9A4E542521AF40790033FEBF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542421AF40790033FEBF /* Login.storyboard */; };
 		9A4E542721AF43AF0033FEBF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542621AF43AF0033FEBF /* Profile.storyboard */; };
@@ -64,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		28A38F20694A9E3D4ACC2581 /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32978CC668952FC2A96EC91C /* Pods-ChaDas5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.release.xcconfig"; path = "Target Support Files/Pods-ChaDas5/Pods-ChaDas5.release.xcconfig"; sourceTree = "<group>"; };
 		3C153372E71286E691FB188D /* Pods-ChaDas5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.debug.xcconfig"; path = "Target Support Files/Pods-ChaDas5/Pods-ChaDas5.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A1B11EA21C43CC1006956B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		9A1B11F021C44AE1006956B7 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 		9A4E542421AF40790033FEBF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9A4E542621AF43AF0033FEBF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -138,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15BC149F21C8102300768231 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				15BC149D21C8101900768231 /* Firebase.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
 		96451FC621AC79EF00C9C351 = {
 			isa = PBXGroup;
 			children = (
@@ -243,19 +251,10 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9A1B11F221C44AEA006956B7 /* DataAccess */ = {
-			isa = PBXGroup;
-			children = (
-				9A1B11F021C44AE1006956B7 /* Firebase.swift */,
-			);
-			name = DataAccess;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		9A76AF8B21C038CB003ED02C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9A1B11F221C44AEA006956B7 /* DataAccess */,
+				15BC149F21C8102300768231 /* DataAccess */,
 				9A1B11D021C43B39006956B7 /* Conversa.swift */,
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
@@ -499,6 +498,7 @@
 				9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */,
 				9A4E543921B0069B0033FEBF /* Feed.swift in Sources */,
 				9A76AF8321C02873003ED02C /* MessagesTableViewCell.swift in Sources */,
+				15BC149E21C8101900768231 /* Firebase.swift in Sources */,
 				9A4E544121B0071F0033FEBF /* StoryScreen.swift in Sources */,
 				9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */,
 				9A4E543721B006870033FEBF /* Profile.swift in Sources */,
@@ -512,7 +512,6 @@
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				9A1B11DF21C43BE5006956B7 /* MessageTableViewCell.swift in Sources */,
-				9A1B11F121C44AE1006956B7 /* Firebase.swift in Sources */,
 				9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,
 				9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */,
@@ -681,7 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -701,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
