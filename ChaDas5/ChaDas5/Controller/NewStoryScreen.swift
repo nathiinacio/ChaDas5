@@ -19,5 +19,7 @@ class NewStoryScreen: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
+    //GABI: adicionar o addButton como action
+    
     
 }
