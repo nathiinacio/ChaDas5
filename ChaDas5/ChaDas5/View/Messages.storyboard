@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mensagens-->
+        <!--Mensagem-->
         <scene sceneID="a3l-Ug-F3H">
             <objects>
                 <viewController id="dBv-Ig-xBg" customClass="Messages" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Xz-h8-fOq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mensagens" id="b51-d0-cxP"/>
+                    <tabBarItem key="tabBarItem" title="Mensagem" image="messageIcon" selectedImage="messageIcon" id="b51-d0-cxP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editButton" destination="dah-py-wwN" id="TKT-1R-vqs"/>
@@ -76,5 +76,6 @@
     </scenes>
     <resources>
         <image name="editIcon" width="924" height="740"/>
+        <image name="messageIcon" width="40" height="40"/>
     </resources>
 </document>

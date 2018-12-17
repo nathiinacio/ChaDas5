@@ -23,6 +23,9 @@ class Informations: UIViewController {
     @IBAction func numbersDismissButton(_ sender: Any) {
         self.dismiss()
     }
+    @IBAction func informationDismissButton(_ sender: Any) {
+        self.dismiss()
+    }
     
     
     //dismiss func

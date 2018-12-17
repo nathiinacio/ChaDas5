@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jzw-L5-tpc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="8af-cw-ccd"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feedIcon" selectedImage="feedIcon" id="8af-cw-ccd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="gAk-hd-CQt" id="XcT-Ww-SvF"/>
@@ -76,5 +76,6 @@
     </scenes>
     <resources>
         <image name="addIcon" width="924" height="740"/>
+        <image name="feedIcon" width="40" height="40"/>
     </resources>
 </document>
