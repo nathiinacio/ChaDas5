@@ -33,15 +33,6 @@ class Relato {
         return result
     }
     
-//    func toDictionary(_ dictionary: Data) -> [String:Any] {
-//        var result:[String:Any] = [:]
-//        result["conteudo"] = dictionary.
-//        result["autor"] = dictionary["autor"]
-//        result["data"] = dictionary["conteudo"]
-//        return result
-//    }
-// 
-    
 
     func fbSave() {
        
