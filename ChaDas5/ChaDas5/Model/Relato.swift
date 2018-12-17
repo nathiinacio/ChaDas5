@@ -33,80 +33,22 @@ class Relato {
         return result
     }
     
+//    func toDictionary(_ dictionary: Data) -> [String:Any] {
+//        var result:[String:Any] = [:]
+//        result["conteudo"] = dictionary.
+//        result["autor"] = dictionary["autor"]
+//        result["data"] = dictionary["conteudo"]
+//        return result
+//    }
+// 
+    
 
     func fbSave() {
        
         //SALVAR NA COLEÇÃO COM ID CUSTOMIZADO
         FBRef.db.collection("Feed").document(self.id).setData(self.asDictionary)
-        
-        //PEGAR TODOS OS DOCS DA COLEÇÃO
-        
-//        let docRef = FBRef.db.collection("Feed")
-//
-//        docRef.getDocuments { (querySnapshot, err) in
-//            print("************ To Aqui ************")
-//                    if let err = err {
-//                        print("Document error")
-//
-//                    } else {
-//                        for document in querySnapshot!.documents {
-//                            print(document.documentID)
-//                        }
-//                    }
-//                }
     }
     
-    
-    
-    //PAGINACAO SCROLLVIEW
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offsetY = scrollView.contentOffset.y
-//        let contentHeight = scrollView.contentSize.height
-//        //print("offsetY: \(offsetY) | contHeight-scrollViewHeight: \(contentHeight-scrollView.frame.height)")
-//        if offsetY > contentHeight - scrollView.frame.height - 50 {
-//            // Bottom of the screen is reached
-//            if !fetchingMore {
-//                paginateData()
-//            }
-//        }
-//    }
-//
-//    // Paginates data
-//    func paginateData() {
-//
-//        fetchingMore = true
-//
-//        var query: Query!
-//
-//        if rides.isEmpty {
-//            query = db.collection("rides").order(by: "price").limit(to: 6)
-//            print("First 6 rides loaded")
-//        } else {
-//            query = db.collection("rides").order(by: "price").start(afterDocument: lastDocumentSnapshot).limit(to: 4)
-//            print("Next 4 rides loaded")
-//        }
-//
-//        query.getDocuments { (snapshot, err) in
-//            if let err = err {
-//                print("\(err.localizedDescription)")
-//            } else if snapshot!.isEmpty {
-//                self.fetchingMore = false
-//                return
-//            } else {
-//                let newRides = snapshot!.documents.compactMap({Ride(dictionary: $0.data())})
-//                self.rides.append(contentsOf: newRides)
-//
-//                //
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                    self.tableView.reloadData()
-//                    self.fetchingMore = false
-//                })
-//
-//                self.lastDocumentSnapshot = snapshot!.documents.last
-//            }
-//        }
-//    }
     
     //OUTRA OPCAO DE PAGINACAO
     
@@ -145,6 +87,22 @@ class Relato {
 //    print("Document successfully updated")
 //    }
 //    }
+    
+    //PEGAR TODOS OS DOCS DA COLEÇÃO
+    
+    //        let docRef = FBRef.db.collection("Feed")
+    //
+    //        docRef.getDocuments { (querySnapshot, err) in
+    //            print("************ To Aqui ************")
+    //                    if let err = err {
+    //                        print("Document error")
+    //
+    //                    } else {
+    //                        for document in querySnapshot!.documents {
+    //                            print(document.documentID)
+    //                        }
+    //                    }
+    //                }
     
 }
     
