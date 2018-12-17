@@ -13,7 +13,7 @@ import Firebase
 class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var fetchingMore:Bool = false
-    var stories = [Relato]()
+    var stories:[DocumentReference] = []
     var lastDocumentSnapshot: DocumentSnapshot!
   
     
@@ -30,6 +30,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
         feedTableView.delegate = self
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
+//        loadStories()
     }
     
     
@@ -39,59 +40,46 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedTableViewCell
+//        if !self.stories.isEmpty {
+//            for element in self.stories {
+//                feedCell.textLabel?.text = (element.value(forKeyPath: "conteudo") as! String)
+//            }
+//        }
         return feedCell
     }
     
-    //PAGINACAO SCROLLVIEW
     
-//    override func update(_ currentTime: TimeInterval) {
-//        
-//            let offsetY = feedTableView.contentOffset.y
-//            let contentHeight = feedTableView.contentSize.height
-//            //print("offsetY: \(offsetY) | contHeight-scrollViewHeight: \(contentHeight-scrollView.frame.height)")
-//            if offsetY > contentHeight - feedTableView.frame.height - 50 {
-//                // Bottom of the screen is reached
-//                if !fetchingMore {
-//                    paginateData()
-//                }
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+////        print("touched")
+////        let offsetY = feedTableView.contentOffset.y
+////        let contentHeight = feedTableView.contentSize.height
+////        if offsetY > contentHeight - feedTableView.frame.height - 50 {
+////            // Bottom of the screen is reached
+////            print("bottom reached")
+////            if !fetchingMore {
+////                paginateData()
+////            }
+////        }
+//    }
+
+        // Paginates data
+        func paginateData() {
+            
+            
+        }
+//
+//    func loadStories() {
+//        let docRef = FBRef.db.collection("Feed")
+//        docRef.getDocuments { (querySnapshot, err) in
+//        if let err = err {
+//            print("Document error")
+//        } else {
+//            for document in querySnapshot!.documents {
+//            self.stories.append(docRef.document(document.documentID))
+//            }
 //            }
 //        }
-//    
-//        // Paginates data
-//        func paginateData() {
-//    
-//            fetchingMore = true
-//    
-//            var query: Query!
-//    
-//            if stories.isEmpty {
-//                query = FBRef.db.collection("Feed").order(by: "data").limit(to: 6)
-//                print("First 6 stories loaded")
-//            } else {
-//                query = FBRef.db.collection("Feed").order(by: "data").start(afterDocument: lastDocumentSnapshot).limit(to: 4)
-//                print("Next 4 stories loaded")
-//            }
-//    
-//            query.getDocuments { (snapshot, err) in
-//                if let err = err {
-//                    print("\(err.localizedDescription)")
-//                } else if snapshot!.isEmpty {
-//                    self.fetchingMore = false
-//                    return
-//                } else {
-//                    let newStories = snapshot!.documents.compactMap({_ in Relato.toDictionary(Data())})
-//                    self.stories.append(contentsOf: newStories)
-//    
-//                    //
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                        self.feedTableView.reloadData()
-//                        self.fetchingMore = false
-//                    })
-//    
-//                    self.lastDocumentSnapshot = snapshot!.documents.last
-//                }
-//            }
-//        }
+//    }
     
    
     
