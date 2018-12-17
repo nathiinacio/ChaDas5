@@ -10,7 +10,6 @@
 		15353FAB21B9E42F00D7F378 /* Relato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15353FAA21B9E42F00D7F378 /* Relato.swift */; };
 		15353FAE21BE9FE200D7F378 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15353FAD21BE9FE200D7F378 /* Firebase.swift */; };
 		15353FB021BEA38900D7F378 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15353FAF21BEA38900D7F378 /* Extentions.swift */; };
-		15353FB221BEDCF800D7F378 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15353FB121BEDCF800D7F378 /* GoogleService-Info.plist */; };
 		15353FB421BEE42500D7F378 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15353FB321BEE42500D7F378 /* User.swift */; };
 		15353FB621BEE45700D7F378 /* Conversa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15353FB521BEE45700D7F378 /* Conversa.swift */; };
 		1F07AEE7DD3EF00918AD7918 /* Pods_ChaDas5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335FD44275DEDD5BB93BFA6 /* Pods_ChaDas5UITests.framework */; };
@@ -21,6 +20,7 @@
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
 		96451FE821AC79F000C9C351 /* ChaDas5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96451FE721AC79F000C9C351 /* ChaDas5UITests.swift */; };
 		97435019DCF66111CD5571BD /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAAA7FC857C7B8EBF528C2A /* Pods_ChaDas5.framework */; };
+		E23901AA21C2CD2C006B3CF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E23901A921C2CD2C006B3CF3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		15353FAA21B9E42F00D7F378 /* Relato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relato.swift; sourceTree = "<group>"; };
 		15353FAD21BE9FE200D7F378 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15353FAF21BEA38900D7F378 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
-		15353FB121BEDCF800D7F378 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15353FB321BEE42500D7F378 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		15353FB521BEE45700D7F378 /* Conversa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversa.swift; sourceTree = "<group>"; };
 		4B283459530A785AD25EE2CA /* Pods-ChaDas5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		96451FE921AC79F000C9C351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A680EBC3C84C215D6A7FD583 /* Pods-ChaDas5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5.release.xcconfig"; sourceTree = "<group>"; };
 		AD452F5712E912BC909FFC57 /* Pods-ChaDas5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5.debug.xcconfig"; sourceTree = "<group>"; };
+		E23901A921C2CD2C006B3CF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEAAA7FC857C7B8EBF528C2A /* Pods_ChaDas5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC5AEC9CC86B8E6D64C4994 /* Pods-ChaDas5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +81,7 @@
 		15353FA521B98FCA00D7F378 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				15353FB121BEDCF800D7F378 /* GoogleService-Info.plist */,
+				E23901A921C2CD2C006B3CF3 /* GoogleService-Info.plist */,
 				96451FDE21AC79F000C9C351 /* Info.plist */,
 				96451FD921AC79F000C9C351 /* Assets.xcassets */,
 			);
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
-				15353FB221BEDCF800D7F378 /* GoogleService-Info.plist in Resources */,
+				E23901AA21C2CD2C006B3CF3 /* GoogleService-Info.plist in Resources */,
 				96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */,
 				96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */,
 			);
@@ -560,7 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32H23754C8;
+				DEVELOPMENT_TEAM = 5FPDGHW8G8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,7 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32H23754C8;
+				DEVELOPMENT_TEAM = 5FPDGHW8G8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
