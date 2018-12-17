@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dBv-Ig-xBg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mensagens-->
+        <scene sceneID="a3l-Ug-F3H">
+            <objects>
+                <viewController id="dBv-Ig-xBg" customClass="Messages" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kRd-i1-Ia0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dah-py-wwN">
+                                <rect key="frame" x="50" y="50" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="USt-Zg-jTl"/>
+                                    <constraint firstAttribute="height" constant="50" id="bFt-Kt-RCR"/>
+                                </constraints>
+                                <state key="normal" title="/" image="editIcon">
+                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QN9-CE-dox">
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="555" id="gaV-e5-Fg1"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessagesCell" rowHeight="148" id="BrL-2g-i2Z">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BrL-2g-i2Z" id="8zk-s0-d6E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dah-py-wwN" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" constant="50" id="5xi-iR-l1y"/>
+                            <constraint firstItem="QN9-CE-dox" firstAttribute="trailing" secondItem="3Xz-h8-fOq" secondAttribute="trailing" id="IZW-cc-9VP"/>
+                            <constraint firstItem="dah-py-wwN" firstAttribute="top" secondItem="3Xz-h8-fOq" secondAttribute="top" constant="30" id="Wsh-Zp-SnO"/>
+                            <constraint firstItem="QN9-CE-dox" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" id="jhG-NE-yaM"/>
+                            <constraint firstItem="QN9-CE-dox" firstAttribute="centerX" secondItem="kRd-i1-Ia0" secondAttribute="centerX" id="lNF-l4-vNk"/>
+                            <constraint firstAttribute="bottom" secondItem="QN9-CE-dox" secondAttribute="bottom" id="sgl-kc-QBw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Xz-h8-fOq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mensagens" id="b51-d0-cxP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="dah-py-wwN" id="TKT-1R-vqs"/>
+                        <outlet property="messagesTableView" destination="QN9-CE-dox" id="5Qf-0j-QvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="viX-r6-w4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.200000000000003" y="129.98500749625188"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="editIcon" width="924" height="740"/>
+    </resources>
+</document>
