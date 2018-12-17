@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
-		15BC14A121C811D500768231 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC14A021C811D500768231 /* Info.plist */; };
 		9299D76C94354DB306315D2D /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D11E054B531DFB5B62B1E6 /* Pods_ChaDas5.framework */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
@@ -371,7 +370,6 @@
 			files = (
 				9A4E542721AF43AF0033FEBF /* Profile.storyboard in Resources */,
 				9A4E543121AF4C490033FEBF /* StoryScreen.storyboard in Resources */,
-				15BC14A121C811D500768231 /* Info.plist in Resources */,
 				9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */,
 				9A4E542921AF44FF0033FEBF /* Feed.storyboard in Resources */,
 				9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */,
@@ -683,6 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 5FPDGHW8G8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -703,6 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 5FPDGHW8G8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
