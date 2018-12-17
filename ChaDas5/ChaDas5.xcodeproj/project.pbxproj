@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
+		15BC14A121C811D500768231 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15BC14A021C811D500768231 /* Info.plist */; };
 		9299D76C94354DB306315D2D /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D11E054B531DFB5B62B1E6 /* Pods_ChaDas5.framework */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28A38F20694A9E3D4ACC2581 /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32978CC668952FC2A96EC91C /* Pods-ChaDas5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.release.xcconfig"; path = "Target Support Files/Pods-ChaDas5/Pods-ChaDas5.release.xcconfig"; sourceTree = "<group>"; };
 		3C153372E71286E691FB188D /* Pods-ChaDas5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.debug.xcconfig"; path = "Target Support Files/Pods-ChaDas5/Pods-ChaDas5.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		9A1B11E521C43CAF006956B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A1B11E821C43CC1006956B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9A1B11EA21C43CC1006956B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 		9A4E542421AF40790033FEBF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -246,7 +247,7 @@
 			children = (
 				9A1B11E821C43CC1006956B7 /* Assets.xcassets */,
 				9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */,
-				9A1B11EA21C43CC1006956B7 /* Info.plist */,
+				15BC14A021C811D500768231 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -370,6 +371,7 @@
 			files = (
 				9A4E542721AF43AF0033FEBF /* Profile.storyboard in Resources */,
 				9A4E543121AF4C490033FEBF /* StoryScreen.storyboard in Resources */,
+				15BC14A121C811D500768231 /* Info.plist in Resources */,
 				9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */,
 				9A4E542921AF44FF0033FEBF /* Feed.storyboard in Resources */,
 				9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */,
