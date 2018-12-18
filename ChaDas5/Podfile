@@ -3,7 +3,7 @@
 
 inhibit_all_warnings!
 
-target 'ChaDas5' do
+target 'ChaDas5_2' do
     use_frameworks!
 
   # Pods for ChaDas5
@@ -14,20 +14,14 @@ target 'ChaDas5' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
-  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestore'
   post_install do |installer|
       installer.pods_project.targets.each do |target|
           if target.name == 'MessageKit'
               target.build_configurations.each do |config|
-                  config.build_settings['SWIFT_VERSION'] = '4.0'
+                  config.build_settings['SWIFT_VERSION'] = '4.2'
               end
           end
       end
   end
-
-  target 'ChaDas5UITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

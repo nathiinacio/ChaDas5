@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
-		9299D76C94354DB306315D2D /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D11E054B531DFB5B62B1E6 /* Pods_ChaDas5.framework */; };
+		902C05E1D9F1DCC1830CB8F2 /* Pods_ChaDas5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
@@ -24,7 +25,6 @@
 		9A1B11DF21C43BE5006956B7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DE21C43BE5006956B7 /* MessageTableViewCell.swift */; };
 		9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11E521C43CAF006956B7 /* ViewController.swift */; };
 		9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E821C43CC1006956B7 /* Assets.xcassets */; };
-		9A1B11EC21C43CC1006956B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */; };
 		9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */; };
 		9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */; };
 		9A4E542521AF40790033FEBF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E542421AF40790033FEBF /* Login.storyboard */; };
@@ -50,7 +50,7 @@
 		9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */; };
 		9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */; };
 		9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE5A121B305630050AE3E /* ViewExtensions.swift */; };
-		E33E7AB9F2788A673B5CA59A /* Pods_ChaDas5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A38F20694A9E3D4ACC2581 /* Pods_ChaDas5UITests.framework */; };
+		C955D7E48B60E3E28E9E144C /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB79D3D8D6717A5891DB5D84 /* Pods_ChaDas5.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		158DBDB421C976CF00C9888F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28A38F20694A9E3D4ACC2581 /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32978CC668952FC2A96EC91C /* Pods-ChaDas5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.release.xcconfig"; path = "Target Support Files/Pods-ChaDas5/Pods-ChaDas5.release.xcconfig"; sourceTree = "<group>"; };
-		3C153372E71286E691FB188D /* Pods-ChaDas5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.debug.xcconfig"; path = "Target Support Files/Pods-ChaDas5/Pods-ChaDas5.debug.xcconfig"; sourceTree = "<group>"; };
-		4CCCE0BB8149E5127C5C35BC /* Pods-ChaDas5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.debug.xcconfig"; path = "Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		80C4F174ABE1AB9CB50E7E64 /* Pods-ChaDas5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		96451FCF21AC79EF00C9C351 /* ChaDas5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaDas5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96451FD721AC79EF00C9C351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96451FD921AC79F000C9C351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 		9A1B11DE21C43BE5006956B7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		9A1B11E521C43CAF006956B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A1B11E821C43CC1006956B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNewAccount.storyboard; sourceTree = "<group>"; };
 		9A4E542421AF40790033FEBF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		9A4E543C21B006CB0033FEBF /* Informations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Informations.swift; sourceTree = "<group>"; };
 		9A4E543E21B006E60033FEBF /* NewStoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryScreen.swift; sourceTree = "<group>"; };
 		9A4E544021B0071F0033FEBF /* StoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScreen.swift; sourceTree = "<group>"; };
+		9A6CCCF8A94A8707BCC3154E /* Pods-ChaDas5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5.release.xcconfig"; sourceTree = "<group>"; };
 		9A76AF8121C02873003ED02C /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		9A76AF8221C02873003ED02C /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
 		9A76AF8821C034F8003ED02C /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedContrl.swift; sourceTree = "<group>"; };
 		9AFBE5A121B305630050AE3E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		C2D11E054B531DFB5B62B1E6 /* Pods_ChaDas5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E898BD9123731E547F0A4B46 /* Pods-ChaDas5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.release.xcconfig"; path = "Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB79D3D8D6717A5891DB5D84 /* Pods_ChaDas5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECA468CD40A087C800DF596A /* Pods-ChaDas5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9299D76C94354DB306315D2D /* Pods_ChaDas5.framework in Frameworks */,
+				C955D7E48B60E3E28E9E144C /* Pods_ChaDas5.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,19 +131,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33E7AB9F2788A673B5CA59A /* Pods_ChaDas5UITests.framework in Frameworks */,
+				902C05E1D9F1DCC1830CB8F2 /* Pods_ChaDas5UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15BC149F21C8102300768231 /* DataAccess */ = {
+		5ABCA8264AFC439F4874731D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15BC149D21C8101900768231 /* Firebase.swift */,
+				BB79D3D8D6717A5891DB5D84 /* Pods_ChaDas5.framework */,
+				0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */,
 			);
-			path = DataAccess;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		96451FC621AC79EF00C9C351 = {
@@ -153,7 +154,7 @@
 				96451FE621AC79F000C9C351 /* ChaDas5UITests */,
 				96451FD021AC79EF00C9C351 /* Products */,
 				D885C731E9951ADACC6D34A7 /* Pods */,
-				EAEF40D511B015BD1702CF11 /* Frameworks */,
+				5ABCA8264AFC439F4874731D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				9A1B11E821C43CC1006956B7 /* Assets.xcassets */,
-				9A1B11E921C43CC1006956B7 /* GoogleService-Info.plist */,
+				158DBDB421C976CF00C9888F /* GoogleService-Info.plist */,
 				15BC14A021C811D500768231 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -254,7 +255,7 @@
 		9A76AF8B21C038CB003ED02C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				15BC149F21C8102300768231 /* DataAccess */,
+				15BC149D21C8101900768231 /* Firebase.swift */,
 				9A1B11D021C43B39006956B7 /* Conversa.swift */,
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
@@ -267,21 +268,12 @@
 		D885C731E9951ADACC6D34A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C153372E71286E691FB188D /* Pods-ChaDas5.debug.xcconfig */,
-				32978CC668952FC2A96EC91C /* Pods-ChaDas5.release.xcconfig */,
-				4CCCE0BB8149E5127C5C35BC /* Pods-ChaDas5UITests.debug.xcconfig */,
-				E898BD9123731E547F0A4B46 /* Pods-ChaDas5UITests.release.xcconfig */,
+				ECA468CD40A087C800DF596A /* Pods-ChaDas5.debug.xcconfig */,
+				9A6CCCF8A94A8707BCC3154E /* Pods-ChaDas5.release.xcconfig */,
+				6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */,
+				80C4F174ABE1AB9CB50E7E64 /* Pods-ChaDas5UITests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		EAEF40D511B015BD1702CF11 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C2D11E054B531DFB5B62B1E6 /* Pods_ChaDas5.framework */,
-				28A38F20694A9E3D4ACC2581 /* Pods_ChaDas5UITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,11 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96451FEC21AC79F000C9C351 /* Build configuration list for PBXNativeTarget "ChaDas5" */;
 			buildPhases = (
-				9627CC767D779BF7FB7D82E7 /* [CP] Check Pods Manifest.lock */,
+				79265406AA483D801FDA95D0 /* [CP] Check Pods Manifest.lock */,
 				96451FCB21AC79EF00C9C351 /* Sources */,
 				96451FCC21AC79EF00C9C351 /* Frameworks */,
 				96451FCD21AC79EF00C9C351 /* Resources */,
-				0CA43B474502303682314629 /* [CP] Embed Pods Frameworks */,
+				011C65ACD7571EB50ECDE535 /* [CP] Embed Pods Frameworks */,
+				CC72370700A070D574D4FC76 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,7 +303,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96451FEF21AC79F000C9C351 /* Build configuration list for PBXNativeTarget "ChaDas5UITests" */;
 			buildPhases = (
-				1EA122797D725C41B70D3B80 /* [CP] Check Pods Manifest.lock */,
+				568C1BA256B77EB61D2BC03B /* [CP] Check Pods Manifest.lock */,
 				96451FDF21AC79F000C9C351 /* Sources */,
 				96451FE021AC79F000C9C351 /* Frameworks */,
 				96451FE121AC79F000C9C351 /* Resources */,
@@ -378,9 +371,9 @@
 				9A4E542B21AF458A0033FEBF /* Messages.storyboard in Resources */,
 				9A76AF8421C02873003ED02C /* MessagesTableViewCell.xib in Resources */,
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
-				9A1B11EC21C43CC1006956B7 /* GoogleService-Info.plist in Resources */,
 				9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */,
 				96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */,
+				158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */,
 				9A76AF8A21C034F8003ED02C /* FeedTableViewCell.xib in Resources */,
 				9A4E542F21AF4B160033FEBF /* NewStoryScreen.storyboard in Resources */,
 				9A4E542521AF40790033FEBF /* Login.storyboard in Resources */,
@@ -398,7 +391,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CA43B474502303682314629 /* [CP] Embed Pods Frameworks */ = {
+		011C65ACD7571EB50ECDE535 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -406,17 +399,15 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -427,22 +418,20 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1EA122797D725C41B70D3B80 /* [CP] Check Pods Manifest.lock */ = {
+		568C1BA256B77EB61D2BC03B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -464,7 +453,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9627CC767D779BF7FB7D82E7 /* [CP] Check Pods Manifest.lock */ = {
+		79265406AA483D801FDA95D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -484,6 +473,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC72370700A070D574D4FC76 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -676,11 +687,11 @@
 		};
 		96451FED21AC79F000C9C351 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C153372E71286E691FB188D /* Pods-ChaDas5.debug.xcconfig */;
+			baseConfigurationReference = ECA468CD40A087C800DF596A /* Pods-ChaDas5.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5FPDGHW8G8;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -696,11 +707,11 @@
 		};
 		96451FEE21AC79F000C9C351 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32978CC668952FC2A96EC91C /* Pods-ChaDas5.release.xcconfig */;
+			baseConfigurationReference = 9A6CCCF8A94A8707BCC3154E /* Pods-ChaDas5.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5FPDGHW8G8;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -716,7 +727,7 @@
 		};
 		96451FF021AC79F000C9C351 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CCCE0BB8149E5127C5C35BC /* Pods-ChaDas5UITests.debug.xcconfig */;
+			baseConfigurationReference = 6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -737,7 +748,7 @@
 		};
 		96451FF121AC79F000C9C351 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E898BD9123731E547F0A4B46 /* Pods-ChaDas5UITests.release.xcconfig */;
+			baseConfigurationReference = 80C4F174ABE1AB9CB50E7E64 /* Pods-ChaDas5UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

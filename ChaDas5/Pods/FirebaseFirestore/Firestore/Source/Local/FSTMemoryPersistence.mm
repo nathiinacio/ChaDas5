@@ -19,6 +19,7 @@
 #include <memory>
 #include <unordered_map>
 #include <unordered_set>
+#include <vector>
 
 #import "Firestore/Source/Core/FSTListenSequence.h"
 #import "Firestore/Source/Local/FSTMemoryMutationQueue.h"
@@ -33,6 +34,7 @@
 
 using firebase::firestore::auth::HashUser;
 using firebase::firestore::auth::User;
+using firebase::firestore::local::LruParams;
 using firebase::firestore::model::DocumentKey;
 using firebase::firestore::model::DocumentKeyHash;
 using firebase::firestore::model::ListenSequenceNumber;
@@ -83,10 +85,13 @@ NS_ASSUME_NONNULL_BEGIN
   return persistence;
 }
 
-+ (instancetype)persistenceWithLRUGCAndSerializer:(FSTLocalSerializer *)serializer {
++ (instancetype)persistenceWithLruParams:(firebase::firestore::local::LruParams)lruParams
+                              serializer:(FSTLocalSerializer *)serializer {
   FSTMemoryPersistence *persistence = [[FSTMemoryPersistence alloc] init];
   persistence.referenceDelegate =
-      [[FSTMemoryLRUReferenceDelegate alloc] initWithPersistence:persistence serializer:serializer];
+      [[FSTMemoryLRUReferenceDelegate alloc] initWithPersistence:persistence
+                                                      serializer:serializer
+                                                       lruParams:lruParams];
   return persistence;
 }
 
@@ -154,6 +159,8 @@ NS_ASSUME_NONNULL_BEGIN
   // This delegate should have the same lifetime as the persistence layer, but mark as
   // weak to avoid retain cycle.
   __weak FSTMemoryPersistence *_persistence;
+  // Tracks sequence numbers of when documents are used. Equivalent to sentinel rows in
+  // the leveldb implementation.
   std::unordered_map<DocumentKey, ListenSequenceNumber, DocumentKeyHash> _sequenceNumbers;
   FSTReferenceSet *_additionalReferences;
   FSTLRUGarbageCollector *_gc;
@@ -163,11 +170,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (instancetype)initWithPersistence:(FSTMemoryPersistence *)persistence
-                         serializer:(FSTLocalSerializer *)serializer {
+                         serializer:(FSTLocalSerializer *)serializer
+                          lruParams:(firebase::firestore::local::LruParams)lruParams {
   if (self = [super init]) {
     _persistence = persistence;
-    _gc =
-        [[FSTLRUGarbageCollector alloc] initWithQueryCache:[_persistence queryCache] delegate:self];
+    _gc = [[FSTLRUGarbageCollector alloc] initWithDelegate:self params:lruParams];
     _currentSequenceNumber = kFSTListenSequenceNumberInvalid;
     // Theoretically this is always 0, since this is all in-memory...
     ListenSequenceNumber highestSequenceNumber =
@@ -220,10 +227,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)enumerateMutationsUsingBlock:
     (void (^)(const DocumentKey &key, ListenSequenceNumber sequenceNumber, BOOL *stop))block {
   BOOL stop = NO;
-  for (auto it = _sequenceNumbers.begin(); !stop && it != _sequenceNumbers.end(); ++it) {
-    ListenSequenceNumber sequenceNumber = it->second;
-    const DocumentKey &key = it->first;
-    if (![_persistence.queryCache containsKey:key]) {
+  for (const auto &entry : _sequenceNumbers) {
+    ListenSequenceNumber sequenceNumber = entry.second;
+    const DocumentKey &key = entry.first;
+    // Pass in the exact sequence number as the upper bound so we know it won't be pinned by being
+    // too recent.
+    if (![self isPinnedAtSequenceNumber:sequenceNumber document:key]) {
       block(key, sequenceNumber, &stop);
     }
   }
@@ -235,10 +244,24 @@ NS_ASSUME_NONNULL_BEGIN
                                                          liveQueries:liveQueries];
 }
 
+- (int32_t)sequenceNumberCount {
+  __block int32_t totalCount = [_persistence.queryCache count];
+  [self enumerateMutationsUsingBlock:^(const DocumentKey &key, ListenSequenceNumber sequenceNumber,
+                                       BOOL *stop) {
+    totalCount++;
+  }];
+  return totalCount;
+}
+
 - (int)removeOrphanedDocumentsThroughSequenceNumber:(ListenSequenceNumber)upperBound {
-  return [(FSTMemoryRemoteDocumentCache *)_persistence.remoteDocumentCache
-      removeOrphanedDocuments:self
-        throughSequenceNumber:upperBound];
+  std::vector<DocumentKey> removed =
+      [(FSTMemoryRemoteDocumentCache *)_persistence.remoteDocumentCache
+          removeOrphanedDocuments:self
+            throughSequenceNumber:upperBound];
+  for (const auto &key : removed) {
+    _sequenceNumbers.erase(key);
+  }
+  return static_cast<int>(removed.size());
 }
 
 - (void)addReference:(const DocumentKey &)key {
@@ -251,8 +274,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)mutationQueuesContainKey:(const DocumentKey &)key {
   const MutationQueues &queues = [_persistence mutationQueues];
-  for (auto it = queues.begin(); it != queues.end(); ++it) {
-    if ([it->second containsKey:key]) {
+  for (const auto &entry : queues) {
+    if ([entry.second containsKey:key]) {
       return YES;
     }
   }
@@ -289,8 +312,8 @@ NS_ASSUME_NONNULL_BEGIN
   count += [_persistence.queryCache byteSizeWithSerializer:_serializer];
   count += [_persistence.remoteDocumentCache byteSizeWithSerializer:_serializer];
   const MutationQueues &queues = [_persistence mutationQueues];
-  for (auto it = queues.begin(); it != queues.end(); ++it) {
-    count += [it->second byteSizeWithSerializer:_serializer];
+  for (const auto &entry : queues) {
+    count += [entry.second byteSizeWithSerializer:_serializer];
   }
   return count;
 }
@@ -369,8 +392,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)mutationQueuesContainKey:(const DocumentKey &)key {
   const MutationQueues &queues = [_persistence mutationQueues];
-  for (auto it = queues.begin(); it != queues.end(); ++it) {
-    if ([it->second containsKey:key]) {
+  for (const auto &entry : queues) {
+    if ([entry.second containsKey:key]) {
       return YES;
     }
   }
@@ -378,8 +401,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)commitTransaction {
-  for (auto it = _orphaned->begin(); it != _orphaned->end(); ++it) {
-    const DocumentKey key = *it;
+  for (const auto &key : *_orphaned) {
     if (![self isReferenced:key]) {
       [[_persistence remoteDocumentCache] removeEntryForKey:key];
     }

@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Relato {
+class Relato:Codable{
     
     var conteudo:String
     var autor:String

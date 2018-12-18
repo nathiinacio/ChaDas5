@@ -12,9 +12,7 @@ import Firebase
 
 class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var fetchingMore:Bool = false
-    var stories:[DocumentReference] = []
-    var lastDocumentSnapshot: DocumentSnapshot!
+
   
     
     //outlets
@@ -30,7 +28,11 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
         feedTableView.delegate = self
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
-//        loadStories()
+
+        Auth.auth().signInAnonymously(completion: nil)
+        print("logged")
+        print(FBRef.db.collection("Feed").collectionID)
+        loadStories()
     }
     
     
@@ -40,46 +42,27 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedTableViewCell
-//        if !self.stories.isEmpty {
-//            for element in self.stories {
-//                feedCell.textLabel?.text = (element.value(forKeyPath: "conteudo") as! String)
-//            }
-//        }
         return feedCell
     }
     
-    
-//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-////        print("touched")
-////        let offsetY = feedTableView.contentOffset.y
-////        let contentHeight = feedTableView.contentSize.height
-////        if offsetY > contentHeight - feedTableView.frame.height - 50 {
-////            // Bottom of the screen is reached
-////            print("bottom reached")
-////            if !fetchingMore {
-////                paginateData()
-////            }
-////        }
-//    }
 
-        // Paginates data
-        func paginateData() {
-            
-            
+    func paginateData() {
+    }
+
+    func loadStories() {
+        let docRef = FBRef.db.collection("Feed")
+        docRef.getDocuments { (querySnapshot, err) in
+        print("************ To Aqui ************")
+        if let err = err {
+            print("Document error")
+        } else {
+            for document in querySnapshot!.documents {
+                print(document.documentID)
+                
+            }
+            }
         }
-//
-//    func loadStories() {
-//        let docRef = FBRef.db.collection("Feed")
-//        docRef.getDocuments { (querySnapshot, err) in
-//        if let err = err {
-//            print("Document error")
-//        } else {
-//            for document in querySnapshot!.documents {
-//            self.stories.append(docRef.document(document.documentID))
-//            }
-//            }
-//        }
-//    }
+    }
     
    
     
