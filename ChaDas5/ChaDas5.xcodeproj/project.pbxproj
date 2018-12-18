@@ -48,6 +48,7 @@
 		9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8C21C038D9003ED02C /* DAO.swift */; };
 		9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */; };
 		9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */; };
+		9AEAA57B21C84CF8001B490F /* SFCompactDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */; };
 		9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */; };
 		9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE5A121B305630050AE3E /* ViewExtensions.swift */; };
 		C955D7E48B60E3E28E9E144C /* Pods_ChaDas5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB79D3D8D6717A5891DB5D84 /* Pods_ChaDas5.framework */; };
@@ -112,6 +113,7 @@
 		9A76AF8C21C038D9003ED02C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedContrl.swift; sourceTree = "<group>"; };
 		9AFBE5A121B305630050AE3E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		BB79D3D8D6717A5891DB5D84 /* Pods_ChaDas5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 		96451FD121AC79EF00C9C351 /* ChaDas5 */ = {
 			isa = PBXGroup;
 			children = (
+				9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */,
 				9A76AF8B21C038CB003ED02C /* Model */,
 				96451FF321AC79FC00C9C351 /* Controller */,
 				96451FF421AC7A0300C9C351 /* View */,
@@ -368,6 +371,7 @@
 				9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */,
 				9A4E542D21AF46000033FEBF /* Informations.storyboard in Resources */,
 				9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */,
+				9AEAA57B21C84CF8001B490F /* SFCompactDisplay-Ultralight.otf in Resources */,
 				9A4E542B21AF458A0033FEBF /* Messages.storyboard in Resources */,
 				9A76AF8421C02873003ED02C /* MessagesTableViewCell.xib in Resources */,
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
@@ -692,6 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32H23754C8;
+				DEVELOPMENT_TEAM = B5JURCMZMH;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -712,6 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32H23754C8;
+				DEVELOPMENT_TEAM = B5JURCMZMH;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

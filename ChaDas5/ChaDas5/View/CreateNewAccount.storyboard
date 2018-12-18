@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFCompactDisplay-Ultralight.otf">
+            <string>SFCompactDisplay-Ultralight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Create New Account-->
         <scene sceneID="Aho-gB-xAk">
@@ -22,7 +27,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="2jl-v3-hz1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -41,7 +46,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="u1M-Zi-dcu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,7 +65,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="F3H-9F-XpV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -79,7 +84,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="toL-kF-Zzl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -114,6 +119,7 @@
                                     <constraint firstAttribute="height" constant="70" id="AOE-t6-vQm"/>
                                     <constraint firstAttribute="width" constant="215" id="iYZ-S9-RqH"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Criar Conta">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

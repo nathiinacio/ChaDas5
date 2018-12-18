@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFCompactDisplay-Ultralight.otf">
+            <string>SFCompactDisplay-Ultralight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Informação-->
         <scene sceneID="ORw-dh-6JW">
@@ -41,7 +46,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="DUM-Le-o7G"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -63,7 +68,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="bZa-a1-WER"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -72,7 +77,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="fRE-Jg-qQa"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

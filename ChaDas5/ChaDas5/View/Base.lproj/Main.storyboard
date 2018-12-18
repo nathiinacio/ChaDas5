@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFCompactDisplay-Ultralight.otf">
+            <string>SFCompactDisplay-Ultralight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -24,6 +29,7 @@
                                     <constraint firstAttribute="width" constant="215" id="H3y-MQ-i2y"/>
                                     <constraint firstAttribute="height" constant="70" id="YKr-vE-FVZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Criar Conta">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -32,6 +38,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="EKk-gz-PWc" kind="show" id="MKn-Kb-g8q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saD-jf-j34">
                                 <rect key="frame" x="80" y="530" width="215" height="70"/>
@@ -40,6 +49,7 @@
                                     <constraint firstAttribute="height" constant="70" id="JWn-Sf-gOB"/>
                                     <constraint firstAttribute="width" constant="215" id="nau-8F-cME"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Fazer Login">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -48,6 +58,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="kGw-BW-pgf" kind="show" id="8ca-k1-Qqk"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-Kf-gA4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
@@ -94,6 +107,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-324" y="0.0"/>
+        </scene>
+        <!--CreateNewAccount-->
+        <scene sceneID="i6W-fI-eQC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateNewAccount" id="EKk-gz-PWc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ma-I3-kQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="56"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="Hb9-Ik-WwY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="kGw-BW-pgf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsh-i6-LWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="225"/>
         </scene>
     </scenes>
     <resources>
