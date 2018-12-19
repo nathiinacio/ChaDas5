@@ -10,7 +10,6 @@
 		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
 		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
-		902C05E1D9F1DCC1830CB8F2 /* Pods_ChaDas5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
@@ -48,6 +47,8 @@
 		9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8C21C038D9003ED02C /* DAO.swift */; };
 		9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */; };
 		9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */; };
+		9AD9B5B621CABBC800828D50 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD9B5B521CABBC800828D50 /* SplashScreen.storyboard */; };
+		9AD9B5B821CABBE600828D50 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9B5B721CABBE600828D50 /* SplashScreen.swift */; };
 		9AEAA57B21C84CF8001B490F /* SFCompactDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */; };
 		9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */; };
 		9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE5A121B305630050AE3E /* ViewExtensions.swift */; };
@@ -70,8 +71,6 @@
 		158DBDB621CAD40100C9888F /* RelatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoManager.swift; sourceTree = "<group>"; };
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		80C4F174ABE1AB9CB50E7E64 /* Pods-ChaDas5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		96451FCF21AC79EF00C9C351 /* ChaDas5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaDas5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96451FD721AC79EF00C9C351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96451FD921AC79F000C9C351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +112,8 @@
 		9A76AF8C21C038D9003ED02C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		9AD9B5B521CABBC800828D50 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		9AD9B5B721CABBE600828D50 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedContrl.swift; sourceTree = "<group>"; };
 		9AFBE5A121B305630050AE3E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902C05E1D9F1DCC1830CB8F2 /* Pods_ChaDas5UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				9A1B11DA21C43B83006956B7 /* AppDelegate.swift */,
+				9AD9B5B721CABBE600828D50 /* SplashScreen.swift */,
 				9A4E543221B0065A0033FEBF /* CreateNewAccount.swift */,
 				9A4E543421B0066F0033FEBF /* Login.swift */,
 				9A4E543621B006870033FEBF /* Profile.swift */,
@@ -217,8 +218,9 @@
 		96451FF421AC7A0300C9C351 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				96451FD621AC79EF00C9C351 /* Main.storyboard */,
 				96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */,
+				9AD9B5B521CABBC800828D50 /* SplashScreen.storyboard */,
+				96451FD621AC79EF00C9C351 /* Main.storyboard */,
 				9A4E541F21AEC8C30033FEBF /* CreateNewAccount.storyboard */,
 				9A4E542421AF40790033FEBF /* Login.storyboard */,
 				9A4E542621AF43AF0033FEBF /* Profile.storyboard */,
@@ -273,8 +275,6 @@
 			children = (
 				ECA468CD40A087C800DF596A /* Pods-ChaDas5.debug.xcconfig */,
 				9A6CCCF8A94A8707BCC3154E /* Pods-ChaDas5.release.xcconfig */,
-				6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */,
-				80C4F174ABE1AB9CB50E7E64 /* Pods-ChaDas5UITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -306,7 +306,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96451FEF21AC79F000C9C351 /* Build configuration list for PBXNativeTarget "ChaDas5UITests" */;
 			buildPhases = (
-				568C1BA256B77EB61D2BC03B /* [CP] Check Pods Manifest.lock */,
 				96451FDF21AC79F000C9C351 /* Sources */,
 				96451FE021AC79F000C9C351 /* Frameworks */,
 				96451FE121AC79F000C9C351 /* Resources */,
@@ -375,6 +374,7 @@
 				9A4E542B21AF458A0033FEBF /* Messages.storyboard in Resources */,
 				9A76AF8421C02873003ED02C /* MessagesTableViewCell.xib in Resources */,
 				96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */,
+				9AD9B5B621CABBC800828D50 /* SplashScreen.storyboard in Resources */,
 				9A4E542021AEC8C30033FEBF /* CreateNewAccount.storyboard in Resources */,
 				96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */,
 				158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */,
@@ -433,28 +433,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChaDas5/Pods-ChaDas5-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		568C1BA256B77EB61D2BC03B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChaDas5UITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		79265406AA483D801FDA95D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -528,6 +506,7 @@
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				9A1B11DF21C43BE5006956B7 /* MessageTableViewCell.swift in Sources */,
 				9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */,
+				9AD9B5B821CABBE600828D50 /* SplashScreen.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,
 				9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */,
 				9A4E543521B0066F0033FEBF /* Login.swift in Sources */,
@@ -731,7 +710,6 @@
 		};
 		96451FF021AC79F000C9C351 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -752,7 +730,6 @@
 		};
 		96451FF121AC79F000C9C351 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80C4F174ABE1AB9CB50E7E64 /* Pods-ChaDas5UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

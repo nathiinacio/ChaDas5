@@ -10,8 +10,16 @@ import UIKit
 
 class StoryScreen: UIViewController {
     
-    //outlets
-    @IBOutlet weak var dismissButton: UIButton!
-    @IBOutlet weak var storyTextView: UITextView!    
+    //outlets   
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss()
+    }
+    @IBOutlet weak var storyTextView: UITextView!
+    
+    
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
 }
