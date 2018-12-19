@@ -33,11 +33,20 @@
                     <connections>
                         <outlet property="splashImage" destination="Raa-1C-V3k" id="jiO-Lq-76D"/>
                         <outlet property="splashView" destination="AyU-iS-QKU" id="AVF-Z2-uJJ"/>
+                        <segue destination="1N6-5B-4yK" kind="presentation" identifier="goToMain" animates="NO" id="hLT-xv-pwa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlL-W6-xUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-287.19999999999999" y="163.26836581709148"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="bzm-jS-99X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="1N6-5B-4yK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVW-dO-HDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="175"/>
         </scene>
     </scenes>
     <resources>

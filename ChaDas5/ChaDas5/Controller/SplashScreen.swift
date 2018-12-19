@@ -16,15 +16,22 @@ class SplashScreen: UIViewController {
     
     override func viewDidLoad() {
         animate()
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(SplashScreen.passScreen)), userInfo: nil, repeats: false)
+        
     }
     
     func animate() {
         UIView.animate(withDuration: 1, animations: {
         
         self.splashView.frame.origin.y -= 307
+            self.splashImage.frame.origin.y -= 152.5
         
         
         }, completion: nil)
+    }
+    
+    @objc func passScreen() {
+        self.performSegue(withIdentifier: "goToMain", sender: self)
     }
     
     

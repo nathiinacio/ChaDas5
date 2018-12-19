@@ -24,6 +24,10 @@ class ViewController: UIViewController {
 //        print("*******************logado*******************")
 //      
 //        Relato(conteudo: "teste time stamp", autor: "testador do time stamp")
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         createNewAccountButtonAnimation()
         loginButtonAnimation ()
     }
