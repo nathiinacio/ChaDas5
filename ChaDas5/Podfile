@@ -3,7 +3,7 @@
 
 inhibit_all_warnings!
 
-target 'ChaDas5_2' do
+target 'ChaDas5' do
     use_frameworks!
 
   # Pods for ChaDas5

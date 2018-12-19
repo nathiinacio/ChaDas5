@@ -129,18 +129,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createNewAccountButton:" destination="I2T-pg-gKs" eventType="touchUpInside" id="aSC-Nd-ZNN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpb-y0-xtx">
-                                <rect key="frame" x="50" y="50" width="50" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Rx3-YO-Tva"/>
-                                    <constraint firstAttribute="height" constant="40" id="fVx-4E-od1"/>
-                                </constraints>
-                                <state key="normal" image="dismissIcon"/>
-                                <connections>
-                                    <action selector="dismissButton:" destination="I2T-pg-gKs" eventType="touchUpInside" id="In6-HN-eAg"/>
+                                    <action selector="createNewAccount:" destination="I2T-pg-gKs" eventType="touchUpInside" id="fHP-df-fhP"/>
                                 </connections>
                             </button>
                         </subviews>
