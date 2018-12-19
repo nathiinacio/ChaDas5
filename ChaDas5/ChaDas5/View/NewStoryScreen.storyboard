@@ -37,6 +37,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dismissButton:" destination="ckq-ex-yFr" eventType="touchUpInside" id="gne-Yk-USc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-hF-FXi">
                                 <rect key="frame" x="275" y="50" width="50" height="50"/>
@@ -45,7 +48,7 @@
                                     <constraint firstAttribute="width" constant="50" id="DUv-Zl-MlF"/>
                                     <constraint firstAttribute="height" constant="50" id="wes-iO-FVm"/>
                                 </constraints>
-                                <state key="normal" title="+" image="addIcon">
+                                <state key="normal" image="sendIcon">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -53,6 +56,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButton:" destination="ckq-ex-yFr" eventType="touchUpInside" id="Xl1-a5-chC"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvQ-fc-iJi">
                                 <rect key="frame" x="45" y="154" width="285" height="170"/>
@@ -99,8 +105,6 @@
                         <viewLayoutGuide key="safeArea" id="CQl-Yn-OcT"/>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="Oxe-hF-FXi" id="yCA-ca-KKu"/>
-                        <outlet property="dismissButton" destination="dfV-bd-YQZ" id="YGN-lk-I1u"/>
                         <outlet property="newStoryTextView" destination="xvU-TD-to3" id="UDd-DT-5CC"/>
                     </connections>
                 </viewController>
@@ -110,7 +114,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addIcon" width="924" height="740"/>
         <image name="dismissIcon" width="924" height="740"/>
+        <image name="sendIcon" width="924" height="740"/>
     </resources>
 </document>

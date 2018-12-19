@@ -20,11 +20,17 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
-    @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!
+    @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!    
     @IBOutlet weak var createNewAccountButton: UIButton!
     
     //var yourTea: String!
     var activityView:UIActivityIndicatorView!
+    //actions
+    @IBAction func createNewAccountButton(_ sender: Any) {
+    }
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss()
+    }
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
@@ -175,7 +181,14 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
             }
         }
     }
+
+    
 }
+    
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     func resetForm() {
         let alert = UIAlertController(title: "Error signing up", message: nil, preferredStyle: .alert)

@@ -11,15 +11,21 @@ import UIKit
 class NewStoryScreen: UIViewController {
     
     //outlets
-    @IBOutlet weak var dismissButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var newStoryTextView: UITextView!    
+    
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss()
+    }
+    @IBAction func sendButton(_ sender: Any) {
+    }
+    @IBOutlet weak var newStoryTextView: UITextView!
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
     }
     
-    //GABI: adicionar o addButton como action
-    
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
 }

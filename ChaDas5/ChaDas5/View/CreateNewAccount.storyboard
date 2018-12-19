@@ -136,6 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="50o-8T-IAz" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" id="11w-qD-JUq"/>
+                            <constraint firstItem="gpb-y0-xtx" firstAttribute="leading" secondItem="0Se-Mf-buV" secondAttribute="leading" constant="50" id="2z0-gN-uYw"/>
                             <constraint firstItem="6Av-tV-KjB" firstAttribute="top" secondItem="y5N-xI-nG4" secondAttribute="bottom" constant="1" id="3u4-Vi-Ilc"/>
                             <constraint firstItem="PPe-7t-dED" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" id="5uJ-P3-dEj"/>
                             <constraint firstItem="q5Q-eb-dRI" firstAttribute="leading" secondItem="0Se-Mf-buV" secondAttribute="leading" constant="80" id="9QZ-cc-SFH"/>
@@ -153,6 +154,7 @@
                             <constraint firstItem="EgS-Hm-QPG" firstAttribute="leading" secondItem="0Se-Mf-buV" secondAttribute="leading" constant="60" id="T78-eB-RJj"/>
                             <constraint firstItem="y5N-xI-nG4" firstAttribute="leading" secondItem="0Se-Mf-buV" secondAttribute="leading" constant="60" id="VQE-eh-iPe"/>
                             <constraint firstItem="Xd0-WM-2O8" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" id="WnH-oG-eSj"/>
+                            <constraint firstItem="gpb-y0-xtx" firstAttribute="top" secondItem="0Se-Mf-buV" secondAttribute="top" constant="30" id="Xfr-Sq-AwL"/>
                             <constraint firstItem="TWp-O3-ywC" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" id="ctw-yl-UNf"/>
                             <constraint firstItem="6Av-tV-KjB" firstAttribute="trailing" secondItem="0Se-Mf-buV" secondAttribute="trailing" id="ene-qp-tvb"/>
                             <constraint firstItem="0Se-Mf-buV" firstAttribute="bottom" secondItem="q5Q-eb-dRI" secondAttribute="bottom" constant="25" id="ijt-9P-zMo"/>
@@ -168,7 +170,7 @@
                         <viewLayoutGuide key="safeArea" id="0Se-Mf-buV"/>
                     </view>
                     <connections>
-                        <outlet property="createNewAccountButton" destination="q5Q-eb-dRI" id="zwf-20-3m2"/>
+                        <outlet property="createNewAccountButton" destination="q5Q-eb-dRI" id="ySM-8a-rW3"/>
                         <outlet property="emailTextField" destination="TWp-O3-ywC" id="C0V-1g-apT"/>
                         <outlet property="passwordConfirmationTextField" destination="PPe-7t-dED" id="6he-59-Q5m"/>
                         <outlet property="passwordTextField" destination="EgS-Hm-QPG" id="mVs-BC-TVC"/>
@@ -180,4 +182,7 @@
             <point key="canvasLocation" x="116" y="162.3688155922039"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dismissIcon" width="924" height="740"/>
+    </resources>
 </document>

@@ -76,6 +76,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="n9s-TK-u2w"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esqueceu a senha?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-YT-Uao">
                                 <rect key="frame" x="113.5" y="493" width="148" height="20"/>
@@ -83,6 +86,17 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-PV-AOZ">
+                                <rect key="frame" x="50" y="50" width="50" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5sC-7f-UQx"/>
+                                    <constraint firstAttribute="height" constant="40" id="Fgb-xo-3J0"/>
+                                </constraints>
+                                <state key="normal" image="dismissIcon"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="ovN-Ru-0vN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -101,8 +115,10 @@
                             <constraint firstItem="54r-C0-5Gi" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="kHi-X1-pgg"/>
                             <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="lar-FU-Ot9"/>
                             <constraint firstItem="Rvd-4s-vrU" firstAttribute="top" secondItem="DJx-MN-RT6" secondAttribute="top" constant="140" id="lwy-xn-dI3"/>
+                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="top" secondItem="DJx-MN-RT6" secondAttribute="top" constant="30" id="oNU-bc-Yut"/>
                             <constraint firstItem="54r-C0-5Gi" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="oov-Sq-b2Q"/>
                             <constraint firstItem="DJx-MN-RT6" firstAttribute="trailing" secondItem="mTT-Oa-eTo" secondAttribute="trailing" constant="80" id="pDy-s1-F5I"/>
+                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="50" id="t5K-3k-PSJ"/>
                             <constraint firstItem="k2G-Sy-b9v" firstAttribute="top" secondItem="DJx-MN-RT6" secondAttribute="top" constant="184" id="w6q-jS-Gcy"/>
                             <constraint firstItem="mTT-Oa-eTo" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="80" id="yD4-l1-DOg"/>
                         </constraints>
@@ -110,7 +126,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="k2G-Sy-b9v" id="kUw-KT-9FT"/>
-                        <outlet property="loginButton" destination="mTT-Oa-eTo" id="zQZ-aZ-VLf"/>
+                        <outlet property="loginButton" destination="mTT-Oa-eTo" id="jcc-To-fYA"/>
                         <outlet property="passwordTextField" destination="8vj-HA-pqc" id="uXk-MW-HX7"/>
                     </connections>
                 </viewController>
@@ -119,4 +135,7 @@
             <point key="canvasLocation" x="105" y="151"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dismissIcon" width="924" height="740"/>
+    </resources>
 </document>

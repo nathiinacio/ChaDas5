@@ -49,6 +49,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="E96-8T-BvF" kind="show" identifier="newStoryScreen" id="HJJ-7x-NxL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,6 +75,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mai-gK-alR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="115.59220389805098"/>
+        </scene>
+        <!--NewStoryScreen-->
+        <scene sceneID="jKq-o1-QN1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewStoryScreen" id="E96-8T-BvF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XC-SL-ZJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="-38"/>
         </scene>
     </scenes>
     <resources>

@@ -45,6 +45,9 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="feedTableViewTextField" destination="Skk-8h-Mnk" id="y0S-aa-BLl"/>
+            </connections>
             <point key="canvasLocation" x="55.200000000000003" y="48.575712143928037"/>
         </tableViewCell>
     </objects>
