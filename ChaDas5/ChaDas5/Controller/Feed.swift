@@ -11,6 +11,7 @@ import Firebase
 
 
 class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
+    
 
     
     
@@ -43,7 +44,9 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         let feedCell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedTableViewCell
         
         if !RelatoManager.instance.stories.isEmpty {
-           
+            let doc = RelatoManager.instance.stories[indexPath.row]
+            
+            feedCell.feedTableViewTextField.text = doc.data()["conteudo"] as! String
         }
 
         return feedCell

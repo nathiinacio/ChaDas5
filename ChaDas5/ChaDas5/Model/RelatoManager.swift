@@ -12,7 +12,7 @@ import Firebase
 protocol Manager {
     
     
-    func readedStories(stories:[QueryDocumentSnapshot]) 
+    func readedStories(stories:[QueryDocumentSnapshot])
     
 }
 
