@@ -41,6 +41,10 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedTableViewCell
+        
+        if !RelatoManager.instance.stories.isEmpty {
+           
+        }
 
         return feedCell
     }
