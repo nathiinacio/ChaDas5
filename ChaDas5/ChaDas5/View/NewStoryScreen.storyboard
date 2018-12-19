@@ -63,7 +63,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvQ-fc-iJi">
                                 <rect key="frame" x="45" y="154" width="285" height="170"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sobre o que você quer conversar nesse chá?" translatesAutoresizingMaskIntoConstraints="NO" id="xvU-TD-to3">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvU-TD-to3">
                                         <rect key="frame" x="25" y="18" width="235" height="135"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
@@ -74,6 +74,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sobre o que você quer conversar nesse chá?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRv-cF-fN4">
+                                        <rect key="frame" x="25" y="18" width="235" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96973460912704468" green="0.92143064737319946" blue="0.92088466882705688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -105,7 +112,9 @@
                         <viewLayoutGuide key="safeArea" id="CQl-Yn-OcT"/>
                     </view>
                     <connections>
+                        <outlet property="newStoryLabel" destination="iRv-cF-fN4" id="OGn-SP-LMQ"/>
                         <outlet property="newStoryTextView" destination="xvU-TD-to3" id="UDd-DT-5CC"/>
+                        <outlet property="sendButton" destination="Oxe-hF-FXi" id="TR9-Hf-HdY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxz-hK-j4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
