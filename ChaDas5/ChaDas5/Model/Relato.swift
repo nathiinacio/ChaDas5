@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Relato:Codable{
+class Relato{
     
     var conteudo:String
     var autor:String
@@ -35,8 +35,6 @@ class Relato:Codable{
     
 
     func fbSave() {
-       
-        //SALVAR NA COLEÇÃO COM ID CUSTOMIZADO
         FBRef.db.collection("Feed").document(self.id).setData(self.asDictionary)
     }
     
