@@ -128,6 +128,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createNewAccountButton:" destination="I2T-pg-gKs" eventType="touchUpInside" id="aSC-Nd-ZNN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpb-y0-xtx">
                                 <rect key="frame" x="50" y="50" width="50" height="40"/>
@@ -178,7 +181,7 @@
                         <viewLayoutGuide key="safeArea" id="0Se-Mf-buV"/>
                     </view>
                     <connections>
-                        <outlet property="createNewAccountButton" destination="q5Q-eb-dRI" id="zwf-20-3m2"/>
+                        <outlet property="createNewAccountButton" destination="q5Q-eb-dRI" id="ySM-8a-rW3"/>
                         <outlet property="emailTextField" destination="TWp-O3-ywC" id="C0V-1g-apT"/>
                         <outlet property="passwordConfirmationTextField" destination="PPe-7t-dED" id="6he-59-Q5m"/>
                         <outlet property="passwordTextField" destination="EgS-Hm-QPG" id="mVs-BC-TVC"/>

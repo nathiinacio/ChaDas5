@@ -15,8 +15,12 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
-    @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!
+    @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!    
     @IBOutlet weak var createNewAccountButton: UIButton!
+    
+    //actions
+    @IBAction func createNewAccountButton(_ sender: Any) {
+    }
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()
     }

@@ -76,6 +76,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="n9s-TK-u2w"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esqueceu a senha?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-YT-Uao">
                                 <rect key="frame" x="113.5" y="493" width="148" height="20"/>
@@ -123,7 +126,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="k2G-Sy-b9v" id="kUw-KT-9FT"/>
-                        <outlet property="loginButton" destination="mTT-Oa-eTo" id="zQZ-aZ-VLf"/>
+                        <outlet property="loginButton" destination="mTT-Oa-eTo" id="jcc-To-fYA"/>
                         <outlet property="passwordTextField" destination="8vj-HA-pqc" id="uXk-MW-HX7"/>
                     </connections>
                 </viewController>
