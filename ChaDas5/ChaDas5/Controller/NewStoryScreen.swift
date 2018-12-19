@@ -11,7 +11,10 @@ import UIKit
 class NewStoryScreen: UIViewController {
     
     //outlets
-    @IBOutlet weak var dismissButton: UIButton!
+    
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss()
+    }
     @IBAction func sendButton(_ sender: Any) {
     }
     @IBOutlet weak var newStoryTextView: UITextView!
@@ -20,6 +23,9 @@ class NewStoryScreen: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
-    
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
 }

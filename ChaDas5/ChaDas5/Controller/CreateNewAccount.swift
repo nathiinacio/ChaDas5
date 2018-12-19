@@ -17,6 +17,9 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!
     @IBOutlet weak var createNewAccountButton: UIButton!
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss()
+    }
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
@@ -57,5 +60,10 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         selectedCell?.contentView.backgroundColor = UIColor.white
     }
     
+    
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
 }

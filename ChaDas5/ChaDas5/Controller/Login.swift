@@ -14,9 +14,17 @@ class Login: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-            
+    @IBAction func dismissButton(_ sender: Any) {
+        dismiss()
+    }
+    
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
+    }
+    
+    @objc private func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
 }
