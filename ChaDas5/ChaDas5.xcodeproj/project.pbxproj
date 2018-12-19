@@ -21,8 +21,6 @@
 		9A1B11D821C43B39006956B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D321C43B39006956B7 /* User.swift */; };
 		9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D421C43B39006956B7 /* Extentions.swift */; };
 		9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DA21C43B83006956B7 /* AppDelegate.swift */; };
-		9A1B11DD21C43BBF006956B7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DC21C43BBF006956B7 /* ExampleViewController.swift */; };
-		9A1B11DF21C43BE5006956B7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DE21C43BE5006956B7 /* MessageTableViewCell.swift */; };
 		9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11E521C43CAF006956B7 /* ViewController.swift */; };
 		9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E821C43CC1006956B7 /* Assets.xcassets */; };
 		9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */; };
@@ -86,8 +84,6 @@
 		9A1B11D321C43B39006956B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A1B11D421C43B39006956B7 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9A1B11DA21C43B83006956B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A1B11DC21C43BBF006956B7 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
-		9A1B11DE21C43BE5006956B7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		9A1B11E521C43CAF006956B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A1B11E821C43CC1006956B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A1B11EE21C43EFB006956B7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
