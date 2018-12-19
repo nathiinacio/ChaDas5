@@ -16,7 +16,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var stories = [QueryDocumentSnapshot]()
     var lastDocumentSnapshot: DocumentSnapshot!
     var fetchingMore = false
-  
+    
     
     //outlets
     @IBOutlet weak var addButton: UIButton!
@@ -29,6 +29,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         feedTableView.dataSource = self
         feedTableView.delegate = self
+        feedTableView.allowsSelection = true
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
         loadStories()
@@ -52,6 +53,17 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //            }
 //        }
         return feedCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.cellForRow(at: indexPath) as! FeedTableViewCell
+        selectedCell.contentView.backgroundColor = UIColor.basePink
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.cellForRow(at: indexPath) as? FeedTableViewCell
+        selectedCell?.contentView.backgroundColor = UIColor.white
     }
     
     func loadStories() {
