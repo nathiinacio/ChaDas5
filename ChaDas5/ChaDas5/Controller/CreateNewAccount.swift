@@ -26,7 +26,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     //var yourTea: String!
     var activityView:UIActivityIndicatorView!
     //actions
-    @IBAction func createNewAccountButton(_ sender: Any) {
+    @IBAction func createNewButton(_ sender: Any) {
     }
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()

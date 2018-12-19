@@ -129,8 +129,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="createNewAccount:" destination="I2T-pg-gKs" eventType="touchUpInside" id="fHP-df-fhP"/>
-                                    <action selector="createNewAccountButton:" destination="I2T-pg-gKs" eventType="touchUpInside" id="dAX-CY-JOm"/>
+                                    <action selector="createNewButton:" destination="I2T-pg-gKs" eventType="touchUpInside" id="CwN-WX-Dzo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-Fo-CMf">
