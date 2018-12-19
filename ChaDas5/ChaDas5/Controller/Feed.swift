@@ -10,14 +10,12 @@ import UIKit
 import Firebase
 
 
-class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
+
+    
     
 
-    var stories = [QueryDocumentSnapshot]()
-    var lastDocumentSnapshot: DocumentSnapshot!
-    var fetchingMore = false
-    
-    
+
     //outlets
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var feedTableView: UITableView!
@@ -32,29 +30,22 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
         feedTableView.allowsSelection = true
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
-        loadStories()
+    
+        RelatoManager.instance.loadStories(requester: self)
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !self.stories.isEmpty {
-            return self.stories.count
-        } else {
-            return 1
-        }
+       return RelatoManager.instance.stories.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let feedCell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedTableViewCell
-        
-//        if !self.stories.isEmpty {
-//            for doc in self.stories {
-//                feedCell.textLabel?.text = doc.get("conteudo")! as? String
-//            }
-//        }
+
         return feedCell
     }
     
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! FeedTableViewCell
         selectedCell.contentView.backgroundColor = UIColor.basePink
@@ -66,29 +57,17 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate {
         selectedCell?.contentView.backgroundColor = UIColor.white
     }
     
-    func loadStories() {
-        let docRef = FBRef.db.collection("Feed")
-        docRef.getDocuments { (querySnapshot, err) in
-        if let err = err {
-            print("Document error")
-        } else {
-            for document in querySnapshot!.documents {
-                self.stories.append(document)
-            }
-            }
-        }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+
+    }
+    
+    
+    func readedStories(stories: [QueryDocumentSnapshot]) {
+        print("got stories")
         feedTableView.reloadData()
     }
     
-    func createStoriesForTesting() {
-        for i in 2...10 {
-            let autor:String = "anonimo\(i)"
-            let conteudo:String = "relato do anonimo \(i)"
-            Relato(conteudo: conteudo, autor: autor).fbSave()
-        }
-        
-    }
-    
-   
-    
 }
+
