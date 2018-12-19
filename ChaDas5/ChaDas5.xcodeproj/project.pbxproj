@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
+		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
 		902C05E1D9F1DCC1830CB8F2 /* Pods_ChaDas5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		9A1B11D821C43B39006956B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D321C43B39006956B7 /* User.swift */; };
 		9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D421C43B39006956B7 /* Extentions.swift */; };
 		9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DA21C43B83006956B7 /* AppDelegate.swift */; };
-		9A1B11DD21C43BBF006956B7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DC21C43BBF006956B7 /* ExampleViewController.swift */; };
 		9A1B11DF21C43BE5006956B7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DE21C43BE5006956B7 /* MessageTableViewCell.swift */; };
 		9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11E521C43CAF006956B7 /* ViewController.swift */; };
 		9A1B11EB21C43CC1006956B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11E821C43CC1006956B7 /* Assets.xcassets */; };
@@ -67,6 +67,7 @@
 /* Begin PBXFileReference section */
 		0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		158DBDB421C976CF00C9888F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		158DBDB621CAD40100C9888F /* RelatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoManager.swift; sourceTree = "<group>"; };
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBC6E4AB7AEECF1B2AA169E /* Pods-ChaDas5UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChaDas5UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChaDas5UITests/Pods-ChaDas5UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		9A1B11D321C43B39006956B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A1B11D421C43B39006956B7 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9A1B11DA21C43B83006956B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A1B11DC21C43BBF006956B7 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		9A1B11DE21C43BE5006956B7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		9A1B11E521C43CAF006956B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A1B11E821C43CC1006956B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,7 +197,6 @@
 			children = (
 				9A1B11DA21C43B83006956B7 /* AppDelegate.swift */,
 				9A4E543221B0065A0033FEBF /* CreateNewAccount.swift */,
-				9A1B11DC21C43BBF006956B7 /* ExampleViewController.swift */,
 				9A4E543421B0066F0033FEBF /* Login.swift */,
 				9A4E543621B006870033FEBF /* Profile.swift */,
 				9A4E543821B0069B0033FEBF /* Feed.swift */,
@@ -263,6 +262,7 @@
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
 				9A1B11D321C43B39006956B7 /* User.swift */,
+				158DBDB621CAD40100C9888F /* RelatoManager.swift */,
 				9A76AF8C21C038D9003ED02C /* DAO.swift */,
 			);
 			path = Model;
@@ -516,13 +516,13 @@
 				15BC149E21C8101900768231 /* Firebase.swift in Sources */,
 				9A4E544121B0071F0033FEBF /* StoryScreen.swift in Sources */,
 				9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */,
+				158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */,
 				9A4E543721B006870033FEBF /* Profile.swift in Sources */,
 				9A1B11D521C43B39006956B7 /* Conversa.swift in Sources */,
 				9A4E543B21B006B30033FEBF /* Messages.swift in Sources */,
 				9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */,
 				9A1B11D821C43B39006956B7 /* User.swift in Sources */,
 				9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */,
-				9A1B11DD21C43BBF006956B7 /* ExampleViewController.swift in Sources */,
 				9A1B11D721C43B39006956B7 /* Relato.swift in Sources */,
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
