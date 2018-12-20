@@ -395,6 +395,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="sdO-sI-Iqf" firstAttribute="leading" secondItem="ARm-FN-0UM" secondAttribute="leading" id="FeG-XG-yav"/>
                                     <constraint firstItem="sdO-sI-Iqf" firstAttribute="top" secondItem="ARm-FN-0UM" secondAttribute="top" id="I4X-ue-V1y"/>
@@ -560,6 +561,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="DLL-6H-AZL" firstAttribute="leading" secondItem="78I-rE-Nkj" secondAttribute="leading" id="OAd-Al-nhV"/>
                                     <constraint firstItem="DLL-6H-AZL" firstAttribute="top" secondItem="78I-rE-Nkj" secondAttribute="top" id="RSQ-7I-PUv"/>
@@ -725,6 +727,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="i3i-4K-YT5" secondAttribute="trailing" id="7dQ-bU-mKY"/>
                                     <constraint firstItem="i3i-4K-YT5" firstAttribute="leading" secondItem="1J4-XP-dBr" secondAttribute="leading" id="fOi-dw-FMI"/>
