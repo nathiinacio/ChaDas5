@@ -31,6 +31,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uJe-Ro-4g0" kind="show" identifier="storyScreen" id="5HX-t0-w5r"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -76,13 +79,21 @@
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="115.59220389805098"/>
         </scene>
+        <!--StoryScreen-->
+        <scene sceneID="PRV-3Z-9xi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoryScreen" id="uJe-Ro-4g0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCD-bt-fCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="-6"/>
+        </scene>
         <!--NewStoryScreen-->
         <scene sceneID="jKq-o1-QN1">
             <objects>
                 <viewControllerPlaceholder storyboardName="NewStoryScreen" id="E96-8T-BvF" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XC-SL-ZJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-38"/>
+            <point key="canvasLocation" x="752" y="115"/>
         </scene>
     </scenes>
     <resources>
