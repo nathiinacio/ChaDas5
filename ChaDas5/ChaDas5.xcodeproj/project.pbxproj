@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
 		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
+		158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDBA21CBED6B00C9888F /* UserManager.swift */; };
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		158DBDB421C976CF00C9888F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		158DBDB621CAD40100C9888F /* RelatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoManager.swift; sourceTree = "<group>"; };
+		158DBDBA21CBED6B00C9888F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96451FCF21AC79EF00C9C351 /* ChaDas5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaDas5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +264,7 @@
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
 				9A1B11D321C43B39006956B7 /* User.swift */,
 				158DBDB621CAD40100C9888F /* RelatoManager.swift */,
+				158DBDBA21CBED6B00C9888F /* UserManager.swift */,
 				9A76AF8C21C038D9003ED02C /* DAO.swift */,
 			);
 			path = Model;
@@ -501,6 +504,7 @@
 				9A1B11D721C43B39006956B7 /* Relato.swift in Sources */,
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
+				158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */,
 				9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */,
 				9AD9B5B821CABBE600828D50 /* SplashScreen.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,

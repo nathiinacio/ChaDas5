@@ -16,6 +16,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     
     
 
+    var selectedIndex:Int?
 
     //outlets
     @IBOutlet weak var addButton: UIButton!
@@ -33,6 +34,8 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
     
         RelatoManager.instance.loadStories(requester: self)
+        
+        
     }
     
     
@@ -56,12 +59,15 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! FeedTableViewCell
         selectedCell.contentView.backgroundColor = UIColor.basePink
+        self.selectedIndex = indexPath.row
         
+        self.performSegue(withIdentifier: "storyScreen", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as? FeedTableViewCell
         selectedCell?.contentView.backgroundColor = UIColor.white
+        
     }
     
 

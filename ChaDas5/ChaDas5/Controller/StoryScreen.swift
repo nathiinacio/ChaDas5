@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class StoryScreen: UIViewController {
+    
+    var selectedStory:QueryDocumentSnapshot?
     
     //outlets   
     @IBAction func dismissButton(_ sender: Any) {
