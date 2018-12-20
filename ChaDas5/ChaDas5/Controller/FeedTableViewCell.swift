@@ -11,5 +11,5 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedTableViewTextField: UITextView!
     
-    
+
 }

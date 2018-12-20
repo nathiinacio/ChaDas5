@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ov1-Sr-NYs">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ov1-Sr-NYs">
                         <rect key="frame" x="16" y="11" width="343" height="128"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>

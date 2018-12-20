@@ -25,4 +25,8 @@ class StoryScreen: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        self.storyTextView.text = self.selectedStory?.data()["conteudo"] as! String
+    }
+    
 }

@@ -14,7 +14,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     
 
     
-    
+    var xibCell:FeedTableViewCell?
 
     var selectedIndex:Int?
 
@@ -50,6 +50,8 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
             let doc = RelatoManager.instance.stories[indexPath.row]
             
             feedCell.feedTableViewTextField.text = doc.data()["conteudo"] as! String
+            
+            feedCell.selectionStyle = .none
         }
 
         return feedCell
@@ -58,7 +60,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! FeedTableViewCell
-        selectedCell.contentView.backgroundColor = UIColor.basePink
+        selectedCell.contentView.backgroundColor = UIColor.clear
         self.selectedIndex = indexPath.row
         
         self.performSegue(withIdentifier: "storyScreen", sender: nil)
@@ -76,6 +78,14 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "storyScreen" {
+            print("go to Story")
+            if let destinationVC = segue.destination as? StoryScreen{
+                destinationVC.selectedStory = RelatoManager.instance.stories[self.selectedIndex!]
+            }
+        }
+    }
     
     func readedStories(stories: [QueryDocumentSnapshot]) {
         print("got stories")
