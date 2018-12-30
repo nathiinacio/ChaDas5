@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class StoryScreen: UIViewController {
+    
+    var selectedStory:QueryDocumentSnapshot?
     
     //outlets   
     @IBAction func dismissButton(_ sender: Any) {
@@ -20,6 +23,10 @@ class StoryScreen: UIViewController {
     @objc private func dismiss() {
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    override func viewDidLoad() {
+        self.storyTextView.text = self.selectedStory?.data()["conteudo"] as! String
     }
     
 }

@@ -12,15 +12,24 @@ class NewStoryScreen: UIViewController {
     
     //outlets
     
+    @IBOutlet weak var newStoryLabel: UILabel!    
+    @IBOutlet weak var sendButton: UIButton!
+    
+    //actions
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()
     }
     @IBAction func sendButton(_ sender: Any) {
+        
+        Relato(conteudo: newStoryTextView.text, autor: "usuárioDeafault").fbSave()
+        
+        dismiss()
     }
     @IBOutlet weak var newStoryTextView: UITextView!
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
+        
     }
     
     @objc private func dismiss() {
