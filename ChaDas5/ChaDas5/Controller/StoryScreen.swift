@@ -18,6 +18,8 @@ class StoryScreen: UIViewController {
         dismiss()
     }
     @IBOutlet weak var storyTextView: UITextView!
+    @IBAction func chatButton(_ sender: Any) {
+    }
     
     
     @objc private func dismiss() {

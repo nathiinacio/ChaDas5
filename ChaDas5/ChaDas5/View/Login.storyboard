@@ -80,12 +80,6 @@
                                     <action selector="loginButton:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="n9s-TK-u2w"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esqueceu a senha?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-YT-Uao">
-                                <rect key="frame" x="113.5" y="493" width="148" height="20"/>
-                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
-                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-PV-AOZ">
                                 <rect key="frame" x="50" y="50" width="50" height="40"/>
                                 <constraints>
@@ -97,20 +91,28 @@
                                     <action selector="dismissButton:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="ovN-Ru-0vN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-kp-kTl">
+                                <rect key="frame" x="100" y="493" width="175" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
+                                <state key="normal" title="Esqueci minha senha.">
+                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="S65-As-dq2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OaV-YT-Uao" firstAttribute="top" secondItem="mTT-Oa-eTo" secondAttribute="bottom" constant="8" id="BWq-mR-IOI"/>
                             <constraint firstItem="k2G-Sy-b9v" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="JRy-Qc-dgd"/>
                             <constraint firstItem="mTT-Oa-eTo" firstAttribute="top" secondItem="8vj-HA-pqc" secondAttribute="bottom" constant="66" id="LC3-5S-3pq"/>
                             <constraint firstItem="Rvd-4s-vrU" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="MHJ-hj-QCQ"/>
                             <constraint firstItem="8vj-HA-pqc" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="T39-my-xzx"/>
                             <constraint firstItem="8vj-HA-pqc" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="TQp-Go-Ugu"/>
-                            <constraint firstItem="OaV-YT-Uao" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="113.5" id="XZR-yz-8h1"/>
                             <constraint firstItem="54r-C0-5Gi" firstAttribute="top" secondItem="k2G-Sy-b9v" secondAttribute="bottom" constant="10" id="ZRp-ss-lG4"/>
                             <constraint firstItem="Rvd-4s-vrU" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="ZcJ-lB-gM1"/>
                             <constraint firstItem="8vj-HA-pqc" firstAttribute="top" secondItem="54r-C0-5Gi" secondAttribute="bottom" id="bCM-TT-IUX"/>
-                            <constraint firstItem="OaV-YT-Uao" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="eD7-8Z-WwU"/>
                             <constraint firstItem="k2G-Sy-b9v" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="hsA-gE-2dH"/>
                             <constraint firstItem="54r-C0-5Gi" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="kHi-X1-pgg"/>
                             <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="lar-FU-Ot9"/>
@@ -128,11 +130,20 @@
                         <outlet property="emailTextField" destination="k2G-Sy-b9v" id="kUw-KT-9FT"/>
                         <outlet property="loginButton" destination="mTT-Oa-eTo" id="jcc-To-fYA"/>
                         <outlet property="passwordTextField" destination="8vj-HA-pqc" id="uXk-MW-HX7"/>
+                        <segue destination="a8d-0r-HBW" kind="show" identifier="Feed" id="5O7-9n-hYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnn-f4-DXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="151"/>
+            <point key="canvasLocation" x="-271.19999999999999" y="108.39580209895054"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="plr-W3-KyL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="a8d-0r-HBW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xk-e5-U8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="113"/>
         </scene>
     </scenes>
     <resources>

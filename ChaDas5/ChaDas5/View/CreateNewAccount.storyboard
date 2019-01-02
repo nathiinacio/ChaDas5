@@ -188,11 +188,20 @@
                         <outlet property="passwordConfirmationTextField" destination="PPe-7t-dED" id="6he-59-Q5m"/>
                         <outlet property="passwordTextField" destination="EgS-Hm-QPG" id="mVs-BC-TVC"/>
                         <outlet property="pickYourTeaCollectionView" destination="6Av-tV-KjB" id="qMH-zD-i9e"/>
+                        <segue destination="xSu-ex-lll" kind="show" identifier="Feed" id="74X-16-Rg1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWY-dX-pRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="162.3688155922039"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="NU5-dT-xbt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="xSu-ex-lll" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1g-vS-KTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="875" y="204"/>
         </scene>
     </scenes>
     <resources>
