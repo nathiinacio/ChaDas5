@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="-271.19999999999999" y="108.39580209895054"/>
         </scene>
-        <!--Feed-->
+        <!--Profile-->
         <scene sceneID="plr-W3-KyL">
             <objects>
-                <viewControllerPlaceholder storyboardName="Feed" id="a8d-0r-HBW" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="a8d-0r-HBW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xk-e5-U8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="648" y="113"/>

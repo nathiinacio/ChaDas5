@@ -35,7 +35,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         if passwordTextField.text == passwordConfirmationTextField.text && selected?.chooseYourTeaLabel.text != nil
         {
             handleSignUp()
-            //ir para o feed checar no save profile
+            
         }
         else{
             
@@ -103,6 +103,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         
     }
     
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         emailTextField.becomeFirstResponder()
@@ -231,6 +232,9 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                     self.saveProfile(username: yourTea) { success in
                                         if success {
                                             self.dismiss(animated: true, completion: nil)
+                                            if Auth.auth().currentUser != nil {
+                                                self.performSegue(withIdentifier: "Feed", sender: self)
+                                            }
                                         } else {
                                             self.resetForm()
                                         }

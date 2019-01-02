@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="116" y="162.3688155922039"/>
         </scene>
-        <!--Feed-->
+        <!--Profile-->
         <scene sceneID="NU5-dT-xbt">
             <objects>
-                <viewControllerPlaceholder storyboardName="Feed" id="xSu-ex-lll" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="xSu-ex-lll" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1g-vS-KTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="875" y="204"/>
