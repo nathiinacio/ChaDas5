@@ -45,7 +45,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                 self.passwordConfirmationTextField.text = ""
                 self.passwordTextField.text = ""
             })
-            let alert = UIAlertController(title: "Oops...", message: "Erro na Confirmação de Senha", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Oops...", message: "Erro na confirmação de senha", preferredStyle: .alert)
             alert.addAction(tentarNovamente)
             self.present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.buttonPink
@@ -55,7 +55,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
             else {
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
                 })
-                let alert = UIAlertController(title: "Oops...", message: "Esqueceu de Escolher seu Chá", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Oops...", message: "Esqueceu de escolher seu chá", preferredStyle: .alert)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 alert.view.tintColor = UIColor.buttonPink
