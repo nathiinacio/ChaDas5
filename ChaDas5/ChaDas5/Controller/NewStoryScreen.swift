@@ -21,7 +21,7 @@ class NewStoryScreen: UIViewController {
     }
     @IBAction func sendButton(_ sender: Any) {
         
-        Relato(conteudo: newStoryTextView.text, autor: "usuárioDeafault").fbSave()
+        Relato(conteudo: newStoryTextView.text, autor: (UserManager.instance.currentUser?.uid)!).fbSave()
         
         dismiss()
     }

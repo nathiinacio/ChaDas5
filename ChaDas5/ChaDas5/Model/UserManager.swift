@@ -14,7 +14,7 @@ class UserManager {
     static let instance = UserManager()
     private init(){}
     
-    
+    let currentUser = Auth.auth().currentUser
     
 
 }
