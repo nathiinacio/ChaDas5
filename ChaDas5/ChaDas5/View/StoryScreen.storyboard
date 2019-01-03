@@ -92,6 +92,7 @@
                         <viewLayoutGuide key="safeArea" id="hw4-sL-ogr"/>
                     </view>
                     <connections>
+                        <outlet property="chatButton" destination="dD1-BE-gBN" id="EMQ-Nd-DgF"/>
                         <outlet property="storyTextView" destination="FMQ-7Z-TuW" id="QgI-u8-BI2"/>
                     </connections>
                 </viewController>

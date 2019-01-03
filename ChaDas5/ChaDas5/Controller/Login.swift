@@ -127,6 +127,17 @@ class Login: UIViewController {
                 //self.dismiss(animated: false, completion: nil)
                 print ("Logado com sucesso!")
                 
+                let userID = UserManager.instance.currentUser?.uid
+                let docRef = FBRef.db.collection("users").document(userID!)
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let dataDescription = document.data()
+                        AppSettings.displayName = dataDescription!["username"] as? String
+                    } else {
+                        print("Document does not exist")
+                    }
+                }
+                
                 if Auth.auth().currentUser != nil {
                     self.performSegue(withIdentifier: "Feed", sender: self)
                 }

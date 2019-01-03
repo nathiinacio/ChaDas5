@@ -289,6 +289,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
+                self.db.collection("users").document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
                 self.performSegue(withIdentifier: "Feed", sender: self)
             }
         }
