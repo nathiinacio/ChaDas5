@@ -232,9 +232,6 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                     self.saveProfile(username: yourTea) { success in
                                         if success {
                                             self.dismiss(animated: true, completion: nil)
-                                            if Auth.auth().currentUser != nil {
-                                                self.performSegue(withIdentifier: "Feed", sender: self)
-                                            }
                                         } else {
                                             self.resetForm()
                                         }
@@ -292,7 +289,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
-                //ir para feed
+                self.performSegue(withIdentifier: "Feed", sender: self)
             }
         }
         
