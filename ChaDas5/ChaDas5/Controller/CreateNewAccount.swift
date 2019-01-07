@@ -248,6 +248,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                         self.dismiss(animated: true, completion: nil)
                                                                     } else {
                                                                         self.resetForm()
+                                                                         UserManager.instance.currentUser?.delete(completion: nil)
                                                                     }
                                                                 }
                                                                 
@@ -273,6 +274,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                                 self.dismiss(animated: true, completion: nil)
                                                                             } else {
                                                                                 self.resetForm()
+                                                                                UserManager.instance.currentUser?.delete(completion: nil)
                                                                             }
                                                                         }
                                                                                                                                             }

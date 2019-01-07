@@ -53,6 +53,10 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let nib = UINib.init(nibName: "ProfileTableViewCell", bundle: nil)
         self.profileTableView.register(nib, forCellReuseIdentifier: "ProfileCell")
         
+        nameLabel.text = AppSettings.displayName
+        profileImage.image = UIImage(named: AppSettings.displayName)
+        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit 
+        
     }
     
    
