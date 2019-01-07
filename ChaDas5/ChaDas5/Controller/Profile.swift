@@ -61,7 +61,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         nameLabel.text = AppSettings.displayName
         profileImage.image = UIImage(named: AppSettings.displayName)
-        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit 
+        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
         
     }
     
