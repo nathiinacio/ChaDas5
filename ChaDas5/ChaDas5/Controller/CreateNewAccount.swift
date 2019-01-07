@@ -145,6 +145,8 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let pickYouTeaCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickYouTea", for: indexPath) as! ChooseYourTeaCollectionViewCell
         pickYouTeaCell.chooseYourTeaLabel.text = DAO.instance.teas[indexPath.item]
+        pickYouTeaCell.chooseYourteaImage.image = UIImage(named:  DAO.instance.teas[indexPath.item])
+        pickYouTeaCell.chooseYourteaImage.contentMode = UIView.ContentMode.scaleAspectFit
         return pickYouTeaCell
     }
     
@@ -282,7 +284,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                 
                                                                 let alertActionCancel = UIAlertAction(title: "Cancelar", style: .default) {
                                                                     (_) in
-                                                                    
+                                                                   UserManager.instance.currentUser?.delete(completion: nil)
                                                                    self.dismiss()
                                                                 }
                                                                 
@@ -326,11 +328,13 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                 } else {
                                     print("Error: \(error!.localizedDescription)")
                                     self.resetForm()
+                                    UserManager.instance.currentUser?.delete(completion: nil)
                                 }
                             }
                             
                         } else {
                             self.resetForm()
+                            UserManager.instance.currentUser?.delete(completion: nil)
                         }
                     }
                     
@@ -340,12 +344,15 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                         self.emailTextField.text = ""
                         self.passwordConfirmationTextField.text = ""
                         self.passwordTextField.text = ""
+                        UserManager.instance.currentUser?.delete(completion: nil)
                         //self.pickYourTeaCollectionView.deselectAllItems(animated: true)
                         
                     })
         
                     let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
                         self.dismiss()
+                        UserManager.instance.currentUser?.delete(completion: nil)
+                        
                     }
         
                     let alert = UIAlertController(title: "Oops...", message: "E-mail já usado anteriormente", preferredStyle: .alert)
