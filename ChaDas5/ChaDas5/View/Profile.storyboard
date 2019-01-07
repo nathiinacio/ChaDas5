@@ -37,6 +37,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editButton:" destination="Ib0-Co-gM1" eventType="touchUpInside" id="qta-ad-zpZ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOX-oQ-RBh">
                                 <rect key="frame" x="123" y="100" width="128" height="128"/>
@@ -63,6 +66,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutButton:" destination="Ib0-Co-gM1" eventType="touchUpInside" id="qQq-Az-gzX"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S3a-Mc-Id0">
                                 <rect key="frame" x="0.0" y="359" width="375" height="308"/>
@@ -105,7 +111,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" image="profileIcon" selectedImage="profileIcon" id="3oy-cj-eMt"/>
                     <connections>
-                        <outlet property="addButton" destination="7jP-yu-5l5" id="GN0-iB-4N3"/>
                         <outlet property="editButton" destination="ges-bX-Snj" id="sI5-JU-5iH"/>
                         <outlet property="nameLabel" destination="q88-IL-ICW" id="4CM-6M-GJA"/>
                         <outlet property="noStoryLabel" destination="ea6-0U-RgJ" id="mXh-dQ-Zgz"/>

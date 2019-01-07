@@ -30,11 +30,17 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //outlets
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
+    
+    //actions
+    @IBAction func logoutButton(_ sender: Any) {
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+    }
     
     
     override func viewDidLoad() {
