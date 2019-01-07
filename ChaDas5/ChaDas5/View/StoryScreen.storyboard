@@ -79,6 +79,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svz-Z4-Yhg">
+                                <rect key="frame" x="270" y="50" width="55" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lE2-8f-4io"/>
+                                    <constraint firstAttribute="width" constant="55" id="nQg-cg-5MT"/>
+                                </constraints>
+                                <state key="normal" image="archive"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -86,8 +100,10 @@
                             <constraint firstItem="rUa-cf-VJh" firstAttribute="leading" secondItem="hw4-sL-ogr" secondAttribute="leading" constant="50" id="1hC-7P-pRs"/>
                             <constraint firstItem="rUa-cf-VJh" firstAttribute="centerX" secondItem="4XW-lM-QjK" secondAttribute="centerX" id="45s-pp-VKF"/>
                             <constraint firstItem="tde-1a-ZNZ" firstAttribute="top" secondItem="hw4-sL-ogr" secondAttribute="top" constant="30" id="DvV-Oj-vq3"/>
+                            <constraint firstItem="svz-Z4-Yhg" firstAttribute="top" secondItem="hw4-sL-ogr" secondAttribute="top" constant="30" id="KuW-7c-XKH"/>
                             <constraint firstItem="hw4-sL-ogr" firstAttribute="trailing" secondItem="rUa-cf-VJh" secondAttribute="trailing" constant="50" id="THh-Gu-9Vp"/>
                             <constraint firstItem="hw4-sL-ogr" firstAttribute="bottom" secondItem="rUa-cf-VJh" secondAttribute="bottom" constant="57" id="u4v-JS-Kgd"/>
+                            <constraint firstItem="hw4-sL-ogr" firstAttribute="trailing" secondItem="svz-Z4-Yhg" secondAttribute="trailing" constant="50" id="zPu-aS-xt5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hw4-sL-ogr"/>
                     </view>
@@ -102,6 +118,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="archive" width="924" height="740"/>
         <image name="chat" width="924" height="740"/>
         <image name="dismissIcon" width="924" height="740"/>
     </resources>
