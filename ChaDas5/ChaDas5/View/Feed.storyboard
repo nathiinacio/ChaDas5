@@ -56,6 +56,13 @@
                                     <segue destination="E96-8T-BvF" kind="show" identifier="newStoryScreen" id="HJJ-7x-NxL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-1L-uAh">
+                                <rect key="frame" x="37" y="140" width="300" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -73,6 +80,7 @@
                     <connections>
                         <outlet property="addButton" destination="gAk-hd-CQt" id="XcT-Ww-SvF"/>
                         <outlet property="feedTableView" destination="rsd-4Z-ZH2" id="OZk-sm-Qrm"/>
+                        <outlet property="noStoryLabel" destination="Le7-1L-uAh" id="bpi-po-R8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mai-gK-alR" userLabel="First Responder" sceneMemberID="firstResponder"/>
