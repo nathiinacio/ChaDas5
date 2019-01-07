@@ -21,6 +21,8 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     //outlets
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet weak var noStoryLabel: UILabel!
+    
     
     override func viewDidLoad() {
         

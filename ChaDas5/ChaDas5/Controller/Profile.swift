@@ -34,6 +34,8 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileTableView: UITableView!
+    @IBOutlet weak var noStoryLabel: UILabel!
+    
     
     override func viewDidLoad() {
         

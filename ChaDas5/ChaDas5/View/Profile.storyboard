@@ -86,6 +86,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea6-0U-RgJ">
+                                <rect key="frame" x="37" y="388" width="300" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -101,6 +108,7 @@
                         <outlet property="addButton" destination="7jP-yu-5l5" id="GN0-iB-4N3"/>
                         <outlet property="editButton" destination="ges-bX-Snj" id="sI5-JU-5iH"/>
                         <outlet property="nameLabel" destination="q88-IL-ICW" id="4CM-6M-GJA"/>
+                        <outlet property="noStoryLabel" destination="ea6-0U-RgJ" id="mXh-dQ-Zgz"/>
                         <outlet property="profileImage" destination="LOX-oQ-RBh" id="n1y-wT-qoc"/>
                         <outlet property="profileTableView" destination="S3a-Mc-Id0" id="Uxp-QP-TXR"/>
                     </connections>
