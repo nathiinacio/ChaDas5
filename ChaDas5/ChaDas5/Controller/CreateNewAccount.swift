@@ -218,6 +218,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
             } else {
                 if stringArray == nil {
                     print("No password. No active account")
+                
                     Auth.auth().createUser(withEmail: email, password: pass) { user, error in
                         if error == nil && user != nil {
                             print("User created!")
@@ -229,13 +230,96 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                 if error == nil {
                                     print("User display name changed!")
                                     
-                                    self.saveProfile(username: yourTea) { success in
-                                        if success {
-                                            self.dismiss(animated: true, completion: nil)
-                                        } else {
-                                            self.resetForm()
-                                        }
+                                    Auth.auth().currentUser?.sendEmailVerification(completion:
+                                        {(error) in
+                                            if error == nil
+                                            {
+                                                let ok = UIAlertAction(title: "Ok, verifiquei!", style: .default, handler: { (action) -> Void in
+                                                   
+                                                    Auth.auth().currentUser?.reload(completion: { (err) in
+                                                        if err == nil{
+                                                            
+                                                            
+                                                            if Auth.auth().currentUser!.isEmailVerified {
+                                                                print("VERIFIED")
+                                                                
+                                                                self.saveProfile(username: yourTea) { success in
+                                                                    if success {
+                                                                        self.dismiss(animated: true, completion: nil)
+                                                                    } else {
+                                                                        self.resetForm()
+                                                                    }
+                                                                }
+                                                                
+                                                            } else {
+                                                                
+                                                                print("It aint verified yet")
+                                                                
+                                                                let alertVC = UIAlertController(title: "Erro", message: "Desculpe. Seu e-mail ainda não foi verificado, deseja reenviar o e-mail de verificação para \(email)?", preferredStyle: .alert)
+                                                                
+                                                                let alertActionOkay = UIAlertAction(title: "Reenviar", style: .default) {
+                                                                    (_) in
+                                                                        Auth.auth().currentUser?.sendEmailVerification(completion: nil)
+                                                                }
+                                                             
+                                                                let alertActionVerified = UIAlertAction(title: "Ok, verifiquei!", style: .default, handler: { (action) -> Void in
+                                                                    
+                                                                    Auth.auth().currentUser?.reload()
+                                                                    if (!(Auth.auth().currentUser?.isEmailVerified)!) {
+                                                                     
+                                                                    } else {
+                                                                        self.saveProfile(username: yourTea) { success in
+                                                                            if success {
+                                                                                self.dismiss(animated: true, completion: nil)
+                                                                            } else {
+                                                                                self.resetForm()
+                                                                            }
+                                                                        }
+                                                                                                                                            }
+                                                                })
+                                                                
+                                                                let alertActionCancel = UIAlertAction(title: "Cancelar", style: .default) {
+                                                                    (_) in
+                                                                    
+                                                                   self.dismiss()
+                                                                }
+                                                                
+                                                                
+                                                                alertVC.addAction(alertActionOkay)
+                                                                alertVC.addAction(alertActionVerified)
+                                                                alertVC.addAction(alertActionCancel)
+                                                                
+                                                                alertVC.view.tintColor = UIColor.buttonPink
+                                                                self.present(alertVC, animated: true, completion: nil)
+                                                                
+                                                            }
+                                                        } else {
+                                                            
+                                                            print(err?.localizedDescription)
+                                                            
+                                                        }
+                                                    })
+                                                
+                                                    
+                                                })
+                                                let alert = UIAlertController(title: "E-mail de verificação", message: "Um e-mail de verificação foi enviado, por favor cheque seu e-mail", preferredStyle: .alert)
+                                                alert.addAction(ok)
+                                                self.present(alert, animated: true, completion: nil)
+                                                alert.view.tintColor = UIColor.buttonPink
+                                                
+                                            }
+                                            else{
+                                                
+                                            let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+                                                })
+                                            let alert = UIAlertController(title: "Erro", message: "Erro no envio do e-mail de verificação", preferredStyle: .alert)
+                                            alert.addAction(ok)
+                                            self.present(alert, animated: true, completion: nil)
+                                            alert.view.tintColor = UIColor.buttonPink
                                     }
+                                    })
+
+                                    
                                     
                                 } else {
                                     print("Error: \(error!.localizedDescription)")
@@ -352,4 +436,10 @@ extension UICollectionView {
         }
     }
 }
+
+
+
+
+
+
 

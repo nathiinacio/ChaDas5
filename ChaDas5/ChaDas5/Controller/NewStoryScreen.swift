@@ -15,6 +15,7 @@ class NewStoryScreen: UIViewController {
     @IBOutlet weak var newStoryLabel: UILabel!    
     @IBOutlet weak var sendButton: UIButton!
     
+    
     //actions
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()
