@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155CF80821DE6E6800AFB04B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80721DE6E6800AFB04B /* Channel.swift */; };
+		155CF80A21DE6F3300AFB04B /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */; };
+		155CF80C21DE7D2B00AFB04B /* ChannelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */; };
+		155CF80E21DE89F400AFB04B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80D21DE89F400AFB04B /* Message.swift */; };
+		155CF81021DE8A9000AFB04B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80F21DE8A9000AFB04B /* AppSettings.swift */; };
+		155CF81221DE926100AFB04B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81121DE926100AFB04B /* ChatViewController.swift */; };
+		155CF81421DE92D400AFB04B /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81321DE92D400AFB04B /* UIView+Additions.swift */; };
+		155CF81621DE92E000AFB04B /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */; };
+		155CF81821DE92E800AFB04B /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81721DE92E800AFB04B /* UIImage+Additions.swift */; };
 		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
 		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
 		158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDBA21CBED6B00C9888F /* UserManager.swift */; };
@@ -67,6 +76,15 @@
 
 /* Begin PBXFileReference section */
 		0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		155CF80721DE6E6800AFB04B /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
+		155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsManager.swift; sourceTree = "<group>"; };
+		155CF80D21DE89F400AFB04B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		155CF80F21DE8A9000AFB04B /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		155CF81121DE926100AFB04B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		155CF81321DE92D400AFB04B /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Additions.swift"; sourceTree = "<group>"; };
+		155CF81721DE92E800AFB04B /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		158DBDB421C976CF00C9888F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		158DBDB621CAD40100C9888F /* RelatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoManager.swift; sourceTree = "<group>"; };
 		158DBDBA21CBED6B00C9888F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -195,6 +213,7 @@
 		96451FF321AC79FC00C9C351 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				155CF81121DE926100AFB04B /* ChatViewController.swift */,
 				9A1B11DA21C43B83006956B7 /* AppDelegate.swift */,
 				E23901B421CADDA8006B3CF3 /* SplashScreen.swift */,
 				9A4E543221B0065A0033FEBF /* CreateNewAccount.swift */,
@@ -261,10 +280,18 @@
 				15BC149D21C8101900768231 /* Firebase.swift */,
 				9A1B11D021C43B39006956B7 /* Conversa.swift */,
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
+				155CF81321DE92D400AFB04B /* UIView+Additions.swift */,
+				155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */,
+				155CF81721DE92E800AFB04B /* UIImage+Additions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
+				155CF80721DE6E6800AFB04B /* Channel.swift */,
+				155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */,
 				9A1B11D321C43B39006956B7 /* User.swift */,
 				158DBDB621CAD40100C9888F /* RelatoManager.swift */,
 				158DBDBA21CBED6B00C9888F /* UserManager.swift */,
+				155CF80F21DE8A9000AFB04B /* AppSettings.swift */,
+				155CF80D21DE89F400AFB04B /* Message.swift */,
+				155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */,
 				9A76AF8C21C038D9003ED02C /* DAO.swift */,
 			);
 			path = Model;
@@ -489,9 +516,14 @@
 				9A4E543321B0065A0033FEBF /* CreateNewAccount.swift in Sources */,
 				9A4E543F21B006E60033FEBF /* NewStoryScreen.swift in Sources */,
 				9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */,
+				155CF80821DE6E6800AFB04B /* Channel.swift in Sources */,
+				155CF80E21DE89F400AFB04B /* Message.swift in Sources */,
 				9A4E543921B0069B0033FEBF /* Feed.swift in Sources */,
 				9A76AF8321C02873003ED02C /* MessagesTableViewCell.swift in Sources */,
+				155CF81821DE92E800AFB04B /* UIImage+Additions.swift in Sources */,
 				15BC149E21C8101900768231 /* Firebase.swift in Sources */,
+				155CF81021DE8A9000AFB04B /* AppSettings.swift in Sources */,
+				155CF80C21DE7D2B00AFB04B /* ChannelsManager.swift in Sources */,
 				9A4E544121B0071F0033FEBF /* StoryScreen.swift in Sources */,
 				9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */,
 				158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */,
@@ -502,6 +534,7 @@
 				9A1B11D821C43B39006956B7 /* User.swift in Sources */,
 				9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */,
 				9A1B11D721C43B39006956B7 /* Relato.swift in Sources */,
+				155CF81421DE92D400AFB04B /* UIView+Additions.swift in Sources */,
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */,
@@ -509,8 +542,11 @@
 				E23901B521CADDA8006B3CF3 /* SplashScreen.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,
 				9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */,
+				155CF80A21DE6F3300AFB04B /* DatabaseRepresentation.swift in Sources */,
 				9A4E543521B0066F0033FEBF /* Login.swift in Sources */,
 				9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */,
+				155CF81221DE926100AFB04B /* ChatViewController.swift in Sources */,
+				155CF81621DE92E000AFB04B /* UICollectionView+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +711,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -695,6 +732,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -15,7 +15,9 @@ class Login: UIViewController {
     //outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!      
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
     @IBAction func forgotPassword(_ sender: Any) {
     }
     
@@ -27,7 +29,7 @@ class Login: UIViewController {
     }    
     @IBAction func loginButton(_ sender: Any) {
         handleSignIn()
-        print("BORA PARA A PROXIMA PAGINA")
+       
     }
     
     override func viewDidLoad() {
@@ -49,8 +51,7 @@ class Login: UIViewController {
         setLoginButton(enabled: false)
         
     }
-    
-    
+  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         emailTextField.becomeFirstResponder()
@@ -125,6 +126,21 @@ class Login: UIViewController {
             if error == nil && user != nil {
                 //self.dismiss(animated: false, completion: nil)
                 print ("Logado com sucesso!")
+                
+                let userID = UserManager.instance.currentUser?.uid
+                let docRef = FBRef.db.collection("users").document(userID!)
+                docRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let dataDescription = document.data()
+                        AppSettings.displayName = dataDescription!["username"] as? String
+                    } else {
+                        print("Document does not exist")
+                    }
+                }
+                
+                if Auth.auth().currentUser != nil {
+                    self.performSegue(withIdentifier: "Feed", sender: self)
+                }
             } else {
                 print("Error logging in: \(error!.localizedDescription)")
                 

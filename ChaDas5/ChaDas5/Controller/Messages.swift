@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
-class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, ChannelsManagerProtocol {
+    
+    
     
     //outlets
     @IBOutlet weak var editButton: UIButton!
@@ -23,23 +26,35 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate {
         messagesTableView.allowsSelection = true
         let nib = UINib.init(nibName: "MessagesTableViewCell", bundle: nil)
         self.messagesTableView.register(nib, forCellReuseIdentifier: "MessagesCell")
+        ChannelsManager.instance.loadChannels(requester: self)
+    }
+    
+    func addToMyChannels() {
+        print("not here")
+    }
+    
+    func readedChannels(channels: [QueryDocumentSnapshot]) {
+        messagesTableView.reloadData()
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return ChannelsManager.instance.channels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messagesCell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesTableViewCell
-//        messagesCell.messageTableViewLabel.text = "ói eu aqui \(indexPath.row)"
-         return messagesCell
+
+        messagesCell.messageTableViewLabel.text = "channel"
+        return messagesCell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! MessagesTableViewCell
         selectedCell.contentView.backgroundColor = UIColor.basePink
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

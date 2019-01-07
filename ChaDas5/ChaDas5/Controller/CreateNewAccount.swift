@@ -35,7 +35,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         if passwordTextField.text == passwordConfirmationTextField.text && selected?.chooseYourTeaLabel.text != nil
         {
             handleSignUp()
-            //ir para o feed checar no save profile
+            
         }
         else{
             
@@ -45,7 +45,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                 self.passwordConfirmationTextField.text = ""
                 self.passwordTextField.text = ""
             })
-            let alert = UIAlertController(title: "Oops...", message: "Erro na Confirmação de Senha", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Oops...", message: "Erro na confirmação de senha", preferredStyle: .alert)
             alert.addAction(tentarNovamente)
             self.present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.buttonPink
@@ -55,7 +55,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
             else {
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
                 })
-                let alert = UIAlertController(title: "Oops...", message: "Esqueceu de Escolher seu Chá", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Oops...", message: "Esqueceu de escolher seu chá", preferredStyle: .alert)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 alert.view.tintColor = UIColor.buttonPink
@@ -103,6 +103,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         
     }
     
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         emailTextField.becomeFirstResponder()
@@ -288,7 +289,8 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
-                //ir para feed
+                self.db.collection("users").document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
+                self.performSegue(withIdentifier: "Feed", sender: self)
             }
         }
         
