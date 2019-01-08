@@ -104,8 +104,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROh-BM-ggp">
-                                        <rect key="frame" x="19" y="6" width="110" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Editar">
+                                            <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="E6a-j2-m7h" kind="show" id="zGa-55-5xQ"/>
                                         </connections>
@@ -131,6 +135,7 @@
                     <tabBarItem key="tabBarItem" title="Perfil" image="profileIcon" selectedImage="profileIcon" id="3oy-cj-eMt"/>
                     <connections>
                         <outlet property="editButton" destination="ges-bX-Snj" id="sI5-JU-5iH"/>
+                        <outlet property="imageCircle" destination="ROh-BM-ggp" id="gtd-I1-9vl"/>
                         <outlet property="nameLabel" destination="q88-IL-ICW" id="4CM-6M-GJA"/>
                         <outlet property="noStoryLabel" destination="ea6-0U-RgJ" id="mXh-dQ-Zgz"/>
                         <outlet property="pickYouTeaButton" destination="ROh-BM-ggp" id="MAI-GN-Qbv"/>

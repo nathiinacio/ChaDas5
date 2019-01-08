@@ -36,6 +36,8 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
     @IBOutlet weak var pickYouTeaButton: UIButton!
+    @IBOutlet weak var imageCircle: UIButton!
+    
     
     //actions
     @IBAction func logoutButton(_ sender: Any) {
