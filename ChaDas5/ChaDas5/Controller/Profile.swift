@@ -36,12 +36,14 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
+    @IBOutlet weak var pickYouTeaButton: UIButton!
     
     //actions
     @IBAction func logoutButton(_ sender: Any) {
-    }
-    
+    }    
     @IBAction func editButton(_ sender: Any) {
+    }
+    @IBAction func pickYourTeaButton(_ sender: Any) {
     }
     
     

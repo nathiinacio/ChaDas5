@@ -58,6 +58,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logoutButton:" destination="Ib0-Co-gM1" eventType="touchUpInside" id="qQq-Az-gzX"/>
+                                    <segue destination="Z82-Cr-Lu0" kind="show" identifier="main" id="Npj-vd-o7T"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S3a-Mc-Id0">
@@ -102,6 +103,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROh-BM-ggp">
+                                        <rect key="frame" x="19" y="6" width="110" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="pickYourTeaButton:" destination="Ib0-Co-gM1" eventType="touchUpInside" id="iBI-LK-nfB"/>
+                                            <segue destination="E6a-j2-m7h" kind="show" identifier="chooseYourTea" id="28X-sd-9xC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -125,6 +134,7 @@
                         <outlet property="editButton" destination="ges-bX-Snj" id="sI5-JU-5iH"/>
                         <outlet property="nameLabel" destination="q88-IL-ICW" id="4CM-6M-GJA"/>
                         <outlet property="noStoryLabel" destination="ea6-0U-RgJ" id="mXh-dQ-Zgz"/>
+                        <outlet property="pickYouTeaButton" destination="ROh-BM-ggp" id="MAI-GN-Qbv"/>
                         <outlet property="profileImage" destination="LOX-oQ-RBh" id="n1y-wT-qoc"/>
                         <outlet property="profileTableView" destination="S3a-Mc-Id0" id="Uxp-QP-TXR"/>
                     </connections>
@@ -132,6 +142,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-s6-W2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-516" y="-44.527736131934034"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="wFt-MS-eJ8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Z82-Cr-Lu0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m7N-Hn-9aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="-533"/>
+        </scene>
+        <!--Choose Your Tea Screen-->
+        <scene sceneID="m2w-mG-1GQ">
+            <objects>
+                <viewController id="E6a-j2-m7h" customClass="ChooseYourTeaScreen" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tFN-2a-3bA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifi-5s-0rX">
+                                <rect key="frame" x="50" y="50" width="60" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JjI-EP-88C"/>
+                                    <constraint firstAttribute="width" constant="60" id="OPx-q5-4UU"/>
+                                </constraints>
+                                <state key="normal" image="dismissIcon"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="E6a-j2-m7h" eventType="touchUpInside" id="ymt-ih-Uk6"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dek-xr-Q42">
+                                <rect key="frame" x="16" y="137" width="343" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NMw-kb-FWg">
+                                    <size key="itemSize" width="92" height="119"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseYourTea" id="eKA-3M-8Hg">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="92" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ifi-5s-0rX" firstAttribute="top" secondItem="eiH-Ik-nSR" secondAttribute="top" constant="30" id="N7b-xH-H1a"/>
+                            <constraint firstItem="Ifi-5s-0rX" firstAttribute="leading" secondItem="eiH-Ik-nSR" secondAttribute="leading" constant="50" id="YZf-Eq-FPz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eiH-Ik-nSR"/>
+                    </view>
+                    <connections>
+                        <outlet property="chooseYourTeaCollectionView" destination="Dek-xr-Q42" id="hi3-2c-SM4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzu-Ae-YVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392.80000000000001" y="-43.628185907046479"/>
         </scene>
         <!--Feed-->
         <scene sceneID="F3b-rX-7s7">
@@ -185,6 +259,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dismissIcon" width="924" height="740"/>
         <image name="editIcon" width="924" height="740"/>
         <image name="logout" width="924" height="740"/>
         <image name="profileIcon" width="40" height="40"/>
