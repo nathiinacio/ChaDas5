@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 
 
@@ -37,9 +37,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //actions
     @IBAction func logoutButton(_ sender: Any) {
+        
+        try! Auth.auth().signOut()
+        
     }
     
     @IBAction func editButton(_ sender: Any) {
+        
+        
+        
     }
     
     
