@@ -16,6 +16,8 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     //outlets
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var noStoryLabel: UILabel!
+    
     
     override func viewDidLoad() {
         
