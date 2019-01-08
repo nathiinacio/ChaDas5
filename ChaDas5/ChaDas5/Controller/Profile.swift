@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+<<<<<<< HEAD
+=======
+
+>>>>>>> cfa702d1deb6cc5d7da51e5b43ebf41fed86ce43
 
 
 
@@ -24,7 +28,8 @@ import Firebase
 
 
 
-class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
+    
    
     var segmentedControl: CustomSegmentedContrl!
 
@@ -34,18 +39,25 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
+    @IBOutlet weak var pickYouTeaButton: UIButton!
     
     //actions
     @IBAction func logoutButton(_ sender: Any) {
+<<<<<<< HEAD
         
         try! Auth.auth().signOut()
         
     }
     
+=======
+    }    
+>>>>>>> cfa702d1deb6cc5d7da51e5b43ebf41fed86ce43
     @IBAction func editButton(_ sender: Any) {
         
         
         
+    }
+    @IBAction func pickYourTeaButton(_ sender: Any) {
     }
     
     
@@ -67,7 +79,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         nameLabel.text = AppSettings.displayName
         profileImage.image = UIImage(named: AppSettings.displayName)
-        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit 
+        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
         
     }
     
@@ -97,6 +109,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
+    }
+    
+    func readedStories(stories: [QueryDocumentSnapshot]) {
+        print("not here")
+    }
+    
+    func readedMyStories(stories: [QueryDocumentSnapshot]) {
+        print("readed my stories")
+        profileTableView.reloadData()
     }
     
     

@@ -20,6 +20,7 @@
 		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
 		158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDBA21CBED6B00C9888F /* UserManager.swift */; };
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
+		15BCCFAD21E3EA61000461FD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BCCFAC21E3EA61000461FD /* NavigationController.swift */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
@@ -28,7 +29,6 @@
 		9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */; };
 		9A1B11D521C43B39006956B7 /* Conversa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D021C43B39006956B7 /* Conversa.swift */; };
 		9A1B11D721C43B39006956B7 /* Relato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D221C43B39006956B7 /* Relato.swift */; };
-		9A1B11D821C43B39006956B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D321C43B39006956B7 /* User.swift */; };
 		9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D421C43B39006956B7 /* Extentions.swift */; };
 		9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DA21C43B83006956B7 /* AppDelegate.swift */; };
 		9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11E521C43CAF006956B7 /* ViewController.swift */; };
@@ -56,6 +56,7 @@
 		9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8C21C038D9003ED02C /* DAO.swift */; };
 		9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */; };
 		9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */; };
+		9A82FD8721E5030400566AE1 /* ChooseYourTeaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82FD8621E5030400566AE1 /* ChooseYourTeaScreen.swift */; };
 		9AEAA57B21C84CF8001B490F /* SFCompactDisplay-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */; };
 		9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */; };
 		9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBE5A121B305630050AE3E /* ViewExtensions.swift */; };
@@ -90,6 +91,7 @@
 		158DBDBA21CBED6B00C9888F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15BCCFAC21E3EA61000461FD /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		96451FCF21AC79EF00C9C351 /* ChaDas5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaDas5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96451FD721AC79EF00C9C351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96451FD921AC79F000C9C351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +103,6 @@
 		9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseYourTeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A1B11D021C43B39006956B7 /* Conversa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversa.swift; sourceTree = "<group>"; };
 		9A1B11D221C43B39006956B7 /* Relato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relato.swift; sourceTree = "<group>"; };
-		9A1B11D321C43B39006956B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A1B11D421C43B39006956B7 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9A1B11DA21C43B83006956B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1B11E521C43CAF006956B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		9A76AF8C21C038D9003ED02C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		9A82FD8621E5030400566AE1 /* ChooseYourTeaScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourTeaScreen.swift; sourceTree = "<group>"; };
 		9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Ultralight.otf"; sourceTree = "<group>"; };
 		9AFBE59D21B1D2D90050AE3E /* CustomSegmentedContrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedContrl.swift; sourceTree = "<group>"; };
 		9AFBE5A121B305630050AE3E /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		96451FF321AC79FC00C9C351 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				15BCCFAC21E3EA61000461FD /* NavigationController.swift */,
 				155CF81121DE926100AFB04B /* ChatViewController.swift */,
 				9A1B11DA21C43B83006956B7 /* AppDelegate.swift */,
 				E23901B421CADDA8006B3CF3 /* SplashScreen.swift */,
@@ -229,6 +232,7 @@
 				9A76AF8121C02873003ED02C /* MessagesTableViewCell.swift */,
 				9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */,
 				9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */,
+				9A82FD8621E5030400566AE1 /* ChooseYourTeaScreen.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,7 +290,6 @@
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
 				155CF80721DE6E6800AFB04B /* Channel.swift */,
 				155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */,
-				9A1B11D321C43B39006956B7 /* User.swift */,
 				158DBDB621CAD40100C9888F /* RelatoManager.swift */,
 				158DBDBA21CBED6B00C9888F /* UserManager.swift */,
 				155CF80F21DE8A9000AFB04B /* AppSettings.swift */,
@@ -518,8 +521,10 @@
 				9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */,
 				155CF80821DE6E6800AFB04B /* Channel.swift in Sources */,
 				155CF80E21DE89F400AFB04B /* Message.swift in Sources */,
+				15BCCFAD21E3EA61000461FD /* NavigationController.swift in Sources */,
 				9A4E543921B0069B0033FEBF /* Feed.swift in Sources */,
 				9A76AF8321C02873003ED02C /* MessagesTableViewCell.swift in Sources */,
+				9A82FD8721E5030400566AE1 /* ChooseYourTeaScreen.swift in Sources */,
 				155CF81821DE92E800AFB04B /* UIImage+Additions.swift in Sources */,
 				15BC149E21C8101900768231 /* Firebase.swift in Sources */,
 				155CF81021DE8A9000AFB04B /* AppSettings.swift in Sources */,
@@ -531,7 +536,6 @@
 				9A1B11D521C43B39006956B7 /* Conversa.swift in Sources */,
 				9A4E543B21B006B30033FEBF /* Messages.swift in Sources */,
 				9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */,
-				9A1B11D821C43B39006956B7 /* User.swift in Sources */,
 				9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */,
 				9A1B11D721C43B39006956B7 /* Relato.swift in Sources */,
 				155CF81421DE92D400AFB04B /* UIView+Additions.swift in Sources */,
@@ -710,9 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5FPDGHW8G8;
 				DEVELOPMENT_TEAM = B5JURCMZMH;
-				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -732,9 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5FPDGHW8G8;
 				DEVELOPMENT_TEAM = B5JURCMZMH;
-				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

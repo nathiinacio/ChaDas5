@@ -19,16 +19,17 @@ struct Channel {
     self.id = newDoc.documentID
   }
   
-//  init?(document: QueryDocumentSnapshot) {
-//    let data = document.data()
-//
-//    guard let name = data["name"] as? String else {
-//      return nil
-//    }
-//
-//    id = document.documentID
-//    self.name = name
-//  }
+  init?(document: QueryDocumentSnapshot) {
+    let data = document.data()
+    
+
+    guard let name = data["ID"] as? String else {
+      return nil
+    }
+
+    id = document.documentID
+    self.name = name
+  }
   
 }
 

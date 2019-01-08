@@ -16,6 +16,8 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     //outlets
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var noStoryLabel: UILabel!
+    
     
     override func viewDidLoad() {
         
@@ -54,6 +56,19 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         let selectedCell = tableView.cellForRow(at: indexPath) as! MessagesTableViewCell
         selectedCell.contentView.backgroundColor = UIColor.basePink
         
+        let channel = ChannelsManager.instance.channels[indexPath.row]
+        let user = UserManager.instance.currentUser!
+        guard let choosedChannel = Channel(document: channel) else {
+            print("Bota o alerta do se fudeu")
+            return
+        }
+        let vc = ChatViewController(user: user, channel: choosedChannel)
+//        guard let nc = navigationController  else {
+//            print("Bota o alerta do se fudeu")
+//            return
+//        }
+        present(vc, animated: true, completion: nil)
+//        nc.pushViewController(vc, animated: true)
         
     }
     
