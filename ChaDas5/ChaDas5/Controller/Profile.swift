@@ -47,7 +47,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     
 
     @IBAction func editButton(_ sender: Any) {
-//        
+//
 //        pickYouTeaButton.setTitle("Editar", for: .normal)
 //        pickYouTeaButton.tintColor =  UIColor.buttonPink
 //        pickYouTeaButton.frame = CGRect(x: 15, y: 15, width: pickYouTeaButton.frame.width, height: pickYouTeaButton.frame.height)
@@ -55,11 +55,6 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 //        pickYouTeaButton.titleLabel?.font =  UIFont(name: "SF Compact Display Ultralight", size: 100)
     }
     
-    @IBAction func pickYourTeaButton(_ sender: Any) {
-        
-        
-        
-    }
     
     
     override func viewDidLoad() {
