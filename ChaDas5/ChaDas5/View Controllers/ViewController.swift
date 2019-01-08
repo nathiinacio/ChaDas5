@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
+    
+      
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -26,6 +28,17 @@ class ViewController: UIViewController {
 //        Relato(conteudo: "teste time stamp", autor: "testador do time stamp")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                 self.performSegue(withIdentifier: "profile", sender: self)
+            } else {
+                // No User is signed in. Show user the login screen
+            }
+        }
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         createNewAccountButtonAnimation()
