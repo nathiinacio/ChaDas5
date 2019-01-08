@@ -11,6 +11,8 @@ import Foundation
 import Firebase
 
 class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
    
     @IBOutlet weak var chooseYourTeaCollectionView: UICollectionView!
     @IBAction func dismissButton(_ sender: Any) {
@@ -18,6 +20,8 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     var selected:ChooseYourTeaCollectionViewCell?
+    private let db = Firestore.firestore()
+    
     var index: IndexPath?
     
     var pickYourTeaCell: ChooseYourTeaCollectionViewCell?
@@ -30,7 +34,7 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         chooseYourTeaCollectionView.allowsSelection = true
         chooseYourTeaCollectionView.bounds.inset(by: chooseYourTeaCollectionView.layoutMargins).width
         let nib = UINib.init(nibName: "ChooseYourTeaCollectionViewCell", bundle: nil)
-        self.chooseYourTeaCollectionView.register(nib, forCellWithReuseIdentifier: "ChooseYourTea")
+        self.chooseYourTeaCollectionView.register(nib, forCellWithReuseIdentifier: "PickYouTea")
     }
     
     //collection view settings
@@ -64,5 +68,26 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    func ok() {
+    guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
+    guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        db.collection("users").document("\(uid)").setData([
+            "username": yourTea
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                self.db.collection("users").document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
+                //self.performSegue(withIdentifier: "Feed", sender: self)
+                Auth.auth().currentUser?.reload()
+                self.dismiss()
+            }
+        }
+    }
+
+    
     
 }

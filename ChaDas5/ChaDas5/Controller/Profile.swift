@@ -39,6 +39,13 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @IBOutlet weak var imageCircle: UIButton!
     
     
+    @IBAction func pickYourTeaButton(_ sender: Any) {
+        performSegue(withIdentifier: "toChooseYourTea", sender: nil)
+        imageCircle.alpha = 1
+        profileImage.alpha = 1
+        pickYouTeaButton.alpha = 0
+    }
+    
     //actions
     @IBAction func logoutButton(_ sender: Any) {
 
@@ -49,12 +56,10 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     
 
     @IBAction func editButton(_ sender: Any) {
-//
-//        pickYouTeaButton.setTitle("Editar", for: .normal)
-//        pickYouTeaButton.tintColor =  UIColor.buttonPink
-//        pickYouTeaButton.frame = CGRect(x: 15, y: 15, width: pickYouTeaButton.frame.width, height: pickYouTeaButton.frame.height)
-//        pickYouTeaButton.titleLabel?.textAlignment = .center
-//        pickYouTeaButton.titleLabel?.font =  UIFont(name: "SF Compact Display Ultralight", size: 100)
+        imageCircle.alpha = 0.25
+        profileImage.alpha = 0.25
+        pickYouTeaButton.alpha = 1
+        
     }
     
     
@@ -78,6 +83,9 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         nameLabel.text = AppSettings.displayName
         profileImage.image = UIImage(named: AppSettings.displayName)
         profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
+        pickYouTeaButton.alpha = 0
+        
+        Auth.auth().currentUser?.reload()
         
     }
     
