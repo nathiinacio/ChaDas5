@@ -8,10 +8,6 @@
 
 import UIKit
 import Firebase
-<<<<<<< HEAD
-=======
-
->>>>>>> cfa702d1deb6cc5d7da51e5b43ebf41fed86ce43
 
 
 
@@ -43,21 +39,26 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     
     //actions
     @IBAction func logoutButton(_ sender: Any) {
-<<<<<<< HEAD
+
         
         try! Auth.auth().signOut()
         
     }
     
-=======
-    }    
->>>>>>> cfa702d1deb6cc5d7da51e5b43ebf41fed86ce43
+
     @IBAction func editButton(_ sender: Any) {
-        
-        
-        
+//        
+//        pickYouTeaButton.setTitle("Editar", for: .normal)
+//        pickYouTeaButton.tintColor =  UIColor.buttonPink
+//        pickYouTeaButton.frame = CGRect(x: 15, y: 15, width: pickYouTeaButton.frame.width, height: pickYouTeaButton.frame.height)
+//        pickYouTeaButton.titleLabel?.textAlignment = .center
+//        pickYouTeaButton.titleLabel?.font =  UIFont(name: "SF Compact Display Ultralight", size: 100)
     }
+    
     @IBAction func pickYourTeaButton(_ sender: Any) {
+        
+        
+        
     }
     
     

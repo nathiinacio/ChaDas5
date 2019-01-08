@@ -30,13 +30,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                 self.performSegue(withIdentifier: "profile", sender: self)
-            } else {
-                // No User is signed in. Show user the login screen
-            }
-        }
+       
     }
     
     
