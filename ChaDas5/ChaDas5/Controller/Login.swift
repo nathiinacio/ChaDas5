@@ -19,6 +19,37 @@ class Login: UIViewController {
     
     
     @IBAction func forgotPassword(_ sender: Any) {
+        
+        let forgotPasswordAlert = UIAlertController(title: "Esqueceu sua senha?", message: "Digite seu e-mail de login abaixo:", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = "Digite seu e-mail"
+        }
+        forgotPasswordAlert.view.tintColor = UIColor.buttonPink
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Redefinir senha", style: .default, handler: { (action) in
+            let resetEmail = forgotPasswordAlert.textFields?.first?.text
+            
+            Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                //Make sure you execute the following code on the main queue
+                DispatchQueue.main.async {
+                    //Use "if let" to access the error, if it is non-nil
+                    if let error = error {
+                        let resetFailedAlert = UIAlertController(title: "Redefinir senha falhou", message: "Não existe nenhuma conta com este e-mail", preferredStyle: .alert)
+                        resetFailedAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        resetFailedAlert.view.tintColor = UIColor.buttonPink
+                        self.present(resetFailedAlert, animated: true, completion: nil)
+                    } else {
+                        let resetEmailSentAlert = UIAlertController(title: "E-mail enviado com sucesso!", message: "Cheque seu e-mail para redefinir sua senha", preferredStyle: .alert)
+                        resetEmailSentAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        resetEmailSentAlert.view.tintColor = UIColor.buttonPink
+                        self.present(resetEmailSentAlert, animated: true, completion: nil)
+                    }
+                }
+            })
+        }))
+        //PRESENT ALERT
+        self.present(forgotPasswordAlert, animated: true, completion: nil)
+        
     }
     
     var activityView:UIActivityIndicatorView!

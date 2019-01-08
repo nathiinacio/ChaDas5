@@ -102,11 +102,20 @@
                     <connections>
                         <outlet property="createNewAccountButton" destination="9LX-75-H2R" id="jCG-ge-uXe"/>
                         <outlet property="loginButton" destination="saD-jf-j34" id="Cxv-uB-y2Y"/>
+                        <segue destination="Sdh-CE-JEz" kind="show" identifier="profile" id="qUU-Se-AfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-324" y="0.0"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="3Ks-2B-8yS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="Sdh-CE-JEz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83a-kS-naQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="-241"/>
         </scene>
         <!--CreateNewAccount-->
         <scene sceneID="i6W-fI-eQC">
