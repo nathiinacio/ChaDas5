@@ -92,5 +92,10 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         feedTableView.reloadData()
     }
     
+    func readedMyStories(stories: [QueryDocumentSnapshot]) {
+        print("not here")
+    }
+    
+    
 }
 
