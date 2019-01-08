@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 
@@ -24,7 +25,8 @@ import UIKit
 
 
 
-class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
+    
    
     var segmentedControl: CustomSegmentedContrl!
 
@@ -91,6 +93,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
+    }
+    
+    func readedStories(stories: [QueryDocumentSnapshot]) {
+        print("not here")
+    }
+    
+    func readedMyStories(stories: [QueryDocumentSnapshot]) {
+        print("readed my stories")
+        profileTableView.reloadData()
     }
     
     

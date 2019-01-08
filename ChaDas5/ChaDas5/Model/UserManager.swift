@@ -17,5 +17,6 @@ class UserManager {
     let currentUser = Auth.auth().currentUser
     
 
+
 }
 

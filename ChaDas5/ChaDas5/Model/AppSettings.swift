@@ -28,6 +28,7 @@ final class AppSettings {
                 defaults.removeObject(forKey: key)
             }
         }
+        
     }
     
 }
