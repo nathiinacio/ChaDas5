@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
+    
+      
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -26,6 +28,11 @@ class ViewController: UIViewController {
 //        Relato(conteudo: "teste time stamp", autor: "testador do time stamp")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         createNewAccountButtonAnimation()
