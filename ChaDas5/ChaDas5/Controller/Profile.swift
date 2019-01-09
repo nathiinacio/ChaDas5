@@ -30,20 +30,14 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
         profileTableView.reloadData()
         self.activityView.stopAnimating()
-        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
-        
-        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count == 0 {
-            self.noStoryLabel.alpha = 1
-            self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
-        }
-        
     }
 
 
 
     var segmentedControl: CustomSegmentedContrl!
-     var selectedIndex:Int?
+    var selectedIndex:Int?
     var currentSegment:Int = 0
+    private let refreshControl = UIRefreshControl()
 
     //outlets
     @IBOutlet weak var editButton: UIButton!
@@ -144,6 +138,9 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         self.currentSegment = 0
         
         self.profileTableView.isUserInteractionEnabled = true
+        profileTableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor.basePink
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
       
     }
 
@@ -156,7 +153,25 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         profileTableView.reloadData()
         self.currentSegment = sender.selectedSegmentIndex
         print(currentSegment)
+        label()
 
+    }
+    
+    func label() {
+        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
+        self.noStoryLabel.text = labelsText[self.currentSegment]
+        
+        if currentSegment == 0 && MyStoriesManager.instance.relatosPassados.count == 0 {
+            self.noStoryLabel.alpha = 1
+        }
+        if currentSegment == 1  && MyStoriesManager.instance.relatosAtuais.count == 0 {
+            self.noStoryLabel.alpha = 1
+        }
+        else {
+            self.noStoryLabel.alpha = 0
+        }
+        print(self.noStoryLabel.text)
+        print(self.noStoryLabel.alpha)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -189,19 +204,6 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     func readedStories(stories: [QueryDocumentSnapshot]) {
         print("not here")
     }
-
-//    func readedMyStories(stories: [QueryDocumentSnapshot]) {
-//        print("readed my stories")
-//        profileTableView.reloadData()
-//        activityView.stopAnimating()
-//
-//        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
-//
-//        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count == 0 {
-//            self.noStoryLabel.alpha = 1
-//             self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
-//        }
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStory" {
@@ -217,6 +219,13 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
                 
             }
         }
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+
+        MyStoriesManager.instance.loadMyStories(requester: self)
+        self.refreshControl.endRefreshing()
+        
     }
 
 
