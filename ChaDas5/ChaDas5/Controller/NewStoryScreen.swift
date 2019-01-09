@@ -17,6 +17,7 @@ class NewStoryScreen: UIViewController, UITextViewDelegate {
     
     
     
+    
     //actions
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()
@@ -30,11 +31,32 @@ class NewStoryScreen: UIViewController, UITextViewDelegate {
     @IBOutlet weak var newStoryTextView: UITextView!
     
     override func viewDidLoad() {
+        
         hideKeyboardWhenTappedAround()
-//        newStoryTextView.addGestureRecognizer(tap)
+        
+        //código novo
+        
+        
+        let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myTapAction))
+        
+        mytapGestureRecognizer.numberOfTapsRequired = 1
+        
+        self.newStoryTextView.addGestureRecognizer(mytapGestureRecognizer)
+        
+
+        
     }
     
-
+    
+    @objc func myTapAction(recognizer: UITapGestureRecognizer) {
+        
+        print("TAPPED")
+        newStoryLabel.text = ""
+        
+    
+    }
+    
+    // acaba aqui
     
     @objc private func dismiss() {
         self.dismiss(animated: true, completion: nil)
