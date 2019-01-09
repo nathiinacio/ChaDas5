@@ -42,8 +42,9 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
 
     var segmentedControl: CustomSegmentedContrl!
-     var selectedIndex:Int?
+    var selectedIndex:Int?
     var currentSegment:Int = 0
+    var bool =  false
 
     //outlets
     @IBOutlet weak var editButton: UIButton!
@@ -62,6 +63,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         imageCircle.alpha = 1
         profileImage.alpha = 1
         pickYouTeaButton.alpha = 0
+        bool = false
     }
     
    
@@ -94,10 +96,20 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
 
     @IBAction func editButton(_ sender: Any) {
-        
+        if bool == false{
         imageCircle.alpha = 0.25
         profileImage.alpha = 0.25
         pickYouTeaButton.alpha = 1
+        bool = true
+            
+        }
+        else{
+            
+            imageCircle.alpha = 1
+            profileImage.alpha = 1
+            pickYouTeaButton.alpha = 0
+            bool = false
+        }
         
 
     }
@@ -144,7 +156,9 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         self.currentSegment = 0
         
         self.profileTableView.isUserInteractionEnabled = true
-      
+        
+        bool =  false
+        
     }
 
 
