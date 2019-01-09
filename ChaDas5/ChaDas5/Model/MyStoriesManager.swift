@@ -15,11 +15,9 @@ class MyStoriesManager {
 
     var relatosPassados = [QueryDocumentSnapshot]()
     var relatosAtuais = [QueryDocumentSnapshot]()
-    var todosOsDados:[[QueryDocumentSnapshot]] {
-        return [relatosPassados, relatosAtuais]
-    }
     
     func loadMyStories(requester:Manager) {
+        emptyArrays()
         let dbRef = FBRef.db.collection("stories")
         dbRef.getDocuments { (querySnapshot, err) in
             if let err = err {
@@ -39,11 +37,15 @@ class MyStoriesManager {
                             self.relatosPassados.append(document)
                         }
                 }
-                print("loaded my stories")
-                requester.readedMyStories(stories: self.todosOsDados)
+                requester.readedMyStories(stories: [self.relatosPassados, self.relatosAtuais])
             }
         }
     }
+    }
+    
+    func emptyArrays() {
+        self.relatosAtuais = []
+        self.relatosPassados = []
     }
     
     
