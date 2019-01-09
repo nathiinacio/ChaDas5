@@ -73,6 +73,8 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         if self.selectedStory?.data()["autor"] as? String == UserManager.instance.currentUser?.uid {
             chatButton.isEnabled = false
             
+        } else {
+            archiveButton.isEnabled = false
         }
         storyTextView.isEditable = false
     }

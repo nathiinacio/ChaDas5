@@ -34,6 +34,8 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
 
     var segmentedControl: CustomSegmentedContrl!
+     var selectedIndex:Int?
+    var currentSegment:Int = 0
 
     //outlets
     @IBOutlet weak var editButton: UIButton!
@@ -115,6 +117,10 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
         Auth.auth().currentUser?.reload()
         MyStoriesManager.instance.loadMyStories(requester: self)
+        
+        self.currentSegment = 0
+        
+        self.profileTableView.isUserInteractionEnabled = true
       
     }
 
@@ -125,8 +131,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
         dadosDaTableView = MyStoriesManager.instance.todosOsDados[sender.selectedSegmentIndex]
         profileTableView.reloadData()
+        self.currentSegment = sender.selectedSegmentIndex
+        print(currentSegment)
 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        self.selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showStory", sender: nil)
     }
 
     //table view setting
@@ -145,12 +158,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
             return profileCell
         }
         profileCell.profileCellTextField.text = conteudo
+        profileCell.isUserInteractionEnabled = true
         return profileCell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
     }
+    
+    
 
     func readedStories(stories: [QueryDocumentSnapshot]) {
         print("not here")
@@ -159,6 +175,22 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     func readedMyStories(stories: [QueryDocumentSnapshot]) {
         print("readed my stories")
         profileTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showStory" {
+            if let destinationVC = segue.destination as? StoryScreen{
+                guard let selected = self.selectedIndex else {
+                    return
+                }
+                if currentSegment == 0 {
+                    destinationVC.selectedStory = MyStoriesManager.instance.relatosPassados[selected]
+                } else {
+                    destinationVC.selectedStory = MyStoriesManager.instance.relatosAtuais[selected]
+                }
+                
+            }
+        }
     }
 
 
