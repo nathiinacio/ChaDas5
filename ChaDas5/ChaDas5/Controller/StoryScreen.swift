@@ -50,6 +50,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         
         let arquivar = UIAlertAction(title: "Arquivar relato", style: .default, handler: { (action) -> Void in
             FBRef.db.collection("stories").document(id).updateData(["status" : "archived"])
+            self.dismiss()
         })
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
