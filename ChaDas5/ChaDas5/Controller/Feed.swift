@@ -12,11 +12,13 @@ import Firebase
 
 class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
     
+    
 
     
     var xibCell:FeedTableViewCell?
 
     var selectedIndex:Int?
+    private let refreshControl = UIRefreshControl()
 
     //outlets
     @IBOutlet weak var addButton: UIButton!
@@ -32,16 +34,29 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         feedTableView.dataSource = self
         feedTableView.delegate = self
         feedTableView.allowsSelection = true
+        
+        feedTableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor.basePink
+        
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
     
         RelatoManager.instance.loadStories(requester: self)
         
+        feedTableView.reloadData()
+
         
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if RelatoManager.instance.stories.count == 0 {
+            self.noStoryLabel.text = "Ainda não temos relatos postados..."
+            
+        } else {
+            self.noStoryLabel.alpha = 0
+        }
        return RelatoManager.instance.stories.count
     }
 
@@ -80,6 +95,8 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
 
     }
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "storyScreen" {
             print("go to Story")
@@ -94,10 +111,16 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         feedTableView.reloadData()
     }
     
-    func readedMyStories(stories: [QueryDocumentSnapshot]) {
+    func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
         print("not here")
     }
     
+    
+    @objc private func refreshData(_ sender: Any) {
+        RelatoManager.instance.loadStories(requester: self)
+        self.refreshControl.endRefreshing()
+        
+    }
     
 }
 

@@ -139,13 +139,13 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     
     //collection view settings
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DAO.instance.teas.count
+        return UserManager.instance.teas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let pickYouTeaCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickYouTea", for: indexPath) as! ChooseYourTeaCollectionViewCell
-        pickYouTeaCell.chooseYourTeaLabel.text = DAO.instance.teas[indexPath.item]
-        pickYouTeaCell.chooseYourteaImage.image = UIImage(named:  DAO.instance.teas[indexPath.item])
+        pickYouTeaCell.chooseYourTeaLabel.text = UserManager.instance.teas[indexPath.item]
+        pickYouTeaCell.chooseYourteaImage.image = UIImage(named:  UserManager.instance.teas[indexPath.item])
         pickYouTeaCell.chooseYourteaImage.contentMode = UIView.ContentMode.scaleAspectFit
         return pickYouTeaCell
     }
@@ -159,7 +159,6 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         selectedCell.contentView.backgroundColor = UIColor.basePink
         self.selected = selectedCell
         self.index = collectionView.indexPath(for: selected!)
-        print("foi")
     
     }
     

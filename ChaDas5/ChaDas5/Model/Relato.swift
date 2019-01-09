@@ -14,6 +14,7 @@ class Relato{
     var conteudo:String
     var autor:String
     var data:Date
+    var status:String
     var id:String {
         return data.keyString+autor
     }
@@ -22,6 +23,7 @@ class Relato{
         self.conteudo = conteudo
         self.autor = autor
         self.data = Date()
+        self.status = "active"
         fbSave()
     }
     
@@ -30,12 +32,16 @@ class Relato{
         result["conteudo"] = self.conteudo
         result["autor"] = self.autor
         result["data"] = self.data.keyString
+        result["status"] = self.status
         return result
     }
     
 
     func fbSave() {
-        FBRef.db.collection("Feed").document(self.id).setData(self.asDictionary)
+        FBRef.db.collection("stories").document(self.id).setData(self.asDictionary)
+        guard let userID = UserManager.instance.currentUser?.uid else {
+            return
+        }
     }
     
     

@@ -111,7 +111,7 @@
                                             <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="E6a-j2-m7h" kind="show" id="zGa-55-5xQ"/>
+                                            <action selector="pickYourTeaButton:" destination="Ib0-Co-gM1" eventType="touchUpInside" id="kHY-0f-W52"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,6 +141,7 @@
                         <outlet property="pickYouTeaButton" destination="ROh-BM-ggp" id="MAI-GN-Qbv"/>
                         <outlet property="profileImage" destination="LOX-oQ-RBh" id="n1y-wT-qoc"/>
                         <outlet property="profileTableView" destination="S3a-Mc-Id0" id="Uxp-QP-TXR"/>
+                        <segue destination="E6a-j2-m7h" kind="show" identifier="toChooseYourTea" id="G2q-pK-9Lc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-s6-W2i" userLabel="First Responder" sceneMemberID="firstResponder"/>

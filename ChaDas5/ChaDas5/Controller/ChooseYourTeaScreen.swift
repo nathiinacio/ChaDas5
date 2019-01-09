@@ -11,6 +11,8 @@ import Foundation
 import Firebase
 
 class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
    
     @IBOutlet weak var chooseYourTeaCollectionView: UICollectionView!
     @IBAction func dismissButton(_ sender: Any) {
@@ -18,6 +20,8 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     var selected:ChooseYourTeaCollectionViewCell?
+    private let db = Firestore.firestore()
+    
     var index: IndexPath?
     
     var pickYourTeaCell: ChooseYourTeaCollectionViewCell?
@@ -30,18 +34,18 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         chooseYourTeaCollectionView.allowsSelection = true
         chooseYourTeaCollectionView.bounds.inset(by: chooseYourTeaCollectionView.layoutMargins).width
         let nib = UINib.init(nibName: "ChooseYourTeaCollectionViewCell", bundle: nil)
-        self.chooseYourTeaCollectionView.register(nib, forCellWithReuseIdentifier: "ChooseYourTea")
+        self.chooseYourTeaCollectionView.register(nib, forCellWithReuseIdentifier: "PickYouTea")
     }
     
     //collection view settings
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DAO.instance.teas.count
+        return UserManager.instance.teas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let pickYouTeaCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickYouTea", for: indexPath) as! ChooseYourTeaCollectionViewCell
-        pickYouTeaCell.chooseYourTeaLabel.text = DAO.instance.teas[indexPath.item]
-        pickYouTeaCell.chooseYourteaImage.image = UIImage(named:  DAO.instance.teas[indexPath.item])
+        pickYouTeaCell.chooseYourTeaLabel.text = UserManager.instance.teas[indexPath.item]
+        pickYouTeaCell.chooseYourteaImage.image = UIImage(named:  UserManager.instance.teas[indexPath.item])
         pickYouTeaCell.chooseYourteaImage.contentMode = UIView.ContentMode.scaleAspectFit
         return pickYouTeaCell
     }
@@ -64,5 +68,26 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    func ok() {
+    guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
+    guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        db.collection("users").document("\(uid)").setData([
+            "username": yourTea
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                self.db.collection("users").document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
+                //self.performSegue(withIdentifier: "Feed", sender: self)
+                Auth.auth().currentUser?.reload()
+                self.dismiss()
+            }
+        }
+    }
+
+    
     
 }

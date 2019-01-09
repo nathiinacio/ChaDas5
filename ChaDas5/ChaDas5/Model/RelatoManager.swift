@@ -14,7 +14,7 @@ protocol Manager {
     
     func readedStories(stories:[QueryDocumentSnapshot])
     
-    func readedMyStories(stories:[QueryDocumentSnapshot])
+    func readedMyStories(stories:[[QueryDocumentSnapshot]])
     
 }
 
@@ -25,38 +25,27 @@ class RelatoManager {
     
     var stories = [QueryDocumentSnapshot]()
     
-    var myCurrentStories = [QueryDocumentSnapshot]()
-    
     func loadStories(requester:Manager) {
-        let docRef = FBRef.db.collection("Feed")
+        self.stories = []
+
+        let docRef = FBRef.db.collection("stories")
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Document error")
             } else {
                 for document in querySnapshot!.documents {
-                    self.stories.append(document)
+                    guard let status = document.data()["status"] as? String else {
+                        return
+                    }
+                    if status == "active" {
+                        self.stories.append(document)
+                    }
                 }
                 print("loaded stories")
                 requester.readedStories(stories: self.stories)
             }
         }
     }
-    
-    func loadMyCurrentStories(requester:Manager) {
-        let userRef = FBRef.db.collection("user").document((UserManager.instance.currentUser?.uid)!).collection("myStories")
-        userRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Document error")
-            } else {
-                for document in querySnapshot!.documents {
-                    self.myCurrentStories.append(document)
-                }
-                print("loaded my stories")
-                requester.readedMyStories(stories: self.myCurrentStories)
-            }
-        }
-    }
-    
     
     
 }

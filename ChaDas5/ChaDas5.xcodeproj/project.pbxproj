@@ -53,7 +53,7 @@
 		9A76AF8321C02873003ED02C /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8121C02873003ED02C /* MessagesTableViewCell.swift */; };
 		9A76AF8421C02873003ED02C /* MessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8221C02873003ED02C /* MessagesTableViewCell.xib */; };
 		9A76AF8A21C034F8003ED02C /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8821C034F8003ED02C /* FeedTableViewCell.xib */; };
-		9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8C21C038D9003ED02C /* DAO.swift */; };
+		9A76AF8D21C038D9003ED02C /* MyStoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8C21C038D9003ED02C /* MyStoriesManager.swift */; };
 		9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */; };
 		9A76AF9121C04B80003ED02C /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */; };
 		9A82FD8721E5030400566AE1 /* ChooseYourTeaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82FD8621E5030400566AE1 /* ChooseYourTeaScreen.swift */; };
@@ -128,7 +128,7 @@
 		9A76AF8121C02873003ED02C /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		9A76AF8221C02873003ED02C /* MessagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesTableViewCell.xib; sourceTree = "<group>"; };
 		9A76AF8821C034F8003ED02C /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
-		9A76AF8C21C038D9003ED02C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		9A76AF8C21C038D9003ED02C /* MyStoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoriesManager.swift; sourceTree = "<group>"; };
 		9A76AF8E21C04B80003ED02C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9A76AF8F21C04B80003ED02C /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		9A82FD8621E5030400566AE1 /* ChooseYourTeaScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourTeaScreen.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 				155CF80F21DE8A9000AFB04B /* AppSettings.swift */,
 				155CF80D21DE89F400AFB04B /* Message.swift */,
 				155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */,
-				9A76AF8C21C038D9003ED02C /* DAO.swift */,
+				9A76AF8C21C038D9003ED02C /* MyStoriesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */,
-				9A76AF8D21C038D9003ED02C /* DAO.swift in Sources */,
+				9A76AF8D21C038D9003ED02C /* MyStoriesManager.swift in Sources */,
 				E23901B521CADDA8006B3CF3 /* SplashScreen.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,
 				9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */,
@@ -714,7 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -734,7 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5JURCMZMH;
+				DEVELOPMENT_TEAM = 32H23754C8;
 				INFOPLIST_FILE = "$(SRCROOT)/ChaDas5/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

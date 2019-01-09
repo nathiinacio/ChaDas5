@@ -16,6 +16,7 @@ class UserManager {
     
     let currentUser = Auth.auth().currentUser
     
+    let teas = ["Gengibre", "Frutas Vermelhas", "Erva Doce", "Camomila", "Capim Limão", "Chá Preto", "Hibisco", "Hortelã"]
 
 
 }
