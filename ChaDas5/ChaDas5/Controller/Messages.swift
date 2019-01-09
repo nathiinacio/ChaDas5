@@ -69,12 +69,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
             return
         }
         let vc = ChatViewController(user: user, channel: choosedChannel)
-//        guard let nc = navigationController  else {
-//            print("Bota o alerta do se fudeu")
-//            return
-//        }
         present(vc, animated: true, completion: nil)
-//        nc.pushViewController(vc, animated: true)
         
     }
     

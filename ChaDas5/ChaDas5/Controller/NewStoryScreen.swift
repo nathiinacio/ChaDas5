@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewStoryScreen: UIViewController {
+class NewStoryScreen: UIViewController, UITextViewDelegate {
     
     //outlets
     
@@ -31,14 +31,10 @@ class NewStoryScreen: UIViewController {
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
-//        textfield.addTarget(self, action: #selector(myTargetFunction), for: UIControlEvents.touchDown)
-
-        
+//        newStoryTextView.addGestureRecognizer(tap)
     }
     
-    @objc func myTargetFunction(textField: UITextField) {
-        newStoryLabel.alpha = 0
-    }
+
     
     @objc private func dismiss() {
         self.dismiss(animated: true, completion: nil)
