@@ -92,8 +92,8 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
             } else {
                 print("Document successfully written!")
                 self.db.collection("users").document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
-                //self.performSegue(withIdentifier: "Feed", sender: self)
                 Auth.auth().currentUser?.reload()
+                AppSettings.displayName = yourTea
                 self.dismiss()
             }
         }

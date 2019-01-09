@@ -105,10 +105,6 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         let nib = UINib.init(nibName: "ProfileTableViewCell", bundle: nil)
         self.profileTableView.register(nib, forCellReuseIdentifier: "ProfileCell")
 
-        nameLabel.text = AppSettings.displayName
-        profileImage.image = UIImage(named: AppSettings.displayName)
-        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
-        pickYouTeaButton.alpha = 0
 
         activityView = UIActivityIndicatorView(style: .gray)
         activityView.color = UIColor.buttonPink
@@ -134,8 +130,11 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         refreshControl.tintColor = UIColor.buttonPink
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
 
-      bool =  false
+        bool =  false
+        
+        
     }
+    
 
     //segmented control adjustments
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
@@ -143,6 +142,13 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         profileTableView.reloadData()
         label()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        nameLabel.text = AppSettings.displayName
+        profileImage.image = UIImage(named: AppSettings.displayName)
+        profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
+        pickYouTeaButton.alpha = 0
     }
 
     func label() {
