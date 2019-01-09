@@ -47,16 +47,15 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         guard let id = selectedStory?.documentID else {
             return
         }
+        let alert = UIAlertController(title: "Deseja mesmo arquivar esse relato?", message: "Seus relatos arquivados só aparecem no seu perfil e não aparecerão mais para outras pessoas.", preferredStyle: .alert)
         
         let arquivar = UIAlertAction(title: "Arquivar relato", style: .default, handler: { (action) -> Void in
             FBRef.db.collection("stories").document(id).updateData(["status" : "archived"])
         })
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
-            self.dismiss()
+            alert.dismiss(animated: true, completion: nil)
         }
-        
-        let alert = UIAlertController(title: "Deseja mesmo arquivar esse relato?", message: "Seus relatos arquivados só aparecem no seu perfil e não aparecerão mais para outras pessoas.", preferredStyle: .alert)
         alert.addAction(arquivar)
         alert.addAction(cancelar)
         self.present(alert, animated: true, completion: nil)
