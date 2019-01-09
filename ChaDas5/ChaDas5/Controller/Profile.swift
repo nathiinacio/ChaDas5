@@ -10,28 +10,7 @@ import UIKit
 import Firebase
 
 
-
-
-//struct MyStory {
-//    var postDate:Date
-//    var title:String
-//    var description:String
-//}
-//
-//var myStories:[MyStory] = []
-//
-//  var datasources = [myStories]
-
-
-
 class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
-
-
-    func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
-        profileTableView.reloadData()
-        self.activityView.stopAnimating()
-    }
-
 
 
     var segmentedControl: CustomSegmentedContrl!
@@ -130,8 +109,8 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         activityView = UIActivityIndicatorView(style: .gray)
         activityView.color = UIColor.buttonPink
         activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
-        activityView.center = segmentedControl.center
-        activityView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        activityView.center = profileTableView.center
+        activityView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
 
         noStoryLabel.alpha = 0
 
@@ -148,7 +127,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
         self.profileTableView.isUserInteractionEnabled = true
         profileTableView.refreshControl = refreshControl
-        refreshControl.tintColor = UIColor.basePink
+        refreshControl.tintColor = UIColor.buttonPink
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
 
         bool =  false
@@ -157,15 +136,10 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     }
     
 
-
-    var dadosDaTableView = MyStoriesManager.instance.todosOsDados[0]
-
     //segmented control adjustments
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
-        dadosDaTableView = MyStoriesManager.instance.todosOsDados[sender.selectedSegmentIndex]
-        profileTableView.reloadData()
         self.currentSegment = sender.selectedSegmentIndex
-        print(currentSegment)
+        profileTableView.reloadData()
         label()
 
     }
@@ -193,6 +167,13 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         print(self.noStoryLabel.text)
         print(self.noStoryLabel.alpha)
     }
+    
+    func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
+        profileTableView.reloadData()
+        self.activityView.stopAnimating()
+        label()
+    }
+
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedIndex = indexPath.row
@@ -201,13 +182,23 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
     //table view setting
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count
+        if currentSegment == 0 {
+            return MyStoriesManager.instance.relatosPassados.count
+        } else {
+            return MyStoriesManager.instance.relatosAtuais.count
+        }
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
-        let docID = MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex][indexPath.row]
-        guard let conteudo = docID.data()["conteudo"] as? String else {
+        let docId:QueryDocumentSnapshot
+        if currentSegment == 0 {
+            docId = MyStoriesManager.instance.relatosPassados[indexPath.row]
+        } else {
+            docId = MyStoriesManager.instance.relatosAtuais[indexPath.row]
+        }
+        guard let conteudo = docId.data()["conteudo"] as? String else {
             return profileCell
         }
         profileCell.profileCellTextField.text = conteudo
@@ -242,8 +233,8 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     }
 
     @objc private func refreshData(_ sender: Any) {
-
         MyStoriesManager.instance.loadMyStories(requester: self)
+        profileTableView.reloadData()
         self.refreshControl.endRefreshing()
 
     }

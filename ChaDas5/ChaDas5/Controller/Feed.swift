@@ -37,7 +37,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         feedTableView.allowsSelection = true
         
         feedTableView.refreshControl = refreshControl
-        refreshControl.tintColor = UIColor.basePink
+        refreshControl.tintColor = UIColor.buttonPink
         
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)

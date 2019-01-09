@@ -31,7 +31,13 @@ class NewStoryScreen: UIViewController {
     
     override func viewDidLoad() {
         hideKeyboardWhenTappedAround()
+//        textfield.addTarget(self, action: #selector(myTargetFunction), for: UIControlEvents.touchDown)
+
         
+    }
+    
+    @objc func myTargetFunction(textField: UITextField) {
+        newStoryLabel.alpha = 0
     }
     
     @objc private func dismiss() {
