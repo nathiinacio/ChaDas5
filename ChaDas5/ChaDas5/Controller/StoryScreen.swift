@@ -33,6 +33,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     
     //outlets
     @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var archiveButton: UIButton!
     
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()
@@ -40,9 +41,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     @IBOutlet weak var storyTextView: UITextView!
     @IBAction func chatButton(_ sender: Any) {
         ChannelsManager.instance.createChannel(requester: self)
-    }
-    
-    
+    }  
     @IBAction func archiveButton(_ sender: Any) {
         guard let id = selectedStory?.documentID else {
             return

@@ -142,11 +142,20 @@
                         <outlet property="profileImage" destination="LOX-oQ-RBh" id="n1y-wT-qoc"/>
                         <outlet property="profileTableView" destination="S3a-Mc-Id0" id="Uxp-QP-TXR"/>
                         <segue destination="E6a-j2-m7h" kind="show" identifier="toChooseYourTea" id="G2q-pK-9Lc"/>
+                        <segue destination="vqG-2j-0aZ" kind="show" identifier="showStory" id="z6h-lP-Mu1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-s6-W2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-516" y="-44.527736131934034"/>
+        </scene>
+        <!--StoryScreen-->
+        <scene sceneID="yOd-hd-8js">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoryScreen" id="vqG-2j-0aZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mG8-aC-rBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="-626"/>
         </scene>
         <!--Main-->
         <scene sceneID="wFt-MS-eJ8">
@@ -238,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzu-Ae-YVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.80000000000001" y="-43.628185907046479"/>
+            <point key="canvasLocation" x="391" y="-44"/>
         </scene>
         <!--Feed-->
         <scene sceneID="F3b-rX-7s7">

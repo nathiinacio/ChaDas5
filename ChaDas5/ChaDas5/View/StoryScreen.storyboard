@@ -93,7 +93,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="archiveButton:" destination="DY3-Pf-arH" eventType="touchUpInside" id="h0R-Go-tLZ"/>
+                                    <action selector="archiveButton:" destination="DY3-Pf-arH" eventType="touchUpInside" id="BmY-gf-lE1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,6 +111,7 @@
                         <viewLayoutGuide key="safeArea" id="hw4-sL-ogr"/>
                     </view>
                     <connections>
+                        <outlet property="archiveButton" destination="svz-Z4-Yhg" id="mdC-cR-Qbl"/>
                         <outlet property="chatButton" destination="dD1-BE-gBN" id="EMQ-Nd-DgF"/>
                         <outlet property="storyTextView" destination="FMQ-7Z-TuW" id="QgI-u8-BI2"/>
                     </connections>
