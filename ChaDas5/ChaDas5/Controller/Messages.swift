@@ -41,7 +41,12 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //falta o outlet
+        if ChannelsManager.instance.channels.count == 0 {
+            self.noStoryLabel.text = "Você não possui mensagens ainda..."
+            
+        } else {
+            self.noStoryLabel.alpha = 0
+        }
         return ChannelsManager.instance.channels.count
     }
     
