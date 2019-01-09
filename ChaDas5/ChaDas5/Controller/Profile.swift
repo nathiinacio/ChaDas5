@@ -46,6 +46,8 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @IBOutlet weak var pickYouTeaButton: UIButton!
     @IBOutlet weak var imageCircle: UIButton!
 
+    var activityView:UIActivityIndicatorView!
+    
 
     @IBAction func pickYourTeaButton(_ sender: Any) {
         performSegue(withIdentifier: "toChooseYourTea", sender: nil)
@@ -114,6 +116,19 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         profileImage.image = UIImage(named: AppSettings.displayName)
         profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
         pickYouTeaButton.alpha = 0
+        
+        activityView = UIActivityIndicatorView(style: .gray)
+        activityView.color = UIColor.buttonPink
+        activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
+        activityView.center = segmentedControl.center
+        activityView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        
+        noStoryLabel.alpha = 0
+        
+        
+        view.addSubview(activityView)
+        
+        activityView.startAnimating()
 
         Auth.auth().currentUser?.reload()
         MyStoriesManager.instance.loadMyStories(requester: self)
@@ -143,11 +158,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     }
 
     //table view setting
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
-        self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
-        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count != 0 {
-            self.noStoryLabel.alpha = 0
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count
     }
 
@@ -175,6 +186,14 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     func readedMyStories(stories: [QueryDocumentSnapshot]) {
         print("readed my stories")
         profileTableView.reloadData()
+        activityView.stopAnimating()
+        
+        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
+        
+        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count == 0 {
+            self.noStoryLabel.alpha = 1
+             self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

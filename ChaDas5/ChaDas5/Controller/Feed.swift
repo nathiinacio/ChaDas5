@@ -14,6 +14,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     
     
 
+    var activityView:UIActivityIndicatorView!
     
     var xibCell:FeedTableViewCell?
 
@@ -41,22 +42,29 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         let nib = UINib.init(nibName: "FeedTableViewCell", bundle: nil)
         self.feedTableView.register(nib, forCellReuseIdentifier: "FeedCell")
+        
+        activityView = UIActivityIndicatorView(style: .gray)
+        activityView.color = UIColor.buttonPink
+        activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
+        activityView.center = feedTableView.center
+        activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+      
+       
+        
+        view.addSubview(activityView)
+        
+        activityView.startAnimating()
+        
     
         RelatoManager.instance.loadStories(requester: self)
         
         feedTableView.reloadData()
-
+        noStoryLabel.alpha = 0
         
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if RelatoManager.instance.stories.count == 0 {
-            self.noStoryLabel.text = "Ainda não temos relatos postados..."
-            
-        } else {
-            self.noStoryLabel.alpha = 0
-        }
        return RelatoManager.instance.stories.count
     }
 
@@ -109,6 +117,12 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     func readedStories(stories: [QueryDocumentSnapshot]) {
         print("got stories")
         feedTableView.reloadData()
+        activityView.stopAnimating()
+        if RelatoManager.instance.stories.count == 0 {
+            self.noStoryLabel.alpha = 1
+            self.noStoryLabel.text = "Ainda não temos relatos postados..."
+            
+        }
     }
     
     func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
