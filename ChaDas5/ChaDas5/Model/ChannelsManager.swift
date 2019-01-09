@@ -28,11 +28,6 @@ class ChannelsManager {
     func createChannel(requester:ChannelsManagerProtocol) {
         let channel = Channel(name: "channel")
         let channelRef = FBRef.db.collection("channels")
-        channelRef.addDocument(data: channel.representation) { error in
-            if let e = error {
-                print("Error saving channel: \(e.localizedDescription)")
-            }
-        }
         print("channel created")
         print(channel.id!)
         self.newChannelID = channel.id!

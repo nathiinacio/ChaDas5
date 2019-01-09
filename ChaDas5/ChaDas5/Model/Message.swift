@@ -83,6 +83,10 @@ struct Message: MessageType {
 }
 
 extension Message: DatabaseRepresentation {
+    var asDictionary: [String : Any] {
+        return [:]
+    }
+    
     
     var representation: [String : Any] {
         var rep: [String : Any] = [

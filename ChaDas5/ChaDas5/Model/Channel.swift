@@ -10,40 +10,54 @@ import FirebaseFirestore
 
 struct Channel {
   
-  var id: String?
-  let name: String
+    var id: String?
+    let name: String
+    var firstUser:String?
+    var created:String?
   
-  init(name: String) {
-    self.name = name
-    let newDoc = FBRef.db.collection("channels").addDocument(data: self.representation)
-    self.id = newDoc.documentID
-  }
-  
-  init?(document: QueryDocumentSnapshot) {
-    let data = document.data()
-    
-
-    guard let name = data["ID"] as? String else {
-      return nil
+    init(name: String) {
+        self.name = name
+        self.firstUser = (UserManager.instance.currentUser?.uid)
+        self.created = Date().keyString
+        self.id = self.channelID
+        let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
     }
-
-    id = document.documentID
-    self.name = name
-  }
   
-}
+    init?(document: QueryDocumentSnapshot) {
+        let data = document.data()
+        guard let name = data["ID"] as? String else {
+            return nil
+            
+        }
+        id = document.documentID
+        self.name = name
+        guard let created = data["created"] as? String else {
+            return nil
+        }
+        self.created = created
+    }
+  }
 
 extension Channel: DatabaseRepresentation {
-  
-  var representation: [String : Any] {
-    var rep = ["name": name]
     
-    if let id = id {
-      rep["id"] = id
+    var asDictionary:[String:Any] {
+        var result:[String:Any] = [:]
+        result["firstUser"] = self.firstUser
+        result["name"] = self.name
+        result["created"] = self.created
+        return result
     }
     
-    return rep
-  }
+    var channelID:String {
+        guard let first = self.firstUser else {
+            return "user_error"
+        }
+        guard let created = self.created else {
+            return "data_non_avaliable"
+        }
+        return first+created
+    }
+    
   
 }
 

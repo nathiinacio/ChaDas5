@@ -10,22 +10,13 @@ import UIKit
 import Firebase
 
 
-
-
-
-//struct MyStory {
-//    var postDate:Date
-//    var title:String
-//    var description:String
-//}
-//
-//var myStories:[MyStory] = []
-//
-//  var datasources = [myStories]
-
-
-
 class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
+    
+    
+    func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
+        profileTableView.reloadData()
+    }
+    
     
    
     var segmentedControl: CustomSegmentedContrl!
@@ -64,30 +55,36 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         nameLabel.text = AppSettings.displayName
         profileImage.image = UIImage(named: AppSettings.displayName)
         profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
-        
+        MyStoriesManager.instance.loadMyStories(requester: self)
     }
     
    
-    var dadosDaTableView = DAO.instance.todosOsDados[0]
+    var dadosDaTableView = MyStoriesManager.instance.todosOsDados[0]
 
     //segmented control adjustments
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
-        
-        dadosDaTableView = DAO.instance.todosOsDados[sender.selectedSegmentIndex]
+        dadosDaTableView = MyStoriesManager.instance.todosOsDados[sender.selectedSegmentIndex]
         profileTableView.reloadData()
 
         
     }
     
     //table view setting
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DAO.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
+        self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
+        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count != 0 {
+            self.noStoryLabel.alpha = 0
+        }
+        return MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
-        profileCell.profileCellTextField.text = DAO.instance.todosOsDados[segmentedControl.selectedSegmentIndex][indexPath.row]
-
+        let docID = MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex][indexPath.row]
+        guard let conteudo = docID.data()["conteudo"] as? String else {
+            return profileCell
+        }
+        profileCell.profileCellTextField.text = conteudo
         return profileCell
     }
     

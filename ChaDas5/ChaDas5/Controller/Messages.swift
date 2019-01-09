@@ -39,6 +39,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //falta o outlet
         return ChannelsManager.instance.channels.count
     }
     
