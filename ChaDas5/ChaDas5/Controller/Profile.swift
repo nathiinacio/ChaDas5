@@ -29,11 +29,16 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
     func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
         profileTableView.reloadData()
+        self.activityView.stopAnimating()
     }
 
 
 
     var segmentedControl: CustomSegmentedContrl!
+    var selectedIndex:Int?
+    var currentSegment:Int = 0
+    private let refreshControl = UIRefreshControl()
+    var bool =  false
 
     //outlets
     @IBOutlet weak var editButton: UIButton!
@@ -44,27 +49,62 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @IBOutlet weak var pickYouTeaButton: UIButton!
     @IBOutlet weak var imageCircle: UIButton!
 
+    var activityView:UIActivityIndicatorView!
+
 
     @IBAction func pickYourTeaButton(_ sender: Any) {
         performSegue(withIdentifier: "toChooseYourTea", sender: nil)
         imageCircle.alpha = 1
         profileImage.alpha = 1
         pickYouTeaButton.alpha = 0
+        bool = false
     }
+
+
 
     //actions
     @IBAction func logoutButton(_ sender: Any) {
 
+        let alert = UIAlertController(title: "Deseja mesmo sair?", message: "", preferredStyle: .alert)
 
-        try! Auth.auth().signOut()
+
+        let ok = UIAlertAction(title: "Sim, desejo sair", style: .default, handler: { (action) -> Void in
+
+            try! Auth.auth().signOut()
+            self.performSegue(withIdentifier: "main", sender: self)
+
+        })
+
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
+            alert.dismiss(animated: true, completion: nil)
+        }
+
+        alert.addAction(ok)
+        alert.addAction(cancelar)
+        self.present(alert, animated: true, completion: nil)
+        alert.view.tintColor = UIColor.buttonPink
+
+
 
     }
 
 
     @IBAction func editButton(_ sender: Any) {
+        if bool == false{
         imageCircle.alpha = 0.25
         profileImage.alpha = 0.25
         pickYouTeaButton.alpha = 1
+        bool = true
+
+        }
+        else{
+
+            imageCircle.alpha = 1
+            profileImage.alpha = 1
+            pickYouTeaButton.alpha = 0
+            bool = false
+        }
+
 
     }
 
@@ -91,9 +131,31 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
         pickYouTeaButton.alpha = 0
 
+        activityView = UIActivityIndicatorView(style: .gray)
+        activityView.color = UIColor.buttonPink
+        activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
+        activityView.center = segmentedControl.center
+        activityView.transform = CGAffineTransform(scaleX: 1, y: 1)
+
+        noStoryLabel.alpha = 0
+
+
+        view.addSubview(activityView)
+
+        activityView.startAnimating()
+
         Auth.auth().currentUser?.reload()
+        
         MyStoriesManager.instance.loadMyStories(requester: self)
 
+        self.currentSegment = 0
+
+        self.profileTableView.isUserInteractionEnabled = true
+        profileTableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor.basePink
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+
+      bool =  false
     }
 
 
@@ -103,16 +165,36 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
         dadosDaTableView = MyStoriesManager.instance.todosOsDados[sender.selectedSegmentIndex]
         profileTableView.reloadData()
-
+        self.currentSegment = sender.selectedSegmentIndex
+        print(currentSegment)
+        label()
 
     }
 
-    //table view setting
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
-        self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
-        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count != 0 {
+    func label() {
+        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
+        self.noStoryLabel.text = labelsText[self.currentSegment]
+
+        if currentSegment == 0 && MyStoriesManager.instance.relatosPassados.count == 0 {
+            self.noStoryLabel.alpha = 1
+        }
+        if currentSegment == 1  && MyStoriesManager.instance.relatosAtuais.count == 0 {
+            self.noStoryLabel.alpha = 1
+        }
+        else {
             self.noStoryLabel.alpha = 0
         }
+        print(self.noStoryLabel.text)
+        print(self.noStoryLabel.alpha)
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        performSegue(withIdentifier: "showStory", sender: nil)
+    }
+
+    //table view setting
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count
     }
 
@@ -123,6 +205,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
             return profileCell
         }
         profileCell.profileCellTextField.text = conteudo
+        profileCell.isUserInteractionEnabled = true
         return profileCell
     }
 
@@ -130,13 +213,33 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         return 150.0
     }
 
+
+
     func readedStories(stories: [QueryDocumentSnapshot]) {
         print("not here")
     }
 
-    func readedMyStories(stories: [QueryDocumentSnapshot]) {
-        print("readed my stories")
-        profileTableView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showStory" {
+            if let destinationVC = segue.destination as? StoryScreen{
+                guard let selected = self.selectedIndex else {
+                    return
+                }
+                if currentSegment == 0 {
+                    destinationVC.selectedStory = MyStoriesManager.instance.relatosPassados[selected]
+                } else {
+                    destinationVC.selectedStory = MyStoriesManager.instance.relatosAtuais[selected]
+                }
+
+            }
+        }
+    }
+
+    @objc private func refreshData(_ sender: Any) {
+
+        MyStoriesManager.instance.loadMyStories(requester: self)
+        self.refreshControl.endRefreshing()
+
     }
 
 
