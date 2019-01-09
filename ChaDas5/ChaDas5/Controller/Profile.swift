@@ -29,6 +29,14 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
     func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
         profileTableView.reloadData()
+        self.activityView.stopAnimating()
+        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
+        
+        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count == 0 {
+            self.noStoryLabel.alpha = 1
+            self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
+        }
+        
     }
 
 
@@ -152,7 +160,6 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         self.selectedIndex = indexPath.row
         performSegue(withIdentifier: "showStory", sender: nil)
     }
@@ -183,18 +190,18 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         print("not here")
     }
 
-    func readedMyStories(stories: [QueryDocumentSnapshot]) {
-        print("readed my stories")
-        profileTableView.reloadData()
-        activityView.stopAnimating()
-        
-        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
-        
-        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count == 0 {
-            self.noStoryLabel.alpha = 1
-             self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
-        }
-    }
+//    func readedMyStories(stories: [QueryDocumentSnapshot]) {
+//        print("readed my stories")
+//        profileTableView.reloadData()
+//        activityView.stopAnimating()
+//
+//        let labelsText = ["Você não possui relatos passados ainda.", "Você não possui relatos atuais ainda."]
+//
+//        if MyStoriesManager.instance.todosOsDados[segmentedControl.selectedSegmentIndex].count == 0 {
+//            self.noStoryLabel.alpha = 1
+//             self.noStoryLabel.text = labelsText[segmentedControl.selectedSegmentIndex]
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStory" {
