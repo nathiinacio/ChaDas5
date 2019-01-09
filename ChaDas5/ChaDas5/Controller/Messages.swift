@@ -64,6 +64,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
         let channel = ChannelsManager.instance.channels[indexPath.row]
         let user = UserManager.instance.currentUser!
+        print(channel)
         guard let choosedChannel = Channel(document: channel) else {
             print("Bota o alerta do se fudeu")
             return

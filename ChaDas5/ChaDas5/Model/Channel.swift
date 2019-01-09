@@ -14,6 +14,7 @@ struct Channel {
     let name: String
     var firstUser:String?
     var created:String?
+    var messages:[Message] = []
   
     init(name: String) {
         self.name = name
@@ -21,6 +22,8 @@ struct Channel {
         self.created = Date().keyString
         self.id = self.channelID
         let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
+        
+        
     }
   
     init?(document: QueryDocumentSnapshot) {
@@ -31,11 +34,23 @@ struct Channel {
         }
         id = document.documentID
         self.name = name
-        guard let created = data["created"] as? String else {
-            return nil
-        }
-        self.created = created
+        let addicData = id?.split(separator: "|")
+        self.firstUser = String(addicData?[0] ?? "")
+        self.created = String(addicData?[1] ?? "")
     }
+    
+    
+    
+    
+    func add(message:String) {
+        guard let id = self.id else {return}
+        let channelRef = FBRef.db.collection("channel").document(id)
+
+//        var firstUser:String?
+//        var created:String?
+
+    }
+    
   }
 
 extension Channel: DatabaseRepresentation {
@@ -55,7 +70,7 @@ extension Channel: DatabaseRepresentation {
         guard let created = self.created else {
             return "data_non_avaliable"
         }
-        return first+created
+        return first+"|"+created
     }
     
   
