@@ -14,7 +14,10 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
     
     
    
+    @IBOutlet weak var salvar: UIButton!
+    
     @IBOutlet weak var chooseYourTeaCollectionView: UICollectionView!
+    
     @IBAction func dismissButton(_ sender: Any) {
         dismiss()
     }
@@ -35,6 +38,8 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         chooseYourTeaCollectionView.bounds.inset(by: chooseYourTeaCollectionView.layoutMargins).width
         let nib = UINib.init(nibName: "ChooseYourTeaCollectionViewCell", bundle: nil)
         self.chooseYourTeaCollectionView.register(nib, forCellWithReuseIdentifier: "PickYouTea")
+        salvar.alpha = 0.5
+        salvar.isEnabled = false
     }
     
     //collection view settings
@@ -54,6 +59,8 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         let selectedCell = collectionView.cellForItem(at: indexPath) as! ChooseYourTeaCollectionViewCell
         selectedCell.contentView.backgroundColor = UIColor.basePink
         self.selected = selectedCell
+        salvar.alpha = 1
+        salvar.isEnabled = true
         self.index = collectionView.indexPath(for: selected!)
         print("foi")
         
@@ -73,6 +80,7 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBAction func salvar(_ sender: Any) {
         
+    
         guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
         guard let uid = Auth.auth().currentUser?.uid else { return }
         

@@ -243,6 +243,7 @@
                     </view>
                     <connections>
                         <outlet property="chooseYourTeaCollectionView" destination="Dek-xr-Q42" id="hi3-2c-SM4"/>
+                        <outlet property="salvar" destination="OQO-Y5-i3m" id="Go1-kO-6pa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzu-Ae-YVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
