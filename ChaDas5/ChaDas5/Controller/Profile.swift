@@ -151,6 +151,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         activityView.startAnimating()
 
         Auth.auth().currentUser?.reload()
+        
         MyStoriesManager.instance.loadMyStories(requester: self)
         
         self.currentSegment = 0
