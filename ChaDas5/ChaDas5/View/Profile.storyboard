@@ -79,7 +79,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea6-0U-RgJ">
                                 <rect key="frame" x="37" y="388" width="300" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -142,11 +142,20 @@
                         <outlet property="profileImage" destination="LOX-oQ-RBh" id="n1y-wT-qoc"/>
                         <outlet property="profileTableView" destination="S3a-Mc-Id0" id="Uxp-QP-TXR"/>
                         <segue destination="E6a-j2-m7h" kind="show" identifier="toChooseYourTea" id="G2q-pK-9Lc"/>
+                        <segue destination="vqG-2j-0aZ" kind="show" identifier="showStory" id="z6h-lP-Mu1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpv-s6-W2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-516" y="-44.527736131934034"/>
+        </scene>
+        <!--StoryScreen-->
+        <scene sceneID="yOd-hd-8js">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoryScreen" id="vqG-2j-0aZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mG8-aC-rBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="-626"/>
         </scene>
         <!--Main-->
         <scene sceneID="wFt-MS-eJ8">
@@ -175,10 +184,13 @@
                                     <action selector="dismissButton:" destination="E6a-j2-m7h" eventType="touchUpInside" id="ymt-ih-Uk6"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dek-xr-Q42">
-                                <rect key="frame" x="16" y="137" width="343" height="510"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dek-xr-Q42">
+                                <rect key="frame" x="50" y="137" width="274" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="NEe-Vf-4Ca"/>
+                                    <constraint firstAttribute="height" constant="427" id="VkX-xN-hcU"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NMw-kb-FWg">
                                     <size key="itemSize" width="92" height="119"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -196,11 +208,36 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQO-Y5-i3m">
+                                <rect key="frame" x="174" y="583" width="150" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="V6M-Aa-AZr"/>
+                                    <constraint firstAttribute="height" constant="50" id="ya2-BQ-p7j"/>
+                                </constraints>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="salvar:" destination="E6a-j2-m7h" eventType="touchUpInside" id="S3t-vQ-fLc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="eiH-Ik-nSR" firstAttribute="bottom" secondItem="OQO-Y5-i3m" secondAttribute="bottom" constant="34" id="8Gn-yk-HFs"/>
+                            <constraint firstItem="eiH-Ik-nSR" firstAttribute="trailing" secondItem="OQO-Y5-i3m" secondAttribute="trailing" constant="51" id="Ld2-qv-MAJ"/>
+                            <constraint firstItem="Dek-xr-Q42" firstAttribute="top" secondItem="Ifi-5s-0rX" secondAttribute="bottom" constant="37" id="M46-px-2DC"/>
                             <constraint firstItem="Ifi-5s-0rX" firstAttribute="top" secondItem="eiH-Ik-nSR" secondAttribute="top" constant="30" id="N7b-xH-H1a"/>
+                            <constraint firstItem="Dek-xr-Q42" firstAttribute="leading" secondItem="eiH-Ik-nSR" secondAttribute="leading" constant="50" id="UPb-bn-khd"/>
                             <constraint firstItem="Ifi-5s-0rX" firstAttribute="leading" secondItem="eiH-Ik-nSR" secondAttribute="leading" constant="50" id="YZf-Eq-FPz"/>
+                            <constraint firstItem="eiH-Ik-nSR" firstAttribute="trailing" secondItem="Dek-xr-Q42" secondAttribute="trailing" constant="51" id="a86-fT-dnf"/>
+                            <constraint firstItem="OQO-Y5-i3m" firstAttribute="top" secondItem="Dek-xr-Q42" secondAttribute="bottom" constant="19" id="cGk-d1-LjU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eiH-Ik-nSR"/>
                     </view>
@@ -210,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzu-Ae-YVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.80000000000001" y="-43.628185907046479"/>
+            <point key="canvasLocation" x="391" y="-44"/>
         </scene>
         <!--Feed-->
         <scene sceneID="F3b-rX-7s7">

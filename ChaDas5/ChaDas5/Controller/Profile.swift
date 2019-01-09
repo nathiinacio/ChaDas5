@@ -51,20 +51,42 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         profileImage.alpha = 1
         pickYouTeaButton.alpha = 0
     }
+    
+   
 
     //actions
     @IBAction func logoutButton(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Deseja mesmo sair?", message: "", preferredStyle: .alert)
+        
+        
+        let ok = UIAlertAction(title: "Sim, desejo sair", style: .default, handler: { (action) -> Void in
+            
+            try! Auth.auth().signOut()
+            self.performSegue(withIdentifier: "main", sender: self)
+            
+        })
+        
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancelar)
+        self.present(alert, animated: true, completion: nil)
+        alert.view.tintColor = UIColor.buttonPink
 
 
-        try! Auth.auth().signOut()
 
     }
 
 
     @IBAction func editButton(_ sender: Any) {
+        
         imageCircle.alpha = 0.25
         profileImage.alpha = 0.25
         pickYouTeaButton.alpha = 1
+        
 
     }
 
@@ -93,7 +115,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
         Auth.auth().currentUser?.reload()
         MyStoriesManager.instance.loadMyStories(requester: self)
-
+      
     }
 
 

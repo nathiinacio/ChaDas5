@@ -69,9 +69,12 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
         
     }
     
-    func ok() {
-    guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
-    guard let uid = Auth.auth().currentUser?.uid else { return }
+    
+    
+    @IBAction func salvar(_ sender: Any) {
+        
+        guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         
         db.collection("users").document("\(uid)").setData([
             "username": yourTea
@@ -86,8 +89,9 @@ class ChooseYourTeaScreen: UIViewController, UICollectionViewDelegate, UICollect
                 self.dismiss()
             }
         }
+        
+        
     }
-
     
     
 }
