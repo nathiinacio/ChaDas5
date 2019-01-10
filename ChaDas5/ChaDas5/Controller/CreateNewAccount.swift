@@ -14,6 +14,8 @@ import Firebase
 class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var selected:ChooseYourTeaCollectionViewCell?
+    
+  
     var index: IndexPath?
     
     
@@ -344,7 +346,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                         self.passwordConfirmationTextField.text = ""
                         self.passwordTextField.text = ""
                         UserManager.instance.currentUser?.delete(completion: nil)
-                        //self.pickYourTeaCollectionView.deselectAllItems(animated: true)
+                        self.pickYourTeaCollectionView.deselectItem(at: self.index!, animated: true)
                         
                     })
         
@@ -394,7 +396,8 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
             self.emailTextField.text = ""
             self.passwordConfirmationTextField.text = ""
             self.passwordTextField.text = ""
-            //self.pickYourTeaCollectionView.deselectAllItems()
+            self.pickYourTeaCollectionView.deselectItem(at: self.index!, animated: true)
+            
         })
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
@@ -437,11 +440,12 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     
     
 }
+
 extension UICollectionView {
-    func deselectAllItems(animated: Bool = false) {
-        for indexPath in self.indexPathsForSelectedItems ?? [] {
-            self.deselectItem(at: indexPath, animated: animated)
-        }
+    
+    func deselectAllItems(animated: Bool) {
+        guard let selectedItems = indexPathsForSelectedItems else { return }
+        for indexPath in selectedItems { deselectItem(at: indexPath, animated: animated) }
     }
 }
 
