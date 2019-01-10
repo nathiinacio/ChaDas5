@@ -43,24 +43,76 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         ChannelsManager.instance.createChannel(requester: self)
     }  
     @IBAction func archiveButton(_ sender: Any) {
+        
         guard let id = selectedStory?.documentID else {
             return
         }
-        let alert = UIAlertController(title: "Deseja mesmo arquivar esse relato?", message: "Seus relatos arquivados só aparecem no seu perfil e não aparecerão mais para outras pessoas.", preferredStyle: .alert)
         
-        let arquivar = UIAlertAction(title: "Arquivar relato", style: .default, handler: { (action) -> Void in
-            FBRef.db.collection("stories").document(id).updateData(["status" : "archived"])
-            self.dismiss()
-        })
         
-        let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
-            alert.dismiss(animated: true, completion: nil)
+        var property: String?
+    
+        let docRef = FBRef.db.collection("stories").document(id)
+        
+        docRef.getDocument(source: .cache) { (document, error) in
+            if let document = document {
+                
+                property = document.get("status") as? String
+                
+                print (property!)
+                
+                if property == "archived"
+                {
+                    let alert = UIAlertController(title: "Deseja mesmo desarquivar esse relato?", message: "Esse relato voltará a aparecer para outras pessoa no Feed.", preferredStyle: .alert)
+                    
+                    
+                    
+                    let desarquivar = UIAlertAction(title: "Desarquivar relato", style: .default, handler: { (action) -> Void in
+                        FBRef.db.collection("stories").document(id).updateData(["status" : "active"])
+                        self.dismiss()
+                    })
+                    
+                    let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
+                        alert.dismiss(animated: true, completion: nil)
+                    }
+                    alert.addAction(desarquivar)
+                    alert.addAction(cancelar)
+                    self.present(alert, animated: true, completion: nil)
+                    alert.view.tintColor = UIColor.buttonPink
+                    
+                    
+                    
+                }
+                else{
+                    
+                    let alert = UIAlertController(title: "Deseja mesmo arquivar esse relato?", message: "Seus relatos arquivados só aparecem no seu perfil e não aparecerão mais para outras pessoas.", preferredStyle: .alert)
+                    
+                    
+                    
+                    let arquivar = UIAlertAction(title: "Arquivar relato", style: .default, handler: { (action) -> Void in
+                        FBRef.db.collection("stories").document(id).updateData(["status" : "archived"])
+                        self.dismiss()
+                    })
+                    
+                    let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
+                        alert.dismiss(animated: true, completion: nil)
+                    }
+                    alert.addAction(arquivar)
+                    alert.addAction(cancelar)
+                    self.present(alert, animated: true, completion: nil)
+                    alert.view.tintColor = UIColor.buttonPink
+                    
+                }
+                
+            } else {
+                print("Document does not exist in cache")
+            }
         }
-        alert.addAction(arquivar)
-        alert.addAction(cancelar)
-        self.present(alert, animated: true, completion: nil)
-        alert.view.tintColor = UIColor.buttonPink
+        
+        
+        
+        
     }
+    
     
     
     @objc private func dismiss() {

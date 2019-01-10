@@ -34,29 +34,19 @@ class NewStoryScreen: UIViewController, UITextViewDelegate {
         
         hideKeyboardWhenTappedAround()
         
-        //código novo
+        newStoryTextView.delegate = self
         
-        
-        let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myTapAction))
-        
-        mytapGestureRecognizer.numberOfTapsRequired = 1
-        
-        self.newStoryTextView.addGestureRecognizer(mytapGestureRecognizer)
-        
-
+        newStoryLabel.textColor = UIColor.gray
         
     }
     
-    
-    @objc func myTapAction(recognizer: UITapGestureRecognizer) {
-        
-        print("TAPPED")
+    func textViewDidBeginEditing(_ textView: UITextView) {
         newStoryLabel.text = ""
-        
-    
+        newStoryTextView.text = String()
+      
     }
+
     
-    // acaba aqui
     
     @objc private func dismiss() {
         self.dismiss(animated: true, completion: nil)

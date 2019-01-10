@@ -157,16 +157,22 @@ class Login: UIViewController {
             if error == nil && user != nil {
                 //self.dismiss(animated: false, completion: nil)
                 print ("Logado com sucesso!")
+                print(user?.user.uid)
+            
+                var property: String?
                 
                 let userID = UserManager.instance.currentUser?.uid
-                let docRef = FBRef.db.collection("users").document(userID!)
-                docRef.getDocument { (document, error) in
-                    if let document = document, document.exists {
-                        let dataDescription = document.data()
-                        AppSettings.displayName = dataDescription!["username"] as? String
+                let docRef = FBRef.db.collection("users")
+                docRef.getDocuments { (querySnapshot, err) in
+                    if let err = err {
+                        print("Document error")
                     } else {
-                        print("Document does not exist")
-                    }
+                        for document in querySnapshot!.documents {
+                            if document.documentID == userID {
+                                AppSettings.displayName = document.data()["username"] as! String
+                            }
+                            }
+                        }
                 }
                 
                 if Auth.auth().currentUser != nil {
@@ -178,6 +184,9 @@ class Login: UIViewController {
                 self.resetForm()
             }
         }
+        
+   
+        
     }
     
     func resetForm() {
