@@ -16,6 +16,7 @@
 		155CF81421DE92D400AFB04B /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81321DE92D400AFB04B /* UIView+Additions.swift */; };
 		155CF81621DE92E000AFB04B /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */; };
 		155CF81821DE92E800AFB04B /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81721DE92E800AFB04B /* UIImage+Additions.swift */; };
+		1588D7B221E7AEB000136083 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588D7B121E7AEB000136083 /* MessagesManager.swift */; };
 		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
 		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
 		158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDBA21CBED6B00C9888F /* UserManager.swift */; };
@@ -27,7 +28,6 @@
 		96451FE821AC79F000C9C351 /* ChaDas5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96451FE721AC79F000C9C351 /* ChaDas5UITests.swift */; };
 		9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */; };
 		9A1B11CF21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */; };
-		9A1B11D521C43B39006956B7 /* Conversa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D021C43B39006956B7 /* Conversa.swift */; };
 		9A1B11D721C43B39006956B7 /* Relato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D221C43B39006956B7 /* Relato.swift */; };
 		9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11D421C43B39006956B7 /* Extentions.swift */; };
 		9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B11DA21C43B83006956B7 /* AppDelegate.swift */; };
@@ -86,6 +86,7 @@
 		155CF81321DE92D400AFB04B /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Additions.swift"; sourceTree = "<group>"; };
 		155CF81721DE92E800AFB04B /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
+		1588D7B121E7AEB000136083 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 		158DBDB421C976CF00C9888F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		158DBDB621CAD40100C9888F /* RelatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoManager.swift; sourceTree = "<group>"; };
 		158DBDBA21CBED6B00C9888F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		96451FE921AC79F000C9C351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1B11CC21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourTeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A1B11CD21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseYourTeaCollectionViewCell.xib; sourceTree = "<group>"; };
-		9A1B11D021C43B39006956B7 /* Conversa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversa.swift; sourceTree = "<group>"; };
 		9A1B11D221C43B39006956B7 /* Relato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relato.swift; sourceTree = "<group>"; };
 		9A1B11D421C43B39006956B7 /* Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9A1B11DA21C43B83006956B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +160,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1588D7B021E7A3C100136083 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				15BC149D21C8101900768231 /* Firebase.swift */,
+				158DBDB621CAD40100C9888F /* RelatoManager.swift */,
+				155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */,
+				9A76AF8C21C038D9003ED02C /* MyStoriesManager.swift */,
+				158DBDBA21CBED6B00C9888F /* UserManager.swift */,
+				155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */,
+				1588D7B121E7AEB000136083 /* MessagesManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		5ABCA8264AFC439F4874731D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +254,9 @@
 		96451FF421AC7A0300C9C351 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				155CF81321DE92D400AFB04B /* UIView+Additions.swift */,
+				155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */,
+				155CF81721DE92E800AFB04B /* UIImage+Additions.swift */,
 				96451FD621AC79EF00C9C351 /* Main.storyboard */,
 				E23901B221CADD92006B3CF3 /* SplashScreen.storyboard */,
 				96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */,
@@ -281,21 +298,12 @@
 		9A76AF8B21C038CB003ED02C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				15BC149D21C8101900768231 /* Firebase.swift */,
-				9A1B11D021C43B39006956B7 /* Conversa.swift */,
+				1588D7B021E7A3C100136083 /* Managers */,
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
-				155CF81321DE92D400AFB04B /* UIView+Additions.swift */,
-				155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */,
-				155CF81721DE92E800AFB04B /* UIImage+Additions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
 				155CF80721DE6E6800AFB04B /* Channel.swift */,
-				155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */,
-				158DBDB621CAD40100C9888F /* RelatoManager.swift */,
-				158DBDBA21CBED6B00C9888F /* UserManager.swift */,
 				155CF80F21DE8A9000AFB04B /* AppSettings.swift */,
 				155CF80D21DE89F400AFB04B /* Message.swift */,
-				155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */,
-				9A76AF8C21C038D9003ED02C /* MyStoriesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -533,12 +541,12 @@
 				9A1B11E621C43CAF006956B7 /* ViewController.swift in Sources */,
 				158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */,
 				9A4E543721B006870033FEBF /* Profile.swift in Sources */,
-				9A1B11D521C43B39006956B7 /* Conversa.swift in Sources */,
 				9A4E543B21B006B30033FEBF /* Messages.swift in Sources */,
 				9A1B11DB21C43B83006956B7 /* AppDelegate.swift in Sources */,
 				9AFBE5A221B305630050AE3E /* ViewExtensions.swift in Sources */,
 				9A1B11D721C43B39006956B7 /* Relato.swift in Sources */,
 				155CF81421DE92D400AFB04B /* UIView+Additions.swift in Sources */,
+				1588D7B221E7AEB000136083 /* MessagesManager.swift in Sources */,
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */,

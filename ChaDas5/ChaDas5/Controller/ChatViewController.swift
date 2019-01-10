@@ -1,20 +1,13 @@
 
 
 import UIKit
-import Photos
 import Firebase
 import MessageKit
 import FirebaseFirestore
 import MessageInputBar
 
-final class ChatViewController: MessagesViewController {
-  
-  
-  private let db = Firestore.firestore()
-  private var reference: CollectionReference?
-  private let storage = Storage.storage().reference()
-
-  private var messages: [Message] = []
+class ChatViewController: MessagesViewController, MessagesProtocol {
+    
   private var messageListener: ListenerRegistration?
   
   private let user: User
@@ -41,24 +34,31 @@ final class ChatViewController: MessagesViewController {
     super.viewDidLoad()
     
     guard let id = channel.id else {
-      navigationController?.popViewController(animated: true)
-      return
+        self.dismiss(animated: true)
+        return
     }
-
-    reference = db.collection(["channels", id, "thread"].joined(separator: "/"))
+    MessagesManager.instance.loadMessages(from: self.channel, requester: self)
     
-    messageListener = reference?.addSnapshotListener { querySnapshot, error in
+    let img = UIImage(named: "dismissIcon")
+    let dismissButton = UIButton(frame: CGRect(x: 50, y: 50, width: 65, height: 55))
+    dismissButton.setImage(img , for: .normal)
+    dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+    dismissButton.contentMode = .center
+    self.view.addSubview(dismissButton)
+
+    let reference = FBRef.db.collection("channels").document(id).collection("thread")
+    
+    messageListener = reference.addSnapshotListener { querySnapshot, error in
       guard let snapshot = querySnapshot else {
         print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
         return
       }
     }
     
-    navigationItem.largeTitleDisplayMode = .never
     
     maintainPositionOnKeyboardFrameChanged = true
     messageInputBar.inputTextView.tintColor = UIColor.basePink
-    messageInputBar.sendButton.setTitleColor(UIColor.gray, for: .normal)
+    messageInputBar.sendButton.setTitleColor(UIColor.buttonPink, for: .normal)
     
     messageInputBar.delegate = self
     messagesCollectionView.messagesDataSource = self
@@ -66,35 +66,49 @@ final class ChatViewController: MessagesViewController {
     messagesCollectionView.messagesDisplayDelegate = self
 
     messageInputBar.leftStackView.alignment = .center
+    messageInputBar.sendButton.title = "Enviar"
+    messageInputBar.backgroundView.backgroundColor = UIColor.basePink
+    messageInputBar.isTranslucent = true
+    messageInputBar.inputTextView.placeholderLabel.text = "Nova mensagem"
+//    messageInputBar.inputTextView.backgroundColor = UIColor.white
+//    messageInputBar.inputTextView.textInputView.smoothRoundCorners(to: 1.2)
+    
     messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
   }
+    
+    func readedMessagesFromChannel(messages: [Message]) {
+        print("loaded messages in chatviewcontroller")
+        print(MessagesManager.instance.messages)
+        self.messagesCollectionView.reloadData()
+        
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        self.dismiss(animated: true, completion: nil)
+    }
   
   
   // MARK: - Helpers
   
-  private func save(_ message: Message) {
-    //CONSERTAR
-    reference?.addDocument(data: message.representation) { error in
-      if let e = error {
-        print("Error sending message: \(e.localizedDescription)")
-        return
-      }
-      
-      self.messagesCollectionView.scrollToBottom()
-    }
+  private func save(_ message: String) {
+    //SALVA NO CHANNEL, AJUSTA A COLLECTIONVIEW E CHAMA A FUNCAO DE INSERIR NO ARRAY
+    print("saving message...")
+    let messageRep = Message(content: message)
+    self.channel.add(message: messageRep)
+    self.messagesCollectionView.scrollToBottom()
+    insertNewMessage(messageRep)
   }
   
   private func insertNewMessage(_ message: Message) {
-    //CONSERTAR
-
-    guard !messages.contains(message) else {
+    
+    guard !MessagesManager.instance.messages.contains(message) else {
       return
     }
     
-    messages.append(message)
-    messages.sort()
+    MessagesManager.instance.messages.append(message)
+    MessagesManager.instance.messages.sort()
     
-    let isLatestMessage = messages.index(of: message) == (messages.count - 1)
+    let isLatestMessage = MessagesManager.instance.messages.index(of: message) == (MessagesManager.instance.messages.count - 1)
     let shouldScrollToBottom = messagesCollectionView.isAtBottom && isLatestMessage
     
     messagesCollectionView.reloadData()
@@ -104,6 +118,7 @@ final class ChatViewController: MessagesViewController {
         self.messagesCollectionView.scrollToBottom(animated: true)
       }
     }
+    print("appended message in array")
   }
   
 
@@ -116,9 +131,6 @@ final class ChatViewController: MessagesViewController {
 extension ChatViewController: MessagesDisplayDelegate {
   
   func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-    
-    //CONSERTAR
-
     return isFromCurrentSender(message: message) ? UIColor.gray : UIColor.basePink
   }
   
@@ -127,9 +139,6 @@ extension ChatViewController: MessagesDisplayDelegate {
   }
   
   func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-    //CONSERTAR
-
-    
     let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
     return .bubbleTail(corner, .curved)
   }
@@ -149,7 +158,6 @@ extension ChatViewController: MessagesLayoutDelegate {
   }
   
   func heightForLocation(message: MessageType, at indexPath: IndexPath, with maxWidth: CGFloat, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-    
     return 0
   }
   
@@ -159,7 +167,11 @@ extension ChatViewController: MessagesLayoutDelegate {
 
 extension ChatViewController: MessagesDataSource {
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return 0
+        return 1
+    }
+    
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        return MessagesManager.instance.messages.count
     }
     
   
@@ -168,11 +180,12 @@ extension ChatViewController: MessagesDataSource {
   }
   
   func numberOfMessages(in messagesCollectionView: MessagesCollectionView) -> Int {
-    return messages.count
+    return MessagesManager.instance.messages.count
   }
   
   func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-    return messages[indexPath.section]
+    print(MessagesManager.instance.messages.count)
+    return MessagesManager.instance.messages[indexPath.row]
   }
   
   func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
@@ -193,11 +206,9 @@ extension ChatViewController: MessagesDataSource {
 extension ChatViewController: MessageInputBarDelegate  {
   
   func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
-    let message = Message(user: (UserManager.instance.currentUser?.uid)!, content: text)
-
-    save(message)
+    save(text)
+    print(text)
     inputBar.inputTextView.text = ""
-    
   }
   
 }

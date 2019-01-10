@@ -18,42 +18,27 @@ struct Message: MessageType {
     let sentDate: Date
     let sender: Sender
     
-    var data: MessageKind {
-        if let image = image {
-            return .photo(image as! MediaItem)
-        } else {
-            return .text(content)
-        }
-    }
-    
     var messageId: String {
         return id ?? UUID().uuidString
     }
     
-    var image: UIImage? = nil
-    var downloadURL: URL? = nil
     
-    init(user: String, content: String) {
+    init(content: String) {
         sender = Sender(id: (UserManager.instance.currentUser?.uid)!, displayName: AppSettings.displayName)
         self.content = content
         sentDate = Date()
         id = nil
         kind = .text(content)
+        print("created message in Message")
     }
     
-    init(user: User, image: UIImage) {
-        sender = Sender(id: (UserManager.instance.currentUser?.uid)!, displayName: AppSettings.displayName)
-        self.image = image
-        content = ""
-        sentDate = Date()
-        id = nil
-        kind = .photo(image as! MediaItem)
-    }
+    
     
     init?(document: QueryDocumentSnapshot) {
         let data = document.data()
         
-        guard let sentDate = data["created"] as? Date else {
+        
+        guard let sentDate = (data["created"] as? Timestamp)?.dateValue() else {
             return nil
         }
         guard let senderID = data["senderID"] as? String else {
@@ -67,17 +52,14 @@ struct Message: MessageType {
         
         self.sentDate = sentDate
         sender = Sender(id: senderID, displayName: senderName)
-        kind = .custom(nil)
         
         if let content = data["content"] as? String {
             self.content = content
-            downloadURL = nil
-        } else if let urlString = data["url"] as? String, let url = URL(string: urlString) {
-            downloadURL = url
-            content = ""
+            self.kind = .text(content)
         } else {
             return nil
         }
+        print("readed message")
     }
     
 }
@@ -92,15 +74,9 @@ extension Message: DatabaseRepresentation {
         var rep: [String : Any] = [
             "created": sentDate,
             "senderID": sender.id,
-            "senderName": sender.displayName
+            "senderName": sender.displayName,
+            "content":content
         ]
-        
-        if let url = downloadURL {
-            rep["url"] = url.absoluteString
-        } else {
-            rep["content"] = content
-        }
-        
         return rep
     }
     

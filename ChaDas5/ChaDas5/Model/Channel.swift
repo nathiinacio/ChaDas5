@@ -8,13 +8,12 @@
 
 import FirebaseFirestore
 
-struct Channel {
+class Channel {
   
     var id: String?
     let name: String
     var firstUser:String?
     var created:String?
-    var messages:[Message] = []
   
     init(name: String) {
         self.name = name
@@ -22,8 +21,6 @@ struct Channel {
         self.created = Date().keyString
         self.id = self.channelID
         let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
-        
-        
     }
   
     init?(document: QueryDocumentSnapshot) {
@@ -34,21 +31,23 @@ struct Channel {
         }
         id = document.documentID
         self.name = name
-        let addicData = id?.split(separator: "|")
-        self.firstUser = String(addicData?[0] ?? "")
-        self.created = String(addicData?[1] ?? "")
+        let addicData = name.split(separator: "|")
+        self.firstUser = String(addicData[0] ?? "")
+        self.created = String(addicData[1] ?? "")
     }
     
     
     
     
-    func add(message:String) {
-        guard let id = self.id else {return}
-        let channelRef = FBRef.db.collection("channel").document(id)
-
-//        var firstUser:String?
-//        var created:String?
-
+    func add(message:Message) {
+        //SALVA A MENSAGEM NO CHANNEL
+        print(message.representation)
+        guard let id = self.id else {
+            print("error saving message")
+            return}
+        let channelMessagesRef = FBRef.db.collection("channels").document(name).collection("thread")
+        channelMessagesRef.addDocument(data: message.representation)
+        print("saved message")
     }
     
   }
