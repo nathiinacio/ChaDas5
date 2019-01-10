@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     
       
         super.viewDidLoad()
+        
+//        print("USER 2:")
+//        print(UserManager.instance.currentUser?.uid)
+//
         // Do any additional setup after loading the view, typically from a nib.
         
 //        Auth.auth().signInAnonymously(completion: nil)

@@ -50,6 +50,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         let ok = UIAlertAction(title: "Sim, desejo sair", style: .default, handler: { (action) -> Void in
 
             try! Auth.auth().signOut()
+            AppSettings.displayName = ""
             self.performSegue(withIdentifier: "main", sender: self)
 
         })
@@ -156,16 +157,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         self.noStoryLabel.text = labelsText[self.currentSegment]
 
         if currentSegment == 0 && MyStoriesManager.instance.relatosPassados.count == 0 {
+            
             self.noStoryLabel.alpha = 1
-        }
-        if currentSegment == 1  && MyStoriesManager.instance.relatosAtuais.count == 0 {
+            
+        } else if currentSegment == 1  && MyStoriesManager.instance.relatosAtuais.count == 0 {
             self.noStoryLabel.alpha = 1
         }
         else {
             self.noStoryLabel.alpha = 0
         }
-        print(self.noStoryLabel.text)
-        print(self.noStoryLabel.alpha)
     }
     
     func readedMyStories(stories: [[QueryDocumentSnapshot]]) {
