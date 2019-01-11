@@ -44,7 +44,6 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     
     @IBAction func chatButton(_ sender: Any) {
         ChannelsManager.instance.createChannel(story: selectedStory!, requester: self)
-        
     }
     
     
