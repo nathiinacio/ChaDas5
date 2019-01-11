@@ -177,12 +177,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ia-hTu">
-                                                <rect key="frame" x="50" y="50" width="45" height="45"/>
+                                                <rect key="frame" x="50" y="50" width="55" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="GbS-BN-rs2"/>
+                                                    <constraint firstAttribute="width" constant="55" id="GbS-BN-rs2"/>
                                                     <constraint firstAttribute="height" constant="45" id="hM3-Ua-9Bl"/>
                                                 </constraints>
-                                                <state key="normal" image="dismissIcon"/>
+                                                <state key="normal" image="informationDismissIcon"/>
                                                 <connections>
                                                     <action selector="informationDismissButton:" destination="dyB-dv-7CC" eventType="touchUpInside" id="7DA-lI-Qrf"/>
                                                 </connections>
@@ -434,12 +434,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1126.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X99-J8-4or">
-                                                <rect key="frame" x="50" y="50" width="45" height="45"/>
+                                                <rect key="frame" x="50" y="50" width="55" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="g5z-cj-vwk"/>
-                                                    <constraint firstAttribute="width" constant="45" id="gpb-xi-TkK"/>
+                                                    <constraint firstAttribute="width" constant="55" id="gpb-xi-TkK"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="dismissIcon"/>
+                                                <state key="normal" title="Button" image="informationDismissIcon"/>
                                                 <connections>
                                                     <action selector="numbersDismissButton:" destination="RH6-GL-wwF" eventType="touchUpInside" id="rzP-Oq-aEa"/>
                                                 </connections>
@@ -660,12 +660,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-SK-dZd">
-                                                <rect key="frame" x="50" y="50" width="45" height="45"/>
+                                                <rect key="frame" x="50" y="50" width="55" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="DvC-NE-cpa"/>
+                                                    <constraint firstAttribute="width" constant="55" id="DvC-NE-cpa"/>
                                                     <constraint firstAttribute="height" constant="45" id="GfB-tA-lZk"/>
                                                 </constraints>
-                                                <state key="normal" image="dismissIcon"/>
+                                                <state key="normal" image="informationDismissIcon"/>
                                                 <connections>
                                                     <action selector="whatToDoDismissButton:" destination="5yV-Wd-gxe" eventType="touchUpInside" id="vaR-NT-Llb"/>
                                                 </connections>
@@ -753,7 +753,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dismissIcon" width="924" height="740"/>
+        <image name="informationDismissIcon" width="924" height="740"/>
         <image name="informationIcon" width="40" height="40"/>
         <image name="informations" width="924" height="740"/>
         <image name="whatToDo" width="924" height="740"/>
