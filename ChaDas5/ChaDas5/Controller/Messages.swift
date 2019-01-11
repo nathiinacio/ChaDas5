@@ -18,6 +18,9 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
     
+    var activityView:UIActivityIndicatorView!
+    
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         
@@ -28,7 +31,28 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         messagesTableView.allowsSelection = true
         let nib = UINib.init(nibName: "MessagesTableViewCell", bundle: nil)
         self.messagesTableView.register(nib, forCellReuseIdentifier: "MessagesCell")
+        
+        activityView = UIActivityIndicatorView(style: .gray)
+        activityView.color = UIColor.buttonPink
+        activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
+        activityView.center = messagesTableView.center
+        activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        
+        noStoryLabel.alpha = 0
+        
+        view.addSubview(activityView)
+        
+        activityView.startAnimating()
+        
+        messagesTableView.refreshControl = refreshControl
+        refreshControl.tintColor = UIColor.buttonPink
+        
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        
+        
         ChannelsManager.instance.loadChannels(requester: self)
+        
+        
     }
     
     func addToMyChannels() {
@@ -37,16 +61,17 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     func readedChannels(channels: [QueryDocumentSnapshot]) {
         messagesTableView.reloadData()
+        activityView.stopAnimating()
+        if ChannelsManager.instance.channels.count == 0 {
+            self.noStoryLabel.alpha = 1
+            self.noStoryLabel.text = "Você não possui conversas ainda..."
+            
+        }
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if ChannelsManager.instance.channels.count == 0 {
-            self.noStoryLabel.text = "Você não possui mensagens ainda..."
-            
-        } else {
-            self.noStoryLabel.alpha = 0
-        }
+       
         return ChannelsManager.instance.channels.count
     }
     
@@ -82,6 +107,14 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
     }
+    
+    
+    @objc private func refreshData(_ sender: Any) {
+        ChannelsManager.instance.loadChannels(requester: self)
+        self.refreshControl.endRefreshing()
+        
+    }
+    
     
     
 }

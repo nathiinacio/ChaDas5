@@ -45,7 +45,7 @@ open class TextMessageCell: MessageContentCell {
         super.apply(layoutAttributes)
         if let attributes = layoutAttributes as? MessagesCollectionViewLayoutAttributes {
             messageLabel.textInsets = attributes.messageLabelInsets
-            messageLabel.messageLabelFont = attributes.messageLabelFont
+            messageLabel.font = attributes.messageLabelFont
             messageLabel.frame = messageContainerView.bounds
         }
     }
@@ -76,6 +76,7 @@ open class TextMessageCell: MessageContentCell {
                 let attributes = displayDelegate.detectorAttributes(for: detector, and: message, at: indexPath)
                 messageLabel.setAttributes(attributes, detector: detector)
             }
+            print("message.kind", message.kind)
             switch message.kind {
             case .text(let text), .emoji(let text):
                 let textColor = displayDelegate.textColor(for: message, at: indexPath, in: messagesCollectionView)
