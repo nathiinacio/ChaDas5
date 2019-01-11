@@ -48,8 +48,13 @@ class Channel {
             print("error saving message")
             return}
         let channelMessagesRef = FBRef.db.collection("channels").document(name).collection("thread")
-        channelMessagesRef.addDocument(data: message.representation)
-        print("saved message")
+        channelMessagesRef.addDocument(data: message.representation) { (error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            } else {
+                debugPrint("saved message")
+            }
+        }
     }
     
   }

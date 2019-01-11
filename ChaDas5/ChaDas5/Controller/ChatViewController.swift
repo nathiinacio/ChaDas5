@@ -30,6 +30,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     fatalError("init(coder:) has not been implemented")
   }
   
+    static var lcount = 0
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -47,15 +48,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     dismissButton.contentMode = .center
     self.view.addSubview(dismissButton)
-
-    let reference = FBRef.db.collection("channels").document(id).collection("thread")
-    
-    messageListener = reference.addSnapshotListener { querySnapshot, error in
-      guard let snapshot = querySnapshot else {
-        print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
-        return
-      }
-    }
     
     
     maintainPositionOnKeyboardFrameChanged = true
@@ -76,11 +68,10 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
 //    messageInputBar.inputTextView.textInputView.smoothRoundCorners(to: 1.2)
     
     messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
+    
   }
     
     func readedMessagesFromChannel(messages: [Message]) {
-        print("loaded messages in chatviewcontroller")
-        print(MessagesManager.instance.messages)
         self.messagesCollectionView.reloadData()
         
     }
@@ -93,8 +84,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
   // MARK: - Helpers
   
   private func save(_ message: String) {
-    //SALVA NO CHANNEL, AJUSTA A COLLECTIONVIEW E CHAMA A FUNCAO DE INSERIR NO ARRAY
-    print("saving message...")
     let messageRep = Message(content: message)
     self.channel.add(message: messageRep)
     self.messagesCollectionView.scrollToBottom()
@@ -103,24 +92,14 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
   
   private func insertNewMessage(_ message: Message) {
     
-    guard !MessagesManager.instance.messages.contains(message) else {
-      return
-    }
-    
-    MessagesManager.instance.messages.append(message)
-    MessagesManager.instance.messages.sort()
-    
     let isLatestMessage = MessagesManager.instance.messages.index(of: message) == (MessagesManager.instance.messages.count - 1)
     let shouldScrollToBottom = messagesCollectionView.isAtBottom && isLatestMessage
-    
-    messagesCollectionView.reloadData()
     
     if shouldScrollToBottom {
       DispatchQueue.main.async {
         self.messagesCollectionView.scrollToBottom(animated: true)
       }
     }
-    print("appended message in array")
   }
   
 
@@ -150,6 +129,10 @@ extension ChatViewController: MessagesDisplayDelegate {
 // MARK: - MessagesLayoutDelegate
 
 extension ChatViewController: MessagesLayoutDelegate {
+    
+    func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+        return CGSize(width: 200, height: 90)
+    }
   
   func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
     return .zero
@@ -186,7 +169,6 @@ extension ChatViewController: MessagesDataSource {
   }
   
   func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-    print(MessagesManager.instance.messages.count)
     return MessagesManager.instance.messages[indexPath.row]
   }
   
@@ -209,7 +191,6 @@ extension ChatViewController: MessageInputBarDelegate  {
   
   func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
     save(text)
-    print(text)
     inputBar.inputTextView.text = ""
   }
   
