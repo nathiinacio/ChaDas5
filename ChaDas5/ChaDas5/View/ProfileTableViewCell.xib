@@ -23,19 +23,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-t2-6Z2">
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-t2-6Z2">
                         <rect key="frame" x="20" y="17" width="335" height="115"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8gi-me-Hro">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8gi-me-Hro">
                                 <rect key="frame" x="35" y="13" width="265" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="7iP-Lh-0eR"/>
+                                    <constraint firstAttribute="height" constant="88" id="Gb5-Jh-S6p"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.96973460912704468" green="0.92143064737319946" blue="0.92088466882705688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="8gi-me-Hro" secondAttribute="bottom" constant="14" id="9FK-IQ-buW"/>
+                            <constraint firstAttribute="trailing" secondItem="8gi-me-Hro" secondAttribute="trailing" constant="35" id="DBm-13-0oA"/>
+                            <constraint firstItem="8gi-me-Hro" firstAttribute="top" secondItem="Vy3-t2-6Z2" secondAttribute="top" constant="13" id="F4B-59-ePP"/>
+                            <constraint firstAttribute="width" constant="335" id="KAa-po-ZqT"/>
+                            <constraint firstItem="8gi-me-Hro" firstAttribute="leading" secondItem="Vy3-t2-6Z2" secondAttribute="leading" constant="35" id="h8F-9c-hlN"/>
+                            <constraint firstAttribute="height" constant="115" id="mRj-lr-daC"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="15"/>
@@ -43,6 +53,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Vy3-t2-6Z2" secondAttribute="bottom" constant="7" id="00q-qe-EfV"/>
+                    <constraint firstItem="Vy3-t2-6Z2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="JNU-TM-jPI"/>
+                    <constraint firstItem="Vy3-t2-6Z2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="MwW-gN-WAH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Vy3-t2-6Z2" secondAttribute="trailing" constant="4" id="NqG-d5-9uA"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

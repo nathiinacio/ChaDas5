@@ -22,12 +22,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97741764783859253" green="0.75185805559158325" blue="0.75384771823883057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-1C-V3k">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-1C-V3k">
                                 <rect key="frame" x="67.5" y="233.5" width="240" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="P3H-Y5-Jg5"/>
+                                    <constraint firstAttribute="height" constant="200" id="fz5-0V-IuO"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dCr-Zx-6SV" firstAttribute="bottom" secondItem="Raa-1C-V3k" secondAttribute="bottom" constant="233.5" id="2jR-wV-JAo"/>
+                            <constraint firstItem="dCr-Zx-6SV" firstAttribute="trailing" secondItem="Raa-1C-V3k" secondAttribute="trailing" constant="67.5" id="Pfq-tS-dJ6"/>
+                            <constraint firstItem="Raa-1C-V3k" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" constant="67.5" id="glj-Y6-GHs"/>
+                            <constraint firstItem="Raa-1C-V3k" firstAttribute="top" secondItem="dCr-Zx-6SV" secondAttribute="top" constant="213.5" id="hW3-x1-Eql"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dCr-Zx-6SV"/>
                     </view>
                     <connections>

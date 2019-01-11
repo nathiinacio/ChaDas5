@@ -55,9 +55,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNt-1m-Fzg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNt-1m-Fzg">
                                 <rect key="frame" x="37" y="140" width="300" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="ezB-md-6KC"/>
+                                    <constraint firstAttribute="width" constant="300" id="nxd-PK-5vs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,9 +71,13 @@
                             <constraint firstItem="dah-py-wwN" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" constant="50" id="5xi-iR-l1y"/>
                             <constraint firstItem="QN9-CE-dox" firstAttribute="trailing" secondItem="3Xz-h8-fOq" secondAttribute="trailing" id="IZW-cc-9VP"/>
                             <constraint firstItem="dah-py-wwN" firstAttribute="top" secondItem="3Xz-h8-fOq" secondAttribute="top" constant="30" id="Wsh-Zp-SnO"/>
+                            <constraint firstItem="vNt-1m-Fzg" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" constant="37" id="ZDC-n7-Psq"/>
                             <constraint firstItem="QN9-CE-dox" firstAttribute="leading" secondItem="3Xz-h8-fOq" secondAttribute="leading" id="jhG-NE-yaM"/>
                             <constraint firstItem="QN9-CE-dox" firstAttribute="centerX" secondItem="kRd-i1-Ia0" secondAttribute="centerX" id="lNF-l4-vNk"/>
+                            <constraint firstItem="3Xz-h8-fOq" firstAttribute="bottom" secondItem="vNt-1m-Fzg" secondAttribute="bottom" constant="388" id="mH2-g4-ss0"/>
                             <constraint firstAttribute="bottom" secondItem="QN9-CE-dox" secondAttribute="bottom" id="sgl-kc-QBw"/>
+                            <constraint firstItem="vNt-1m-Fzg" firstAttribute="top" secondItem="dah-py-wwN" secondAttribute="bottom" constant="40" id="ydk-KY-5Ny"/>
+                            <constraint firstItem="3Xz-h8-fOq" firstAttribute="trailing" secondItem="vNt-1m-Fzg" secondAttribute="trailing" constant="38" id="zC8-CZ-RAf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Xz-h8-fOq"/>
                     </view>
