@@ -25,8 +25,8 @@ class ChannelsManager {
 
     var newChannelID:String?
     
-    func createChannel(requester:ChannelsManagerProtocol) {
-        let channel = Channel(name: "channel")
+    func createChannel(story: QueryDocumentSnapshot,requester:ChannelsManagerProtocol) {
+        let channel = Channel(name: "channel", story: story)
         let channelRef = FBRef.db.collection("channels")
         print("channel created")
         print(channel.id!)
@@ -36,7 +36,10 @@ class ChannelsManager {
     
     
     func author(dc:QueryDocumentSnapshot) -> String{
-        return dc.data()["autor"] as! String
+        guard let author = dc.data()["autor"] as? String else {
+            return "error retrieving author"
+        }
+        return author
     }
     
     var channels = [QueryDocumentSnapshot]()

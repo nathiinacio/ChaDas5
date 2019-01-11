@@ -37,10 +37,12 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
         self.dismiss(animated: true)
         return
     }
+    
+    MessagesManager.instance.messages = [] 
     MessagesManager.instance.loadMessages(from: self.channel, requester: self)
     
     let img = UIImage(named: "dismissIcon")
-    let dismissButton = UIButton(frame: CGRect(x: 50, y: 50, width: 65, height: 55))
+    let dismissButton = UIButton(frame: CGRect(x: 45, y: 50, width: 65, height: 55))
     dismissButton.setImage(img , for: .normal)
     dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     dismissButton.contentMode = .center

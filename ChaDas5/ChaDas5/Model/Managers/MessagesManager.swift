@@ -22,13 +22,13 @@ class MessagesManager {
     var messages = [Message]()
     
     func loadMessages(from channel: Channel, requester: MessagesProtocol) {
-        let messagesRef = FBRef.db.collection("channels").document(channel.name).collection("thread")
-        
+        let messagesRef = FBRef.db.collection("channels").document(channel.name).collection("thread").order(by: "created")
 
         messagesRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Document error", err)
             } else {
+                
                 for document in querySnapshot!.documents {
                     guard let message = Message(document: document) else {
                         return }

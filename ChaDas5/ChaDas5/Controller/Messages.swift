@@ -60,13 +60,13 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! MessagesTableViewCell
-        selectedCell.contentView.backgroundColor = UIColor.basePink
+        selectedCell.contentView.backgroundColor = UIColor.clear
         
         let channel = ChannelsManager.instance.channels[indexPath.row]
         let user = UserManager.instance.currentUser!
         print(channel)
         guard let choosedChannel = Channel(document: channel) else {
-            print("Bota o alerta do se fudeu")
+            print("Error retrieving channel")
             return
         }
         let vc = ChatViewController(user: user, channel: choosedChannel)
@@ -74,10 +74,10 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let selectedCell = tableView.cellForRow(at: indexPath) as? MessagesTableViewCell
-        selectedCell?.contentView.backgroundColor = UIColor.white
-    }
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        let selectedCell = tableView.cellForRow(at: indexPath) as? MessagesTableViewCell
+//        selectedCell?.contentView.backgroundColor = UIColor.white
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0

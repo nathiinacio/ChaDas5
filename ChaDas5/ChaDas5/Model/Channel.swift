@@ -14,12 +14,14 @@ class Channel {
     let name: String
     var firstUser:String?
     var created:String?
+    var secondUser:String?
   
-    init(name: String) {
+    init(name: String, story: QueryDocumentSnapshot) {
         self.name = name
         self.firstUser = (UserManager.instance.currentUser?.uid)
         self.created = Date().keyString
         self.id = self.channelID
+        self.secondUser = ChannelsManager.instance.author(dc: story)
         let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
     }
   
@@ -59,6 +61,7 @@ extension Channel: DatabaseRepresentation {
         result["firstUser"] = self.firstUser
         result["name"] = self.name
         result["created"] = self.created
+        result["secondUser"] = self.secondUser
         return result
     }
     
