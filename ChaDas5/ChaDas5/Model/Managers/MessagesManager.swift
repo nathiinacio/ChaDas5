@@ -19,13 +19,7 @@ class MessagesManager {
     static let instance = MessagesManager()
     private init(){}
     
-    var messages = [Message]() {
-        didSet {
-            debugPrint("==================")
-            debugPrint(self.messages.count)
-            debugPrint("==================")
-        }
-    }
+    var messages = [Message]() 
     
     func loadMessages(from channel: Channel, requester: MessagesProtocol) {
         let messagesRef = FBRef.db.collection("channels").document(channel.name).collection("thread").order(by: "created")
