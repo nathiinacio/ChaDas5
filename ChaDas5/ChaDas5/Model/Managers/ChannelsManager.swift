@@ -45,6 +45,7 @@ class ChannelsManager {
     var channels = [QueryDocumentSnapshot]()
     
     func loadChannels(requester:ChannelsManagerProtocol) {
+        self.channels = []
         let docRef = FBRef.db.collection("users").document((UserManager.instance.currentUser?.uid)!).collection("myChannels")
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
