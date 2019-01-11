@@ -185,6 +185,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     ///   If you override this method, remember to call MessagesDataSource's customCell(for:at:in:) for MessageKind.custom messages, if necessary
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
+        print(#function)
         guard let messagesCollectionView = collectionView as? MessagesCollectionView else {
             fatalError(MessageKitError.notMessagesCollectionView)
         }
@@ -195,6 +196,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
         let message = messagesDataSource.messageForItem(at: indexPath, in: messagesCollectionView)
 
+        print("message.kind", message.kind)
         switch message.kind {
         case .text, .attributedText, .emoji:
             let cell = messagesCollectionView.dequeueReusableCell(TextMessageCell.self, for: indexPath)

@@ -59,6 +59,9 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     maintainPositionOnKeyboardFrameChanged = true
     messageInputBar.inputTextView.tintColor = UIColor.basePink
     messageInputBar.sendButton.setTitleColor(UIColor.buttonPink, for: .normal)
+    messageInputBar.sendButton.title = ""
+    messageInputBar.sendButton.image = UIImage(named: "sendIcon")
+    messageInputBar.sendButton.contentMode = .scaleAspectFill
     
     messageInputBar.delegate = self
     messagesCollectionView.messagesDataSource = self
@@ -70,10 +73,13 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messageInputBar.backgroundView.backgroundColor = UIColor.basePink
     messageInputBar.isTranslucent = true
     messageInputBar.inputTextView.placeholderLabel.text = "Nova mensagem"
-//    messageInputBar.inputTextView.backgroundColor = UIColor.white
-//    messageInputBar.inputTextView.textInputView.smoothRoundCorners(to: 1.2)
-    
+    messageInputBar.inputTextView.placeholderLabel.font = UIFont(name: "SFCompactDisplay-Ultralight", size: 18)
+    messageInputBar.inputTextView.placeholderLabel.textColor = UIColor.gray
+    messageInputBar.inputTextView.backgroundColor = UIColor.white
+    messageInputBar.inputTextView.layer.cornerRadius = 15
+    messageInputBar.inputTextView.font = UIFont(name: "SFCompactDisplay-Ultralight", size: 18)
     messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
+
   }
     
     func readedMessagesFromChannel(messages: [Message]) {
@@ -131,8 +137,9 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
 extension ChatViewController: MessagesDisplayDelegate {
   
   func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-    return isFromCurrentSender(message: message) ? UIColor.gray : UIColor.basePink
+    return isFromCurrentSender(message: message) ? UIColor.basePink : UIColor.lightGray.withAlphaComponent(0.25)
   }
+    
   
   func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
     return false
@@ -160,6 +167,10 @@ extension ChatViewController: MessagesLayoutDelegate {
   func heightForLocation(message: MessageType, at indexPath: IndexPath, with maxWidth: CGFloat, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
     return 0
   }
+    
+func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+         return isFromCurrentSender(message: message) ? UIColor.black : UIColor.black
+    }
   
 }
 
@@ -209,6 +220,9 @@ extension ChatViewController: MessageInputBarDelegate  {
     save(text)
     print(text)
     inputBar.inputTextView.text = ""
+    
   }
   
 }
+
+
