@@ -61,7 +61,9 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messagesCollectionView.messagesDataSource = self
     messagesCollectionView.messagesLayoutDelegate = self
     messagesCollectionView.messagesDisplayDelegate = self
-
+    
+ 
+    
     messageInputBar.leftStackView.alignment = .center
     messageInputBar.sendButton.title = "Enviar"
     messageInputBar.backgroundView.backgroundColor = UIColor.basePink
@@ -72,7 +74,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messageInputBar.inputTextView.backgroundColor = UIColor.white
     messageInputBar.inputTextView.layer.cornerRadius = 15
     messageInputBar.inputTextView.font = UIFont(name: "SFCompactDisplay-Ultralight", size: 18)
-    messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
+    messageInputBar.setLeftStackViewWidthConstant(to: 10, animated: false)
 
   }
 
@@ -130,6 +132,12 @@ extension ChatViewController: MessagesDisplayDelegate {
     return .bubbleTail(corner, .curved)
   }
 
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        
+        avatarView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    }
+    
+    
 }
 
 // MARK: - MessagesLayoutDelegate
@@ -155,6 +163,9 @@ extension ChatViewController: MessagesLayoutDelegate {
 func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
          return isFromCurrentSender(message: message) ? UIColor.black : UIColor.black
     }
+    
+    
+ 
 
 }
 
