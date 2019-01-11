@@ -15,20 +15,22 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         print("not here too")
     }
     
-    
+    var selectedStory:QueryDocumentSnapshot?
+
     
     func addToMyChannels() {
         let id = UserManager.instance.currentUser?.uid
    
         let channelID = ChannelsManager.instance.newChannelID!
     FBRef.db.collection("users").document(id!).collection("myChannels").addDocument(data: ["ID":channelID])
+                
+        let secondUserID = ChannelsManager.instance.author(dc: selectedStory!)
         
-    FBRef.db.collection("users").document(ChannelsManager.instance.author(dc: self.selectedStory!)).collection("myChannels").addDocument(data: ["ID":channelID])
+        FBRef.db.collection("users").document(secondUserID).collection("myChannels").addDocument(data: ["ID":channelID])
         
     }
     
     
-    var selectedStory:QueryDocumentSnapshot?
 
     
     //outlets
@@ -39,9 +41,13 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         dismiss()
     }
     @IBOutlet weak var storyTextView: UITextView!
+    
     @IBAction func chatButton(_ sender: Any) {
-        ChannelsManager.instance.createChannel(requester: self)
-    }  
+        ChannelsManager.instance.createChannel(story: selectedStory!, requester: self)
+        
+    }
+    
+    
     @IBAction func archiveButton(_ sender: Any) {
         
         guard let id = selectedStory?.documentID else {

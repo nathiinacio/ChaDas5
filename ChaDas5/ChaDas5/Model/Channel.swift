@@ -14,12 +14,14 @@ class Channel {
     let name: String
     var firstUser:String?
     var created:String?
+    var secondUser:String?
   
-    init(name: String) {
+    init(name: String, story: QueryDocumentSnapshot) {
         self.name = name
         self.firstUser = (UserManager.instance.currentUser?.uid)
         self.created = Date().keyString
         self.id = self.channelID
+        self.secondUser = ChannelsManager.instance.author(dc: story)
         let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
     }
   
@@ -46,8 +48,13 @@ class Channel {
             print("error saving message")
             return}
         let channelMessagesRef = FBRef.db.collection("channels").document(name).collection("thread")
-        channelMessagesRef.addDocument(data: message.representation)
-        print("saved message")
+        channelMessagesRef.addDocument(data: message.representation) { (error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            } else {
+                debugPrint("saved message")
+            }
+        }
     }
     
   }
@@ -59,6 +66,7 @@ extension Channel: DatabaseRepresentation {
         result["firstUser"] = self.firstUser
         result["name"] = self.name
         result["created"] = self.created
+        result["secondUser"] = self.secondUser
         return result
     }
     

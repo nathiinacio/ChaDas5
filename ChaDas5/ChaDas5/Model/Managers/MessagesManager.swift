@@ -19,23 +19,27 @@ class MessagesManager {
     static let instance = MessagesManager()
     private init(){}
     
-    var messages = [Message]()
+    var messages = [Message]() {
+        didSet {
+            debugPrint("==================")
+            debugPrint(self.messages.count)
+            debugPrint("==================")
+        }
+    }
     
     func loadMessages(from channel: Channel, requester: MessagesProtocol) {
-        let messagesRef = FBRef.db.collection("channels").document(channel.name).collection("thread")
+        let messagesRef = FBRef.db.collection("channels").document(channel.name).collection("thread").order(by: "created")
         
-
-        messagesRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Document error", err)
-            } else {
-                for document in querySnapshot!.documents {
-                    guard let message = Message(document: document) else {
-                        return }
-                    self.messages.append(message)
-                }
-                requester.readedMessagesFromChannel(messages: self.messages)
+        messagesRef.addSnapshotListener { (query, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
             }
+            self.messages = []
+            for document in (query?.documents)! {
+                guard let message = Message(document: document) else { return }
+                self.messages.append(message)
+            }
+            requester.readedMessagesFromChannel(messages: self.messages)
         }
         
     }

@@ -29,7 +29,6 @@ struct Message: MessageType {
         sentDate = Date()
         id = nil
         kind = .text(content)
-        print("created message in Message")
     }
     
     
@@ -59,7 +58,6 @@ struct Message: MessageType {
         } else {
             return nil
         }
-        print("readed message")
     }
     
 }

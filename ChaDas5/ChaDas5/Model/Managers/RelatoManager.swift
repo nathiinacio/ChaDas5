@@ -28,7 +28,7 @@ class RelatoManager {
     func loadStories(requester:Manager) {
         self.stories = []
 
-        let docRef = FBRef.db.collection("stories")
+        let docRef = FBRef.db.collection("stories").order(by: "data", descending: true)
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Document error")

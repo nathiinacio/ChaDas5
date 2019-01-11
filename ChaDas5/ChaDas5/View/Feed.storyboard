@@ -61,9 +61,12 @@
                                     <segue destination="E96-8T-BvF" kind="show" identifier="newStoryScreen" id="HJJ-7x-NxL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-1L-uAh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-1L-uAh">
                                 <rect key="frame" x="37" y="140" width="300" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="9jO-Nb-he7"/>
+                                    <constraint firstAttribute="width" constant="300" id="LcY-T8-9r9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -73,8 +76,12 @@
                         <constraints>
                             <constraint firstItem="gAk-hd-CQt" firstAttribute="top" secondItem="Jzw-L5-tpc" secondAttribute="top" constant="30" id="2CM-9K-vR6"/>
                             <constraint firstItem="Jzw-L5-tpc" firstAttribute="trailing" secondItem="gAk-hd-CQt" secondAttribute="trailing" constant="50" id="2lX-Eh-b8k"/>
+                            <constraint firstItem="Le7-1L-uAh" firstAttribute="leading" secondItem="Jzw-L5-tpc" secondAttribute="leading" constant="37" id="5Ij-Ny-WEB"/>
+                            <constraint firstItem="Jzw-L5-tpc" firstAttribute="trailing" secondItem="Le7-1L-uAh" secondAttribute="trailing" constant="38" id="Kva-P2-cGl"/>
+                            <constraint firstItem="Le7-1L-uAh" firstAttribute="top" secondItem="gAk-hd-CQt" secondAttribute="bottom" constant="40" id="PCx-d7-0hW"/>
                             <constraint firstItem="rsd-4Z-ZH2" firstAttribute="centerX" secondItem="Jx1-3x-tf0" secondAttribute="centerX" id="WEy-9K-uUh"/>
                             <constraint firstAttribute="bottom" secondItem="rsd-4Z-ZH2" secondAttribute="bottom" id="hKT-0K-U2A"/>
+                            <constraint firstItem="Jzw-L5-tpc" firstAttribute="bottom" secondItem="Le7-1L-uAh" secondAttribute="bottom" constant="388" id="q7F-kk-QOn"/>
                             <constraint firstItem="rsd-4Z-ZH2" firstAttribute="leading" secondItem="Jzw-L5-tpc" secondAttribute="leading" id="sgN-HF-gua"/>
                             <constraint firstItem="rsd-4Z-ZH2" firstAttribute="trailing" secondItem="Jzw-L5-tpc" secondAttribute="trailing" id="uqj-d1-zag"/>
                         </constraints>

@@ -18,7 +18,7 @@ class MyStoriesManager {
     
     func loadMyStories(requester:Manager) {
         emptyArrays()
-        let dbRef = FBRef.db.collection("stories")
+        let dbRef = FBRef.db.collection("stories").order(by: "data", descending: true)
         dbRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Document error")
