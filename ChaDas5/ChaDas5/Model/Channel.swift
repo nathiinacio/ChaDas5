@@ -15,6 +15,7 @@ class Channel {
     var firstUser:String?
     var created:String?
     var secondUser:String?
+    var lastMessageDate:String?
   
     init(name: String, story: QueryDocumentSnapshot) {
         self.name = name
@@ -22,6 +23,7 @@ class Channel {
         self.created = Date().keyString
         self.id = self.channelID
         self.secondUser = ChannelsManager.instance.author(dc: story)
+        self.lastMessageDate = created
         let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
     }
   
@@ -43,7 +45,6 @@ class Channel {
     
     func add(message:Message) {
         //SALVA A MENSAGEM NO CHANNEL
-        print(message.representation)
         guard let id = self.id else {
             print("error saving message")
             return}
@@ -55,6 +56,8 @@ class Channel {
                 debugPrint("saved message")
             }
         }
+        self.lastMessageDate = message.sentDate.keyString
+        FBRef.db.collection("channels").document(name).updateData(["lastMessageDate" : self.lastMessageDate])
     }
     
   }
@@ -67,6 +70,7 @@ extension Channel: DatabaseRepresentation {
         result["name"] = self.name
         result["created"] = self.created
         result["secondUser"] = self.secondUser
+        result["lastMessageDate"] = self.lastMessageDate
         return result
     }
     
