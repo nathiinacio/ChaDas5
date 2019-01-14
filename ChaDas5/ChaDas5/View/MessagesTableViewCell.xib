@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36R-R8-rnS">
-                                <rect key="frame" x="25" y="19" width="90" height="90"/>
+                                <rect key="frame" x="38" y="19" width="90" height="90"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-hc-2u1">
                                         <rect key="frame" x="10" y="10" width="70" height="70"/>
@@ -77,9 +77,9 @@
                             <constraint firstAttribute="bottom" secondItem="zf2-0H-peX" secondAttribute="bottom" constant="41" id="Tuz-I1-d7g"/>
                             <constraint firstAttribute="trailing" secondItem="zf2-0H-peX" secondAttribute="trailing" constant="46" id="Ywr-aZ-QJo"/>
                             <constraint firstAttribute="bottom" secondItem="36R-R8-rnS" secondAttribute="bottom" constant="19" id="duz-6S-rql"/>
-                            <constraint firstItem="36R-R8-rnS" firstAttribute="leading" secondItem="rPV-kT-USH" secondAttribute="leading" constant="25" id="eNY-Yl-dn4"/>
+                            <constraint firstItem="36R-R8-rnS" firstAttribute="leading" secondItem="rPV-kT-USH" secondAttribute="leading" constant="38" id="eNY-Yl-dn4"/>
                             <constraint firstAttribute="height" constant="128" id="g0Z-Nm-CNb"/>
-                            <constraint firstItem="zf2-0H-peX" firstAttribute="leading" secondItem="36R-R8-rnS" secondAttribute="trailing" constant="32" id="xLp-98-35c"/>
+                            <constraint firstItem="zf2-0H-peX" firstAttribute="leading" secondItem="36R-R8-rnS" secondAttribute="trailing" constant="19" id="xLp-98-35c"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -87,20 +87,37 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-cN-k8y">
+                        <rect key="frame" x="-3" y="0.0" width="50" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="jVp-2O-db4"/>
+                            <constraint firstAttribute="width" constant="50" id="kOn-L9-1bL"/>
+                        </constraints>
+                        <state key="normal" image="dismissIcon"/>
+                        <connections>
+                            <action selector="deleteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0sY-IO-D8l"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="rPV-kT-USH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2Tv-oF-xO9"/>
                     <constraint firstItem="rPV-kT-USH" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="3fc-yV-c0k"/>
                     <constraint firstItem="rPV-kT-USH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Bjr-HP-79g"/>
+                    <constraint firstItem="NQb-cN-k8y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gfx-Sk-5pI"/>
                     <constraint firstItem="rPV-kT-USH" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="iWx-ud-40f"/>
+                    <constraint firstItem="NQb-cN-k8y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-3" id="vcf-nH-gww"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteButton" destination="NQb-cN-k8y" id="Dap-Ut-xFH"/>
                 <outlet property="messageTableViewImage" destination="wUo-hc-2u1" id="I3m-Cb-n8K"/>
                 <outlet property="messageTableViewLabel" destination="zf2-0H-peX" id="GS8-dh-3Jg"/>
             </connections>
             <point key="canvasLocation" x="55.200000000000003" y="48.575712143928037"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="dismissIcon" width="924" height="740"/>
+    </resources>
 </document>

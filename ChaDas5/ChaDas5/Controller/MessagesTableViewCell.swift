@@ -15,6 +15,13 @@ class MessagesTableViewCell: UITableViewCell {
     //outlets
     @IBOutlet weak var messageTableViewImage: UIImageView!
     @IBOutlet weak var messageTableViewLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
+
+    //actions
+    @IBAction func deleteButton(_ sender: Any) {
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

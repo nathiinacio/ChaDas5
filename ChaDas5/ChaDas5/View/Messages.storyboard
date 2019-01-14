@@ -37,6 +37,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editButton:" destination="dBv-Ig-xBg" eventType="touchUpInside" id="xy5-18-jpZ"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QN9-CE-dox">
                                 <rect key="frame" x="0.0" y="112" width="375" height="555"/>

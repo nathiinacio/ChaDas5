@@ -14,7 +14,12 @@ class ProfileTableViewCell: UITableViewCell {
     
     //outlets
     @IBOutlet weak var profileCellTextField: UITextView!
-
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    //actions
+    @IBAction func deleteButton(_ sender: Any) {
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -52,19 +52,36 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5T-Bi-yJ5">
+                        <rect key="frame" x="-3" y="0.0" width="50" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="1qj-cR-ITX"/>
+                            <constraint firstAttribute="height" constant="40" id="paL-h5-avp"/>
+                        </constraints>
+                        <state key="normal" image="dismissIcon"/>
+                        <connections>
+                            <action selector="deleteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QmK-Go-YgZ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Vy3-t2-6Z2" secondAttribute="bottom" constant="7" id="00q-qe-EfV"/>
+                    <constraint firstItem="i5T-Bi-yJ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-3" id="7nV-be-GbU"/>
                     <constraint firstItem="Vy3-t2-6Z2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="JNU-TM-jPI"/>
+                    <constraint firstItem="i5T-Bi-yJ5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KhN-7B-iKB"/>
                     <constraint firstItem="Vy3-t2-6Z2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="MwW-gN-WAH"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Vy3-t2-6Z2" secondAttribute="trailing" constant="4" id="NqG-d5-9uA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteButton" destination="i5T-Bi-yJ5" id="Sgy-kZ-xuN"/>
                 <outlet property="profileCellTextField" destination="8gi-me-Hro" id="6dr-uR-fWm"/>
             </connections>
             <point key="canvasLocation" x="55.200000000000003" y="48.575712143928037"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="dismissIcon" width="924" height="740"/>
+    </resources>
 </document>

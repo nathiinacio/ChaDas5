@@ -18,6 +18,10 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
     
+    //actions    
+    @IBAction func editButton(_ sender: Any) {
+    }
+    
     var activityView:UIActivityIndicatorView!
     
     private let refreshControl = UIRefreshControl()
