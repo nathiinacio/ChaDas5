@@ -24,7 +24,7 @@ struct Message: MessageType {
     
     
     init(content: String) {
-        sender = Sender(id: (UserManager.instance.currentUser?.uid)!, displayName: AppSettings.displayName)
+        sender = Sender(id: (UserManager.instance.currentUser)!, displayName: AppSettings.displayName)
         self.content = content
         sentDate = Date()
         id = nil

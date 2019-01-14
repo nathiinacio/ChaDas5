@@ -88,13 +88,13 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         selectedCell.contentView.backgroundColor = UIColor.clear
         
         let channel = ChannelsManager.instance.channels[indexPath.row]
-        let user = UserManager.instance.currentUser!
+//        let user = UserManager.instance.currentUser!
         print(channel)
         guard let choosedChannel = Channel(document: channel) else {
             print("Error retrieving channel")
             return
         }
-        let vc = ChatViewController(user: user, channel: choosedChannel)
+        let vc = ChatViewController(user: Auth.auth().currentUser!, channel: choosedChannel)
         present(vc, animated: true, completion: nil)
         
     }

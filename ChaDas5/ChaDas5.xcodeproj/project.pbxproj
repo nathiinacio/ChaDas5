@@ -207,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				9AEAA57A21C84CF5001B490F /* SFCompactDisplay-Ultralight.otf */,
+				9A1B11DA21C43B83006956B7 /* AppDelegate.swift */,
 				9A76AF8B21C038CB003ED02C /* Model */,
 				96451FF321AC79FC00C9C351 /* Controller */,
 				96451FF421AC7A0300C9C351 /* View */,
@@ -231,7 +232,6 @@
 			children = (
 				15BCCFAC21E3EA61000461FD /* NavigationController.swift */,
 				155CF81121DE926100AFB04B /* ChatViewController.swift */,
-				9A1B11DA21C43B83006956B7 /* AppDelegate.swift */,
 				E23901B421CADDA8006B3CF3 /* SplashScreen.swift */,
 				9A4E543221B0065A0033FEBF /* CreateNewAccount.swift */,
 				9A4E543421B0066F0033FEBF /* Login.swift */,

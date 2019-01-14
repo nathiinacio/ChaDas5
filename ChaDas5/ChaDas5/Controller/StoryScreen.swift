@@ -19,7 +19,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
 
     
     func addToMyChannels() {
-        let id = UserManager.instance.currentUser?.uid
+        let id = UserManager.instance.currentUser
    
         let channelID = ChannelsManager.instance.newChannelID!
     FBRef.db.collection("users").document(id!).collection("myChannels").addDocument(data: ["ID":channelID])
@@ -137,7 +137,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     override func viewDidLoad() {
         self.storyTextView.text = self.selectedStory?.data()["conteudo"] as! String
         
-        if self.selectedStory?.data()["autor"] as? String == UserManager.instance.currentUser?.uid {
+        if self.selectedStory?.data()["autor"] as? String == UserManager.instance.currentUser {
             chatButton.isEnabled = false
             
         } else {

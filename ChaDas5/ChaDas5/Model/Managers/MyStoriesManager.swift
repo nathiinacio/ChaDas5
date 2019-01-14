@@ -30,7 +30,7 @@ class MyStoriesManager {
                     guard let authorID = document.data()["autor"] as? String else {
                         return
                     }
-                    if authorID == UserManager.instance.currentUser?.uid {
+                    if authorID == UserManager.instance.currentUser {
                         if status == "active" {
                             self.relatosAtuais.append(document)
                         } else {

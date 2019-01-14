@@ -19,7 +19,7 @@ class Channel {
   
     init(name: String, story: QueryDocumentSnapshot) {
         self.name = name
-        self.firstUser = (UserManager.instance.currentUser?.uid)
+        self.firstUser = (UserManager.instance.currentUser)
         self.created = Date().keyString
         self.id = self.channelID
         self.secondUser = ChannelsManager.instance.author(dc: story)

@@ -251,7 +251,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                         self.dismiss(animated: true, completion: nil)
                                                                     } else {
                                                                         self.resetForm()
-                                                                         UserManager.instance.currentUser?.delete(completion: nil)
+                                                                        Auth.auth().currentUser?.delete(completion: nil)
                                                                     }
                                                                 }
                                                                 
@@ -277,7 +277,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                                 self.dismiss(animated: true, completion: nil)
                                                                             } else {
                                                                                 self.resetForm()
-                                                                                UserManager.instance.currentUser?.delete(completion: nil)
+                                                                            
                                                                             }
                                                                         }
                                                                                                                                             }
@@ -285,7 +285,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                 
                                                                 let alertActionCancel = UIAlertAction(title: "Cancelar", style: .default) {
                                                                     (_) in
-                                                                   UserManager.instance.currentUser?.delete(completion: nil)
+                                                                    Auth.auth().currentUser?.delete(completion: nil)
                                                                    self.dismiss()
                                                                 }
                                                                 
@@ -329,13 +329,13 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                 } else {
                                     print("Error: \(error!.localizedDescription)")
                                     self.resetForm()
-                                    UserManager.instance.currentUser?.delete(completion: nil)
+                                    Auth.auth().currentUser?.delete(completion: nil)
                                 }
                             }
                             
                         } else {
                             self.resetForm()
-                            UserManager.instance.currentUser?.delete(completion: nil)
+                            Auth.auth().currentUser?.delete(completion: nil)
                         }
                     }
                     
@@ -345,14 +345,14 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                         self.emailTextField.text = ""
                         self.passwordConfirmationTextField.text = ""
                         self.passwordTextField.text = ""
-                        UserManager.instance.currentUser?.delete(completion: nil)
+                        Auth.auth().currentUser?.delete(completion: nil)
                         self.pickYourTeaCollectionView.deselectItem(at: self.index!, animated: true)
                         
                     })
         
                     let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
                         self.dismiss()
-                        UserManager.instance.currentUser?.delete(completion: nil)
+                        Auth.auth().currentUser?.delete(completion: nil)
                         
                     }
         
