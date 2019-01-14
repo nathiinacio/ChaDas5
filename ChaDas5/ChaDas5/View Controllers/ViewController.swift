@@ -21,8 +21,8 @@ class ViewController: UIViewController {
       
         super.viewDidLoad()
         
-//        print("USER 2:")
-//        print(UserManager.instance.currentUser?.uid)
+        print("USER 2:")
+        print(UserManager.instance.currentUser)
 //
         // Do any additional setup after loading the view, typically from a nib.
         

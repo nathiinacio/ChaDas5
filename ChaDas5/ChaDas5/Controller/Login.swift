@@ -153,40 +153,18 @@ class Login: UIViewController {
         loginButton.setTitle("", for: .normal)
         activityView.startAnimating()
         
-        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
-            if error == nil && user != nil {
-                //self.dismiss(animated: false, completion: nil)
-                print ("Logado com sucesso!")
-                print(user?.user.uid)
-            
-                var property: String?
-                
-                let userID = UserManager.instance.currentUser?.uid
-                let docRef = FBRef.db.collection("users")
-                docRef.getDocuments { (querySnapshot, err) in
-                    if let err = err {
-                        print("Document error")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            if document.documentID == userID {
-                                AppSettings.displayName = document.data()["username"] as! String
-                            }
-                            }
-                        }
-                }
-                
-                if Auth.auth().currentUser != nil {
-                    self.performSegue(withIdentifier: "Feed", sender: self)
-                }
+        UserManager.instance.login(withEmail: email, password: pass) { (error) in
+            if error != nil {
+                debugPrint(String(describing: error?.localizedDescription))
             } else {
-                print("Error logging in: \(error!.localizedDescription)")
-                
-                self.resetForm()
+                if UserManager.instance.currentUser != nil {
+                    self.performSegue(withIdentifier: "Feed", sender: self)
+                } else {
+                    debugPrint("Error logging in: \(error!.localizedDescription)")
+                    self.resetForm()
+                }
             }
         }
-        
-   
-        
     }
     
     func resetForm() {

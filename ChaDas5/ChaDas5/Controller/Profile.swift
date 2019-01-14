@@ -49,9 +49,13 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
         let ok = UIAlertAction(title: "Sim, desejo sair", style: .default, handler: { (action) -> Void in
 
-            try! Auth.auth().signOut()
-            AppSettings.displayName = ""
-            self.performSegue(withIdentifier: "main", sender: self)
+            UserManager.instance.signOut(completion: { (error) in
+                if error != nil {
+                    debugPrint(#function, String(describing: error?.localizedDescription))
+                } else {
+                   self.performSegue(withIdentifier: "main", sender: self)
+                }
+            })
 
         })
 
