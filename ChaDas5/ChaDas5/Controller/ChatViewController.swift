@@ -75,6 +75,8 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messageInputBar.inputTextView.layer.cornerRadius = 15
     messageInputBar.inputTextView.font = UIFont(name: "SFCompactDisplay-Ultralight", size: 18)
     messageInputBar.setLeftStackViewWidthConstant(to: 10, animated: false)
+    
+    
 
   }
 
@@ -134,7 +136,8 @@ extension ChatViewController: MessagesDisplayDelegate {
 
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         
-        avatarView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+       avatarView.removeFromSuperview()
+        
     }
     
     

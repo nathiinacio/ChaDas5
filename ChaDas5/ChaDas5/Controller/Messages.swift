@@ -18,8 +18,23 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
     
+     var messageIsEditing =  false
+    
+    
+    
     //actions    
     @IBAction func editButton(_ sender: Any) {
+        
+        if !messageIsEditing{
+            messageIsEditing = true
+            
+        }
+        else{
+            
+            messageIsEditing = false
+        }
+        messagesTableView.reloadData()
+        
     }
     
     var activityView:UIActivityIndicatorView!
@@ -53,6 +68,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         
+        messageIsEditing =  false
         
         ChannelsManager.instance.loadChannels(requester: self)
         
@@ -81,7 +97,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messagesCell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesTableViewCell
-
+        messagesCell.deleteButton.alpha = messageIsEditing ? 1 : 0
         messagesCell.messageTableViewLabel.text = "channel"
         return messagesCell
     }

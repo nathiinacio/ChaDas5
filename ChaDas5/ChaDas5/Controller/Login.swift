@@ -156,6 +156,8 @@ class Login: UIViewController {
         UserManager.instance.login(withEmail: email, password: pass) { (error) in
             if error != nil {
                 debugPrint(String(describing: error?.localizedDescription))
+                debugPrint("Error logging in: \(error!.localizedDescription)")
+                self.resetForm()
             } else {
                 if UserManager.instance.currentUser != nil {
                     self.performSegue(withIdentifier: "Feed", sender: self)

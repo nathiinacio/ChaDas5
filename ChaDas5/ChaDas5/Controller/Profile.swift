@@ -17,7 +17,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     var selectedIndex:Int?
     var currentSegment:Int = 0
     private let refreshControl = UIRefreshControl()
-    var bool =  false
+    var profileIsEditing =  false
 
     //outlets
     @IBOutlet weak var editButton: UIButton!
@@ -33,12 +33,14 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
     @IBAction func pickYourTeaButton(_ sender: Any) {
         performSegue(withIdentifier: "toChooseYourTea", sender: nil)
-        imageCircle.alpha = 1
-        profileImage.alpha = 1
-        pickYouTeaButton.alpha = 0
-        bool = false
+        imageCircle.alpha = 0.25
+        profileImage.alpha = 0.25
+        pickYouTeaButton.alpha = 1
+       
     }
 
+    
+    
 
 
     //actions
@@ -74,11 +76,11 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
 
     @IBAction func editButton(_ sender: Any) {
-        if bool == false{
+        if !profileIsEditing{
         imageCircle.alpha = 0.25
         profileImage.alpha = 0.25
         pickYouTeaButton.alpha = 1
-        bool = true
+        profileIsEditing = true
 
         }
         else{
@@ -86,10 +88,9 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
             imageCircle.alpha = 1
             profileImage.alpha = 1
             pickYouTeaButton.alpha = 0
-            bool = false
+            profileIsEditing = false
         }
-
-
+        profileTableView.reloadData()
     }
 
 
@@ -134,9 +135,9 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         profileTableView.refreshControl = refreshControl
         refreshControl.tintColor = UIColor.buttonPink
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-
-        bool =  false
         
+        profileIsEditing =  false
+
         
     }
     
@@ -153,7 +154,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         nameLabel.text = AppSettings.displayName
         profileImage.image = UIImage(named: AppSettings.displayName)
         profileImage.contentMode =  UIView.ContentMode.scaleAspectFit
-        pickYouTeaButton.alpha = 0
+        if profileIsEditing {
+            
+            pickYouTeaButton.alpha = 1
+        }
+        else{
+            
+           pickYouTeaButton.alpha = 0
+        }
+        
     }
 
     func label() {
@@ -196,6 +205,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let profileCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
+        profileCell.deleteButton.alpha = profileIsEditing ? 1 : 0
         let docId:QueryDocumentSnapshot
         if currentSegment == 0 {
             docId = MyStoriesManager.instance.relatosPassados[indexPath.row]
@@ -204,6 +214,7 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         }
         guard let conteudo = docId.data()["conteudo"] as? String else {
             return profileCell
+
         }
         profileCell.profileCellTextField.text = conteudo
         profileCell.isUserInteractionEnabled = true

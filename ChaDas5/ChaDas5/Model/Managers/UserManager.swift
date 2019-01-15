@@ -27,19 +27,23 @@ class UserManager {
             if let error = error {
                 completion(error)
             }
-            self.currentUser = user?.user.uid
-            
-            let docRef = FBRef.db.collection("users").document(self.currentUser!)
-            
-            docRef.getDocument { (document, error) in
-                if let error = error {
-                    debugPrint(error.localizedDescription)
-                }
-                let property = document?.get("username") as! String
-                AppSettings.displayName = property
+            else{
+
+                self.currentUser = user?.user.uid
                 
+                let docRef = FBRef.db.collection("users").document(self.currentUser!)
+                
+                docRef.getDocument { (document, error) in
+                    if let error = error {
+                        debugPrint(error.localizedDescription)
+                    }
+                    let property = document?.get("username") as! String
+                    AppSettings.displayName = property
+                    
+                }
+                completion(nil)
             }
-            completion(nil)
+       
         }
     }
     
