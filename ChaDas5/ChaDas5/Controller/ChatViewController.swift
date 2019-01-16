@@ -30,6 +30,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
   }
 
     static var lcount = 0
+    
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -49,7 +50,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     self.view.addSubview(dismissButton)
 
 
-    maintainPositionOnKeyboardFrameChanged = true
+
     messageInputBar.inputTextView.tintColor = UIColor.basePink
     messageInputBar.sendButton.setTitleColor(UIColor.buttonPink, for: .normal)
     messageInputBar.sendButton.title = ""
@@ -61,6 +62,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messagesCollectionView.messagesLayoutDelegate = self
     messagesCollectionView.messagesDisplayDelegate = self
     
+   
  
     
     messageInputBar.leftStackView.alignment = .center
@@ -76,6 +78,8 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messageInputBar.setLeftStackViewWidthConstant(to: 10, animated: false)
     
     messagesCollectionView.scrollToBottom()
+    scrollsToBottomOnKeyboardBeginsEditing = true
+    maintainPositionOnKeyboardFrameChanged = true
     
     
 
@@ -150,10 +154,6 @@ extension ChatViewController: MessagesDisplayDelegate {
 
 extension ChatViewController: MessagesLayoutDelegate {
 
-    func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
-        return CGSize(width: 200, height: 90)
-    }
-
   func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
     return .zero
   }
@@ -162,13 +162,13 @@ extension ChatViewController: MessagesLayoutDelegate {
     return CGSize(width: 0, height: 8)
   }
 
-  func heightForLocation(message: MessageType, at indexPath: IndexPath, with maxWidth: CGFloat, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-    return 0
-  }
 
 func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
          return isFromCurrentSender(message: message) ? UIColor.black : UIColor.black
     }
+
+    
+
     
     
  
@@ -197,17 +197,6 @@ extension ChatViewController: MessagesDataSource {
 
   func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
     return MessagesManager.instance.messages[indexPath.row]
-  }
-
-  func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-    let name = message.sender.displayName
-    return NSAttributedString(
-      string: name,
-      attributes: [
-        .font: UIFont.preferredFont(forTextStyle: .caption1),
-        .foregroundColor: UIColor(white: 0.3, alpha: 1)
-      ]
-    )
   }
 
 }

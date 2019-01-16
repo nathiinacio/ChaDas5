@@ -34,13 +34,15 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         ChannelsManager.instance.createChannel(story: selectedStory!, requester: self)
         
         let alert = UIAlertController(title: "Conversa iniciada!", message: "Vá em Mensagem para acessar o channel.", preferredStyle: .alert)
-        
+
         let ok = UIAlertAction(title: "Ok", style: .default ) { (action) -> Void in
             self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = UIColor.buttonPink
+        
+
     }
     
     
