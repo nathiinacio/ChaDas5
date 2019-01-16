@@ -12,8 +12,6 @@ import Firebase
 protocol ChannelsManagerProtocol {
     
     
-    func addToMyChannels()
-    
     func readedChannels(channels:[QueryDocumentSnapshot])
     
 }
@@ -31,7 +29,6 @@ class ChannelsManager {
         print("channel created")
         print(channel.id!)
         self.newChannelID = channel.id!
-        requester.addToMyChannels()
     }
     
     

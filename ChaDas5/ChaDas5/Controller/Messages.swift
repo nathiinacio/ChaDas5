@@ -75,10 +75,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
     }
     
-    func addToMyChannels() {
-        print("not here")
-    }
-    
+   
     func readedChannels(channels: [QueryDocumentSnapshot]) {
         messagesTableView.reloadData()
         activityView.stopAnimating()
@@ -100,12 +97,16 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         messagesCell.deleteButton.alpha = messageIsEditing ? 1 : 0
         
         //TEMP
-        let channelFirst = ChannelsManager.instance.channels[indexPath.row].data()["firstUser"] as! String
-        let channelSecond = ChannelsManager.instance.channels[indexPath.row].data()["secondUser"] as! String
-        if UserManager.instance.currentUser == channelFirst {
-            messagesCell.messageTableViewLabel.text = channelSecond
+        if ChannelsManager.instance.channels.isEmpty {
+            return messagesCell
         } else {
-            messagesCell.messageTableViewLabel.text = channelFirst
+            let channelFirst = ChannelsManager.instance.channels[indexPath.row].data()["firstUser"] as! String
+            let channelSecond = ChannelsManager.instance.channels[indexPath.row].data()["secondUser"] as! String
+            if UserManager.instance.currentUser == channelFirst {
+                messagesCell.messageTableViewLabel.text = channelSecond
+            } else {
+                messagesCell.messageTableViewLabel.text = channelFirst
+            }
         }
         return messagesCell
     }

@@ -18,18 +18,6 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     var selectedStory:QueryDocumentSnapshot?
 
     
-    func addToMyChannels() {
-        let id = UserManager.instance.currentUser
-   
-        let channelID = ChannelsManager.instance.newChannelID!
-    FBRef.db.collection("users").document(id!).collection("myChannels").addDocument(data: ["ID":channelID])
-                
-        let secondUserID = ChannelsManager.instance.author(dc: selectedStory!)
-        
-        FBRef.db.collection("users").document(secondUserID).collection("myChannels").addDocument(data: ["ID":channelID])
-        
-    }
-    
     
 
     
