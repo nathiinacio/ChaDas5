@@ -50,7 +50,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     self.view.addSubview(dismissButton)
 
 
-
     messageInputBar.inputTextView.tintColor = UIColor.basePink
     messageInputBar.sendButton.setTitleColor(UIColor.buttonPink, for: .normal)
     messageInputBar.sendButton.title = ""
@@ -61,9 +60,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messagesCollectionView.messagesDataSource = self
     messagesCollectionView.messagesLayoutDelegate = self
     messagesCollectionView.messagesDisplayDelegate = self
-    
-   
- 
     
     messageInputBar.leftStackView.alignment = .center
     messageInputBar.sendButton.title = "Enviar"
@@ -80,8 +76,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messagesCollectionView.scrollToBottom()
     scrollsToBottomOnKeyboardBeginsEditing = true
     maintainPositionOnKeyboardFrameChanged = true
-    
-    
 
   }
 
@@ -167,11 +161,6 @@ func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCol
          return isFromCurrentSender(message: message) ? UIColor.black : UIColor.black
     }
 
-    
-
-    
-    
- 
 
 }
 
