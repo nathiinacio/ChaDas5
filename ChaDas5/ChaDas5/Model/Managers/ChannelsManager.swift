@@ -26,7 +26,7 @@ class ChannelsManager {
     var newChannelID:String?
     
     func createChannel(story: QueryDocumentSnapshot,requester:ChannelsManagerProtocol) {
-        let channel = Channel(name: "channel", story: story)
+        let channel = Channel(story: story)
         let channelRef = FBRef.db.collection("channels")
         print("channel created")
         print(channel.id!)
@@ -45,14 +45,24 @@ class ChannelsManager {
     var channels = [QueryDocumentSnapshot]()
     
     func loadChannels(requester:ChannelsManagerProtocol) {
+        debugPrint("Retrieving channels...")
         self.channels = []
-        let docRef = FBRef.db.collection("users").document((UserManager.instance.currentUser)!).collection("myChannels")
+        let docRef = FBRef.db.collection("channels").order(by: "lastMessageDate", descending: true)
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Document error")
             } else {
                 for document in querySnapshot!.documents {
-                    self.channels.append(document)
+                    
+                    guard let first = document.data()["firstUser"] as? String else {
+                        debugPrint("error in first user")
+                        return }
+                    guard let second = document.data()["secondUser"] as? String else {
+                        debugPrint("error in second user")
+                        return }
+                    if first == Auth.auth().currentUser?.uid || second == Auth.auth().currentUser?.uid {
+                        self.channels.append(document)
+                    }
                 }
                 print("loaded channels")
                 requester.readedChannels(channels: self.channels)

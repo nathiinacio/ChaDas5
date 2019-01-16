@@ -11,14 +11,12 @@ import FirebaseFirestore
 class Channel {
   
     var id: String?
-    let name: String
     var firstUser:String?
     var created:String?
     var secondUser:String?
     var lastMessageDate:String?
   
-    init(name: String, story: QueryDocumentSnapshot) {
-        self.name = name
+    init(story: QueryDocumentSnapshot) {
         self.firstUser = (UserManager.instance.currentUser)
         self.created = Date().keyString
         self.id = self.channelID
@@ -28,16 +26,11 @@ class Channel {
     }
   
     init?(document: QueryDocumentSnapshot) {
-        let data = document.data()
-        guard let name = data["ID"] as? String else {
-            return nil
-            
-        }
+        var data = document.data()
         id = document.documentID
-        self.name = name
-        let addicData = name.split(separator: "|")
-        self.firstUser = String(addicData[0] ?? "")
-        self.created = String(addicData[1] ?? "")
+        data["firstUser"] = self.firstUser
+        data["secondUser"] = self.secondUser
+        data["created"] = self.created
     }
     
     
@@ -48,7 +41,7 @@ class Channel {
         guard let id = self.id else {
             print("error saving message")
             return}
-        let channelMessagesRef = FBRef.db.collection("channels").document(name).collection("thread")
+        let channelMessagesRef = FBRef.db.collection("channels").document(id).collection("thread")
         channelMessagesRef.addDocument(data: message.representation) { (error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
@@ -57,7 +50,7 @@ class Channel {
             }
         }
         self.lastMessageDate = message.sentDate.keyString
-        FBRef.db.collection("channels").document(name).updateData(["lastMessageDate" : self.lastMessageDate])
+        FBRef.db.collection("channels").document(id).updateData(["lastMessageDate" : self.lastMessageDate])
     }
     
   }
@@ -67,7 +60,6 @@ extension Channel: DatabaseRepresentation {
     var asDictionary:[String:Any] {
         var result:[String:Any] = [:]
         result["firstUser"] = self.firstUser
-        result["name"] = self.name
         result["created"] = self.created
         result["secondUser"] = self.secondUser
         result["lastMessageDate"] = self.lastMessageDate
@@ -83,18 +75,6 @@ extension Channel: DatabaseRepresentation {
         }
         return first+"|"+created
     }
-    
-  
-}
 
-extension Channel: Comparable {
-  
-  static func == (lhs: Channel, rhs: Channel) -> Bool {
-    return lhs.id == rhs.id
-  }
-  
-  static func < (lhs: Channel, rhs: Channel) -> Bool {
-    return lhs.name < rhs.name
-  }
 
 }

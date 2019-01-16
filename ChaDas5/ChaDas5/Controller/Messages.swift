@@ -98,7 +98,15 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messagesCell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesTableViewCell
         messagesCell.deleteButton.alpha = messageIsEditing ? 1 : 0
-        messagesCell.messageTableViewLabel.text = "channel"
+        
+        //TEMP
+        let channelFirst = ChannelsManager.instance.channels[indexPath.row].data()["firstUser"] as! String
+        let channelSecond = ChannelsManager.instance.channels[indexPath.row].data()["secondUser"] as! String
+        if UserManager.instance.currentUser == channelFirst {
+            messagesCell.messageTableViewLabel.text = channelSecond
+        } else {
+            messagesCell.messageTableViewLabel.text = channelFirst
+        }
         return messagesCell
     }
     

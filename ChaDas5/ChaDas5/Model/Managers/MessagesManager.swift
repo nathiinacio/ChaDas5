@@ -22,7 +22,7 @@ class MessagesManager {
     var messages = [Message]() 
     
     func loadMessages(from channel: Channel, requester: MessagesProtocol) {
-        let messagesRef = FBRef.db.collection("channels").document(channel.name).collection("thread").order(by: "created")
+        let messagesRef = FBRef.db.collection("channels").document(channel.id!).collection("thread").order(by: "created")
         
         messagesRef.addSnapshotListener { (query, error) in
             if let error = error {

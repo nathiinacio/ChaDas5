@@ -23,7 +23,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     self.channel = channel
     super.init(nibName: nil, bundle: nil)
 
-    title = channel.name
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -76,12 +75,15 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     messageInputBar.inputTextView.font = UIFont(name: "SFCompactDisplay-Ultralight", size: 18)
     messageInputBar.setLeftStackViewWidthConstant(to: 10, animated: false)
     
+    messagesCollectionView.scrollToBottom()
+    
     
 
   }
 
     func readedMessagesFromChannel(messages: [Message]) {
         self.messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToBottom()
 
     }
 
@@ -109,6 +111,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
         self.messagesCollectionView.scrollToBottom(animated: true)
       }
     }
+    self.messagesCollectionView.scrollToBottom(animated: true)
   }
 
 
@@ -126,7 +129,7 @@ extension ChatViewController: MessagesDisplayDelegate {
 
 
   func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
-    return false
+    return true
   }
 
   func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
