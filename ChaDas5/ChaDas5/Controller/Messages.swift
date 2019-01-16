@@ -116,6 +116,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         let selectedCell = tableView.cellForRow(at: indexPath) as! MessagesTableViewCell
         selectedCell.contentView.backgroundColor = UIColor.clear
         
+        
         let channel = ChannelsManager.instance.channels[indexPath.row]
 //        let user = UserManager.instance.currentUser!
         print(channel)
