@@ -41,16 +41,16 @@ class MessagesTableViewCell: UITableViewCell {
         }
         
         
-//        print(choosedChannel.id!)
+        print(choosedChannel.id!)
         
         let selectedChannel = choosedChannel.id
         
         
-        let alert = UIAlertController(title: "Deseja mesmo excluir essa conversa?", message: "Você excluirá apenas para você essa conversa", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Deseja mesmo excluir essa conversa?", message: "A conversa será excluída para todos.", preferredStyle: .alert)
         
         
         let excluir = UIAlertAction(title: "Excluir conversa", style: .default, handler: { (action) -> Void in
-            FBRef.db.collection("users").document(UserManager.instance.currentUser!).collection("myChannels").document(selectedChannel!)
+            FBRef.db.collection("channels").document(selectedChannel!)
                 .delete(){ err in
                 if let err = err {
                     print("Error removing document: \(err)")

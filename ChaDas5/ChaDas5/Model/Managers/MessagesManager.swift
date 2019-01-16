@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+
 protocol MessagesProtocol {
     
     func readedMessagesFromChannel(messages:[Message]) 
@@ -38,6 +39,6 @@ class MessagesManager {
         
     }
     
-    
+
     
 }
