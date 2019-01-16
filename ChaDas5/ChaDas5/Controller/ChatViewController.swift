@@ -6,10 +6,12 @@ import MessageKit
 import FirebaseFirestore
 import MessageInputBar
 
+
 class ChatViewController: MessagesViewController, MessagesProtocol {
 
   private var messageListener: ListenerRegistration?
-
+  private let db = Firestore.firestore()
+    
   private let user: User
   private let channel: Channel
 
@@ -47,6 +49,15 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     dismissButton.contentMode = .center
     self.view.addSubview(dismissButton)
+    
+    
+    let complainButtonImg = UIImage(named: "complainIcon")
+    let complainButton = UIButton(frame: CGRect(x: 250, y: 50, width: 65, height: 55))
+    complainButton.setImage(complainButtonImg , for: .normal)
+    complainButton.addTarget(self, action: #selector(complainAction), for: .touchUpInside)
+    complainButton.contentMode = .center
+    self.view.addSubview(complainButton)
+    
 
 
     maintainPositionOnKeyboardFrameChanged = true
@@ -90,6 +101,59 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     @objc func buttonAction(sender: UIButton!) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func complainAction(sender: UIButton!) {
+        
+        let alert = UIAlertController(title: "Deseja mesmo bloquear esse usuário?", message: "Vocês não verão postagens um do outro mais! Esse usuário também será mandado para análise.", preferredStyle: .alert)
+        
+        
+        let bloquear = UIAlertAction(title: "Bloquear Usuário", style: .default, handler: { (action) -> Void in
+            
+            
+            var firstUser: String?
+            var secondUser: String?
+            
+    
+            
+            guard let id = self.channel.id else {
+                return
+            }
+
+            
+            let docRef = FBRef.db.collection("channels").document(id)
+            
+            docRef.getDocument(source: .cache) { (document, error) in
+                if let document = document {
+                    
+                    firstUser = document.get("firstUser") as? String
+                    secondUser  = document.get("secondUser") as? String
+                    print (firstUser!)
+                    print (secondUser!)
+                    self.db.collection("users").document(firstUser!).collection("block").document(secondUser!).setData(["id" : secondUser!])
+                    self.db.collection("users").document(secondUser!).collection("block").document(firstUser!).setData(["id" : firstUser!])
+                    
+                    
+                }
+                
+            }
+            
+            
+            
+            
+
+        })
+        
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(bloquear)
+        alert.addAction(cancelar)
+        self.present(alert, animated: true, completion: nil)
+        alert.view.tintColor = UIColor.buttonPink
+        
+    }
+    
+    
 
 
   // MARK: - Helpers
@@ -113,7 +177,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     }
     self.messagesCollectionView.scrollToBottom(animated: true)
   }
-
+    
 
 }
 

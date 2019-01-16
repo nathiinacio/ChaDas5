@@ -7,6 +7,7 @@
 //
 
 import FirebaseFirestore
+import UserNotifications
 
 class Channel {
   
@@ -46,12 +47,37 @@ class Channel {
             if let error = error {
                 debugPrint(error.localizedDescription)
             } else {
-                debugPrint("saved message")
-            }
+                debugPrint("saved message")            }
         }
         self.lastMessageDate = message.sentDate.keyString
         FBRef.db.collection("channels").document(id).updateData(["lastMessageDate" : self.lastMessageDate])
     }
+    
+    
+//    
+//    func createNotification(){
+//        
+//        
+//        print("HERE")
+//        let content = UNMutableNotificationContent()
+//        content.title = "Title"
+//        content.subtitle = "Sub"
+//        content.body = "body"
+//        content.sound = UNNotificationSound.default
+//        //content.launchImageName = AppDelegate
+//        
+//        let myTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+//        let myRequest = UNNotificationRequest(identifier: "Notification", content: content, trigger: myTrigger)
+//        
+//        UNUserNotificationCenter.current().add(myRequest) { (error) in
+//            print(error as Any)
+//        }
+//        
+//        
+//    }
+    
+    
+    
     
   }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,9 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser != nil {
             UserManager.instance.setup()
         }
-
+        
+//        UserDefaults.standard.set(["pt_BR"], forKey: "AppleLanguages")
+//        UserDefaults.standard.synchronize()
+//
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.badge , .alert]) { (sucess, error) in
+//            if error != nil{
+//
+//                print("Authorizatiion Unsucessful")
+//
+//            }
+//            else{
+//
+//                print("Authorizatiion Sucessful")
+//
+//            }
+//        }
+        
         return true
     }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) { }
 
@@ -40,4 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) { }
 
     func applicationWillTerminate(_ application: UIApplication) { }
+    
+   
+    
 }
