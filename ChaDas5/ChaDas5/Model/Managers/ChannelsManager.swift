@@ -27,7 +27,6 @@ class ChannelsManager {
         let channel = Channel(story: story)
         let channelRef = FBRef.db.collection("channels")
         print("channel created")
-        print(channel.id!)
         self.newChannelID = channel.id!
     }
     
