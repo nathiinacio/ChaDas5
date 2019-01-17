@@ -70,7 +70,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
         messageIsEditing =  false
         
-        ChannelsManager.instance.loadChannels(requester: self)
+        ChannelsManager.instance.preLoad(requester: self)
         
         
     }
@@ -140,7 +140,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     
     @objc private func refreshData(_ sender: Any) {
-        ChannelsManager.instance.loadChannels(requester: self)
+        ChannelsManager.instance.preLoad(requester: self)
         self.refreshControl.endRefreshing()
         
     }

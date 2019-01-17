@@ -16,6 +16,8 @@ class Channel {
     var created:String?
     var secondUser:String?
     var lastMessageDate:String?
+    var username1:String?
+    var username2:String?
   
     init(story: QueryDocumentSnapshot) {
         self.firstUser = (UserManager.instance.currentUser)
@@ -24,14 +26,17 @@ class Channel {
         self.secondUser = ChannelsManager.instance.author(dc: story)
         self.lastMessageDate = created
         let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
+        getUsernames()
+        
     }
   
     init?(document: QueryDocumentSnapshot) {
         var data = document.data()
         id = document.documentID
-        data["firstUser"] = self.firstUser
-        data["secondUser"] = self.secondUser
-        data["created"] = self.created
+        self.firstUser = data["firstUser"] as! String
+        self.secondUser = data["secondUser"] as! String
+        self.created = data["created"] as! String
+        getUsernames()
     }
     
     init?(document: DocumentReference) {
@@ -39,9 +44,29 @@ class Channel {
             var data = snapshot?.data()
             print(data)
             self.id = document.documentID
-            data!["firstUser"] = self.firstUser
-            data!["secondUser"] = self.secondUser
+            self.firstUser = data!["firstUser"] as! String
+            self.secondUser = data!["secondUser"] as! String
         }
+        getUsernames()
+    }
+    
+    func getUsernames() {
+//        let user1Ref = FBRef.db.collection("users").document(firstUser!)
+//
+//        user1Ref.getDocument(source: .cache) { (document, error) in
+//            if let document = document {
+//                self.username1 = document.get("username") as! String
+//            }
+//
+//        }
+//
+//        let user2Ref = FBRef.db.collection("users").document(firstUser!)
+//        user2Ref.getDocument(source: .cache) { (document, error) in
+//            if let document = document {
+//                self.username2 = document.get("username") as! String
+//            }
+//        }
+//        print(username1, username2)
     }
     
     
@@ -99,6 +124,8 @@ extension Channel: DatabaseRepresentation {
         result["created"] = self.created
         result["secondUser"] = self.secondUser
         result["lastMessageDate"] = self.lastMessageDate
+//        result["username1"] = self.username1
+//        result["username2"] = self.username2
         return result
     }
     

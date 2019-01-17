@@ -7,7 +7,7 @@ import FirebaseFirestore
 import MessageInputBar
 
 
-class ChatViewController: MessagesViewController, MessagesProtocol{
+class ChatViewController: MessagesViewController, MessagesProtocol, UINavigationBarDelegate {
 
   private var messageListener: ListenerRegistration?
   private let db = Firestore.firestore()
@@ -88,31 +88,18 @@ class ChatViewController: MessagesViewController, MessagesProtocol{
         var secondUser: String?
         
         var title:String?
-        
-        guard let id = self.channel.id else {
-            return
-        }
-        
-        let docRef = FBRef.db.collection("channels").document(id)
-        
-        docRef.getDocument(source: .cache) { (document, error) in
-            if let document = document {
-                
-                firstUser = document.get("firstUser") as? String
-                secondUser  = document.get("secondUser") as? String
-                
-                if firstUser == Auth.auth().currentUser?.uid {
-                    title = secondUser!
-                } else {
-                    title = firstUser!
-                }
-            }
+        if firstUser == Auth.auth().currentUser?.uid {
+            title = channel.secondUser!
+            
+        } else {
+            title = channel.firstUser!
+            
         }
         
         let navbarFont = UIFont(name: "SFCompactDisplay-Ultralight", size: 17) ?? UIFont.systemFont(ofSize: 17)
         bar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.black]
         
-        
+        self.title = title
         self.view.addSubview(bar)
         
         configureButtons()
@@ -120,7 +107,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol{
     
     func configureButtons() {
         let img = UIImage(named: "dismissIcon")
-        let dismissButton = UIButton(frame: CGRect(x: 30, y: 40, width: 65, height: 55))
+        let dismissButton = UIButton(frame: CGRect(x: 30, y: 45, width: 65, height: 55))
         dismissButton.setImage(img , for: .normal)
         dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         dismissButton.contentMode = .center
@@ -128,7 +115,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol{
         
         
         let complainButtonImg = UIImage(named: "complainIcon")
-        let complainButton = UIButton(frame: CGRect(x: 300, y: 40, width: 65, height: 55))
+        let complainButton = UIButton(frame: CGRect(x: 375 - dismissButton.frame.maxX, y: 45, width: 65, height: 55))
         complainButton.setImage(complainButtonImg , for: .normal)
         complainButton.addTarget(self, action: #selector(complainAction), for: .touchUpInside)
         complainButton.contentMode = .center
@@ -272,7 +259,7 @@ func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCol
     }
     
     func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: 100)
+        return CGSize(width: self.view.bounds.width, height: 120)
     }
 
 
