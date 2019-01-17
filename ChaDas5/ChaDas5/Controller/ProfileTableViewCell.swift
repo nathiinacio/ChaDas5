@@ -42,7 +42,7 @@ class ProfileTableViewCell: UITableViewCell {
             return
         }
         
-        let alert = UIAlertController(title: "Deseja mesmo excluir esse relato?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Deseja mesmo excluir esse relato?", message: "Essa ação não poderá ser desfeita.", preferredStyle: .alert)
         
         
         
