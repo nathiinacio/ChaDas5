@@ -9,7 +9,13 @@
 import UIKit
 import Firebase
 
-class StoryScreen: UIViewController, ChannelsManagerProtocol {
+
+protocol ChannelCreationObserver {
+    func created(channel: Channel)
+}
+
+
+class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObserver {
     
     func readedChannels(channels: [QueryDocumentSnapshot]) {
         print("not here too")
@@ -43,18 +49,22 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
         
         let docRef = FBRef.db.collection("channels").document(id)
         
-        print("HELLO", docRef, id)
-        
-        if let channel = Channel(document: docRef) {
+        guard let _ = Channel(document: docRef, channelRequester: self) else {
             print("deu ruim na criação do canal, se fode aí.")
-            let vc = ChatViewController(user: Auth.auth().currentUser!, channel: channel)
-            
-            present(vc, animated: true, completion: nil)
+            return
         }
         
         
 
     }
+    
+    func created(channel: Channel) {
+        let vc = ChatViewController(user: Auth.auth().currentUser!, channel: channel)
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
+
     
     
     @IBAction func archiveButton(_ sender: Any) {

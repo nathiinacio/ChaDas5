@@ -39,13 +39,13 @@ class Channel {
         getUsernames()
     }
     
-    init?(document: DocumentReference) {
+    init?(document: DocumentReference, channelRequester: ChannelCreationObserver) {
         document.getDocument { (snapshot, err) in
             var data = snapshot?.data()
-            print(type(of:self), #function, data)
             self.id = document.documentID
             self.firstUser = data!["firstUser"] as! String
             self.secondUser = data!["secondUser"] as! String
+            channelRequester.created(channel: self)
         }
         getUsernames()
     }

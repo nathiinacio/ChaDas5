@@ -120,14 +120,6 @@
             </objects>
             <point key="canvasLocation" x="104.8" y="136.28185907046478"/>
         </scene>
-        <!--Messages-->
-        <scene sceneID="PjR-9F-JDV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Messages" id="o3k-CA-2U7" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8f-5h-flB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="893" y="228"/>
-        </scene>
     </scenes>
     <resources>
         <image name="archive" width="924" height="740"/>
