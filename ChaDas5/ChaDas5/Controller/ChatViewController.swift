@@ -33,7 +33,13 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
 
     static var lcount = 0
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print ("OIIIIIII", #function)
+    }
+    
   override func viewDidLoad() {
+    print ("OIIIIIII", #function, "canal: ", channel.id)
     super.viewDidLoad()
 
     guard let id = channel.id else {

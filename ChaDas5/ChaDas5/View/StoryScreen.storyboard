@@ -58,8 +58,7 @@
                                         </constraints>
                                         <state key="normal" image="chat"/>
                                         <connections>
-                                            <action selector="chatButton:" destination="DY3-Pf-arH" eventType="touchUpInside" id="X42-FD-F94"/>
-                                            <segue destination="o3k-CA-2U7" kind="show" identifier="messages" id="gF1-sc-Tex"/>
+                                            <action selector="chatButton:" destination="DY3-Pf-arH" eventType="touchUpInside" id="Ue9-QX-4yf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -113,7 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="archiveButton" destination="svz-Z4-Yhg" id="mdC-cR-Qbl"/>
-                        <outlet property="chatButton" destination="dD1-BE-gBN" id="EMQ-Nd-DgF"/>
+                        <outlet property="chatButton" destination="dD1-BE-gBN" id="wIe-qu-p46"/>
                         <outlet property="storyTextView" destination="FMQ-7Z-TuW" id="QgI-u8-BI2"/>
                     </connections>
                 </viewController>

@@ -37,7 +37,7 @@ class Channel {
     init?(document: DocumentReference) {
         document.getDocument { (snapshot, err) in
             var data = snapshot?.data()
-            print(data)
+            print(type(of:self), #function, data)
             self.id = document.documentID
             data!["firstUser"] = self.firstUser
             data!["secondUser"] = self.secondUser

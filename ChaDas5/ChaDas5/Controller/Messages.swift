@@ -125,6 +125,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
             return
         }
         let vc = ChatViewController(user: Auth.auth().currentUser!, channel: choosedChannel)
+        
         present(vc, animated: true, completion: nil)
         
     }

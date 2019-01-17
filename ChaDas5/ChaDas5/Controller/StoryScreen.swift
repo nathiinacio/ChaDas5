@@ -18,7 +18,6 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     var selectedStory:QueryDocumentSnapshot?
 
     
-    
 
     
     //outlets
@@ -26,21 +25,33 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     @IBOutlet weak var archiveButton: UIButton!
     
     @IBAction func dismissButton(_ sender: Any) {
-        dismiss()
+        dismiss(animated: true)
     }
+    
     @IBOutlet weak var storyTextView: UITextView!
     
     @IBAction func chatButton(_ sender: Any) {
+    
+  
         ChannelsManager.instance.createChannel(story: selectedStory!, requester: self)
+    
         
-        let alert = UIAlertController(title: "Conversa iniciada!", message: "Vá em Mensagem para acessar o channel.", preferredStyle: .alert)
-
-        let ok = UIAlertAction(title: "Ok", style: .default ) { (action) -> Void in
-            self.dismiss(animated: true, completion: nil)
+        guard let id = ChannelsManager.instance.newChannelID else {
+            return
         }
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
-        alert.view.tintColor = UIColor.buttonPink
+    
+        
+        let docRef = FBRef.db.collection("channels").document(id)
+        
+        print("HELLO", docRef, id)
+        
+        if let channel = Channel(document: docRef) {
+            print("deu ruim na criação do canal, se fode aí.")
+            let vc = ChatViewController(user: Auth.auth().currentUser!, channel: channel)
+            
+            present(vc, animated: true, completion: nil)
+        }
+        
         
 
     }
