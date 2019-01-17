@@ -141,10 +141,6 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
                 
             }
             
-            
-            
-            
-
         })
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
