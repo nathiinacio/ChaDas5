@@ -56,7 +56,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         activityView.startAnimating()
         
     
-        RelatoManager.instance.loadStories(requester: self)
+        RelatoManager.instance.preLoad(requester: self)
         
         feedTableView.reloadData()
         noStoryLabel.alpha = 0
@@ -131,7 +131,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
     
     
     @objc private func refreshData(_ sender: Any) {
-        RelatoManager.instance.loadStories(requester: self)
+        RelatoManager.instance.preLoad(requester: self)
         self.refreshControl.endRefreshing()
         
     }

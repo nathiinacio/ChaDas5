@@ -7,7 +7,7 @@ import FirebaseFirestore
 import MessageInputBar
 
 
-class ChatViewController: MessagesViewController, MessagesProtocol {
+class ChatViewController: MessagesViewController, MessagesProtocol{
 
   private var messageListener: ListenerRegistration?
   private let db = Firestore.firestore()
@@ -24,6 +24,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     self.user = user
     self.channel = channel
     super.init(nibName: nil, bundle: nil)
+
 
   }
 
@@ -43,22 +44,10 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
 
     MessagesManager.instance.messages = []
     MessagesManager.instance.loadMessages(from: self.channel, requester: self)
+    
+    configureNB()
+    
 
-    let img = UIImage(named: "dismissIcon")
-    let dismissButton = UIButton(frame: CGRect(x: 45, y: 50, width: 65, height: 55))
-    dismissButton.setImage(img , for: .normal)
-    dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-    dismissButton.contentMode = .center
-    self.view.addSubview(dismissButton)
-    
-    
-    let complainButtonImg = UIImage(named: "complainIcon")
-    let complainButton = UIButton(frame: CGRect(x: 250, y: 50, width: 65, height: 55))
-    complainButton.setImage(complainButtonImg , for: .normal)
-    complainButton.addTarget(self, action: #selector(complainAction), for: .touchUpInside)
-    complainButton.contentMode = .center
-    self.view.addSubview(complainButton)
-    
 
 
     messageInputBar.inputTextView.tintColor = UIColor.basePink
@@ -89,6 +78,67 @@ class ChatViewController: MessagesViewController, MessagesProtocol {
     maintainPositionOnKeyboardFrameChanged = true
 
   }
+    func configureNB() {
+        let bar = CustomNavigationBar()
+        bar.frame = CGRect(x: 0.5, y: 0.5, width: 375, height: 100)
+        bar.barTintColor = UIColor.basePink
+        bar.isTranslucent = true
+        
+        var firstUser: String?
+        var secondUser: String?
+        
+        var title:String?
+        
+        guard let id = self.channel.id else {
+            return
+        }
+        
+        let docRef = FBRef.db.collection("channels").document(id)
+        
+        docRef.getDocument(source: .cache) { (document, error) in
+            if let document = document {
+                
+                firstUser = document.get("firstUser") as? String
+                secondUser  = document.get("secondUser") as? String
+                
+                if firstUser == Auth.auth().currentUser?.uid {
+                    title = secondUser!
+                } else {
+                    title = firstUser!
+                }
+            }
+        }
+        
+        let navbarFont = UIFont(name: "SFCompactDisplay-Ultralight", size: 17) ?? UIFont.systemFont(ofSize: 17)
+        bar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.black]
+        
+        
+        self.view.addSubview(bar)
+        
+        configureButtons()
+    }
+    
+    func configureButtons() {
+        let img = UIImage(named: "dismissIcon")
+        let dismissButton = UIButton(frame: CGRect(x: 30, y: 40, width: 65, height: 55))
+        dismissButton.setImage(img , for: .normal)
+        dismissButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        dismissButton.contentMode = .center
+        self.view.addSubview(dismissButton)
+        
+        
+        let complainButtonImg = UIImage(named: "complainIcon")
+        let complainButton = UIButton(frame: CGRect(x: 300, y: 40, width: 65, height: 55))
+        complainButton.setImage(complainButtonImg , for: .normal)
+        complainButton.addTarget(self, action: #selector(complainAction), for: .touchUpInside)
+        complainButton.contentMode = .center
+        self.view.addSubview(complainButton)
+    }
+    
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     func readedMessagesFromChannel(messages: [Message]) {
         self.messagesCollectionView.reloadData()
@@ -224,6 +274,10 @@ extension ChatViewController: MessagesLayoutDelegate {
 func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
          return isFromCurrentSender(message: message) ? UIColor.black : UIColor.black
     }
+    
+    func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+        return CGSize(width: self.view.bounds.width, height: 100)
+    }
 
 
 }
@@ -265,3 +319,6 @@ extension ChatViewController: MessageInputBarDelegate  {
   }
 
 }
+
+
+
