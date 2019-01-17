@@ -40,6 +40,8 @@ class ChannelsManager {
     
     var channels = [QueryDocumentSnapshot]()
     
+    var block = [String]()
+    
     func loadChannels(requester:ChannelsManagerProtocol) {
         debugPrint("Retrieving channels...")
         self.channels = []
@@ -56,6 +58,12 @@ class ChannelsManager {
                     guard let second = document.data()["secondUser"] as? String else {
                         debugPrint("error in second user")
                         return }
+                    
+                    if self.block.contains(second) || self.block.contains(first) {
+                        FBRef.db.collection("channels").document(document.documentID).delete()
+                    }
+                    
+                    
                     if first == Auth.auth().currentUser?.uid || second == Auth.auth().currentUser?.uid {
                         self.channels.append(document)
                     }
@@ -64,6 +72,23 @@ class ChannelsManager {
                 requester.readedChannels(channels: self.channels)
             }
         }
+    }
+    
+    
+    func preLoad(requester: ChannelsManagerProtocol) {
+        self.block = []
+        
+        let docRef = FBRef.db.collection("users").document((Auth.auth().currentUser?.uid)!).collection("block")
+        docRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Document error")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.block.append(document.documentID)
+                }
+            }
+        }
+        self.loadChannels(requester: requester)
     }
     
    

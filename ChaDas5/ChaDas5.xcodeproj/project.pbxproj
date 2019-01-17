@@ -17,11 +17,11 @@
 		155CF81621DE92E000AFB04B /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */; };
 		155CF81821DE92E800AFB04B /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF81721DE92E800AFB04B /* UIImage+Additions.swift */; };
 		1588D7B221E7AEB000136083 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588D7B121E7AEB000136083 /* MessagesManager.swift */; };
+		1588D7B421F0CAB100136083 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588D7B321F0CAB100136083 /* NavigationBar.swift */; };
 		158DBDB521C976D000C9888F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDB421C976CF00C9888F /* GoogleService-Info.plist */; };
 		158DBDB721CAD40100C9888F /* RelatoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDB621CAD40100C9888F /* RelatoManager.swift */; };
 		158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DBDBA21CBED6B00C9888F /* UserManager.swift */; };
 		15BC149E21C8101900768231 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BC149D21C8101900768231 /* Firebase.swift */; };
-		15BCCFAD21E3EA61000461FD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BCCFAC21E3EA61000461FD /* NavigationController.swift */; };
 		96451FD821AC79EF00C9C351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD621AC79EF00C9C351 /* Main.storyboard */; };
 		96451FDA21AC79F000C9C351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96451FD921AC79F000C9C351 /* Assets.xcassets */; };
 		96451FDD21AC79F000C9C351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96451FDB21AC79F000C9C351 /* LaunchScreen.storyboard */; };
@@ -87,12 +87,12 @@
 		155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Additions.swift"; sourceTree = "<group>"; };
 		155CF81721DE92E800AFB04B /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		1588D7B121E7AEB000136083 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
+		1588D7B321F0CAB100136083 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		158DBDB421C976CF00C9888F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		158DBDB621CAD40100C9888F /* RelatoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatoManager.swift; sourceTree = "<group>"; };
 		158DBDBA21CBED6B00C9888F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		15BC149D21C8101900768231 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		15BC14A021C811D500768231 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15BCCFAC21E3EA61000461FD /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		96451FCF21AC79EF00C9C351 /* ChaDas5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChaDas5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96451FD721AC79EF00C9C351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96451FD921AC79F000C9C351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 		96451FF321AC79FC00C9C351 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				15BCCFAC21E3EA61000461FD /* NavigationController.swift */,
 				155CF81121DE926100AFB04B /* ChatViewController.swift */,
 				E23901B421CADDA8006B3CF3 /* SplashScreen.swift */,
 				9A4E543221B0065A0033FEBF /* CreateNewAccount.swift */,
@@ -254,6 +253,7 @@
 		96451FF421AC7A0300C9C351 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1588D7B321F0CAB100136083 /* NavigationBar.swift */,
 				155CF81321DE92D400AFB04B /* UIView+Additions.swift */,
 				155CF81521DE92E000AFB04B /* UICollectionView+Additions.swift */,
 				155CF81721DE92E800AFB04B /* UIImage+Additions.swift */,
@@ -529,7 +529,6 @@
 				9A1B11EF21C43EFB006956B7 /* FeedTableViewCell.swift in Sources */,
 				155CF80821DE6E6800AFB04B /* Channel.swift in Sources */,
 				155CF80E21DE89F400AFB04B /* Message.swift in Sources */,
-				15BCCFAD21E3EA61000461FD /* NavigationController.swift in Sources */,
 				9A4E543921B0069B0033FEBF /* Feed.swift in Sources */,
 				9A76AF8321C02873003ED02C /* MessagesTableViewCell.swift in Sources */,
 				9A82FD8721E5030400566AE1 /* ChooseYourTeaScreen.swift in Sources */,
@@ -547,6 +546,7 @@
 				9A1B11D721C43B39006956B7 /* Relato.swift in Sources */,
 				155CF81421DE92D400AFB04B /* UIView+Additions.swift in Sources */,
 				1588D7B221E7AEB000136083 /* MessagesManager.swift in Sources */,
+				1588D7B421F0CAB100136083 /* NavigationBar.swift in Sources */,
 				9A1B11CE21C28BBC006956B7 /* ChooseYourTeaCollectionViewCell.swift in Sources */,
 				9A76AF9021C04B80003ED02C /* ProfileTableViewCell.swift in Sources */,
 				158DBDBB21CBED6B00C9888F /* UserManager.swift in Sources */,

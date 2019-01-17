@@ -25,6 +25,8 @@ class RelatoManager {
     
     var stories = [QueryDocumentSnapshot]()
     
+    var block = [String]()
+    
     func loadStories(requester:Manager) {
         self.stories = []
 
@@ -37,7 +39,11 @@ class RelatoManager {
                     guard let status = document.data()["status"] as? String else {
                         return
                     }
-                    if status == "active" {
+                    
+                    guard let author = document.data()["autor"] as? String else {
+                        return
+                    }
+                    if status == "active" && !self.block.contains(author){
                         self.stories.append(document)
                     }
                 }
@@ -45,6 +51,22 @@ class RelatoManager {
                 requester.readedStories(stories: self.stories)
             }
         }
+    }
+    
+    func preLoad(requester: Manager) {
+        self.block = []
+        
+        let docRef = FBRef.db.collection("users").document((Auth.auth().currentUser?.uid)!).collection("block")
+        docRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                print("Document error")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.block.append(document.documentID)
+                }
+            }
+        }
+        self.loadStories(requester: requester)
     }
     
     
