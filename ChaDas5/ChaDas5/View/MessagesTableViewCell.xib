@@ -40,8 +40,7 @@
                                 <rect key="frame" x="38" y="19" width="90" height="90"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-hc-2u1">
-                                        <rect key="frame" x="10" y="10" width="70" height="70"/>
-                                        <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="19" y="6" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="84f-5b-6SX"/>
                                             <constraint firstAttribute="width" constant="70" id="Pzb-8x-EGX"/>
@@ -56,11 +55,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="KEM-OR-BbJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="wUo-hc-2u1" secondAttribute="bottom" constant="10" id="KI3-Dc-Mau"/>
-                                    <constraint firstAttribute="trailing" secondItem="wUo-hc-2u1" secondAttribute="trailing" constant="10" id="MTm-nO-t5Q"/>
-                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="leading" secondItem="36R-R8-rnS" secondAttribute="leading" constant="10" id="cdd-FA-Vsl"/>
+                                    <constraint firstAttribute="bottom" secondItem="wUo-hc-2u1" secondAttribute="bottom" constant="14" id="KI3-Dc-Mau"/>
+                                    <constraint firstAttribute="trailing" secondItem="wUo-hc-2u1" secondAttribute="trailing" constant="1" id="MTm-nO-t5Q"/>
+                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="leading" secondItem="36R-R8-rnS" secondAttribute="leading" constant="19" id="cdd-FA-Vsl"/>
                                     <constraint firstAttribute="height" constant="90" id="hln-Xu-Qpg"/>
-                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="top" secondItem="36R-R8-rnS" secondAttribute="top" constant="10" id="s30-8x-dTB"/>
+                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="top" secondItem="36R-R8-rnS" secondAttribute="top" constant="6" id="s30-8x-dTB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
