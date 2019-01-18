@@ -39,9 +39,6 @@ class Relato{
 
     func fbSave() {
         FBRef.db.collection("stories").document(self.id).setData(self.asDictionary)
-        guard let userID = UserManager.instance.currentUser else {
-            return
-        }
     }
     
     

@@ -22,8 +22,8 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
     messageListener?.remove()
   }
 
-  init(user: User, channel: Channel) {
-    self.user = user
+  init(channel: Channel) {
+    self.user = Auth.auth().currentUser!
     self.channel = channel
     super.init(nibName: nil, bundle: nil)
 
@@ -105,14 +105,14 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
         var firstUser: String?
         var secondUser: String?
         
-        var title:String?
-        if firstUser == Auth.auth().currentUser?.uid {
-            title = channel.secondUser!
-            
-        } else {
-            title = channel.firstUser!
-            
-        }
+        var title: String?
+//        if firstUser == Auth.auth().currentUser?.uid {
+//            title = channel.secondUser!
+//
+//        } else {
+//            title = channel.firstUser!
+//
+//        }
         
         let navbarFont = UIFont(name: "SFCompactDisplay-Ultralight", size: 17) ?? UIFont.systemFont(ofSize: 17)
         bar.titleTextAttributes = [NSAttributedString.Key.font: navbarFont, NSAttributedString.Key.foregroundColor:UIColor.black]

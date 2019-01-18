@@ -9,38 +9,59 @@
 import FirebaseFirestore
 import UserNotifications
 
+struct ChannelUser {
+    var uid: String
+    var displayName: String?
+}
+
 class Channel {
   
     var id: String?
-    var firstUser:String?
-    var created:String?
-    var secondUser:String?
-    var lastMessageDate:String?
+    var firstUser: ChannelUser?
+    var created: String?
+    var secondUser: ChannelUser?
+    var lastMessageDate: String?
   
     init(story: QueryDocumentSnapshot) {
-        self.firstUser = (UserManager.instance.currentUser)
+        self.firstUser = ChannelUser(uid: (UserManager.instance.currentUser!), displayName: nil)
         self.created = Date().keyString
         self.id = self.channelID
-        self.secondUser = ChannelsManager.instance.author(dc: story)
+        self.secondUser = ChannelUser(uid: ChannelsManager.instance.author(dc: story), displayName: nil)
         self.lastMessageDate = created
-        let newDoc = FBRef.db.collection("channels").document(self.channelID).setData(self.asDictionary)
-        
     }
   
     init?(document: QueryDocumentSnapshot) {
         var data = document.data()
         id = document.documentID
-        self.firstUser = data["firstUser"] as! String
-        self.secondUser = data["secondUser"] as! String
-        self.created = data["created"] as! String
+        guard let fUser = data["firstUser"] as? String else {
+            debugPrint("Error in first user")
+            return
+        }
+        guard let sUser = data["secondUser"] as? String else {
+            debugPrint("Error in first user")
+            return
+        }
+        
+        self.firstUser = ChannelUser(uid: fUser, displayName: nil)
+        self.secondUser = ChannelUser(uid: sUser, displayName: nil)
+        self.created = (data["created"] as! String)
     }
     
     init?(document: DocumentReference, channelRequester: ChannelCreationObserver) {
         document.getDocument { (snapshot, err) in
             var data = snapshot?.data()
             self.id = document.documentID
-            self.firstUser = data!["firstUser"] as! String
-            self.secondUser = data!["secondUser"] as! String
+            guard let fUser = data!["firstUser"] as? String else {
+                debugPrint("Error in first user")
+                return
+            }
+            guard let sUser = data!["secondUser"] as? String else {
+                debugPrint("Error in first user")
+                return
+            }
+            
+            self.firstUser = ChannelUser(uid: fUser, displayName: nil)
+            self.secondUser = ChannelUser(uid: sUser, displayName: nil)
             channelRequester.created(channel: self)
         }
         
@@ -66,29 +87,6 @@ class Channel {
     }
     
     
-//    
-//    func createNotification(){
-//        
-//        
-//        print("HERE")
-//        let content = UNMutableNotificationContent()
-//        content.title = "Title"
-//        content.subtitle = "Sub"
-//        content.body = "body"
-//        content.sound = UNNotificationSound.default
-//        //content.launchImageName = AppDelegate
-//        
-//        let myTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
-//        let myRequest = UNNotificationRequest(identifier: "Notification", content: content, trigger: myTrigger)
-//        
-//        UNUserNotificationCenter.current().add(myRequest) { (error) in
-//            print(error as Any)
-//        }
-//        
-//        
-//    }
-    
-    
     
     
   }
@@ -106,12 +104,12 @@ extension Channel: DatabaseRepresentation {
     
     var channelID:String {
         guard let first = self.firstUser else {
-            return "user_error"
+            return "error_in_first"
         }
         guard let created = self.created else {
             return "data_non_avaliable"
         }
-        return first+"|"+created
+        return first.uid+"|"+created
     }
 
 

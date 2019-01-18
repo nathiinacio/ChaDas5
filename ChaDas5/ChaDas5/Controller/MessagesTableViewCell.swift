@@ -35,22 +35,22 @@ class MessagesTableViewCell: UITableViewCell {
         
         print(channel)
         
-        guard let choosedChannel = Channel(document: channel) else {
-            print("Error retrieving channel")
-            return
-        }
+//        guard let choosedChannel = Channel(document: channel) else {
+//            print("Error retrieving channel")
+//            return
+//        }
         
-        
-        print(choosedChannel.id!)
-        
-        let selectedChannel = choosedChannel.id
+//
+//        print(choosedChannel.id!)
+//
+//        let selectedChannel = choosedChannel.id
         
         
         let alert = UIAlertController(title: "Deseja mesmo excluir essa conversa?", message: "A conversa será excluída para todos e essa ação não poderá ser desfeita.", preferredStyle: .alert)
         
         
         let excluir = UIAlertAction(title: "Excluir conversa", style: .default, handler: { (action) -> Void in
-            FBRef.db.collection("channels").document(selectedChannel!)
+            FBRef.db.collection("channels").document(channel.id!)
                 .delete(){ err in
                 if let err = err {
                     print("Error removing document: \(err)")

@@ -27,7 +27,7 @@ class MessagesManager {
         
         messagesRef.addSnapshotListener { (query, error) in
             if let error = error {
-                debugPrint(error.localizedDescription)
+                debugPrint("Document error \(error.localizedDescription)")
             }
             self.messages = []
             for document in (query?.documents)! {

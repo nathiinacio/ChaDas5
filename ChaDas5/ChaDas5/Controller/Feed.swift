@@ -74,7 +74,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         if !RelatoManager.instance.stories.isEmpty {
             let doc = RelatoManager.instance.stories[indexPath.row]
             
-            feedCell.feedTableViewTextField.text = doc.data()["conteudo"] as! String
+            feedCell.feedTableViewTextField.text = (doc.data()["conteudo"] as! String)
             
             feedCell.selectionStyle = .none
         }

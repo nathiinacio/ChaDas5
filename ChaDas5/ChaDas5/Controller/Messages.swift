@@ -76,7 +76,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     }
     
    
-    func readedChannels(channels: [QueryDocumentSnapshot]) {
+    func readedChannels(channels: [Channel]) {
         messagesTableView.reloadData()
         activityView.stopAnimating()
         if ChannelsManager.instance.channels.count == 0 {
@@ -98,17 +98,28 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         messagesCell.deleteButton.alpha = messageIsEditing ? 1 : 0
         
         //TEMP
-        if ChannelsManager.instance.channels.isEmpty || ChannelsManager.instance.usernames.isEmpty {
+        if ChannelsManager.instance.channels.isEmpty {
             return messagesCell
         } else {
-            print("============", ChannelsManager.instance.usernames)
-            print("============", indexPath.row)
-
-            let username = ChannelsManager.instance.usernames[indexPath.row]
-            let photo = UIImage.init(named: username)
+            let channel = ChannelsManager.instance.channels[indexPath.row]
             
-            messagesCell.messageTableViewLabel.text = username
-            messagesCell.messageTableViewImage.image = photo
+            var username: String?
+            if UserManager.instance.currentUser == channel.firstUser?.uid {
+                if let displayName = channel.secondUser?.displayName {
+                    username = displayName
+                }
+            } else {
+                if let displayName = channel.firstUser?.displayName {
+                    username = displayName
+                }
+            }
+            
+            if (username != nil) {
+                let photo = UIImage.init(named: username!)
+                
+                messagesCell.messageTableViewLabel.text = username
+                messagesCell.messageTableViewImage.image = photo
+            }
         }
         return messagesCell
     }
@@ -120,13 +131,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
         
         let channel = ChannelsManager.instance.channels[indexPath.row]
-//        let user = UserManager.instance.currentUser!
-        print(channel)
-        guard let choosedChannel = Channel(document: channel) else {
-            print("Error retrieving channel")
-            return
-        }
-        let vc = ChatViewController(user: Auth.auth().currentUser!, channel: choosedChannel)
+        let vc = ChatViewController(channel: channel)
         
         present(vc, animated: true, completion: nil)
         

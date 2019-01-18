@@ -34,6 +34,7 @@ class Login: UIViewController {
                 DispatchQueue.main.async {
                     //Use "if let" to access the error, if it is non-nil
                     if let error = error {
+                        debugPrint("error: \(error.localizedDescription)")
                         let resetFailedAlert = UIAlertController(title: "Redefinir senha falhou", message: "Não existe nenhuma conta com este e-mail", preferredStyle: .alert)
                         resetFailedAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                         resetFailedAlert.view.tintColor = UIColor.buttonPink

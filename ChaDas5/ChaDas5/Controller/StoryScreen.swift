@@ -17,7 +17,7 @@ protocol ChannelCreationObserver {
 
 class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObserver {
     
-    func readedChannels(channels: [QueryDocumentSnapshot]) {
+    func readedChannels(channels: [Channel]) {
         print("not here too")
     }
     
@@ -59,7 +59,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
     }
     
     func created(channel: Channel) {
-        let vc = ChatViewController(user: Auth.auth().currentUser!, channel: channel)
+        let vc = ChatViewController(channel: channel)
         
         present(vc, animated: true, completion: nil)
     }
@@ -146,7 +146,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
     }
     
     override func viewDidLoad() {
-        self.storyTextView.text = self.selectedStory?.data()["conteudo"] as! String
+        self.storyTextView.text = (self.selectedStory?.data()["conteudo"] as! String)
         
         if self.selectedStory?.data()["autor"] as? String == UserManager.instance.currentUser {
             chatButton.isEnabled = false

@@ -10,10 +10,7 @@ import Foundation
 import Firebase
 
 protocol ChannelsManagerProtocol {
-    
-    
-    func readedChannels(channels:[QueryDocumentSnapshot])
-    
+    func readedChannels(channels: [Channel])
 }
 
 class ChannelsManager {
@@ -25,7 +22,6 @@ class ChannelsManager {
     
     func createChannel(story: QueryDocumentSnapshot,requester:ChannelsManagerProtocol) {
         let channel = Channel(story: story)
-        let channelRef = FBRef.db.collection("channels")
         print("channel created")
         self.newChannelID = channel.id!
     }
@@ -38,59 +34,40 @@ class ChannelsManager {
         return author
     }
     
-    var channels = [QueryDocumentSnapshot]()
+    var channels = [Channel]()
     
     var block = [String]()
     
-    var usernames = [String]()
-    
-    func loadChannels(requester:ChannelsManagerProtocol) {
+    func loadChannels(requester: ChannelsManagerProtocol) {
         debugPrint("Retrieving channels...")
+        let channelsRef = FBRef.db.collection("channels")
+        
         self.channels = []
-        self.usernames = []
-        let docRef = FBRef.db.collection("channels").order(by: "lastMessageDate", descending: true)
+        let docRef = channelsRef.order(by: "lastMessageDate", descending: true)
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
-                print("Document error")
+                debugPrint("Document error \(err.localizedDescription)")
             } else {
                 for document in querySnapshot!.documents {
+                    let currentChannel = Channel(document: document)
                     
-                    guard let first = document.data()["firstUser"] as? String else {
-                        debugPrint("error in first user")
-                        return }
-                    guard let second = document.data()["secondUser"] as? String else {
-                        debugPrint("error in second user")
-                        return }
+                    guard let first = currentChannel?.firstUser?.uid else { return }
+                    guard let second = currentChannel?.secondUser?.uid else { return }
                     
-                    if (first == Auth.auth().currentUser?.uid && self.block.contains(second)) || (second == Auth.auth().currentUser?.uid && self.block.contains(first)) {
+                    // EXCLUIR CONVERSAS COM BLOQUEADOS
+                    if (first == UserManager.instance.currentUser && self.block.contains(second)) || (second == UserManager.instance.currentUser && self.block.contains(first)) {
                         FBRef.db.collection("channels").document(document.documentID).delete()
                     }
                     
                     
-                    if first == Auth.auth().currentUser?.uid {
+                    print("============= my channel: ", currentChannel?.asDictionary)
                     
-                        FBRef.db.collection("users").document(second).getDocument(completion: { (dc, err) in
-                            let usrnm = dc?.data()!["username"] as! String
-                            self.usernames.append(usrnm)
-                            print("==============", usrnm)
-                            
-                        })
+                   
                     
-                        self.channels.append(document)
-                        
-                    } else if second == Auth.auth().currentUser?.uid {
-                        
-                        FBRef.db.collection("users").document(first).getDocument(completion: { (dc, err) in
-                            let usrnm = dc?.data()!["username"] as! String
-                            self.usernames.append(usrnm)
-                            print("==============", usrnm)
-                        })
-                        
-                        self.channels.append(document)
-                    }
+                    self.channels.append(currentChannel!)
                 }
                 print("loaded channels")
-                requester.readedChannels(channels: self.channels)
+                self.loadUsernames(requester: requester)
             }
         }
     }
@@ -99,17 +76,63 @@ class ChannelsManager {
     func preLoad(requester: ChannelsManagerProtocol) {
         self.block = []
         
-        let docRef = FBRef.db.collection("users").document((Auth.auth().currentUser?.uid)!).collection("block")
+        let docRef = FBRef.db.collection("users").document(
+            (Auth.auth().currentUser?.uid)!).collection("block")
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
-                print("Document error")
+                print("Document error \(err.localizedDescription)")
             } else {
                 for document in querySnapshot!.documents {
                     self.block.append(document.documentID)
                 }
+                self.loadChannels(requester: requester)
             }
         }
-        self.loadChannels(requester: requester)
+    }
+    
+    func retriveDisplayName(withUID uid: String, completion: @escaping (String?, Error?) -> Void) {
+        let usersRef = FBRef.db.collection("users")
+        
+        usersRef.document(uid).getDocument() { (document, error) in
+            if let error = error {
+                completion(nil, error)
+            }
+            let username = document?.data()!["username"] as! String
+            completion(username, nil)
+        }
+    }
+    
+    func loadUsernames(requester: ChannelsManagerProtocol) {
+        /// from (https://stackoverflow.com/questions/35906568/wait-until-swift-for-loop-with-asynchronous-network-requests-finishes-executing)
+        let dispatch = DispatchGroup()
+        
+        for channel in self.channels {
+            dispatch.enter()
+            guard let first = channel.firstUser?.uid else { return }
+            guard let second = channel.secondUser?.uid else { return }
+            
+            retriveDisplayName(withUID: first) { (fUsername, error) in
+                if let error = error {
+                    debugPrint("======================")
+                    debugPrint(#function, error.localizedDescription)
+                    debugPrint("======================")
+                }
+                channel.firstUser?.displayName = fUsername
+                
+                self.retriveDisplayName(withUID: second) { (sUsername, error) in
+                    if let error = error {
+                        debugPrint("======================")
+                        debugPrint(#function, error.localizedDescription)
+                        debugPrint("======================")
+                    }
+                    channel.secondUser?.displayName = sUsername
+                    dispatch.leave()
+                }
+            }
+        }
+        dispatch.notify(queue: .main) {
+            requester.readedChannels(channels: self.channels)
+        }
     }
     
 }

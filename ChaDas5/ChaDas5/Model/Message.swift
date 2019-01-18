@@ -69,7 +69,7 @@ extension Message: DatabaseRepresentation {
     
     
     var representation: [String : Any] {
-        var rep: [String : Any] = [
+        let rep: [String : Any] = [
             "created": sentDate,
             "senderID": sender.id,
             "senderName": sender.displayName,

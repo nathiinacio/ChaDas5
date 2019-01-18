@@ -21,7 +21,7 @@ class MyStoriesManager {
         let dbRef = FBRef.db.collection("stories").order(by: "data", descending: true)
         dbRef.getDocuments { (querySnapshot, err) in
             if let err = err {
-                print("Document error")
+                debugPrint("Document error \(err.localizedDescription)")
             } else {
                 for document in querySnapshot!.documents {
                     guard let status = document.data()["status"] as? String else {
