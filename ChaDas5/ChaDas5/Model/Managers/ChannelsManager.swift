@@ -42,9 +42,12 @@ class ChannelsManager {
     
     var block = [String]()
     
+    var usernames = [String]()
+    
     func loadChannels(requester:ChannelsManagerProtocol) {
         debugPrint("Retrieving channels...")
         self.channels = []
+        self.usernames = []
         let docRef = FBRef.db.collection("channels").order(by: "lastMessageDate", descending: true)
         docRef.getDocuments { (querySnapshot, err) in
             if let err = err {
@@ -59,12 +62,30 @@ class ChannelsManager {
                         debugPrint("error in second user")
                         return }
                     
-                    if self.block.contains(second) || self.block.contains(first) {
+                    if (first == Auth.auth().currentUser?.uid && self.block.contains(second)) || (second == Auth.auth().currentUser?.uid && self.block.contains(first)) {
                         FBRef.db.collection("channels").document(document.documentID).delete()
                     }
                     
                     
-                    if first == Auth.auth().currentUser?.uid || second == Auth.auth().currentUser?.uid {
+                    if first == Auth.auth().currentUser?.uid {
+                    
+                        FBRef.db.collection("users").document(second).getDocument(completion: { (dc, err) in
+                            let usrnm = dc?.data()!["username"] as! String
+                            self.usernames.append(usrnm)
+                            print("==============", usrnm)
+                            
+                        })
+                    
+                        self.channels.append(document)
+                        
+                    } else if second == Auth.auth().currentUser?.uid {
+                        
+                        FBRef.db.collection("users").document(first).getDocument(completion: { (dc, err) in
+                            let usrnm = dc?.data()!["username"] as! String
+                            self.usernames.append(usrnm)
+                            print("==============", usrnm)
+                        })
+                        
                         self.channels.append(document)
                     }
                 }
@@ -91,5 +112,4 @@ class ChannelsManager {
         self.loadChannels(requester: requester)
     }
     
-   
 }
