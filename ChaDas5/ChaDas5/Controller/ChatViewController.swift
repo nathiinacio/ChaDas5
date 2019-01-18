@@ -153,7 +153,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
     }
 
     @objc func buttonAction(sender: UIButton!) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
 
