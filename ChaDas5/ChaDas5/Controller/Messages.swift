@@ -82,7 +82,6 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         if ChannelsManager.instance.channels.count == 0 {
             self.noStoryLabel.alpha = 1
             self.noStoryLabel.text = "Você não possui conversas ainda..."
-            
         }
     }
     
@@ -97,16 +96,17 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         messagesCell.deleteButton.alpha = messageIsEditing ? 1 : 0
         
         //TEMP
-        if ChannelsManager.instance.channels.isEmpty {
+        if ChannelsManager.instance.channels.isEmpty || ChannelsManager.instance.usernames.isEmpty {
             return messagesCell
         } else {
-            let channelFirst = ChannelsManager.instance.channels[indexPath.row].data()["firstUser"] as! String
-            let channelSecond = ChannelsManager.instance.channels[indexPath.row].data()["secondUser"] as! String
-            if UserManager.instance.currentUser == channelFirst {
-                messagesCell.messageTableViewLabel.text = channelSecond
-            } else {
-                messagesCell.messageTableViewLabel.text = channelFirst
-            }
+            print("============", ChannelsManager.instance.usernames)
+            print("============", indexPath.row)
+
+            let username = ChannelsManager.instance.usernames[indexPath.row]
+            let photo = UIImage.init(named: username)
+            
+            messagesCell.messageTableViewLabel.text = username
+            messagesCell.messageTableViewImage.image = photo
         }
         return messagesCell
     }
@@ -142,6 +142,11 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     @objc private func refreshData(_ sender: Any) {
         ChannelsManager.instance.preLoad(requester: self)
         self.refreshControl.endRefreshing()
+        
+        if ChannelsManager.instance.channels.count == 0 {
+            self.noStoryLabel.alpha = 1
+            self.noStoryLabel.text = "Você não possui conversas ainda..."
+        }
         
     }
     

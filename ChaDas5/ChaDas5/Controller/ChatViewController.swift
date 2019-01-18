@@ -41,6 +41,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
         self.dismiss(animated: true)
         return
     }
+    
 
     MessagesManager.instance.messages = []
     MessagesManager.instance.loadMessages(from: self.channel, requester: self)
