@@ -144,11 +144,6 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         ChannelsManager.instance.preLoad(requester: self)
         self.refreshControl.endRefreshing()
         
-        if ChannelsManager.instance.channels.count == 0 {
-            self.noStoryLabel.alpha = 1
-            self.noStoryLabel.text = "Você não possui conversas ainda..."
-        }
-        
     }
     
     
