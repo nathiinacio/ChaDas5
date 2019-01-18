@@ -9,7 +9,13 @@
 import UIKit
 import Firebase
 
-class StoryScreen: UIViewController, ChannelsManagerProtocol {
+
+protocol ChannelCreationObserver {
+    func created(channel: Channel)
+}
+
+
+class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObserver {
     
     func readedChannels(channels: [QueryDocumentSnapshot]) {
         print("not here too")
@@ -18,7 +24,6 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     var selectedStory:QueryDocumentSnapshot?
 
     
-    
 
     
     //outlets
@@ -26,24 +31,40 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol {
     @IBOutlet weak var archiveButton: UIButton!
     
     @IBAction func dismissButton(_ sender: Any) {
-        dismiss()
+        dismiss(animated: true)
     }
+    
     @IBOutlet weak var storyTextView: UITextView!
     
     @IBAction func chatButton(_ sender: Any) {
+    
+  
         ChannelsManager.instance.createChannel(story: selectedStory!, requester: self)
+    
         
-        let alert = UIAlertController(title: "Conversa iniciada!", message: "Vá em Mensagem para acessar o channel.", preferredStyle: .alert)
-
-        let ok = UIAlertAction(title: "Ok", style: .default ) { (action) -> Void in
-            self.dismiss(animated: true, completion: nil)
+        guard let id = ChannelsManager.instance.newChannelID else {
+            return
         }
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
-        alert.view.tintColor = UIColor.buttonPink
+    
+        
+        let docRef = FBRef.db.collection("channels").document(id)
+        
+        guard let _ = Channel(document: docRef, channelRequester: self) else {
+            print("deu ruim na criação do canal, se fode aí.")
+            return
+        }
+        
         
 
     }
+    
+    func created(channel: Channel) {
+        let vc = ChatViewController(user: Auth.auth().currentUser!, channel: channel)
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
+
     
     
     @IBAction func archiveButton(_ sender: Any) {

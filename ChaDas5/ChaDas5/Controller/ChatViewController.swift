@@ -11,6 +11,8 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
 
   private var messageListener: ListenerRegistration?
   private let db = Firestore.firestore()
+   
+  var activityView:UIActivityIndicatorView!
     
   private let user: User
   private let channel: Channel
@@ -34,7 +36,11 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
 
     static var lcount = 0
     
+    
+  
+    
   override func viewDidLoad() {
+    
     super.viewDidLoad()
 
     guard let id = channel.id else {
@@ -78,7 +84,18 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
     scrollsToBottomOnKeyboardBeginsEditing = true
     maintainPositionOnKeyboardFrameChanged = true
 
+    activityView = UIActivityIndicatorView(style: .gray)
+    activityView.color = UIColor.buttonPink
+    activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
+    activityView.center = view.center
+    activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+    
+    view.addSubview(activityView)
+    
+    activityView.startAnimating()
+    
   }
+    
     func configureNB() {
         let bar = CustomNavigationBar()
         bar.frame = CGRect(x: 0.5, y: 0.5, width: 375, height: 100)
@@ -130,6 +147,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
 
     func readedMessagesFromChannel(messages: [Message]) {
         self.messagesCollectionView.reloadData()
+         activityView.stopAnimating()
         messagesCollectionView.scrollToBottom()
 
     }
@@ -137,6 +155,8 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
     @objc func buttonAction(sender: UIButton!) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+
     
     @objc func complainAction(sender: UIButton!) {
         
@@ -148,7 +168,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
             
             var firstUser: String?
             var secondUser: String?
-            
+    
     
             
             guard let id = self.channel.id else {
@@ -168,11 +188,23 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
                     self.db.collection("users").document(firstUser!).collection("block").document(secondUser!).setData(["id" : secondUser!])
                     self.db.collection("users").document(secondUser!).collection("block").document(firstUser!).setData(["id" : firstUser!])
                     
+                    if firstUser ==  UserManager.instance.currentUser
+                    {
+                        self.db.collection("analise").document(secondUser!).setData(["id" : secondUser!])
+           
+                    }
+                    
+                    else{
+                        
+                          self.db.collection("analise").document(firstUser!).setData(["id" : firstUser!])
+                        
+                    }
+                    
                     
                 }
                 
             }
-            
+            self.dismiss(animated: true)
         })
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in

@@ -46,7 +46,7 @@ class MessagesTableViewCell: UITableViewCell {
         let selectedChannel = choosedChannel.id
         
         
-        let alert = UIAlertController(title: "Deseja mesmo excluir essa conversa?", message: "A conversa será excluída para todos.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Deseja mesmo excluir essa conversa?", message: "A conversa será excluída para todos e essa ação não poderá ser desfeita.", preferredStyle: .alert)
         
         
         let excluir = UIAlertAction(title: "Excluir conversa", style: .default, handler: { (action) -> Void in
