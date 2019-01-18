@@ -139,11 +139,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
         complainButton.contentMode = .center
         self.view.addSubview(complainButton)
     }
-    
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+
 
     func readedMessagesFromChannel(messages: [Message]) {
         self.messagesCollectionView.reloadData()
