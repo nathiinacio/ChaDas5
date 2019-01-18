@@ -82,6 +82,8 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         if ChannelsManager.instance.channels.count == 0 {
             self.noStoryLabel.alpha = 1
             self.noStoryLabel.text = "Você não possui conversas ainda..."
+        } else {
+            self.noStoryLabel.alpha = 0
         }
     }
     
@@ -130,10 +132,7 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
     }
     
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let selectedCell = tableView.cellForRow(at: indexPath) as? MessagesTableViewCell
-//        selectedCell?.contentView.backgroundColor = UIColor.white
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
