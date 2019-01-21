@@ -64,18 +64,24 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-Kf-gA4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="76q-6w-RXR">
+                                        <rect key="frame" x="48" y="101" width="279" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Svr-ww-HsZ"/>
+                                            <constraint firstAttribute="width" constant="279" id="n3r-YX-EBN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="76q-6w-RXR" firstAttribute="leading" secondItem="OpM-Kf-gA4" secondAttribute="leading" constant="48" id="5NB-OT-I35"/>
+                                    <constraint firstAttribute="trailing" secondItem="76q-6w-RXR" secondAttribute="trailing" constant="48" id="Vf8-cK-UAP"/>
+                                    <constraint firstItem="76q-6w-RXR" firstAttribute="top" secondItem="OpM-Kf-gA4" secondAttribute="top" constant="101" id="hL8-RF-yZ3"/>
                                     <constraint firstAttribute="height" constant="360" id="qJ8-fi-mVf"/>
+                                    <constraint firstItem="76q-6w-RXR" firstAttribute="centerX" secondItem="OpM-Kf-gA4" secondAttribute="centerX" id="udU-6d-KGl"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="76q-6w-RXR">
-                                <rect key="frame" x="67.5" y="81" width="240" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Svr-ww-HsZ"/>
-                                    <constraint firstAttribute="width" constant="240" id="n3r-YX-EBN"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -86,13 +92,9 @@
                             <constraint firstItem="9LX-75-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mby-U8-YFd"/>
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N2d-Wg-ahW"/>
                             <constraint firstItem="9LX-75-H2R" firstAttribute="top" secondItem="OpM-Kf-gA4" secondAttribute="bottom" constant="54" id="Npq-Qz-LYz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="76q-6w-RXR" secondAttribute="trailing" constant="67.5" id="TBi-PW-JHi"/>
-                            <constraint firstItem="76q-6w-RXR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="XR9-0Y-Dhs"/>
                             <constraint firstItem="saD-jf-j34" firstAttribute="top" secondItem="9LX-75-H2R" secondAttribute="bottom" constant="46" id="Z4R-Ps-YTO"/>
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZIc-S9-u7V"/>
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am3-i5-x35"/>
-                            <constraint firstItem="76q-6w-RXR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cMb-pK-3fX"/>
-                            <constraint firstItem="76q-6w-RXR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67.5" id="e3M-5Z-pRv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="saD-jf-j34" secondAttribute="trailing" constant="80" id="gwa-4Z-Mlf"/>
                             <constraint firstItem="saD-jf-j34" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haD-GO-I2c"/>
                             <constraint firstItem="9LX-75-H2R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="hgA-UR-vQ1"/>
@@ -106,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="0.0"/>
+            <point key="canvasLocation" x="-325.60000000000002" y="-0.44977511244377816"/>
         </scene>
         <!--CreateNewAccount-->
         <scene sceneID="i6W-fI-eQC">

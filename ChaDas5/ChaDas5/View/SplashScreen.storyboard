@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AyU-iS-QKU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyU-iS-QKU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97741764783859253" green="0.75185805559158325" blue="0.75384771823883057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-1C-V3k">
@@ -33,9 +32,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dCr-Zx-6SV" firstAttribute="bottom" secondItem="Raa-1C-V3k" secondAttribute="bottom" constant="233.5" id="2jR-wV-JAo"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="trailing" secondItem="dCr-Zx-6SV" secondAttribute="trailing" id="KbO-lV-x8r"/>
                             <constraint firstItem="dCr-Zx-6SV" firstAttribute="trailing" secondItem="Raa-1C-V3k" secondAttribute="trailing" constant="67.5" id="Pfq-tS-dJ6"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" id="gaB-GO-wy1"/>
                             <constraint firstItem="Raa-1C-V3k" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" constant="67.5" id="glj-Y6-GHs"/>
                             <constraint firstItem="Raa-1C-V3k" firstAttribute="top" secondItem="dCr-Zx-6SV" secondAttribute="top" constant="213.5" id="hW3-x1-Eql"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="bottom" secondItem="dCr-Zx-6SV" secondAttribute="bottom" id="j4o-sl-6dg"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="top" secondItem="2Y9-WK-oaJ" secondAttribute="top" id="zLH-ag-2O6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dCr-Zx-6SV"/>
                     </view>
