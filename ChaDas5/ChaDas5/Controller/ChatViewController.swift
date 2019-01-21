@@ -12,7 +12,7 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
   private var messageListener: ListenerRegistration?
   private let db = Firestore.firestore()
    
-  var activityView:UIActivityIndicatorView!
+  var activityView: UIActivityIndicatorView!
     
   private let user: User
   private let channel: Channel

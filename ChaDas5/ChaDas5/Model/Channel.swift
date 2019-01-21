@@ -47,22 +47,22 @@ class Channel {
         self.created = (data["created"] as! String)
     }
     
-    init?(document: DocumentReference, channelRequester: ChannelCreationObserver) {
+    init?(
+        document: DocumentReference,
+        completion: @escaping (Error?) -> Void) {
         document.getDocument { (snapshot, err) in
+            if let error = err {
+                completion(error)
+            }
             var data = snapshot?.data()
             self.id = document.documentID
-            guard let fUser = data!["firstUser"] as? String else {
-                debugPrint("Error in first user")
-                return
-            }
-            guard let sUser = data!["secondUser"] as? String else {
-                debugPrint("Error in first user")
-                return
-            }
+            guard let autor = data!["autor"] as? String else { return }
             
-            self.firstUser = ChannelUser(uid: fUser, displayName: nil)
-            self.secondUser = ChannelUser(uid: sUser, displayName: nil)
-            channelRequester.created(channel: self)
+            self.firstUser = ChannelUser(uid: UserManager.instance.currentUser!, displayName: nil)
+            self.secondUser = ChannelUser(uid: autor, displayName: nil)
+            self.created = Date().keyString
+            self.lastMessageDate = self.created
+            completion(nil)
         }
         
     }
@@ -95,9 +95,9 @@ extension Channel: DatabaseRepresentation {
     
     var asDictionary:[String:Any] {
         var result:[String:Any] = [:]
-        result["firstUser"] = self.firstUser
+        result["firstUser"] = self.firstUser?.uid
         result["created"] = self.created
-        result["secondUser"] = self.secondUser
+        result["secondUser"] = self.secondUser?.uid
         result["lastMessageDate"] = self.lastMessageDate
         return result
     }

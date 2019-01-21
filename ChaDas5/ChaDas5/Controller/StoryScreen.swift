@@ -18,15 +18,12 @@ protocol ChannelCreationObserver {
 class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObserver {
     
     func readedChannels(channels: [Channel]) {
-        print("not here too")
+        debugPrint("not here too")
     }
     
     var selectedStory:QueryDocumentSnapshot?
-
     
-
-    
-    //outlets
+    // Outlets
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var archiveButton: UIButton!
     
@@ -37,35 +34,25 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
     @IBOutlet weak var storyTextView: UITextView!
     
     @IBAction func chatButton(_ sender: Any) {
-    
-  
-        ChannelsManager.instance.createChannel(story: selectedStory!, requester: self)
-    
-        
-        guard let id = ChannelsManager.instance.newChannelID else {
-            return
+        guard let channelStory = selectedStory else { return }
+        ChannelsManager.instance.createChannel(withStory: channelStory) { (result, error) in
+            if error != nil {
+                debugPrint("======================")
+                debugPrint(#function, String(describing: error?.localizedDescription))
+                debugPrint("======================")
+            } else {
+                debugPrint("====================== CRIOU")
+                self.created(channel: result!)
+            }
         }
-    
-        
-        let docRef = FBRef.db.collection("channels").document(id)
-        
-        guard let _ = Channel(document: docRef, channelRequester: self) else {
-            print("deu ruim na criação do canal, se fode aí.")
-            return
-        }
-        
-        
-
     }
     
     func created(channel: Channel) {
         let vc = ChatViewController(channel: channel)
         
-        present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
-    
-
-    
+ 
     
     @IBAction func archiveButton(_ sender: Any) {
         
@@ -85,8 +72,7 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
                 
                 print (property!)
                 
-                if property == "archived"
-                {
+                if property == "archived" {
                     let alert = UIAlertController(title: "Deseja mesmo desarquivar esse relato?", message: "Esse relato voltará a aparecer para outras pessoa no Feed.", preferredStyle: .alert)
                     
                     
@@ -103,24 +89,28 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
                     alert.addAction(cancelar)
                     self.present(alert, animated: true, completion: nil)
                     alert.view.tintColor = UIColor.buttonPink
+                } else {
                     
+                    let alert = UIAlertController(
+                        title: "Deseja mesmo arquivar esse relato?",
+                        message: "Seus relatos arquivados só aparecem no seu perfil e não aparecerão mais para outras pessoas.",
+                        preferredStyle: .alert
+                    )
                     
-                    
-                }
-                else{
-                    
-                    let alert = UIAlertController(title: "Deseja mesmo arquivar esse relato?", message: "Seus relatos arquivados só aparecem no seu perfil e não aparecerão mais para outras pessoas.", preferredStyle: .alert)
-                    
-                    
-                    
-                    let arquivar = UIAlertAction(title: "Arquivar relato", style: .default, handler: { (action) -> Void in
+                    let arquivar = UIAlertAction(
+                        title: "Arquivar relato",
+                        style: .default,
+                        handler: { (action) -> Void in
                         FBRef.db.collection("stories").document(id).updateData(["status" : "archived"])
                         self.dismiss()
                     })
                     
-                    let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
+                    let cancelar = UIAlertAction(
+                    title: "Cancelar",
+                    style: .default) { (action) -> Void in
                         alert.dismiss(animated: true, completion: nil)
                     }
+                    
                     alert.addAction(arquivar)
                     alert.addAction(cancelar)
                     self.present(alert, animated: true, completion: nil)
@@ -129,17 +119,13 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
                 }
                 
             } else {
-                print("Document does not exist in cache")
+                debugPrint("======================")
+                debugPrint(#function,"Document does not exist in cache")
+                debugPrint("======================")
             }
         }
-        
-        
-        
-        
     }
-    
-    
-    
+
     @objc private func dismiss() {
         self.dismiss(animated: true, completion: nil)
         
@@ -156,7 +142,4 @@ class StoryScreen: UIViewController, ChannelsManagerProtocol, ChannelCreationObs
         }
         storyTextView.isEditable = false
     }
-    
-
-    
 }

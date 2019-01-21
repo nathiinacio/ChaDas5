@@ -20,12 +20,26 @@ class ChannelsManager {
 
     var newChannelID:String?
     
-    func createChannel(story: QueryDocumentSnapshot,requester:ChannelsManagerProtocol) {
-        let channel = Channel(story: story)
-        print("channel created")
-        self.newChannelID = channel.id!
-    }
+//    func createChannel(story: QueryDocumentSnapshot, requester: ChannelsManagerProtocol) {
+//        let channel = Channel(story: story)
+//        print("channel created")
+//        self.newChannelID = channel.id!
+//    }
     
+    func createChannel(withStory story: QueryDocumentSnapshot, completion: @escaping (Channel?, Error?) -> Void) {
+        let channelsRef = FBRef.db.collection("channels")
+        let channel = Channel(story: story)
+        guard let channelId = channel.id else { return }
+        debugPrint(channel.asDictionary)
+        
+        channelsRef.document(channelId).setData(channel.asDictionary) { (error) in
+            if error != nil {
+                completion(nil, error)
+            } else {
+                completion(channel, nil)
+            }
+        }
+    }
     
     func author(dc:QueryDocumentSnapshot) -> String{
         guard let author = dc.data()["autor"] as? String else {
@@ -101,6 +115,7 @@ class ChannelsManager {
             completion(username, nil)
         }
     }
+    
     
     func loadUsernames(requester: ChannelsManagerProtocol) {
         /// from (https://stackoverflow.com/questions/35906568/wait-until-swift-for-loop-with-asynchronous-network-requests-finishes-executing)

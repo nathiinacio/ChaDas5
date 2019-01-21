@@ -58,7 +58,7 @@
                                         </constraints>
                                         <state key="normal" image="chat"/>
                                         <connections>
-                                            <action selector="chatButton:" destination="DY3-Pf-arH" eventType="touchUpInside" id="Ue9-QX-4yf"/>
+                                            <action selector="chatButton:" destination="DY3-Pf-arH" eventType="touchUpInside" id="90o-s6-uIc"/>
                                         </connections>
                                     </button>
                                 </subviews>
