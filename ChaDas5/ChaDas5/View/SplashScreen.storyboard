@@ -24,21 +24,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-1C-V3k">
                                 <rect key="frame" x="67.5" y="233.5" width="240" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="P3H-Y5-Jg5"/>
-                                    <constraint firstAttribute="height" constant="200" id="fz5-0V-IuO"/>
+                                    <constraint firstAttribute="width" constant="240" id="hq5-cn-2jv"/>
+                                    <constraint firstAttribute="height" constant="200" id="mmz-nl-CLV"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dCr-Zx-6SV" firstAttribute="bottom" secondItem="Raa-1C-V3k" secondAttribute="bottom" constant="233.5" id="2jR-wV-JAo"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="trailing" secondItem="dCr-Zx-6SV" secondAttribute="trailing" id="KbO-lV-x8r"/>
-                            <constraint firstItem="dCr-Zx-6SV" firstAttribute="trailing" secondItem="Raa-1C-V3k" secondAttribute="trailing" constant="67.5" id="Pfq-tS-dJ6"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" id="gaB-GO-wy1"/>
-                            <constraint firstItem="Raa-1C-V3k" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" constant="67.5" id="glj-Y6-GHs"/>
-                            <constraint firstItem="Raa-1C-V3k" firstAttribute="top" secondItem="dCr-Zx-6SV" secondAttribute="top" constant="213.5" id="hW3-x1-Eql"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="bottom" secondItem="dCr-Zx-6SV" secondAttribute="bottom" id="j4o-sl-6dg"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="top" secondItem="2Y9-WK-oaJ" secondAttribute="top" id="zLH-ag-2O6"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="centerX" secondItem="2Y9-WK-oaJ" secondAttribute="centerX" id="GzR-Cl-cPy"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="top" secondItem="2Y9-WK-oaJ" secondAttribute="top" id="TIo-Gv-Fxd"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" id="Ueq-hJ-3iy"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="bottom" secondItem="dCr-Zx-6SV" secondAttribute="bottom" id="ZBT-XE-ScL"/>
+                            <constraint firstItem="Raa-1C-V3k" firstAttribute="centerX" secondItem="2Y9-WK-oaJ" secondAttribute="centerX" id="aDB-ge-4ep"/>
+                            <constraint firstItem="Raa-1C-V3k" firstAttribute="centerY" secondItem="2Y9-WK-oaJ" secondAttribute="centerY" id="cj4-iY-515"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="trailing" secondItem="dCr-Zx-6SV" secondAttribute="trailing" id="eAV-t3-3EC"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="centerY" secondItem="2Y9-WK-oaJ" secondAttribute="centerY" id="oMK-OK-xxN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dCr-Zx-6SV"/>
                     </view>

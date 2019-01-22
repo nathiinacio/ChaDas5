@@ -25,7 +25,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-4s-vrU">
                                 <rect key="frame" x="60" y="160" width="255" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="QQs-Xm-68c"/>
+                                    <constraint firstAttribute="height" constant="45" id="UbC-WS-Wvu"/>
+                                    <constraint firstAttribute="width" constant="255" id="UuC-jb-kMt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -35,7 +36,8 @@
                                 <rect key="frame" x="60" y="204" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ZZl-Ah-1g4"/>
+                                    <constraint firstAttribute="width" constant="255" id="3wh-9h-TFE"/>
+                                    <constraint firstAttribute="height" constant="45" id="Y5q-XE-QmK"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
@@ -44,7 +46,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54r-C0-5Gi">
                                 <rect key="frame" x="60" y="259" width="255" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="40G-AT-WzS"/>
+                                    <constraint firstAttribute="width" constant="255" id="esY-dz-yXE"/>
+                                    <constraint firstAttribute="height" constant="45" id="pOs-tc-0hN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -54,18 +57,19 @@
                                 <rect key="frame" x="60" y="304" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="BAD-AQ-7X4"/>
+                                    <constraint firstAttribute="height" constant="45" id="5eR-S8-zCA"/>
+                                    <constraint firstAttribute="width" constant="255" id="zaB-m4-h7N"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-Oa-eTo">
-                                <rect key="frame" x="80" y="415" width="215" height="70"/>
+                                <rect key="frame" x="80" y="415.5" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="215" id="BGf-2U-1kE"/>
-                                    <constraint firstAttribute="height" constant="70" id="HYA-tR-fHk"/>
+                                    <constraint firstAttribute="width" constant="215" id="5gN-fA-mbl"/>
+                                    <constraint firstAttribute="height" constant="70" id="HE6-Qu-6Tg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Fazer Login">
@@ -81,19 +85,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-PV-AOZ">
-                                <rect key="frame" x="50" y="50" width="50" height="40"/>
+                                <rect key="frame" x="50.5" y="50.5" width="50" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="5sC-7f-UQx"/>
-                                    <constraint firstAttribute="height" constant="40" id="Fgb-xo-3J0"/>
+                                    <constraint firstAttribute="height" constant="40" id="i0W-Kb-B58"/>
+                                    <constraint firstAttribute="width" constant="50" id="udU-BA-Tw5"/>
                                 </constraints>
                                 <state key="normal" image="dismissIcon"/>
                                 <connections>
                                     <action selector="dismissButton:" destination="FdJ-g9-0s6" eventType="touchUpInside" id="ovN-Ru-0vN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-kp-kTl">
-                                <rect key="frame" x="100" y="493" width="175" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-kp-kTl">
+                                <rect key="frame" x="100" y="493.5" width="175" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="Mo2-sy-VYf"/>
+                                    <constraint firstAttribute="height" constant="20" id="X78-sw-eob"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Esqueci minha senha">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,24 +112,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="k2G-Sy-b9v" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="JRy-Qc-dgd"/>
-                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="top" secondItem="8vj-HA-pqc" secondAttribute="bottom" constant="66" id="LC3-5S-3pq"/>
-                            <constraint firstItem="Rvd-4s-vrU" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="MHJ-hj-QCQ"/>
-                            <constraint firstItem="8vj-HA-pqc" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="T39-my-xzx"/>
-                            <constraint firstItem="8vj-HA-pqc" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="TQp-Go-Ugu"/>
-                            <constraint firstItem="54r-C0-5Gi" firstAttribute="top" secondItem="k2G-Sy-b9v" secondAttribute="bottom" constant="10" id="ZRp-ss-lG4"/>
-                            <constraint firstItem="Rvd-4s-vrU" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="ZcJ-lB-gM1"/>
-                            <constraint firstItem="8vj-HA-pqc" firstAttribute="top" secondItem="54r-C0-5Gi" secondAttribute="bottom" id="bCM-TT-IUX"/>
-                            <constraint firstItem="k2G-Sy-b9v" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="hsA-gE-2dH"/>
-                            <constraint firstItem="54r-C0-5Gi" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="60" id="kHi-X1-pgg"/>
-                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="lar-FU-Ot9"/>
-                            <constraint firstItem="Rvd-4s-vrU" firstAttribute="top" secondItem="DJx-MN-RT6" secondAttribute="top" constant="140" id="lwy-xn-dI3"/>
-                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="top" secondItem="DJx-MN-RT6" secondAttribute="top" constant="30" id="oNU-bc-Yut"/>
-                            <constraint firstItem="54r-C0-5Gi" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="oov-Sq-b2Q"/>
-                            <constraint firstItem="DJx-MN-RT6" firstAttribute="trailing" secondItem="mTT-Oa-eTo" secondAttribute="trailing" constant="80" id="pDy-s1-F5I"/>
-                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="50" id="t5K-3k-PSJ"/>
-                            <constraint firstItem="k2G-Sy-b9v" firstAttribute="top" secondItem="DJx-MN-RT6" secondAttribute="top" constant="184" id="w6q-jS-Gcy"/>
-                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="leading" secondItem="DJx-MN-RT6" secondAttribute="leading" constant="80" id="yD4-l1-DOg"/>
+                            <constraint firstItem="54r-C0-5Gi" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="5iw-hl-TJA"/>
+                            <constraint firstItem="54r-C0-5Gi" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-52" id="8NY-Wn-Msm"/>
+                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="MBE-EQ-ejf"/>
+                            <constraint firstItem="Rvd-4s-vrU" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="Qkn-RB-kBo"/>
+                            <constraint firstItem="k2G-Sy-b9v" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-107" id="XUj-DD-0zH"/>
+                            <constraint firstItem="ZUx-kp-kTl" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="170" id="bCM-UH-GJu"/>
+                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-263" id="dOj-Gu-pld"/>
+                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" constant="-112" id="fsu-rt-2KM"/>
+                            <constraint firstItem="8vj-HA-pqc" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="gzE-dD-2Do"/>
+                            <constraint firstItem="8vj-HA-pqc" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-7" id="hLa-Aw-SEu"/>
+                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="117" id="htu-R0-ogi"/>
+                            <constraint firstItem="ZUx-kp-kTl" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="kNZ-br-Qxs"/>
+                            <constraint firstItem="k2G-Sy-b9v" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="kj5-4X-esi"/>
+                            <constraint firstItem="Rvd-4s-vrU" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-151" id="uZW-6O-RUP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DJx-MN-RT6"/>
                     </view>
