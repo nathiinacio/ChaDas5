@@ -26,8 +26,8 @@
                                 <rect key="frame" x="50" y="50" width="50" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="K7t-g6-Rk6"/>
-                                    <constraint firstAttribute="width" constant="50" id="h7B-PZ-5L0"/>
+                                    <constraint firstAttribute="width" constant="50" id="8H9-mE-DNw"/>
+                                    <constraint firstAttribute="height" constant="50" id="If8-UB-kut"/>
                                 </constraints>
                                 <state key="normal" title="/" image="dismissIcon">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,8 +45,8 @@
                                 <rect key="frame" x="275" y="50" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="DUv-Zl-MlF"/>
-                                    <constraint firstAttribute="height" constant="50" id="wes-iO-FVm"/>
+                                    <constraint firstAttribute="width" constant="50" id="Ati-Nl-G6F"/>
+                                    <constraint firstAttribute="height" constant="50" id="Mzj-Yq-vEy"/>
                                 </constraints>
                                 <state key="normal" image="sendIcon">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,7 +64,11 @@
                                 <rect key="frame" x="45" y="154" width="285" height="170"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvU-TD-to3">
-                                        <rect key="frame" x="25" y="18" width="235" height="135"/>
+                                        <rect key="frame" x="25" y="17.5" width="235" height="135"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="235" id="1Re-f3-wgn"/>
+                                            <constraint firstAttribute="height" constant="135" id="DdF-Bs-dbO"/>
+                                        </constraints>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -74,9 +78,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sobre o que você quer conversar nesse chá?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRv-cF-fN4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre o que você quer conversar nesse chá?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRv-cF-fN4">
                                         <rect key="frame" x="25" y="18" width="235" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="Emk-wl-D3E"/>
+                                            <constraint firstAttribute="width" constant="235" id="cAb-ZX-fyK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -84,12 +91,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96973460912704468" green="0.92143064737319946" blue="0.92088466882705688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xvU-TD-to3" secondAttribute="bottom" constant="17" id="31T-3u-OrC"/>
-                                    <constraint firstAttribute="trailing" secondItem="xvU-TD-to3" secondAttribute="trailing" constant="25" id="CrN-ER-k12"/>
-                                    <constraint firstAttribute="width" constant="285" id="Qy1-7T-gRI"/>
-                                    <constraint firstItem="xvU-TD-to3" firstAttribute="top" secondItem="dvQ-fc-iJi" secondAttribute="top" constant="18" id="S5l-8a-dwF"/>
-                                    <constraint firstItem="xvU-TD-to3" firstAttribute="leading" secondItem="dvQ-fc-iJi" secondAttribute="leading" constant="25" id="jmF-xf-PSA"/>
-                                    <constraint firstAttribute="height" constant="170" id="rhf-DX-4kV"/>
+                                    <constraint firstItem="xvU-TD-to3" firstAttribute="centerY" secondItem="dvQ-fc-iJi" secondAttribute="centerY" id="9AD-03-pdy"/>
+                                    <constraint firstAttribute="height" constant="170" id="KYr-SG-L72"/>
+                                    <constraint firstItem="iRv-cF-fN4" firstAttribute="centerY" secondItem="dvQ-fc-iJi" secondAttribute="centerY" constant="-36.5" id="RUA-5E-40t"/>
+                                    <constraint firstItem="xvU-TD-to3" firstAttribute="centerX" secondItem="dvQ-fc-iJi" secondAttribute="centerX" id="XYR-7p-Imm"/>
+                                    <constraint firstAttribute="width" constant="285" id="hjT-Rz-gvm"/>
+                                    <constraint firstItem="iRv-cF-fN4" firstAttribute="centerX" secondItem="dvQ-fc-iJi" secondAttribute="centerX" id="kwW-qJ-2Af"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -100,14 +107,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dvQ-fc-iJi" firstAttribute="centerX" secondItem="btZ-HP-iCa" secondAttribute="centerX" id="1xz-pg-dye"/>
-                            <constraint firstItem="dfV-bd-YQZ" firstAttribute="leading" secondItem="CQl-Yn-OcT" secondAttribute="leading" constant="50" id="5se-cl-r8y"/>
-                            <constraint firstItem="dfV-bd-YQZ" firstAttribute="top" secondItem="CQl-Yn-OcT" secondAttribute="top" constant="30" id="DXe-xB-86k"/>
-                            <constraint firstItem="Oxe-hF-FXi" firstAttribute="top" secondItem="CQl-Yn-OcT" secondAttribute="top" constant="30" id="lh6-aS-YO7"/>
-                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="trailing" secondItem="Oxe-hF-FXi" secondAttribute="trailing" constant="50" id="n5e-vU-zhN"/>
-                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="bottom" secondItem="dvQ-fc-iJi" secondAttribute="bottom" constant="343" id="qIu-ap-5YH"/>
-                            <constraint firstItem="CQl-Yn-OcT" firstAttribute="trailing" secondItem="dvQ-fc-iJi" secondAttribute="trailing" constant="45" id="w08-Pc-RaZ"/>
-                            <constraint firstItem="dvQ-fc-iJi" firstAttribute="leading" secondItem="CQl-Yn-OcT" secondAttribute="leading" constant="45" id="zfZ-2T-3Of"/>
+                            <constraint firstItem="Oxe-hF-FXi" firstAttribute="centerY" secondItem="btZ-HP-iCa" secondAttribute="centerY" constant="-258.5" id="3Dq-kI-ad4"/>
+                            <constraint firstItem="dfV-bd-YQZ" firstAttribute="centerX" secondItem="btZ-HP-iCa" secondAttribute="centerX" constant="-112.5" id="OSr-Yx-6cy"/>
+                            <constraint firstItem="Oxe-hF-FXi" firstAttribute="centerX" secondItem="btZ-HP-iCa" secondAttribute="centerX" constant="112.5" id="TbG-Iw-TKr"/>
+                            <constraint firstItem="dvQ-fc-iJi" firstAttribute="centerX" secondItem="btZ-HP-iCa" secondAttribute="centerX" id="ZrH-CJ-hmm"/>
+                            <constraint firstItem="dfV-bd-YQZ" firstAttribute="centerY" secondItem="btZ-HP-iCa" secondAttribute="centerY" constant="-258.5" id="lEI-3F-Al5"/>
+                            <constraint firstItem="dvQ-fc-iJi" firstAttribute="centerY" secondItem="btZ-HP-iCa" secondAttribute="centerY" constant="-94.5" id="siR-Gf-aNK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CQl-Yn-OcT"/>
                     </view>

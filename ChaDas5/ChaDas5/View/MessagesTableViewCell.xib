@@ -27,10 +27,10 @@
                         <rect key="frame" x="16" y="11" width="343" height="128"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-0H-peX">
-                                <rect key="frame" x="147" y="42" width="150" height="45"/>
+                                <rect key="frame" x="147" y="41.5" width="150" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="q40-cq-1YA"/>
-                                    <constraint firstAttribute="height" constant="45" id="zvj-7I-Hhx"/>
+                                    <constraint firstAttribute="width" constant="150" id="6eX-qP-tzQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="DPJ-xQ-Sh9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -42,8 +42,8 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-hc-2u1">
                                         <rect key="frame" x="19" y="6" width="70" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="84f-5b-6SX"/>
-                                            <constraint firstAttribute="width" constant="70" id="Pzb-8x-EGX"/>
+                                            <constraint firstAttribute="height" constant="70" id="SEe-Zo-TYf"/>
+                                            <constraint firstAttribute="width" constant="70" id="Z4I-cZ-iBV"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -54,12 +54,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="KEM-OR-BbJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="wUo-hc-2u1" secondAttribute="bottom" constant="14" id="KI3-Dc-Mau"/>
-                                    <constraint firstAttribute="trailing" secondItem="wUo-hc-2u1" secondAttribute="trailing" constant="1" id="MTm-nO-t5Q"/>
-                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="leading" secondItem="36R-R8-rnS" secondAttribute="leading" constant="19" id="cdd-FA-Vsl"/>
-                                    <constraint firstAttribute="height" constant="90" id="hln-Xu-Qpg"/>
-                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="top" secondItem="36R-R8-rnS" secondAttribute="top" constant="6" id="s30-8x-dTB"/>
+                                    <constraint firstAttribute="width" constant="90" id="D18-ph-c9J"/>
+                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="centerY" secondItem="36R-R8-rnS" secondAttribute="centerY" constant="-4" id="RBf-jd-w8e"/>
+                                    <constraint firstAttribute="height" constant="90" id="ZQQ-cM-r2b"/>
+                                    <constraint firstItem="wUo-hc-2u1" firstAttribute="centerX" secondItem="36R-R8-rnS" secondAttribute="centerX" constant="9" id="amv-oP-zn2"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -70,15 +68,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96973460912704468" green="0.92143064737319946" blue="0.92088466882705688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zf2-0H-peX" firstAttribute="top" secondItem="rPV-kT-USH" secondAttribute="top" constant="42" id="11e-aW-Zv1"/>
-                            <constraint firstItem="36R-R8-rnS" firstAttribute="top" secondItem="rPV-kT-USH" secondAttribute="top" constant="19" id="2Ty-Zq-HIK"/>
-                            <constraint firstAttribute="width" constant="343" id="M3n-ej-sV0"/>
-                            <constraint firstAttribute="bottom" secondItem="zf2-0H-peX" secondAttribute="bottom" constant="41" id="Tuz-I1-d7g"/>
-                            <constraint firstAttribute="trailing" secondItem="zf2-0H-peX" secondAttribute="trailing" constant="46" id="Ywr-aZ-QJo"/>
-                            <constraint firstAttribute="bottom" secondItem="36R-R8-rnS" secondAttribute="bottom" constant="19" id="duz-6S-rql"/>
-                            <constraint firstItem="36R-R8-rnS" firstAttribute="leading" secondItem="rPV-kT-USH" secondAttribute="leading" constant="38" id="eNY-Yl-dn4"/>
-                            <constraint firstAttribute="height" constant="128" id="g0Z-Nm-CNb"/>
-                            <constraint firstItem="zf2-0H-peX" firstAttribute="leading" secondItem="36R-R8-rnS" secondAttribute="trailing" constant="19" id="xLp-98-35c"/>
+                            <constraint firstAttribute="height" constant="128" id="ISX-Fo-jtr"/>
+                            <constraint firstAttribute="width" constant="343" id="LzM-F0-2xg"/>
+                            <constraint firstItem="36R-R8-rnS" firstAttribute="centerX" secondItem="rPV-kT-USH" secondAttribute="centerX" constant="-88.5" id="dCe-Wp-YjK"/>
+                            <constraint firstItem="36R-R8-rnS" firstAttribute="centerY" secondItem="rPV-kT-USH" secondAttribute="centerY" id="eDE-e2-ndo"/>
+                            <constraint firstItem="zf2-0H-peX" firstAttribute="centerX" secondItem="rPV-kT-USH" secondAttribute="centerX" constant="50.5" id="tQz-Mz-fIg"/>
+                            <constraint firstItem="zf2-0H-peX" firstAttribute="centerY" secondItem="rPV-kT-USH" secondAttribute="centerY" id="vDH-wx-Lwq"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -89,8 +84,8 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-cN-k8y">
                         <rect key="frame" x="-3" y="0.0" width="50" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="jVp-2O-db4"/>
-                            <constraint firstAttribute="width" constant="50" id="kOn-L9-1bL"/>
+                            <constraint firstAttribute="height" constant="40" id="2eE-9D-Qne"/>
+                            <constraint firstAttribute="width" constant="50" id="99x-wU-wYw"/>
                         </constraints>
                         <state key="normal" image="dismissIcon"/>
                         <connections>
@@ -99,12 +94,10 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="rPV-kT-USH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2Tv-oF-xO9"/>
-                    <constraint firstItem="rPV-kT-USH" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="3fc-yV-c0k"/>
-                    <constraint firstItem="rPV-kT-USH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Bjr-HP-79g"/>
-                    <constraint firstItem="NQb-cN-k8y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gfx-Sk-5pI"/>
-                    <constraint firstItem="rPV-kT-USH" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="iWx-ud-40f"/>
-                    <constraint firstItem="NQb-cN-k8y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-3" id="vcf-nH-gww"/>
+                    <constraint firstItem="NQb-cN-k8y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-54.75" id="1cI-K4-JhE"/>
+                    <constraint firstItem="NQb-cN-k8y" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-165.5" id="Fky-Om-ozn"/>
+                    <constraint firstItem="rPV-kT-USH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="iIc-bk-6kH"/>
+                    <constraint firstItem="rPV-kT-USH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nlt-fA-Daa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

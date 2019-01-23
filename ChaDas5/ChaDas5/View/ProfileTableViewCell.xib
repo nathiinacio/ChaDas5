@@ -24,13 +24,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-t2-6Z2">
-                        <rect key="frame" x="20" y="17" width="335" height="115"/>
+                        <rect key="frame" x="20" y="17.5" width="335" height="115"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8gi-me-Hro">
-                                <rect key="frame" x="35" y="13" width="265" height="88"/>
+                                <rect key="frame" x="35" y="13.5" width="265" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="7iP-Lh-0eR"/>
-                                    <constraint firstAttribute="height" constant="88" id="Gb5-Jh-S6p"/>
+                                    <constraint firstAttribute="width" constant="265" id="CEP-r1-yWf"/>
+                                    <constraint firstAttribute="height" constant="88" id="Nyk-2i-uwZ"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
@@ -39,12 +39,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96973460912704468" green="0.92143064737319946" blue="0.92088466882705688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8gi-me-Hro" secondAttribute="bottom" constant="14" id="9FK-IQ-buW"/>
-                            <constraint firstAttribute="trailing" secondItem="8gi-me-Hro" secondAttribute="trailing" constant="35" id="DBm-13-0oA"/>
-                            <constraint firstItem="8gi-me-Hro" firstAttribute="top" secondItem="Vy3-t2-6Z2" secondAttribute="top" constant="13" id="F4B-59-ePP"/>
-                            <constraint firstAttribute="width" constant="335" id="KAa-po-ZqT"/>
-                            <constraint firstItem="8gi-me-Hro" firstAttribute="leading" secondItem="Vy3-t2-6Z2" secondAttribute="leading" constant="35" id="h8F-9c-hlN"/>
-                            <constraint firstAttribute="height" constant="115" id="mRj-lr-daC"/>
+                            <constraint firstItem="8gi-me-Hro" firstAttribute="centerX" secondItem="Vy3-t2-6Z2" secondAttribute="centerX" id="512-x4-AVV"/>
+                            <constraint firstAttribute="width" constant="335" id="Dck-9F-bsp"/>
+                            <constraint firstAttribute="height" constant="115" id="Mfm-ai-6rn"/>
+                            <constraint firstItem="8gi-me-Hro" firstAttribute="centerY" secondItem="Vy3-t2-6Z2" secondAttribute="centerY" id="h3b-mE-uOl"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -55,8 +53,8 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5T-Bi-yJ5">
                         <rect key="frame" x="-3" y="0.0" width="50" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="1qj-cR-ITX"/>
-                            <constraint firstAttribute="height" constant="40" id="paL-h5-avp"/>
+                            <constraint firstAttribute="width" constant="50" id="gyo-fW-PLV"/>
+                            <constraint firstAttribute="height" constant="40" id="z7b-Mx-OSy"/>
                         </constraints>
                         <state key="normal" image="dismissIcon"/>
                         <connections>
@@ -65,12 +63,10 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="Vy3-t2-6Z2" secondAttribute="bottom" constant="7" id="00q-qe-EfV"/>
-                    <constraint firstItem="i5T-Bi-yJ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-3" id="7nV-be-GbU"/>
-                    <constraint firstItem="Vy3-t2-6Z2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="JNU-TM-jPI"/>
-                    <constraint firstItem="i5T-Bi-yJ5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KhN-7B-iKB"/>
-                    <constraint firstItem="Vy3-t2-6Z2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="MwW-gN-WAH"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vy3-t2-6Z2" secondAttribute="trailing" constant="4" id="NqG-d5-9uA"/>
+                    <constraint firstItem="Vy3-t2-6Z2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LzK-kk-v7q"/>
+                    <constraint firstItem="Vy3-t2-6Z2" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Nff-JD-ny9"/>
+                    <constraint firstItem="i5T-Bi-yJ5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-54.75" id="k00-7p-mad"/>
+                    <constraint firstItem="i5T-Bi-yJ5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-165.5" id="pJR-n2-RUp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -23,11 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LX-75-H2R">
-                                <rect key="frame" x="80" y="414" width="215" height="70"/>
+                                <rect key="frame" x="80" y="414.5" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="215" id="H3y-MQ-i2y"/>
-                                    <constraint firstAttribute="height" constant="70" id="YKr-vE-FVZ"/>
+                                    <constraint firstAttribute="width" constant="215" id="CPL-AX-ySS"/>
+                                    <constraint firstAttribute="height" constant="70" id="HuP-Sx-lMY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Criar Conta">
@@ -43,11 +43,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saD-jf-j34">
-                                <rect key="frame" x="80" y="530" width="215" height="70"/>
+                                <rect key="frame" x="80" y="530.5" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="JWn-Sf-gOB"/>
-                                    <constraint firstAttribute="width" constant="215" id="nau-8F-cME"/>
+                                    <constraint firstAttribute="width" constant="215" id="1hR-aL-pcs"/>
+                                    <constraint firstAttribute="height" constant="70" id="fqk-Cb-AcB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                 <state key="normal" title="Fazer Login">
@@ -66,38 +66,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="76q-6w-RXR">
-                                        <rect key="frame" x="48" y="101" width="279" height="200"/>
+                                        <rect key="frame" x="67.5" y="80" width="240" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Svr-ww-HsZ"/>
-                                            <constraint firstAttribute="width" constant="279" id="n3r-YX-EBN"/>
+                                            <constraint firstAttribute="height" constant="200" id="9FR-zy-gLV"/>
+                                            <constraint firstAttribute="width" constant="240" id="czb-r9-P69"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="76q-6w-RXR" firstAttribute="leading" secondItem="OpM-Kf-gA4" secondAttribute="leading" constant="48" id="5NB-OT-I35"/>
-                                    <constraint firstAttribute="trailing" secondItem="76q-6w-RXR" secondAttribute="trailing" constant="48" id="Vf8-cK-UAP"/>
-                                    <constraint firstItem="76q-6w-RXR" firstAttribute="top" secondItem="OpM-Kf-gA4" secondAttribute="top" constant="101" id="hL8-RF-yZ3"/>
-                                    <constraint firstAttribute="height" constant="360" id="qJ8-fi-mVf"/>
-                                    <constraint firstItem="76q-6w-RXR" firstAttribute="centerX" secondItem="OpM-Kf-gA4" secondAttribute="centerX" id="udU-6d-KGl"/>
+                                    <constraint firstItem="76q-6w-RXR" firstAttribute="centerX" secondItem="OpM-Kf-gA4" secondAttribute="centerX" id="nqI-Nr-jjl"/>
+                                    <constraint firstItem="76q-6w-RXR" firstAttribute="centerY" secondItem="OpM-Kf-gA4" secondAttribute="centerY" id="s07-wN-Nn5"/>
+                                    <constraint firstAttribute="height" constant="360" id="yv3-cL-hkr"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9LX-75-H2R" secondAttribute="trailing" constant="80" id="2nK-Yd-j8D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="saD-jf-j34" secondAttribute="bottom" constant="67" id="3PH-9c-iwQ"/>
-                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="93H-3K-jvy"/>
-                            <constraint firstItem="saD-jf-j34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="H3r-nY-hWP"/>
-                            <constraint firstItem="9LX-75-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mby-U8-YFd"/>
-                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N2d-Wg-ahW"/>
-                            <constraint firstItem="9LX-75-H2R" firstAttribute="top" secondItem="OpM-Kf-gA4" secondAttribute="bottom" constant="54" id="Npq-Qz-LYz"/>
-                            <constraint firstItem="saD-jf-j34" firstAttribute="top" secondItem="9LX-75-H2R" secondAttribute="bottom" constant="46" id="Z4R-Ps-YTO"/>
-                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZIc-S9-u7V"/>
-                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am3-i5-x35"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="saD-jf-j34" secondAttribute="trailing" constant="80" id="gwa-4Z-Mlf"/>
-                            <constraint firstItem="saD-jf-j34" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haD-GO-I2c"/>
-                            <constraint firstItem="9LX-75-H2R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="hgA-UR-vQ1"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5ir-zK-mza"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7HJ-TD-lkf"/>
+                            <constraint firstItem="saD-jf-j34" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Uv-HO-dCo"/>
+                            <constraint firstItem="9LX-75-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="116" id="BD2-Rp-csc"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="I7a-qT-fV1"/>
+                            <constraint firstItem="saD-jf-j34" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="232" id="UTO-N0-qIo"/>
+                            <constraint firstItem="9LX-75-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="auZ-dZ-wwK"/>
+                            <constraint firstItem="OpM-Kf-gA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o28-Jc-jtV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

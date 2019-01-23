@@ -26,8 +26,8 @@
                                 <rect key="frame" x="50" y="50" width="50" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="By9-oF-2jV"/>
-                                    <constraint firstAttribute="height" constant="50" id="Rnt-e4-j1X"/>
+                                    <constraint firstAttribute="width" constant="50" id="l8f-y9-be3"/>
+                                    <constraint firstAttribute="height" constant="50" id="tw9-sd-tM4"/>
                                 </constraints>
                                 <state key="normal" title="X" image="dismissIcon">
                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,7 +45,11 @@
                                 <rect key="frame" x="50" y="126" width="275" height="484"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-7Z-TuW">
-                                        <rect key="frame" x="25" y="30" width="224" height="386"/>
+                                        <rect key="frame" x="25.5" y="30" width="224" height="386"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="224" id="0mv-0r-58l"/>
+                                            <constraint firstAttribute="height" constant="386" id="jQG-GC-bAX"/>
+                                        </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="SFCompactDisplay-Ultralight" family="SF Compact Display" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -53,8 +57,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD1-BE-gBN">
                                         <rect key="frame" x="210" y="429" width="40" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="rtE-4L-cZw"/>
-                                            <constraint firstAttribute="width" constant="40" id="vPg-Kn-FwO"/>
+                                            <constraint firstAttribute="height" constant="35" id="pz2-8a-JWw"/>
+                                            <constraint firstAttribute="width" constant="40" id="xJL-gd-jKa"/>
                                         </constraints>
                                         <state key="normal" image="chat"/>
                                         <connections>
@@ -64,14 +68,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="FMQ-7Z-TuW" secondAttribute="trailing" constant="26" id="0gm-NR-cwH"/>
-                                    <constraint firstAttribute="width" constant="275" id="D3g-xW-jR4"/>
-                                    <constraint firstItem="FMQ-7Z-TuW" firstAttribute="leading" secondItem="rUa-cf-VJh" secondAttribute="leading" constant="25" id="Qaf-bL-YD9"/>
-                                    <constraint firstAttribute="bottom" secondItem="FMQ-7Z-TuW" secondAttribute="bottom" constant="68" id="Tr8-qJ-qFS"/>
-                                    <constraint firstAttribute="bottom" secondItem="dD1-BE-gBN" secondAttribute="bottom" constant="20" id="bbB-7K-X5P"/>
-                                    <constraint firstAttribute="trailing" secondItem="dD1-BE-gBN" secondAttribute="trailing" constant="25" id="fUh-Oz-JGU"/>
-                                    <constraint firstItem="FMQ-7Z-TuW" firstAttribute="top" secondItem="rUa-cf-VJh" secondAttribute="top" constant="30" id="kuD-kO-BDA"/>
-                                    <constraint firstAttribute="height" constant="484" id="z4Z-u8-c0q"/>
+                                    <constraint firstAttribute="height" constant="484" id="HE8-94-EXk"/>
+                                    <constraint firstItem="dD1-BE-gBN" firstAttribute="centerX" secondItem="rUa-cf-VJh" secondAttribute="centerX" constant="92.5" id="LIx-8c-KJ9"/>
+                                    <constraint firstItem="FMQ-7Z-TuW" firstAttribute="centerY" secondItem="rUa-cf-VJh" secondAttribute="centerY" constant="-19" id="Obf-sD-j5k"/>
+                                    <constraint firstAttribute="width" constant="275" id="ZPq-nt-yX8"/>
+                                    <constraint firstItem="FMQ-7Z-TuW" firstAttribute="centerX" secondItem="rUa-cf-VJh" secondAttribute="centerX" id="b4s-3o-UFg"/>
+                                    <constraint firstItem="dD1-BE-gBN" firstAttribute="centerY" secondItem="rUa-cf-VJh" secondAttribute="centerY" constant="204.5" id="nQq-SZ-deZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -83,8 +85,8 @@
                                 <rect key="frame" x="270" y="50" width="55" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="lE2-8f-4io"/>
-                                    <constraint firstAttribute="width" constant="55" id="nQg-cg-5MT"/>
+                                    <constraint firstAttribute="width" constant="55" id="VqK-Ar-tHN"/>
+                                    <constraint firstAttribute="height" constant="50" id="dJo-Cd-kDw"/>
                                 </constraints>
                                 <state key="normal" image="archive"/>
                                 <userDefinedRuntimeAttributes>
@@ -99,14 +101,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tde-1a-ZNZ" firstAttribute="leading" secondItem="hw4-sL-ogr" secondAttribute="leading" constant="50" id="1IU-4J-jSR"/>
-                            <constraint firstItem="rUa-cf-VJh" firstAttribute="leading" secondItem="hw4-sL-ogr" secondAttribute="leading" constant="50" id="1hC-7P-pRs"/>
-                            <constraint firstItem="rUa-cf-VJh" firstAttribute="centerX" secondItem="4XW-lM-QjK" secondAttribute="centerX" id="45s-pp-VKF"/>
-                            <constraint firstItem="tde-1a-ZNZ" firstAttribute="top" secondItem="hw4-sL-ogr" secondAttribute="top" constant="30" id="DvV-Oj-vq3"/>
-                            <constraint firstItem="svz-Z4-Yhg" firstAttribute="top" secondItem="hw4-sL-ogr" secondAttribute="top" constant="30" id="KuW-7c-XKH"/>
-                            <constraint firstItem="hw4-sL-ogr" firstAttribute="trailing" secondItem="rUa-cf-VJh" secondAttribute="trailing" constant="50" id="THh-Gu-9Vp"/>
-                            <constraint firstItem="hw4-sL-ogr" firstAttribute="bottom" secondItem="rUa-cf-VJh" secondAttribute="bottom" constant="57" id="u4v-JS-Kgd"/>
-                            <constraint firstItem="hw4-sL-ogr" firstAttribute="trailing" secondItem="svz-Z4-Yhg" secondAttribute="trailing" constant="50" id="zPu-aS-xt5"/>
+                            <constraint firstItem="rUa-cf-VJh" firstAttribute="centerY" secondItem="4XW-lM-QjK" secondAttribute="centerY" constant="34.5" id="HIX-ou-p1c"/>
+                            <constraint firstItem="tde-1a-ZNZ" firstAttribute="centerX" secondItem="4XW-lM-QjK" secondAttribute="centerX" constant="-112.5" id="fPr-M6-d6B"/>
+                            <constraint firstItem="svz-Z4-Yhg" firstAttribute="centerY" secondItem="4XW-lM-QjK" secondAttribute="centerY" constant="-258.5" id="hAr-hh-6Nd"/>
+                            <constraint firstItem="svz-Z4-Yhg" firstAttribute="centerX" secondItem="4XW-lM-QjK" secondAttribute="centerX" constant="110" id="jjA-vQ-d1Y"/>
+                            <constraint firstItem="tde-1a-ZNZ" firstAttribute="centerY" secondItem="4XW-lM-QjK" secondAttribute="centerY" constant="-258.5" id="lWc-57-juz"/>
+                            <constraint firstItem="rUa-cf-VJh" firstAttribute="centerX" secondItem="4XW-lM-QjK" secondAttribute="centerX" id="muI-ah-odS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hw4-sL-ogr"/>
                     </view>
