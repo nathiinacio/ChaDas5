@@ -111,8 +111,12 @@ class ChannelsManager {
             if let error = error {
                 completion(nil, error)
             }
-            let username = document?.data()!["username"] as! String
-            completion(username, nil)
+            if let username = document?.data()!["username"] as? String {
+                completion(username, nil)
+
+            } else {
+                completion(nil, nil)
+            }
         }
     }
     
