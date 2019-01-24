@@ -17,21 +17,15 @@ class ChannelsManager {
     
     static let instance = ChannelsManager()
     private init(){}
+    var channels = [Channel]()
+    var block = [String]()
 
-    var newChannelID:String?
-    
-//    func createChannel(story: QueryDocumentSnapshot, requester: ChannelsManagerProtocol) {
-//        let channel = Channel(story: story)
-//        print("channel created")
-//        self.newChannelID = channel.id!
-//    }
-    
+
     func createChannel(withStory story: QueryDocumentSnapshot, completion: @escaping (Channel?, Error?) -> Void) {
         let channelsRef = FBRef.db.collection("channels")
         let channel = Channel(story: story)
         guard let channelId = channel.id else { return }
         debugPrint(channel.asDictionary)
-        
         channelsRef.document(channelId).setData(channel.asDictionary) { (error) in
             if error != nil {
                 completion(nil, error)
@@ -40,52 +34,6 @@ class ChannelsManager {
             }
         }
     }
-    
-    func author(dc:QueryDocumentSnapshot) -> String{
-        guard let author = dc.data()["autor"] as? String else {
-            return "error retrieving author"
-        }
-        return author
-    }
-    
-    var channels = [Channel]()
-    
-    var block = [String]()
-    
-    func loadChannels(requester: ChannelsManagerProtocol) {
-        debugPrint("Retrieving channels...")
-        let channelsRef = FBRef.db.collection("channels")
-        
-        self.channels = []
-        let docRef = channelsRef.order(by: "lastMessageDate", descending: true)
-        docRef.getDocuments { (querySnapshot, err) in
-            if let err = err {
-                debugPrint("Document error \(err.localizedDescription)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let currentChannel = Channel(document: document)
-                    
-                    guard let first = currentChannel?.firstUser?.uid else { return }
-                    guard let second = currentChannel?.secondUser?.uid else { return }
-                    
-                    // EXCLUIR CONVERSAS COM BLOQUEADOS
-                    if (first == UserManager.instance.currentUser && self.block.contains(second)) || (second == UserManager.instance.currentUser && self.block.contains(first)) {
-                        FBRef.db.collection("channels").document(document.documentID).delete()
-                    }
-                    
-                    
-                    print("============= my channel: ", currentChannel?.asDictionary)
-                    
-                   
-                    
-                    self.channels.append(currentChannel!)
-                }
-                print("loaded channels")
-                self.loadUsernames(requester: requester)
-            }
-        }
-    }
-    
     
     func preLoad(requester: ChannelsManagerProtocol) {
         self.block = []
@@ -103,19 +51,34 @@ class ChannelsManager {
             }
         }
     }
-    
-    func retriveDisplayName(withUID uid: String, completion: @escaping (String?, Error?) -> Void) {
-        let usersRef = FBRef.db.collection("users")
-        
-        usersRef.document(uid).getDocument() { (document, error) in
-            if let error = error {
-                completion(nil, error)
-            }
-            if let username = document?.data()!["username"] as? String {
-                completion(username, nil)
 
+    
+    func loadChannels(requester: ChannelsManagerProtocol) {
+        debugPrint("Retrieving channels...")
+        let channelsRef = FBRef.channels
+        self.channels = []
+        let docRef = channelsRef.order(by: "lastMessageDate", descending: true)
+        docRef.getDocuments { (querySnapshot, err) in
+            if let err = err {
+                debugPrint("Document error \(err.localizedDescription)")
             } else {
-                completion(nil, nil)
+                for document in querySnapshot!.documents {
+                    let currentChannel = Channel(document: document)
+                    
+                    guard let first = currentChannel?.firstUser?.uid else { return }
+                    guard let second = currentChannel?.secondUser?.uid else { return }
+                    
+                    let isMyChannel = first == UserManager.instance.currentUser || second == UserManager.instance.currentUser
+                    let isBlocked = self.block.contains(first) || self.block.contains(second)
+                    
+                    if isMyChannel && !isBlocked {
+                        self.channels.append(currentChannel!)
+                    } else if isMyChannel && isBlocked {
+                        FBRef.channels.document((currentChannel?.id)!).delete()
+                    }
+                }
+                debugPrint("loaded channels")
+                self.loadUsernames(requester: requester)
             }
         }
     }
@@ -130,14 +93,13 @@ class ChannelsManager {
             guard let first = channel.firstUser?.uid else { return }
             guard let second = channel.secondUser?.uid else { return }
             
-            retriveDisplayName(withUID: first) { (fUsername, error) in
+            self.retriveDisplayName(withUID: first) { (fUsername, error) in
                 if let error = error {
                     debugPrint("======================")
                     debugPrint(#function, error.localizedDescription)
                     debugPrint("======================")
                 }
                 channel.firstUser?.displayName = fUsername
-                
                 self.retriveDisplayName(withUID: second) { (sUsername, error) in
                     if let error = error {
                         debugPrint("======================")
@@ -151,6 +113,19 @@ class ChannelsManager {
         }
         dispatch.notify(queue: .main) {
             requester.readedChannels(channels: self.channels)
+        }
+    }
+    
+    func retriveDisplayName(withUID uid: String, completion: @escaping (String?, Error?) -> Void) {
+        FBRef.users.document(uid).getDocument() { (document, error) in
+            if let error = error {
+                completion(nil, error)
+            }
+            if let username = document?.data()!["username"] as? String {
+                completion(username, nil)
+            } else {
+                completion(nil, nil)
+            }
         }
     }
     

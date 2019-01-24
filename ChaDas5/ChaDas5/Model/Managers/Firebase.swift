@@ -11,4 +11,10 @@ import Firebase
 
 class FBRef {
     static var db:Firestore!
+    
+    static var channels = FBRef.db.collection("channels")
+    static var users = FBRef.db.collection("users")
+    static var stories = FBRef.db.collection("stories")
+    static var analise = FBRef.db.collection("analise")
+    
 }

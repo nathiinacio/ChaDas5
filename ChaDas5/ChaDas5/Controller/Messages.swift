@@ -9,40 +9,29 @@
 import UIKit
 import Firebase
 
-class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, ChannelsManagerProtocol {
-    
-    
+class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, ChannelsManagerProtocol{
     
     //outlets
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var noStoryLabel: UILabel!
     
-     var messageIsEditing =  false
-    
-    
+    var messageIsEditing =  false
+    var activityView:UIActivityIndicatorView!
+    private let refreshControl = UIRefreshControl()
     
     //actions    
     @IBAction func editButton(_ sender: Any) {
         
-        if !messageIsEditing{
+        if !messageIsEditing {
             messageIsEditing = true
-            
-        }
-        else{
-            
+        } else {
             messageIsEditing = false
         }
         messagesTableView.reloadData()
-        
     }
     
-    var activityView:UIActivityIndicatorView!
-    
-    private let refreshControl = UIRefreshControl()
-    
     override func viewDidLoad() {
-        
         //table view setting
         self.messagesTableView.separatorStyle = .none
         messagesTableView.dataSource = self
@@ -75,7 +64,6 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         
     }
     
-   
     func readedChannels(channels: [Channel]) {
         messagesTableView.reloadData()
         activityView.stopAnimating()
@@ -89,7 +77,6 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
         return ChannelsManager.instance.channels.count
     }
     
@@ -97,7 +84,6 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         let messagesCell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesTableViewCell
         messagesCell.deleteButton.alpha = messageIsEditing ? 1 : 0
         
-        //TEMP
         if ChannelsManager.instance.channels.isEmpty {
             return messagesCell
         } else {
@@ -113,10 +99,8 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
                     username = displayName
                 }
             }
-            
             if (username != nil) {
                 let photo = UIImage.init(named: username!)
-                
                 messagesCell.messageTableViewLabel.text = username
                 messagesCell.messageTableViewImage.image = photo
             }
@@ -124,32 +108,23 @@ class Messages: UIViewController, UITableViewDataSource, UITableViewDelegate, Ch
         return messagesCell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell = tableView.cellForRow(at: indexPath) as! MessagesTableViewCell
         selectedCell.contentView.backgroundColor = UIColor.clear
-        
-        
         let channel = ChannelsManager.instance.channels[indexPath.row]
         let vc = ChatViewController(channel: channel)
-        
         present(vc, animated: true, completion: nil)
         
     }
     
-
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150.0
     }
-    
     
     @objc private func refreshData(_ sender: Any) {
         ChannelsManager.instance.preLoad(requester: self)
         self.refreshControl.endRefreshing()
         
     }
-    
-    
     
 }

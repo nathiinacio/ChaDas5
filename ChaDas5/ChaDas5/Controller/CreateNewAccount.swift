@@ -14,10 +14,7 @@ import Firebase
 class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var selected:ChooseYourTeaCollectionViewCell?
-    
-  
     var index: IndexPath?
-    
     
     //outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,25 +22,17 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     @IBOutlet weak var pickYourTeaCollectionView: UICollectionView!    
     @IBOutlet weak var createNewAccountButton: UIButton!
-
-    
-    private let db = Firestore.firestore()
     
     var activityView:UIActivityIndicatorView!
     
     //actions
     @IBAction func createNewButton(_ sender: Any) {
         
-        if passwordTextField.text == passwordConfirmationTextField.text && selected?.chooseYourTeaLabel.text != nil
-        {
+        if passwordTextField.text == passwordConfirmationTextField.text && selected?.chooseYourTeaLabel.text != nil {
             handleSignUp()
-            
-        }
-        else{
-            
+        } else {
             if passwordTextField.text != passwordConfirmationTextField.text {
-                
-            let tentarNovamente = UIAlertAction(title: "Tentar Novamente", style: .default, handler: { (action) -> Void in
+                let tentarNovamente = UIAlertAction(title: "Tentar Novamente", style: .default, handler: { (action) -> Void in
                 self.passwordConfirmationTextField.text = ""
                 self.passwordTextField.text = ""
             })
@@ -51,23 +40,16 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
             alert.addAction(tentarNovamente)
             self.present(alert, animated: true, completion: nil)
             alert.view.tintColor = UIColor.buttonPink
-                
-            }
             
-            else {
+            } else {
                 let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
                 })
                 let alert = UIAlertController(title: "Oops...", message: "Esqueceu de escolher seu chá", preferredStyle: .alert)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
                 alert.view.tintColor = UIColor.buttonPink
-                
             }
         }
-        
-        
-        
-        
     }
     
     @IBAction func dismissButton(_ sender: Any) {
@@ -101,17 +83,12 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         passwordConfirmationTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     
         setcreateNewAccountButton(enabled: false)
-        
-        
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         emailTextField.becomeFirstResponder()
-        
     }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -123,23 +100,19 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        get {
-            return .lightContent
-        }
+        get { return .lightContent }
     }
     
     @objc func keyboardWillAppear(notification: NSNotification){
-        
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        
         createNewAccountButton.center = CGPoint(x: view.center.x,
                                                 y: view.frame.height - keyboardFrame.height - 16.0 - createNewAccountButton.frame.height / 2)
         activityView.center = createNewAccountButton.center
     }
     
     
-    //collection view settings
+    // MARK: - CollectionView Settings
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return UserManager.instance.teas.count
     }
@@ -161,7 +134,6 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         selectedCell.contentView.backgroundColor = UIColor.basePink
         self.selected = selectedCell
         self.index = collectionView.indexPath(for: selected!)
-    
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -181,9 +153,6 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        // Resigns the target textField and assigns the next textField in the form.
-        
         switch textField {
         case emailTextField:
             emailTextField.resignFirstResponder()
@@ -207,44 +176,34 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         guard let email = emailTextField.text else { return }
         guard let pass = passwordTextField.text else { return }
         guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
-        
-
         setcreateNewAccountButton(enabled: false)
         createNewAccountButton.setTitle("", for: .normal)
         activityView.startAnimating()
-        
-        
-        
         Auth.auth().fetchProviders(forEmail: email, completion: { (stringArray, error) in
             if error != nil {
                 print(error!)
             } else {
                 if stringArray == nil {
-                    print("No password. No active account")
-                
+                    debugPrint("No password. No active account")
                     Auth.auth().createUser(withEmail: email, password: pass) { user, error in
                         if error == nil && user != nil {
-                            print("User created!")
-                            
+                            debugPrint("User created!")
                             let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                             changeRequest?.displayName = yourTea
-                            
                             changeRequest?.commitChanges { error in
                                 if error == nil {
-                                    print("User display name changed!")
-                                    
+                                    debugPrint("User display name changed!")
                                     Auth.auth().currentUser?.sendEmailVerification(completion:
                                         {(error) in
-                                            if error == nil
-                                            {
-                                                let ok = UIAlertAction(title: "Ok, verifiquei!", style: .default, handler: { (action) -> Void in
-                                                   
-                                                    Auth.auth().currentUser?.reload(completion: { (err) in
-                                                        if err == nil{
-                                                            
-                                                            
+                                            if error == nil {
+                                                let ok = UIAlertAction(
+                                                    title: "Ok, verifiquei!",
+                                                    style: .default,
+                                                    handler: { (action) -> Void in
+                                                        Auth.auth().currentUser?.reload(completion: { (err) in
+                                                        if err == nil {
                                                             if Auth.auth().currentUser!.isEmailVerified {
-                                                                print("VERIFIED")
+                                                                debugPrint("VERIFIED")
                                                                 
                                                                 self.saveProfile(username: yourTea) { success in
                                                                     if success {
@@ -254,36 +213,39 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                                         Auth.auth().currentUser?.delete(completion: nil)
                                                                     }
                                                                 }
-                                                                
                                                             } else {
+                                                                debugPrint("It aint verified yet")
+                                                                let alertVC = UIAlertController(
+                                                                    title: "Erro",
+                                                                    message: "Desculpe. Seu e-mail ainda não foi verificado, deseja reenviar o e-mail de verificação para \(email)?",
+                                                                    preferredStyle: .alert)
                                                                 
-                                                                print("It aint verified yet")
-                                                                
-                                                                let alertVC = UIAlertController(title: "Erro", message: "Desculpe. Seu e-mail ainda não foi verificado, deseja reenviar o e-mail de verificação para \(email)?", preferredStyle: .alert)
-                                                                
-                                                                let alertActionOkay = UIAlertAction(title: "Reenviar", style: .default) {
-                                                                    (_) in
-                                                                        Auth.auth().currentUser?.sendEmailVerification(completion: nil)
+                                                                let alertActionOkay = UIAlertAction(
+                                                                title: "Reenviar",
+                                                                style: .default) {
+                                                                    (_) in Auth.auth().currentUser?.sendEmailVerification(completion: nil)
                                                                 }
                                                              
-                                                                let alertActionVerified = UIAlertAction(title: "Ok, verifiquei!", style: .default, handler: { (action) -> Void in
-                                                                    
+                                                                let alertActionVerified = UIAlertAction(
+                                                                    title: "Ok, verifiquei!", style: .default,
+                                                                    handler: { (action) -> Void in
                                                                     Auth.auth().currentUser?.reload()
                                                                     if (!(Auth.auth().currentUser?.isEmailVerified)!) {
-                                                                     
+
                                                                     } else {
                                                                         self.saveProfile(username: yourTea) { success in
                                                                             if success {
                                                                                 self.dismiss(animated: true, completion: nil)
                                                                             } else {
                                                                                 self.resetForm()
-                                                                            
                                                                             }
                                                                         }
-                                                                                                                                            }
+                                                                    }
                                                                 })
                                                                 
-                                                                let alertActionCancel = UIAlertAction(title: "Cancelar", style: .default) {
+                                                                let alertActionCancel = UIAlertAction(
+                                                                title: "Cancelar",
+                                                                style: .default) {
                                                                     (_) in
                                                                     Auth.auth().currentUser?.delete(completion: nil)
                                                                    self.dismiss()
@@ -301,31 +263,31 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                         } else {
                                                             
                                                             print(err?.localizedDescription)
-                                                            
                                                         }
                                                     })
-                                                
-                                                    
                                                 })
-                                                let alert = UIAlertController(title: "E-mail de verificação", message: "Um e-mail de verificação foi enviado, por favor cheque seu e-mail", preferredStyle: .alert)
+                                                let alert = UIAlertController(
+                                                    title: "E-mail de verificação",
+                                                    message: "Um e-mail de verificação foi enviado, por favor cheque seu e-mail",
+                                                    preferredStyle: .alert)
                                                 alert.addAction(ok)
                                                 self.present(alert, animated: true, completion: nil)
                                                 alert.view.tintColor = UIColor.buttonPink
-                                                
-                                            }
-                                            else{
-                                                
-                                            let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
-                                                })
-                                            let alert = UIAlertController(title: "Erro", message: "Erro no envio do e-mail de verificação", preferredStyle: .alert)
+                                            } else {
+                                            let ok = UIAlertAction(
+                                                title: "Ok",
+                                                style: .default,
+                                                handler: { (action) -> Void in
+                                            })
+                                            let alert = UIAlertController(
+                                                title: "Erro",
+                                                message: "Erro no envio do e-mail de verificação",
+                                                preferredStyle: .alert)
                                             alert.addAction(ok)
                                             self.present(alert, animated: true, completion: nil)
                                             alert.view.tintColor = UIColor.buttonPink
                                     }
                                     })
-
-                                    
-                                    
                                 } else {
                                     print("Error: \(error!.localizedDescription)")
                                     self.resetForm()
@@ -341,70 +303,72 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                     
                 } else {
                     print("There is an active account")
-                    let tentarNovamente = UIAlertAction(title: "Tentar Novamente", style: .default, handler: { (action) -> Void in
+                    let tentarNovamente = UIAlertAction(
+                        title: "Tentar Novamente",
+                        style: .default,
+                        handler: { (action) -> Void in
                         self.emailTextField.text = ""
                         self.passwordConfirmationTextField.text = ""
                         self.passwordTextField.text = ""
                         Auth.auth().currentUser?.delete(completion: nil)
                         self.pickYourTeaCollectionView.deselectItem(at: self.index!, animated: true)
-                        
                     })
         
                     let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
                         self.dismiss()
                         Auth.auth().currentUser?.delete(completion: nil)
-                        
                     }
         
-                    let alert = UIAlertController(title: "Oops...", message: "E-mail já usado anteriormente", preferredStyle: .alert)
+                    let alert = UIAlertController(
+                        title: "Oops...",
+                        message: "E-mail já usado anteriormente",
+                        preferredStyle: .alert)
                     alert.addAction(tentarNovamente)
                     alert.addAction(cancelar)
                     self.present(alert, animated: true, completion: nil)
                     alert.view.tintColor = UIColor.buttonPink
-        
                     self.setcreateNewAccountButton(enabled: true)
                     self.createNewAccountButton.setTitle("Criar Conta", for: .normal)
                     self.activityView.stopAnimating()
                 }
             }
         })
-        
-        
     }
     
 
     func saveProfile(username:String, completion: @escaping ((_ success:Bool)->())) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        db.collection("users").document("\(uid)").setData([
-            "username": username
-        ]) { err in
+        FBRef.users.document("\(uid)").setData(["username": username]) { err in
             if let err = err {
-                print("Error writing document: \(err)")
+                debugPrint("Error writing document: \(err.localizedDescription)")
             } else {
                 print("Document successfully written!")
-                self.db.collection("users").document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
+                FBRef.users.document("\(uid)").collection("myChannels").document("first").setData(["channelID" : ""])
                 self.performSegue(withIdentifier: "Feed", sender: self)
             }
         }
-        
     }
     
     func resetForm() {
-       
-        let tentarNovamente = UIAlertAction(title: "Tentar Novamente", style: .default, handler: { (action) -> Void in
+        let tentarNovamente = UIAlertAction(
+            title: "Tentar Novamente",
+            style: .default,
+            handler: { (action) -> Void in
             self.emailTextField.text = ""
             self.passwordConfirmationTextField.text = ""
             self.passwordTextField.text = ""
             self.pickYourTeaCollectionView.deselectItem(at: self.index!, animated: true)
-            
         })
         
         let cancelar = UIAlertAction(title: "Cancelar", style: .default ) { (action) -> Void in
             self.dismiss()
         }
         
-        let alert = UIAlertController(title: "Oops...", message: "Ocorreu algum erro com seus dados", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Oops...",
+            message: "Ocorreu algum erro com seus dados",
+            preferredStyle: .alert)
         alert.addAction(tentarNovamente)
         alert.addAction(cancelar)
         self.present(alert, animated: true, completion: nil)
