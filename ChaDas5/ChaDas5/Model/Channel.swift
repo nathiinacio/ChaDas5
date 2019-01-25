@@ -23,10 +23,11 @@ class Channel {
     var lastMessageDate: String?
   
     init(story: QueryDocumentSnapshot) {
-        self.firstUser = ChannelUser(uid: (UserManager.instance.currentUser!), displayName: nil)
+        let currentUser = UserManager.instance.currentUser!
+        self.firstUser = ChannelUser(uid: (currentUser), displayName: nil)
         self.created = Date().keyString
         self.id = self.channelID
-        self.secondUser = ChannelUser(uid: ChannelsManager.instance.author(dc: story), displayName: nil)
+        self.secondUser = ChannelUser(uid: self.author(with: story), displayName: nil)
         self.lastMessageDate = created
     }
   
@@ -41,10 +42,14 @@ class Channel {
             debugPrint("Error in first user")
             return
         }
+        guard let createdDate = data["created"] as? String else {
+            debugPrint("Error in created date")
+            return
+        }
         
         self.firstUser = ChannelUser(uid: fUser, displayName: nil)
         self.secondUser = ChannelUser(uid: sUser, displayName: nil)
-        self.created = (data["created"] as! String)
+        self.created = createdDate
     }
     
     init?(
@@ -54,11 +59,12 @@ class Channel {
             if let error = err {
                 completion(error)
             }
+            let currentUser = UserManager.instance.currentUser!
             var data = snapshot?.data()
             self.id = document.documentID
             guard let autor = data!["autor"] as? String else { return }
             
-            self.firstUser = ChannelUser(uid: UserManager.instance.currentUser!, displayName: nil)
+            self.firstUser = ChannelUser(uid: currentUser, displayName: nil)
             self.secondUser = ChannelUser(uid: autor, displayName: nil)
             self.created = Date().keyString
             self.lastMessageDate = self.created
@@ -67,31 +73,25 @@ class Channel {
         
     }
     
-    
-    
-    
     func add(message:Message) {
-        //SALVA A MENSAGEM NO CHANNEL
         guard let id = self.id else {
             print("error saving message")
             return}
-        let channelMessagesRef = FBRef.db.collection("channels").document(id).collection("thread")
+        let channelMessagesRef = FBRef.channels.document(id).collection("thread")
         channelMessagesRef.addDocument(data: message.representation) { (error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             } else {
-                debugPrint("saved message")            }
+                debugPrint("saved message")
+            }
         }
         self.lastMessageDate = message.sentDate.keyString
-        FBRef.db.collection("channels").document(id).updateData(["lastMessageDate" : self.lastMessageDate])
+        FBRef.channels.document(id).updateData(["lastMessageDate" : self.lastMessageDate])
     }
-    
-    
-    
     
   }
 
-extension Channel: DatabaseRepresentation {
+extension Channel {
     
     var asDictionary:[String:Any] {
         var result:[String:Any] = [:]
@@ -112,5 +112,11 @@ extension Channel: DatabaseRepresentation {
         return first.uid+"|"+created
     }
 
+    func author(with story:QueryDocumentSnapshot) -> String{
+        guard let author = story.data()["autor"] as? String else {
+            return "error retrieving author"
+        }
+        return author
+    }
 
 }

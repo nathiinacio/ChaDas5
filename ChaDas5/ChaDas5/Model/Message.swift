@@ -35,22 +35,13 @@ struct Message: MessageType {
     
     init?(document: QueryDocumentSnapshot) {
         let data = document.data()
+        guard let sentDate = (data["created"] as? Timestamp)?.dateValue() else { return nil }
+        guard let senderID = data["senderID"] as? String else { return nil }
+        guard let senderName = data["senderName"] as? String else { return nil }
         
-        
-        guard let sentDate = (data["created"] as? Timestamp)?.dateValue() else {
-            return nil
-        }
-        guard let senderID = data["senderID"] as? String else {
-            return nil
-        }
-        guard let senderName = data["senderName"] as? String else {
-            return nil
-        }
-        
-        id = document.documentID
-        
+        self.id = document.documentID
         self.sentDate = sentDate
-        sender = Sender(id: senderID, displayName: senderName)
+        self.sender = Sender(id: senderID, displayName: senderName)
         
         if let content = data["content"] as? String {
             self.content = content
@@ -62,12 +53,8 @@ struct Message: MessageType {
     
 }
 
-extension Message: DatabaseRepresentation {
-    var asDictionary: [String : Any] {
-        return [:]
-    }
-    
-    
+extension Message {
+
     var representation: [String : Any] {
         let rep: [String : Any] = [
             "created": sentDate,

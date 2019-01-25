@@ -18,7 +18,7 @@ class MyStoriesManager {
     
     func loadMyStories(requester:Manager) {
         emptyArrays()
-        let dbRef = FBRef.db.collection("stories").order(by: "data", descending: true)
+        let dbRef = FBRef.stories.order(by: "data", descending: true)
         dbRef.getDocuments { (querySnapshot, err) in
             if let err = err {
                 debugPrint("Document error \(err.localizedDescription)")
