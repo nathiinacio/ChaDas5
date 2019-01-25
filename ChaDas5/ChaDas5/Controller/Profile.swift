@@ -98,11 +98,15 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
     override func viewDidLoad() {
 
         //segmented control customization
-        segmentedControl = CustomSegmentedContrl.init(frame: CGRect.init(x: 0, y: 300, width: self.view.frame.width, height: 45))
+        segmentedControl = CustomSegmentedContrl.init(frame: CGRect.init(x: 0, y: 440, width: self.view.frame.width, height: 45))
         segmentedControl.backgroundColor = .white
         segmentedControl.commaSeperatedButtonTitles = "Relatos passados, Relatos atuais"
         segmentedControl.addTarget(self, action: #selector(onChangeOfSegment(_:)), for: .valueChanged)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(segmentedControl)
+        
+        // Add constraints
+        setUpSegmentedControlConstraints()
 
         //table view setting
         self.profileTableView.separatorStyle = .none
@@ -137,10 +141,18 @@ class Profile: UIViewController, UITableViewDataSource, UITableViewDelegate, Man
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
         
         profileIsEditing =  false
-
         
     }
     
+    private func setUpSegmentedControlConstraints() {
+        NSLayoutConstraint.activate([
+            segmentedControl.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 40),
+            segmentedControl.widthAnchor.constraint(equalTo: view.widthAnchor),
+            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedControl.bottomAnchor.constraint(equalTo: profileTableView.topAnchor, constant: -40),
+            segmentedControl.heightAnchor.constraint(greaterThanOrEqualToConstant: 45)
+            ])
+    }
 
     //segmented control adjustments
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {

@@ -11,13 +11,9 @@ import Firebase
 
 
 class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manager {
-    
-    
 
     var activityView:UIActivityIndicatorView!
-    
     var xibCell:FeedTableViewCell?
-
     var selectedIndex:Int?
     private let refreshControl = UIRefreshControl()
 

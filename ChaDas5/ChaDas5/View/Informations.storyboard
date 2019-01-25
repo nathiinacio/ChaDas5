@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjw-Iy-37R">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqs-IF-1Jj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1031"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="973"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3u-E2-5D8" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1016"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-g8-gz0">
-                                                <rect key="frame" x="80" y="96" width="215" height="180"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1I-g8-gz0">
+                                                <rect key="frame" x="87" y="96" width="200" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="215" id="RcH-3g-Ahs"/>
-                                                    <constraint firstAttribute="height" constant="180" id="jDr-ea-MLK"/>
+                                                    <constraint firstAttribute="width" constant="200" id="RcH-3g-Ahs"/>
+                                                    <constraint firstAttribute="height" constant="200" id="jDr-ea-MLK"/>
                                                 </constraints>
                                                 <state key="normal" image="whatToDo">
                                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,11 +50,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q04-fT-Lpb">
-                                                <rect key="frame" x="80" y="400" width="215" height="180"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q04-fT-Lpb">
+                                                <rect key="frame" x="87" y="400" width="200" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="215" id="XY3-Uh-Aey"/>
-                                                    <constraint firstAttribute="height" constant="180" id="YRK-lu-kar"/>
+                                                    <constraint firstAttribute="width" constant="200" id="XY3-Uh-Aey"/>
+                                                    <constraint firstAttribute="height" constant="200" id="YRK-lu-kar"/>
                                                 </constraints>
                                                 <state key="normal" image="whoToCall">
                                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,11 +81,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJd-8t-EQ6">
-                                                <rect key="frame" x="80" y="704" width="215" height="180"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJd-8t-EQ6">
+                                                <rect key="frame" x="87" y="704" width="200" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="180" id="Yo2-fw-Fbd"/>
-                                                    <constraint firstAttribute="width" constant="215" id="zps-xP-JVl"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Yo2-fw-Fbd"/>
+                                                    <constraint firstAttribute="width" constant="200" id="zps-xP-JVl"/>
                                                 </constraints>
                                                 <state key="normal" image="informations">
                                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,27 +98,21 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="auk-Xp-CXR" secondAttribute="trailing" constant="61" id="1WY-cl-LOc"/>
-                                            <constraint firstItem="JyL-pN-Acz" firstAttribute="top" secondItem="q04-fT-Lpb" secondAttribute="bottom" constant="28" id="1hg-F4-ly6"/>
+                                            <constraint firstItem="JyL-pN-Acz" firstAttribute="top" secondItem="q04-fT-Lpb" secondAttribute="bottom" constant="8" id="1hg-F4-ly6"/>
                                             <constraint firstItem="JyL-pN-Acz" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="3L6-Zu-Nes"/>
-                                            <constraint firstItem="auk-Xp-CXR" firstAttribute="top" secondItem="a1I-g8-gz0" secondAttribute="bottom" constant="28" id="7Nl-7T-Fgk"/>
-                                            <constraint firstItem="q04-fT-Lpb" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="7mD-1L-VZY"/>
+                                            <constraint firstItem="auk-Xp-CXR" firstAttribute="top" secondItem="a1I-g8-gz0" secondAttribute="bottom" constant="8" id="7Nl-7T-Fgk"/>
+                                            <constraint firstItem="q04-fT-Lpb" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" constant="-0.5" id="7mD-1L-VZY"/>
                                             <constraint firstItem="UBE-2R-LdL" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="100" id="9GJ-M3-2NC"/>
                                             <constraint firstItem="AJd-8t-EQ6" firstAttribute="top" secondItem="JyL-pN-Acz" secondAttribute="bottom" constant="51" id="BIg-qp-TsI"/>
-                                            <constraint firstItem="a1I-g8-gz0" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="CBt-dy-wK6"/>
-                                            <constraint firstAttribute="trailing" secondItem="AJd-8t-EQ6" secondAttribute="trailing" constant="80" id="F4H-1M-ezT"/>
-                                            <constraint firstAttribute="trailing" secondItem="q04-fT-Lpb" secondAttribute="trailing" constant="80" id="FRA-0b-UoB"/>
+                                            <constraint firstItem="a1I-g8-gz0" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" constant="-0.5" id="CBt-dy-wK6"/>
                                             <constraint firstItem="JyL-pN-Acz" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="96" id="GSx-QB-ubk"/>
                                             <constraint firstItem="a1I-g8-gz0" firstAttribute="top" secondItem="x3u-E2-5D8" secondAttribute="top" constant="96" id="NM4-gH-esj"/>
-                                            <constraint firstAttribute="trailing" secondItem="a1I-g8-gz0" secondAttribute="trailing" constant="80" id="NnI-l0-eLh"/>
                                             <constraint firstItem="auk-Xp-CXR" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="U3T-pJ-UCt"/>
-                                            <constraint firstItem="q04-fT-Lpb" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="80" id="UGF-G0-yVG"/>
                                             <constraint firstAttribute="trailing" secondItem="UBE-2R-LdL" secondAttribute="trailing" constant="100" id="XZG-Up-3In"/>
-                                            <constraint firstItem="AJd-8t-EQ6" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="arV-ss-Huk"/>
-                                            <constraint firstItem="AJd-8t-EQ6" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="80" id="cP2-8Q-oGH"/>
+                                            <constraint firstItem="AJd-8t-EQ6" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" constant="-0.5" id="arV-ss-Huk"/>
                                             <constraint firstItem="auk-Xp-CXR" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="61" id="dYj-vw-Rcn"/>
-                                            <constraint firstItem="UBE-2R-LdL" firstAttribute="top" secondItem="AJd-8t-EQ6" secondAttribute="bottom" constant="28" id="gtf-Dh-MM1"/>
+                                            <constraint firstItem="UBE-2R-LdL" firstAttribute="top" secondItem="AJd-8t-EQ6" secondAttribute="bottom" constant="8" id="gtf-Dh-MM1"/>
                                             <constraint firstItem="q04-fT-Lpb" firstAttribute="top" secondItem="auk-Xp-CXR" secondAttribute="bottom" constant="51" id="m1E-91-2Mx"/>
-                                            <constraint firstItem="a1I-g8-gz0" firstAttribute="leading" secondItem="x3u-E2-5D8" secondAttribute="leading" constant="80" id="mrA-H3-2xg"/>
                                             <constraint firstAttribute="bottom" secondItem="UBE-2R-LdL" secondAttribute="bottom" constant="59" id="rep-7p-QYH"/>
                                             <constraint firstItem="UBE-2R-LdL" firstAttribute="centerX" secondItem="x3u-E2-5D8" secondAttribute="centerX" id="txS-Cv-hgm"/>
                                             <constraint firstAttribute="trailing" secondItem="JyL-pN-Acz" secondAttribute="trailing" constant="96" id="vPv-Qx-iBI"/>
@@ -161,17 +155,17 @@
             <objects>
                 <viewController id="dyB-dv-7CC" customClass="Informations" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Efw-Ly-9kV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-FN-0UM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdO-sI-Iqf" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="4334.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3748"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que é assédio sexual?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="962-QG-J6V">
-                                                <rect key="frame" x="54" y="159" width="267" height="72"/>
+                                                <rect key="frame" x="54" y="159" width="306" height="71.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -188,134 +182,134 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJB-qu-tc4">
-                                                <rect key="frame" x="54" y="239" width="267" height="271.5"/>
+                                                <rect key="frame" x="54" y="238.66666666666669" width="306" height="244.33333333333331"/>
                                                 <string key="text">É uma manifestação sensual ou sexual, sem o consentimento da pessoa a quem se dirige. Geralmente, são abordagens grosseiras, ofensas e propostas inadequadas que constrangem, humilham e amedrontam.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uma cantada pode ser considerada assédio?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrd-ZG-bUY">
-                                                <rect key="frame" x="54" y="541" width="267" height="143.5"/>
+                                                <rect key="frame" x="54" y="513.66666666666663" width="306" height="107.33333333333337"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB7-Od-70z">
-                                                <rect key="frame" x="54" y="692.5" width="267" height="353"/>
+                                                <rect key="frame" x="54" y="629" width="306" height="298.66666666666674"/>
                                                 <string key="text">Qualquer investida precisa ter o consentimento da outra parte. Muitas mulheres afirmam ter medo de sofrer violências piores se reagirem negativamente a uma abordagem. Dizer coisas desagradáveis ou invasivas é crime, classificado como importunação ofensiva ao pudor.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Passar a mão&quot; em alguém é considerado crime?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yca-Gr-pjv">
-                                                <rect key="frame" x="54" y="1075.5" width="267" height="143.5"/>
+                                                <rect key="frame" x="54" y="957.66666666666663" width="306" height="107.33333333333337"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sim, tocar as partes íntimas de qualquer pessoa sem que haja consentimento pode ser enquadrado como estupro." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuK-04-zXd">
-                                                <rect key="frame" x="54" y="1227" width="267" height="163"/>
+                                                <rect key="frame" x="54" y="1073" width="306" height="108.66666666666674"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual é a diferença entre paquera e assédio?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3z-fb-aJk">
-                                                <rect key="frame" x="54" y="1420.5" width="267" height="107.5"/>
+                                                <rect key="frame" x="54" y="1212" width="306" height="107.33333333333326"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUt-FN-fw5">
-                                                <rect key="frame" x="54" y="1536" width="267" height="271.5"/>
+                                                <rect key="frame" x="54" y="1327.3333333333333" width="306" height="244.33333333333326"/>
                                                 <string key="text">Uma paquera acontece com consentimento das duas partes. É legítima, cria uma conexão com outra pessoa, não causa medo nem angústia e aceita "não" como resposta. O assédio é uma imposição e não aproxima as duas pessoas.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="É aceitável praticar assédios em ambientes mais descontraídos, como casas noturnas ou durante o carnaval?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQn-AY-znE">
-                                                <rect key="frame" x="54" y="1815.5" width="267" height="322"/>
+                                                <rect key="frame" x="54" y="1579.6666666666667" width="306" height="214.66666666666674"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJR-cq-Gec">
-                                                <rect key="frame" x="54" y="2145.5" width="267" height="163"/>
+                                                <rect key="frame" x="54" y="1802.3333333333333" width="306" height="136"/>
                                                 <string key="text">Não, o consentimento deve ser dado por livre e espontânea vontade. Ausência de "não" ou o silêncio também não significam consentimento.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que fazer em caso de assédio sexual?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfY-pW-GtE">
-                                                <rect key="frame" x="54" y="2338.5" width="267" height="107.5"/>
+                                                <rect key="frame" x="54" y="1968.3333333333333" width="306" height="71.666666666666742"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOq-5c-ess">
-                                                <rect key="frame" x="54" y="2454" width="267" height="190"/>
+                                                <rect key="frame" x="54" y="2048" width="306" height="163"/>
                                                 <string key="text">A vítima precisa agir e denunciar imediatamente. Ela deve procurar um policial militar mais próximo ou, se estiver em ambiente privado, o segurança do local.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como identificar o agressor?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erp-yo-iw7">
-                                                <rect key="frame" x="54" y="2674" width="267" height="72"/>
+                                                <rect key="frame" x="54" y="2241" width="306" height="71.666666666666515"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A vítima deve tentar memorizar características físicas e trajes. Fotos também ajudam autoridades a identificar o agressor." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L6-1o-wKS">
-                                                <rect key="frame" x="54" y="2754" width="267" height="163"/>
+                                                <rect key="frame" x="54" y="2320.6666666666665" width="306" height="136"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por que é importante denunciar?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCN-BK-gtb">
-                                                <rect key="frame" x="54" y="2947" width="267" height="107.5"/>
+                                                <rect key="frame" x="54" y="2486.6666666666665" width="306" height="71.666666666666515"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-BZ-tvx">
-                                                <rect key="frame" x="54" y="3062.5" width="267" height="190"/>
+                                                <rect key="frame" x="54" y="2566.3333333333335" width="306" height="163"/>
                                                 <string key="text">As denúncias evitam que mulheres sejam tratadas como objetos sexuais, sem controle sobre a própria sexualidade e submissas a papéis sociais tradicionais.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual o impacto do assédio sexual para a vítima?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inu-M6-Ewf">
-                                                <rect key="frame" x="54" y="3282.5" width="267" height="107.5"/>
+                                                <rect key="frame" x="54" y="2759.3333333333335" width="306" height="107.33333333333348"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-0k-jNt">
-                                                <rect key="frame" x="54" y="3398" width="267" height="190"/>
+                                                <rect key="frame" x="54" y="2874.6666666666665" width="306" height="163"/>
                                                 <string key="text">Os assédios podem prejudicar a saúde física e mental, provocando ansiedade, depressão, perda ou ganho de peso, dores de cabeça, estresse e distúrbios do sono.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chamar uma desconhecida de &quot;gostosa&quot;, &quot;delícia&quot;, &quot;linda&quot;, &quot;princesa&quot; é elogio?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-6I-ATE">
-                                                <rect key="frame" x="54" y="3618" width="267" height="215"/>
+                                                <rect key="frame" x="54" y="3067.6666666666665" width="306" height="179"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não, o que está por trás do assédio não é a vontade de elogiar, mas uma tentativa de mostrar poder e intimidar a mulher." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRx-QD-74V">
-                                                <rect key="frame" x="54" y="3841" width="267" height="136"/>
+                                                <rect key="frame" x="54" y="3254.6666666666665" width="306" height="136"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao usar decote ou saia, a mulher está pedindo para ser abordada?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8a-9d-rem">
-                                                <rect key="frame" x="54" y="4007" width="267" height="143.5"/>
+                                                <rect key="frame" x="54" y="3420.6666666666665" width="306" height="143.33333333333348"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não, uma mulher tem o direito de se vestir como quiser. A responsabilidade é sempre do assediador, nunca da assediada." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83p-ep-Yix">
-                                                <rect key="frame" x="54" y="4158.5" width="267" height="136"/>
+                                                <rect key="frame" x="54" y="3572" width="306" height="136"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -404,7 +398,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.9958462119102478" green="0.61117130517959595" blue="0.50946098566055298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ARm-FN-0UM" firstAttribute="leading" secondItem="VSX-jZ-HHy" secondAttribute="leading" id="0do-5L-Mw9"/>
                             <constraint firstItem="ARm-FN-0UM" firstAttribute="top" secondItem="VSX-jZ-HHy" secondAttribute="top" id="576-FA-VdN"/>
@@ -424,14 +418,14 @@
             <objects>
                 <viewController id="RH6-GL-wwF" customClass="Informations" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2bW-0I-kpy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78I-rE-Nkj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLL-6H-AZL" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1126.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1099"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X99-J8-4or">
                                                 <rect key="frame" x="50" y="50" width="55" height="45"/>
@@ -445,73 +439,73 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwl-DK-qGu">
-                                                <rect key="frame" x="50" y="137" width="117" height="84"/>
+                                                <rect key="frame" x="50" y="137" width="156" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delegacia especializada de atendimento à mulher" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plh-BU-OCO">
-                                                <rect key="frame" x="50" y="229" width="289" height="54.5"/>
+                                                <rect key="frame" x="50" y="229.00000000000003" width="328" height="54.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="190" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECF-rg-qR7">
-                                                <rect key="frame" x="50" y="313.5" width="117" height="84"/>
+                                                <rect key="frame" x="50" y="313.33333333333331" width="156" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polícia Militar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOr-Nc-ktf">
-                                                <rect key="frame" x="50" y="405.5" width="128" height="28"/>
+                                                <rect key="frame" x="50" y="405.33333333333331" width="167" height="28"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="181" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCQ-pq-724">
-                                                <rect key="frame" x="50" y="463.5" width="117" height="84"/>
+                                                <rect key="frame" x="50" y="463.33333333333331" width="156" height="83.999999999999943"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disque-denúncia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9f-op-nLm">
-                                                <rect key="frame" x="50" y="555.5" width="168" height="28"/>
+                                                <rect key="frame" x="50" y="555.33333333333337" width="207" height="28"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiF-Dz-ymC">
-                                                <rect key="frame" x="50" y="613.5" width="117" height="84"/>
+                                                <rect key="frame" x="50" y="613.33333333333337" width="156" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secretaria dos Direitos Humanos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luL-dn-saV">
-                                                <rect key="frame" x="50" y="705.5" width="289" height="54.5"/>
+                                                <rect key="frame" x="50" y="705.33333333333337" width="328" height="27.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="192" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFt-gd-Ocf">
-                                                <rect key="frame" x="50" y="790" width="117" height="84"/>
+                                                <rect key="frame" x="50" y="762.66666666666663" width="156" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serviço público de remoção de doentes (ambulância)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv1-JO-3g8">
-                                                <rect key="frame" x="50" y="882" width="289" height="54.5"/>
+                                                <rect key="frame" x="50" y="854.66666666666663" width="328" height="54.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="193" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlt-JX-Ao5">
-                                                <rect key="frame" x="50" y="966.5" width="117" height="84"/>
+                                                <rect key="frame" x="50" y="939" width="156" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corpo de bombeiros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P4-3R-70m">
-                                                <rect key="frame" x="50" y="1058.5" width="206" height="28"/>
+                                                <rect key="frame" x="50" y="1031" width="245" height="28"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -570,13 +564,13 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99978166818618774" green="0.61515730619430542" blue="0.50920534133911133" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DLL-6H-AZL" firstAttribute="width" secondItem="2bW-0I-kpy" secondAttribute="width" id="7IJ-OU-xFU"/>
-                            <constraint firstItem="78I-rE-Nkj" firstAttribute="leading" secondItem="10y-OQ-QL6" secondAttribute="leading" id="FCa-bd-wfQ"/>
-                            <constraint firstItem="10y-OQ-QL6" firstAttribute="bottom" secondItem="78I-rE-Nkj" secondAttribute="bottom" id="IOC-io-MJb"/>
-                            <constraint firstItem="78I-rE-Nkj" firstAttribute="top" secondItem="10y-OQ-QL6" secondAttribute="top" id="Q4y-Ep-diX"/>
-                            <constraint firstItem="10y-OQ-QL6" firstAttribute="trailing" secondItem="78I-rE-Nkj" secondAttribute="trailing" id="txs-Yz-7yJ"/>
+                            <constraint firstItem="78I-rE-Nkj" firstAttribute="leading" secondItem="2bW-0I-kpy" secondAttribute="leading" id="FCa-bd-wfQ"/>
+                            <constraint firstAttribute="bottom" secondItem="78I-rE-Nkj" secondAttribute="bottom" constant="34" id="IOC-io-MJb"/>
+                            <constraint firstItem="78I-rE-Nkj" firstAttribute="top" secondItem="2bW-0I-kpy" secondAttribute="top" constant="44" id="Q4y-Ep-diX"/>
+                            <constraint firstAttribute="trailing" secondItem="78I-rE-Nkj" secondAttribute="trailing" id="txs-Yz-7yJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10y-OQ-QL6"/>
                     </view>
@@ -590,71 +584,71 @@
             <objects>
                 <viewController id="5yV-Wd-gxe" customClass="Informations" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HTE-LT-YFy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1J4-XP-dBr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3i-4K-YT5" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1209"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1161.6666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiZ-2Q-6sQ">
-                                                <rect key="frame" x="50" y="132" width="39" height="84"/>
+                                                <rect key="frame" x="50" y="132" width="78" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-qK-uHI">
-                                                <rect key="frame" x="50" y="308" width="39" height="84"/>
+                                                <rect key="frame" x="50" y="308" width="78" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogB-8T-lOj">
-                                                <rect key="frame" x="50" y="484" width="39" height="84"/>
+                                                <rect key="frame" x="50" y="484" width="78" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peça ajuda a quem estiver por perto e acione policiais." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYO-Z3-IT5">
-                                                <rect key="frame" x="50" y="216" width="288" height="54.5"/>
+                                                <rect key="frame" x="50" y="216" width="327" height="54.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registre um boletim de ocorrência na delegacia mais próxima." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCz-s7-chf">
-                                                <rect key="frame" x="50" y="392" width="288" height="81.5"/>
+                                                <rect key="frame" x="50" y="392" width="327" height="81.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXB-2C-cFt">
-                                                <rect key="frame" x="50" y="740" width="39" height="84"/>
+                                                <rect key="frame" x="50" y="720" width="78" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-KG-YGd">
-                                                <rect key="frame" x="50" y="943" width="39" height="84"/>
+                                                <rect key="frame" x="50" y="895.66666666666663" width="78" height="84"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guarde todas as informações que conseguir referentes ao assédio." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BU-8j-9pE">
-                                                <rect key="frame" x="50" y="568" width="288" height="81.5"/>
+                                                <rect key="frame" x="50" y="568" width="327" height="81.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faça uma denúncia pelos telefones da Policia Militar (190) e do Disque-Mulher (180)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vej-iA-eqy">
-                                                <rect key="frame" x="50" y="824" width="288" height="109"/>
+                                                <rect key="frame" x="50" y="804" width="327" height="81.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A autoridade policial não pode se recusar a registrar a ocorrência." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-ou-x6w">
-                                                <rect key="frame" x="50" y="1027" width="288" height="81.5"/>
+                                                <rect key="frame" x="50" y="979.66666666666663" width="327" height="81.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -671,13 +665,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anote o dia, horário e local, nome e contato de testemunhas, características do agressor, tire fotos, filme etc." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsM-0U-dVJ">
-                                                <rect key="frame" x="50" y="649.5" width="288" height="80.5"/>
+                                                <rect key="frame" x="50" y="649.66666666666663" width="327" height="60.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mas, caso isso aconteça, registre uma reclamação na ouvidoria do órgão em que ocorreu a recusa." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-1d-qvB">
-                                                <rect key="frame" x="50" y="1108.5" width="288" height="60.5"/>
+                                                <rect key="frame" x="50" y="1061.3333333333333" width="327" height="60.333333333333258"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -736,7 +730,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.99978166818618774" green="0.61515730619430542" blue="0.50920534133911133" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i3i-4K-YT5" firstAttribute="width" secondItem="HTE-LT-YFy" secondAttribute="width" id="C00-VA-rXA"/>
                             <constraint firstItem="1J4-XP-dBr" firstAttribute="top" secondItem="gyG-Ob-r9P" secondAttribute="top" id="I4T-aI-YNm"/>
@@ -755,8 +749,8 @@
     <resources>
         <image name="informationDismissIcon" width="924" height="740"/>
         <image name="informationIcon" width="40" height="40"/>
-        <image name="informations" width="924" height="740"/>
-        <image name="whatToDo" width="924" height="740"/>
-        <image name="whoToCall" width="924" height="740"/>
+        <image name="informations" width="481" height="484"/>
+        <image name="whatToDo" width="481" height="484"/>
+        <image name="whoToCall" width="481" height="484"/>
     </resources>
 </document>

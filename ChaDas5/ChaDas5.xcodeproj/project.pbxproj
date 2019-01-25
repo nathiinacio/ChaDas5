@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		155CF80821DE6E6800AFB04B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80721DE6E6800AFB04B /* Channel.swift */; };
-		155CF80A21DE6F3300AFB04B /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */; };
 		155CF80C21DE7D2B00AFB04B /* ChannelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */; };
 		155CF80E21DE89F400AFB04B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80D21DE89F400AFB04B /* Message.swift */; };
 		155CF81021DE8A9000AFB04B /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155CF80F21DE8A9000AFB04B /* AppSettings.swift */; };
@@ -78,7 +77,6 @@
 /* Begin PBXFileReference section */
 		0BEF3C98C9D939AC8E52F7FE /* Pods_ChaDas5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChaDas5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		155CF80721DE6E6800AFB04B /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
 		155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsManager.swift; sourceTree = "<group>"; };
 		155CF80D21DE89F400AFB04B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		155CF80F21DE8A9000AFB04B /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 				155CF80B21DE7D2B00AFB04B /* ChannelsManager.swift */,
 				9A76AF8C21C038D9003ED02C /* MyStoriesManager.swift */,
 				158DBDBA21CBED6B00C9888F /* UserManager.swift */,
-				155CF80921DE6F3300AFB04B /* DatabaseRepresentation.swift */,
 				1588D7B121E7AEB000136083 /* MessagesManager.swift */,
 			);
 			path = Managers;
@@ -302,8 +299,8 @@
 				9A1B11D421C43B39006956B7 /* Extentions.swift */,
 				9A1B11D221C43B39006956B7 /* Relato.swift */,
 				155CF80721DE6E6800AFB04B /* Channel.swift */,
-				155CF80F21DE8A9000AFB04B /* AppSettings.swift */,
 				155CF80D21DE89F400AFB04B /* Message.swift */,
+				155CF80F21DE8A9000AFB04B /* AppSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -554,7 +551,6 @@
 				E23901B521CADDA8006B3CF3 /* SplashScreen.swift in Sources */,
 				9A4E543D21B006CC0033FEBF /* Informations.swift in Sources */,
 				9AFBE59E21B1D2D90050AE3E /* CustomSegmentedContrl.swift in Sources */,
-				155CF80A21DE6F3300AFB04B /* DatabaseRepresentation.swift in Sources */,
 				9A4E543521B0066F0033FEBF /* Login.swift in Sources */,
 				9A1B11D921C43B39006956B7 /* Extentions.swift in Sources */,
 				155CF81221DE926100AFB04B /* ChatViewController.swift in Sources */,
