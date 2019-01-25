@@ -131,7 +131,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5Q-eb-dRI">
-                                <rect key="frame" x="99.666666666666686" y="638" width="215" height="70"/>
+                                <rect key="frame" x="99.666666666666686" y="621" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="CsA-6A-rfv"/>
@@ -164,7 +164,7 @@
                             <constraint firstItem="yJt-Px-Ney" firstAttribute="centerY" secondItem="Mio-Y7-99q" secondAttribute="centerY" constant="-23.833333333333314" id="Qfr-ye-pJP"/>
                             <constraint firstItem="TWp-O3-ywC" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" id="Qh8-La-d6b"/>
                             <constraint firstItem="Xd0-WM-2O8" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" id="RMv-As-5bm"/>
-                            <constraint firstItem="q5Q-eb-dRI" firstAttribute="centerY" secondItem="Mio-Y7-99q" secondAttribute="centerY" constant="305" id="Xc2-IS-pXN"/>
+                            <constraint firstItem="q5Q-eb-dRI" firstAttribute="centerY" secondItem="Mio-Y7-99q" secondAttribute="centerY" constant="288" id="Xc2-IS-pXN"/>
                             <constraint firstItem="PPe-7t-dED" firstAttribute="centerY" secondItem="Mio-Y7-99q" secondAttribute="centerY" constant="21.166666666666686" id="YgY-PA-wfx"/>
                             <constraint firstItem="dsc-Fo-CMf" firstAttribute="centerY" secondItem="Mio-Y7-99q" secondAttribute="centerY" constant="-288" id="a4I-AL-A4m"/>
                             <constraint firstItem="dsc-Fo-CMf" firstAttribute="centerX" secondItem="Mio-Y7-99q" secondAttribute="centerX" constant="-112" id="bQQ-O0-gif"/>

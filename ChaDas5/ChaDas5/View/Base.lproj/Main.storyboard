@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,7 +19,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-Kf-gA4">
@@ -41,7 +41,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LX-75-H2R">
-                                <rect key="frame" x="99.666666666666686" y="554" width="215" height="70"/>
+                                <rect key="frame" x="99.666666666666686" y="489" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="CPL-AX-ySS"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saD-jf-j34">
-                                <rect key="frame" x="99.666666666666686" y="670" width="215" height="70"/>
+                                <rect key="frame" x="99.666666666666686" y="605" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="1hR-aL-pcs"/>
@@ -86,9 +86,9 @@
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5ir-zK-mza"/>
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7HJ-TD-lkf"/>
                             <constraint firstItem="saD-jf-j34" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Uv-HO-dCo"/>
-                            <constraint firstItem="9LX-75-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="141" id="BD2-Rp-csc"/>
+                            <constraint firstItem="9LX-75-H2R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="156" id="BD2-Rp-csc"/>
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="I7a-qT-fV1"/>
-                            <constraint firstItem="saD-jf-j34" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="257" id="UTO-N0-qIo"/>
+                            <constraint firstItem="saD-jf-j34" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="272" id="UTO-N0-qIo"/>
                             <constraint firstItem="9LX-75-H2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="auZ-dZ-wwK"/>
                             <constraint firstItem="OpM-Kf-gA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o28-Jc-jtV"/>
                         </constraints>
