@@ -42,7 +42,7 @@ class Feed: UIViewController, UITableViewDataSource, UITableViewDelegate, Manage
         activityView = UIActivityIndicatorView(style: .gray)
         activityView.color = UIColor.buttonPink
         activityView.frame = CGRect(x: 0, y: 0, width: 300.0, height: 300.0)
-        activityView.center = feedTableView.center
+        activityView.center = view.center
         activityView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
       
        

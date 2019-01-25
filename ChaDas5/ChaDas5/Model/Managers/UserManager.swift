@@ -56,5 +56,33 @@ class UserManager {
             completion(error)
         }
     }
+    
+    
+//    func fetchProviders(withEmail email: String, completion: @escaping (Error?) -> Void){
+//
+//        Auth.auth().fetchProviders(forEmail: email, completion: { (stringArray, error) in
+//            if let error = error {
+//                completion(error)
+//            }
+//
+//            else{
+//
+//                if stringArray == nil{
+//                    completion(nil)
+//                    //criar usuario
+//                }
+//
+//                else{
+//                     completion(error)
+//                }
+//
+//            }
+//
+//
+//        })
+//}
+    
+    
+    
 }
 

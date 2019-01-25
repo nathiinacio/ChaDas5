@@ -111,7 +111,7 @@ class Login: UIViewController {
         
         loginButton.center = CGPoint(x: view.center.x,
                                         y: view.frame.height - keyboardFrame.height - 16.0 - loginButton.frame.height / 2)
-        activityView.center = loginButton.center
+        activityView.center = self.loginButton.center
     }
     
     @objc func textFieldChanged(_ target:UITextField) {
