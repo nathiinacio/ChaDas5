@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FdJ-g9-0s6">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
             <objects>
                 <viewController id="FdJ-g9-0s6" customClass="Login" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V1b-9n-yvx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-4s-vrU">
-                                <rect key="frame" x="60" y="160" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="194.66666666666666" width="255" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="UbC-WS-Wvu"/>
                                     <constraint firstAttribute="width" constant="255" id="UuC-jb-kMt"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2G-Sy-b9v">
-                                <rect key="frame" x="60" y="204" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="238.66666666666663" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="3wh-9h-TFE"/>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54r-C0-5Gi">
-                                <rect key="frame" x="60" y="259" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="293.66666666666669" width="255" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="esY-dz-yXE"/>
                                     <constraint firstAttribute="height" constant="45" id="pOs-tc-0hN"/>
@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8vj-HA-pqc">
-                                <rect key="frame" x="60" y="304" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="338.66666666666669" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="5eR-S8-zCA"/>
@@ -65,7 +65,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-Oa-eTo">
-                                <rect key="frame" x="80" y="415.5" width="215" height="70"/>
+                                <rect key="frame" x="99.666666666666686" y="450" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="5gN-fA-mbl"/>
@@ -85,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-PV-AOZ">
-                                <rect key="frame" x="50.5" y="50.5" width="50" height="40"/>
+                                <rect key="frame" x="70" y="85" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="i0W-Kb-B58"/>
                                     <constraint firstAttribute="width" constant="50" id="udU-BA-Tw5"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-kp-kTl">
-                                <rect key="frame" x="100" y="493.5" width="175" height="20"/>
+                                <rect key="frame" x="119.66666666666669" y="528" width="175" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="Mo2-sy-VYf"/>
                                     <constraint firstAttribute="height" constant="20" id="X78-sw-eob"/>

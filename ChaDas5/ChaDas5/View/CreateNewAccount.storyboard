@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I2T-pg-gKs">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
             <objects>
                 <viewController id="I2T-pg-gKs" customClass="CreateNewAccount" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mio-Y7-99q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd0-WM-2O8">
-                                <rect key="frame" x="60" y="90" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="124.66666666666669" width="255" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="oeW-t7-fdc"/>
                                     <constraint firstAttribute="width" constant="255" id="wMH-Jm-PAT"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWp-O3-ywC">
-                                <rect key="frame" x="60" y="135" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="169.66666666666666" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="GOd-hy-3V1"/>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50o-8T-IAz">
-                                <rect key="frame" x="60" y="190" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="224.66666666666666" width="255" height="44.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="MsN-PX-RPi"/>
                                     <constraint firstAttribute="height" constant="45" id="brx-Cs-YG1"/>
@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EgS-Hm-QPG">
-                                <rect key="frame" x="60" y="235" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="269.66666666666669" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="7Rf-cY-eJn"/>
@@ -65,7 +65,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmação de Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-Px-Ney">
-                                <rect key="frame" x="60" y="290" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="324.66666666666669" width="255" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="SK5-jd-QuJ"/>
                                     <constraint firstAttribute="height" constant="45" id="UHF-WH-eon"/>
@@ -75,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmação de Senha" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPe-7t-dED">
-                                <rect key="frame" x="60" y="335" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="369.66666666666669" width="255" height="45"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="17S-2X-avh"/>
@@ -86,7 +86,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha seu chá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5N-xI-nG4">
-                                <rect key="frame" x="60" y="390" width="255" height="45"/>
+                                <rect key="frame" x="79.666666666666686" y="424.66666666666669" width="255" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="255" id="JQv-N8-NTj"/>
                                     <constraint firstAttribute="height" constant="45" id="vEa-QC-dHF"/>
@@ -96,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Av-tV-KjB">
-                                <rect key="frame" x="16" y="436.5" width="343" height="128"/>
+                                <rect key="frame" x="35.666666666666657" y="471" width="343" height="128"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="6nj-y5-41N"/>
@@ -110,7 +110,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PickYouTea" id="nA3-uD-Qu9">
-                                        <rect key="frame" x="0.0" y="4.5" width="92" height="119"/>
+                                        <rect key="frame" x="0.0" y="4.666666666666667" width="92" height="119"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="92" height="119"/>
@@ -120,7 +120,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5Q-eb-dRI">
-                                <rect key="frame" x="80" y="572.5" width="215" height="70"/>
+                                <rect key="frame" x="99.666666666666686" y="607" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="CsA-6A-rfv"/>
@@ -140,7 +140,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-Fo-CMf">
-                                <rect key="frame" x="50.5" y="50.5" width="50" height="40"/>
+                                <rect key="frame" x="70" y="85" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Oz1-34-gvA"/>
                                     <constraint firstAttribute="height" constant="40" id="fvy-Wd-Drl"/>
