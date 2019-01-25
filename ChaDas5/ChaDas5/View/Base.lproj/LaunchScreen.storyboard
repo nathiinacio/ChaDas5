@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2K-ED-Irr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.97741764783859253" green="0.75185805559158325" blue="0.75384771823883057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-R2-oBQ">
-                                <rect key="frame" x="87" y="268" width="240" height="200"/>
+                                <rect key="frame" x="87" y="348" width="240" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="O3S-DZ-pGz"/>
                                     <constraint firstAttribute="width" constant="240" id="roh-e5-Qj2"/>
@@ -32,13 +32,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QyY-R2-oBQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fhy-m4-eeH"/>
-                            <constraint firstItem="q2K-ED-Irr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PQE-ea-wsk"/>
+                            <constraint firstItem="q2K-ED-Irr" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="PQE-ea-wsk"/>
                             <constraint firstItem="q2K-ED-Irr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oh3-n6-Boo"/>
                             <constraint firstItem="QyY-R2-oBQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qXY-0I-uHU"/>
-                            <constraint firstItem="q2K-ED-Irr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v4T-aU-l1c"/>
-                            <constraint firstItem="q2K-ED-Irr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vTH-wk-Aks"/>
-                            <constraint firstItem="q2K-ED-Irr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="z0K-Pl-T0Q"/>
-                            <constraint firstItem="q2K-ED-Irr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zy6-bj-Clc"/>
+                            <constraint firstItem="q2K-ED-Irr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="v4T-aU-l1c"/>
+                            <constraint firstItem="q2K-ED-Irr" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="z0K-Pl-T0Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TNK-Yo-e59">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,15 +14,15 @@
             <objects>
                 <viewController id="TNK-Yo-e59" customClass="SplashScreen" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Y9-WK-oaJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AyU-iS-QKU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="0.97741764783859253" green="0.75185805559158325" blue="0.75384771823883057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Raa-1C-V3k">
-                                <rect key="frame" x="87" y="268" width="240" height="200"/>
+                                <rect key="frame" x="67.666666666666686" y="306" width="240" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="dZO-WS-2wL"/>
                                     <constraint firstAttribute="width" constant="240" id="fdR-ud-W6r"/>
@@ -32,11 +32,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AyU-iS-QKU" firstAttribute="top" secondItem="2Y9-WK-oaJ" secondAttribute="top" id="2a9-9U-cDh"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="trailing" secondItem="dCr-Zx-6SV" secondAttribute="trailing" id="8ec-Eu-pJl"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="leading" secondItem="dCr-Zx-6SV" secondAttribute="leading" id="PgU-4P-DCf"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="trailing" secondItem="2Y9-WK-oaJ" secondAttribute="trailing" id="8ec-Eu-pJl"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="leading" secondItem="2Y9-WK-oaJ" secondAttribute="leading" id="PgU-4P-DCf"/>
                             <constraint firstItem="Raa-1C-V3k" firstAttribute="centerY" secondItem="2Y9-WK-oaJ" secondAttribute="centerY" id="UPv-Uh-Aw0"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="centerY" secondItem="2Y9-WK-oaJ" secondAttribute="centerY" id="Wlh-Ax-gst"/>
-                            <constraint firstItem="AyU-iS-QKU" firstAttribute="bottom" secondItem="dCr-Zx-6SV" secondAttribute="bottom" constant="34" id="afp-f1-mfQ"/>
+                            <constraint firstItem="AyU-iS-QKU" firstAttribute="bottom" secondItem="2Y9-WK-oaJ" secondAttribute="bottom" id="afp-f1-mfQ"/>
                             <constraint firstItem="AyU-iS-QKU" firstAttribute="centerX" secondItem="2Y9-WK-oaJ" secondAttribute="centerX" id="dfu-bp-07f"/>
                             <constraint firstItem="Raa-1C-V3k" firstAttribute="centerX" secondItem="2Y9-WK-oaJ" secondAttribute="centerX" id="sM3-lD-d5v"/>
                         </constraints>

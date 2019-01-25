@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8MD-QL-NjA">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,21 +19,21 @@
             <objects>
                 <viewController id="8MD-QL-NjA" customClass="Feed" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jx1-3x-tf0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rsd-4Z-ZH2">
-                                <rect key="frame" x="0.0" y="181" width="414" height="555"/>
+                                <rect key="frame" x="0.0" y="273" width="375" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="555" id="5SS-Bj-XJG"/>
+                                    <constraint firstAttribute="height" constant="544" id="5SS-Bj-XJG"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedCell" rowHeight="120" id="9yW-A5-ssU">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9yW-A5-ssU" id="cfV-1V-JOj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -43,7 +43,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAk-hd-CQt">
-                                <rect key="frame" x="294.66666666666669" y="84.666666666666671" width="50" height="50.000000000000014"/>
+                                <rect key="frame" x="275" y="142.66666666666666" width="50" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="8wd-Bw-kL1"/>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-1L-uAh">
-                                <rect key="frame" x="57" y="181" width="300" height="90"/>
+                                <rect key="frame" x="37.666666666666657" y="307" width="300" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="7Z6-oY-fPu"/>
                                     <constraint firstAttribute="height" constant="90" id="RJ6-4a-fQB"/>
@@ -74,13 +74,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gAk-hd-CQt" firstAttribute="centerY" secondItem="Jx1-3x-tf0" secondAttribute="centerY" constant="-258.5" id="DcJ-sL-UHB"/>
+                            <constraint firstItem="gAk-hd-CQt" firstAttribute="centerY" secondItem="Jx1-3x-tf0" secondAttribute="centerY" constant="-238.5" id="DcJ-sL-UHB"/>
                             <constraint firstItem="gAk-hd-CQt" firstAttribute="centerX" secondItem="Jx1-3x-tf0" secondAttribute="centerX" constant="112.5" id="Dhs-tQ-LbD"/>
                             <constraint firstItem="Le7-1L-uAh" firstAttribute="centerX" secondItem="Jx1-3x-tf0" secondAttribute="centerX" id="izA-fk-tz1"/>
-                            <constraint firstItem="Le7-1L-uAh" firstAttribute="top" secondItem="rsd-4Z-ZH2" secondAttribute="top" id="qul-9f-u3B"/>
-                            <constraint firstAttribute="bottom" secondItem="rsd-4Z-ZH2" secondAttribute="bottom" id="rSM-s8-wVe"/>
-                            <constraint firstItem="rsd-4Z-ZH2" firstAttribute="leading" secondItem="Jzw-L5-tpc" secondAttribute="leading" id="sHJ-ID-TNl"/>
-                            <constraint firstItem="rsd-4Z-ZH2" firstAttribute="trailing" secondItem="Jzw-L5-tpc" secondAttribute="trailing" id="sb5-Fa-sqp"/>
+                            <constraint firstItem="Le7-1L-uAh" firstAttribute="top" secondItem="rsd-4Z-ZH2" secondAttribute="top" constant="34" id="qul-9f-u3B"/>
+                            <constraint firstAttribute="bottom" secondItem="rsd-4Z-ZH2" secondAttribute="bottom" constant="-5" id="rSM-s8-wVe"/>
+                            <constraint firstItem="rsd-4Z-ZH2" firstAttribute="leading" secondItem="Jx1-3x-tf0" secondAttribute="leading" id="sHJ-ID-TNl"/>
+                            <constraint firstItem="rsd-4Z-ZH2" firstAttribute="trailing" secondItem="Jx1-3x-tf0" secondAttribute="trailing" id="sb5-Fa-sqp"/>
                             <constraint firstItem="rsd-4Z-ZH2" firstAttribute="centerX" secondItem="Jx1-3x-tf0" secondAttribute="centerX" id="zcs-6c-ntK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jzw-L5-tpc"/>
@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mai-gK-alR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="115.59220389805098"/>
+            <point key="canvasLocation" x="140" y="114.69265367316342"/>
         </scene>
         <!--StoryScreen-->
         <scene sceneID="PRV-3Z-9xi">

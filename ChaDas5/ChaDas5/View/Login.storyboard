@@ -65,7 +65,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-Oa-eTo">
-                                <rect key="frame" x="99.666666666666686" y="450" width="215" height="70"/>
+                                <rect key="frame" x="99.666666666666686" y="519" width="215" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450980395" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="5gN-fA-mbl"/>
@@ -85,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-PV-AOZ">
-                                <rect key="frame" x="70" y="85" width="50" height="40"/>
+                                <rect key="frame" x="70" y="70" width="50" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="i0W-Kb-B58"/>
                                     <constraint firstAttribute="width" constant="50" id="udU-BA-Tw5"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-kp-kTl">
-                                <rect key="frame" x="119.66666666666669" y="528" width="175" height="20"/>
+                                <rect key="frame" x="119.66666666666669" y="597" width="175" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="175" id="Mo2-sy-VYf"/>
                                     <constraint firstAttribute="height" constant="20" id="X78-sw-eob"/>
@@ -117,12 +117,12 @@
                             <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="MBE-EQ-ejf"/>
                             <constraint firstItem="Rvd-4s-vrU" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="Qkn-RB-kBo"/>
                             <constraint firstItem="k2G-Sy-b9v" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-107" id="XUj-DD-0zH"/>
-                            <constraint firstItem="ZUx-kp-kTl" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="170" id="bCM-UH-GJu"/>
-                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-263" id="dOj-Gu-pld"/>
+                            <constraint firstItem="ZUx-kp-kTl" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="239" id="bCM-UH-GJu"/>
+                            <constraint firstItem="HRL-PV-AOZ" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-278" id="dOj-Gu-pld"/>
                             <constraint firstItem="HRL-PV-AOZ" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" constant="-112" id="fsu-rt-2KM"/>
                             <constraint firstItem="8vj-HA-pqc" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="gzE-dD-2Do"/>
                             <constraint firstItem="8vj-HA-pqc" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-7" id="hLa-Aw-SEu"/>
-                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="117" id="htu-R0-ogi"/>
+                            <constraint firstItem="mTT-Oa-eTo" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="186" id="htu-R0-ogi"/>
                             <constraint firstItem="ZUx-kp-kTl" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="kNZ-br-Qxs"/>
                             <constraint firstItem="k2G-Sy-b9v" firstAttribute="centerX" secondItem="V1b-9n-yvx" secondAttribute="centerX" id="kj5-4X-esi"/>
                             <constraint firstItem="Rvd-4s-vrU" firstAttribute="centerY" secondItem="V1b-9n-yvx" secondAttribute="centerY" constant="-151" id="uZW-6O-RUP"/>
