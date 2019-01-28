@@ -21,7 +21,9 @@ class CustomNavigationBar: UINavigationBar {
     }
     
     // NavigationBar height
-    var customHeight : CGFloat = 100
+    var customHeight : CGFloat {
+        return UIApplication.shared.statusBarFrame.height + 100
+    }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: customHeight)
@@ -30,8 +32,8 @@ class CustomNavigationBar: UINavigationBar {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let y = UIApplication.shared.statusBarFrame.height
-        frame = CGRect(x: frame.origin.x, y:  y, width: frame.size.width, height: customHeight)
+//        let y = UIApplication.shared.statusBarFrame.height
+        frame = CGRect(x: frame.origin.x, y:  0, width: frame.size.width, height: customHeight)
         
         for subview in self.subviews {
             var stringFromClass = NSStringFromClass(subview.classForCoder)

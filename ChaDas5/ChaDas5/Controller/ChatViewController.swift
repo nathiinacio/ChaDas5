@@ -141,6 +141,17 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
         let navbarFont = UIFont(name: "SFCompactDisplay-Ultralight", size: 17) ?? UIFont.systemFont(ofSize: 17)
         self.view.addSubview(bar)
         configureButtons()
+        
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        
+        //constraints
+        NSLayoutConstraint.activate([
+            bar.topAnchor.constraint(equalTo: view.topAnchor),
+            bar.leftAnchor.constraint(equalTo: view.leftAnchor),
+            bar.rightAnchor.constraint(equalTo: view.rightAnchor)
+            
+            ])
+        
     }
     
     func configureButtons() {
@@ -156,6 +167,23 @@ class ChatViewController: MessagesViewController, MessagesProtocol, UINavigation
         complainButton.addTarget(self, action: #selector(complainAction), for: .touchUpInside)
         complainButton.contentMode = .center
         self.view.addSubview(complainButton)
+        
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        complainButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        //constraints
+        NSLayoutConstraint.activate([
+            dismissButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+            dismissButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -112.5),
+            dismissButton.widthAnchor.constraint(equalToConstant: 65),
+            dismissButton.heightAnchor.constraint(equalToConstant: 55),
+            
+            complainButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+            complainButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 112.5),
+            complainButton.widthAnchor.constraint(equalToConstant: 65),
+            complainButton.heightAnchor.constraint(equalToConstant: 55)
+            ])
+    
     }
     
     func configureInputBar() {
