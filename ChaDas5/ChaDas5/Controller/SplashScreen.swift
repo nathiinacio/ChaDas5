@@ -48,8 +48,8 @@ class SplashScreen: UIViewController {
     func animate() {
         UIView.animate(withDuration: 1, animations: {
         
-        self.splashView.frame.origin.y -= 307
-            self.splashImage.frame.origin.y -= 152.5
+        self.splashView.frame.size.height = 434
+            self.splashImage.frame.origin.y = 117
         
         
         }, completion: nil)
