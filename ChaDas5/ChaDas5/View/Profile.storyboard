@@ -102,7 +102,7 @@
                                 <rect key="frame" x="139.66666666666666" y="210.66666666666663" width="134.99999999999997" height="135"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOX-oQ-RBh">
-                                        <rect key="frame" x="19" y="6" width="110" height="110"/>
+                                        <rect key="frame" x="17" y="8" width="110" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="0Zy-Bh-7dw"/>
                                             <constraint firstAttribute="width" constant="110" id="hau-X7-8Ua"/>
@@ -130,9 +130,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LOX-oQ-RBh" firstAttribute="centerX" secondItem="LeW-nS-Cbh" secondAttribute="centerX" constant="6.5" id="2em-zo-7IU"/>
+                                    <constraint firstItem="LOX-oQ-RBh" firstAttribute="centerX" secondItem="LeW-nS-Cbh" secondAttribute="centerX" constant="4.5000000000000142" id="2em-zo-7IU"/>
                                     <constraint firstItem="ROh-BM-ggp" firstAttribute="centerY" secondItem="LeW-nS-Cbh" secondAttribute="centerY" id="HqL-RG-hty"/>
-                                    <constraint firstItem="LOX-oQ-RBh" firstAttribute="centerY" secondItem="LeW-nS-Cbh" secondAttribute="centerY" constant="-6.5" id="XVF-gv-2Rm"/>
+                                    <constraint firstItem="LOX-oQ-RBh" firstAttribute="centerY" secondItem="LeW-nS-Cbh" secondAttribute="centerY" constant="-4.5" id="XVF-gv-2Rm"/>
                                     <constraint firstItem="ROh-BM-ggp" firstAttribute="centerX" secondItem="LeW-nS-Cbh" secondAttribute="centerX" id="fVH-Be-6iX"/>
                                     <constraint firstAttribute="height" constant="135" id="lxo-kc-uuc"/>
                                     <constraint firstAttribute="width" constant="135" id="wua-5P-V9k"/>
