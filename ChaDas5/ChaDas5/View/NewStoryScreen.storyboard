@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ckq-ex-yFr">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
             <objects>
                 <viewController id="ckq-ex-yFr" customClass="NewStoryScreen" customModule="ChaDas5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="btZ-HP-iCa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-bd-YQZ">
-                                <rect key="frame" x="69.666666666666671" y="140.66666666666666" width="50" height="50"/>
+                                <rect key="frame" x="69.666666666666671" y="60.666666666666657" width="50" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.61568627450000002" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="8H9-mE-DNw"/>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-hF-FXi">
-                                <rect key="frame" x="294.66666666666669" y="140.66666666666663" width="50" height="50"/>
+                                <rect key="frame" x="294.66666666666669" y="60.666666666666657" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.99978166820000003" green="0.61515730619999998" blue="0.50920534129999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Ati-Nl-G6F"/>
@@ -61,10 +61,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvQ-fc-iJi">
-                                <rect key="frame" x="64.666666666666686" y="268.66666666666669" width="285" height="170"/>
+                                <rect key="frame" x="64.666666666666686" y="188.66666666666663" width="285" height="170"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvU-TD-to3">
-                                        <rect key="frame" x="25" y="17.333333333333314" width="235" height="135"/>
+                                        <rect key="frame" x="25" y="17.333333333333343" width="235" height="135"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="235" id="1Re-f3-wgn"/>
                                             <constraint firstAttribute="height" constant="135" id="DdF-Bs-dbO"/>
