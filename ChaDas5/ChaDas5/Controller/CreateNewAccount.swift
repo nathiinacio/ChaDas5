@@ -74,7 +74,7 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         activityView = UIActivityIndicatorView(style: .gray)
         activityView.color = UIColor.buttonPink
         activityView.frame = CGRect(x: 0, y: 0, width: 50.0, height: 50.0)
-        activityView.center = createNewAccountButton.center
+        activityView.center = self.createNewAccountButton.center
         
         view.addSubview(activityView)
         
@@ -176,9 +176,13 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
         guard let email = emailTextField.text else { return }
         guard let pass = passwordTextField.text else { return }
         guard let yourTea = self.selected!.chooseYourTeaLabel.text else { return }
+        
         setcreateNewAccountButton(enabled: false)
         createNewAccountButton.setTitle("", for: .normal)
         activityView.startAnimating()
+        
+        
+        
         Auth.auth().fetchProviders(forEmail: email, completion: { (stringArray, error) in
             if error != nil {
                 print(error!)
@@ -190,12 +194,20 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                             debugPrint("User created!")
                             let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                             changeRequest?.displayName = yourTea
+                            UserManager.instance.currentUser =  user?.user.uid
                             changeRequest?.commitChanges { error in
                                 if error == nil {
                                     debugPrint("User display name changed!")
                                     Auth.auth().currentUser?.sendEmailVerification(completion:
                                         {(error) in
                                             if error == nil {
+                                                
+                                                let reenviar = UIAlertAction(
+                                                    title: "Não recebi, reenviar!",
+                                                    style: .default) {
+                                                        (_) in Auth.auth().currentUser?.sendEmailVerification(completion: nil)
+                                                }
+                                                
                                                 let ok = UIAlertAction(
                                                     title: "Ok, verifiquei!",
                                                     style: .default,
@@ -266,13 +278,18 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
                                                         }
                                                     })
                                                 })
+                                                
                                                 let alert = UIAlertController(
                                                     title: "E-mail de verificação",
-                                                    message: "Um e-mail de verificação foi enviado, por favor cheque seu e-mail",
+                                                    message: "Um e-mail de verificação foi enviado, por favor cheque seu e-mail! Não esqueça de checar em spam!",
                                                     preferredStyle: .alert)
                                                 alert.addAction(ok)
+                                                alert.addAction(reenviar)
                                                 self.present(alert, animated: true, completion: nil)
                                                 alert.view.tintColor = UIColor.buttonPink
+                                                
+                                                
+                                                
                                             } else {
                                             let ok = UIAlertAction(
                                                 title: "Ok",
@@ -337,7 +354,8 @@ class CreateNewAccount: UIViewController, UICollectionViewDelegate, UICollection
     
 
     func saveProfile(username:String, completion: @escaping ((_ success:Bool)->())) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = UserManager.instance.currentUser  else { return }
+        AppSettings.displayName = username
         
         FBRef.users.document("\(uid)").setData(["username": username]) { err in
             if let err = err {
